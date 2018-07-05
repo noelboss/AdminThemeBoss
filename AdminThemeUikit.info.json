@@ -2,7 +2,7 @@
 	"title": "Admin Theme Boss",
 	"summary": "A light and clear theme based on Uikit 3.",
 	"href": "https://github.com/noelboss/AdminThemeUikit",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"author": "Noël Bossart",
 	"autoload": "template=admin",
 	"icon": "diamond",

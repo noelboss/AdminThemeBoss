@@ -6,7 +6,7 @@
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
  *
- * File created/changed: 2018-07-05T17:05:20+02:00
+ * File created/changed: 2018-07-05T19:59:43+02:00
  */
 
 namespace ProcessWire;
@@ -86,6 +86,52 @@ class AdminThemeUikit extends AdminThemeFramework implements Module, Configurabl
 	 * @return string
 	 */
 	public function ___render()
+	{
+		if (!$this->isLoggedIn || $this->isModal) {
+			return '';
+		}
+		$process = $this->wire('page')->process;
+		if ($process == 'ProcessPageList') {
+			return '';
+		}
+		$breadcrumbs = $this->wire('breadcrumbs');
+		$out = '';
+
+		// don't show breadcrumbs if only one of them (subjective)
+		if (count($breadcrumbs) < 2 && $process != 'ProcessPageEdit') {
+			return '';
+		}
+
+		if (strpos($this->layout, 'sidenav') === false) {
+			$out = '<li>'.$this->renderQuickTreeLink().'</li>';
+		}
+
+		foreach ($breadcrumbs as $breadcrumb) {
+			$title = $breadcrumb->get('titleMarkup');
+			if (!$title) {
+				$title = $this->wire('sanitizer')->entities1($this->_($breadcrumb->title));
+			}
+			$out .= "<li><a href='$breadcrumb->url'>$title</a></li>";
+		}
+
+		if ($out) {
+			$out = "<ul class='uk-breadcrumb'>$out</ul>";
+		}
+
+		return $out;
+	}
+
+	/*******************************************************************************************
+	 * MARKUP RENDERING METHODS
+	 *
+	 */
+
+	/**
+	 * Render a list of breadcrumbs (list items), excluding the containing <ul>.
+	 *
+	 * @return string
+	 */
+	public function ___renderBreadcrumbs()
 	{
 		if (!$this->isLoggedIn || $this->isModal) {
 			return '';
