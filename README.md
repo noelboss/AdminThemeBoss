@@ -25,7 +25,7 @@ Requires AdminThemeUikit installed and activated…
 
 Activate the core AdminThemeUikit in ProcessWire if not yet done.
 
-1. Download the files from [GitHub](https://github.com/noelboss/AdminThemeBoss) or the ProcessWire repository: https://modules.processwire.com/modules/admin-theme-boss/
+1. Download the files from [GitHub](https://github.com/noelboss/AdminThemeBoss) or the [ProcessWire Modules Repository](https://modules.processwire.com/modules/admin-theme-uikit/).
 2. Copy all of the files for this module into /site/modules/AdminThemeBoss/
 
 ## Activate
