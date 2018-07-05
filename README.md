@@ -18,7 +18,14 @@ There are also slight tweeks to paddings etc. from the default theme.
 
 ## Requirements
 
-Requires AdminThemeUikit installed and activated…
+Requires AdminThemeUikit installed and activated. Make sure to activate Uikit first:
+
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/profile.png "Activate Uikit in your profile")
+
+You can also set the default theme like so in you site/config.php
+
+    $config->defaultAdminTheme = 'AdminThemeUikit';
+
 
 ## Installation
 
