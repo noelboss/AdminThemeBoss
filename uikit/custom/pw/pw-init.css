@@ -1,0 +1,13 @@
+body.pw-init .pw-dropdown-menu,
+body.pw-init .pw-button-dropdown {
+  display: none;
+}
+body.pw-init .WireTab {
+  display: none;
+}
+body.pw-init #pw-masthead > * {
+  display: none;
+}
+ul.uk-navbar-nav ul {
+  display: none;
+}

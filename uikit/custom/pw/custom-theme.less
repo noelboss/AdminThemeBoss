@@ -1,0 +1,950 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+
+@offcanvas-bar-width: 350px;
+@pw-icon-font-size: 14px;
+@pw-tiny-font-size: 12px;
+@pw-tabs-margin-bottom: 0; // margin between tabs and whatever is below
+@pw-body-background: #fff;
+
+
+/**************************************************************
+ * Primary variables
+ *
+ * The entire color theme can be adjusted from the @theme
+ * variables below.
+ *
+ */
+
+@global-background: #fff;
+@theme-text-color: #575555;
+
+@theme-link-color: #333335;
+@theme-link-hover-color: darken(@theme-link-color, 20%);
+
+@pw-box-shadow: 0 10px 30px -10px rgba(0, 0, 2, 0.2);
+
+@theme-light-background: #fff;
+@theme-dark-background: #131010;
+
+@theme-muted-background: #fafafb; // secondary boxes
+@theme-muted-text-color: #777;
+@theme-muted-text-color-alternate: #777;
+
+@theme-secondary-background: rgba(250, 250, 250, 0.9); // offscreen navi
+@theme-success-background: #8bccde;
+@theme-success-color: @theme-text-color;
+
+@theme-warning-background: #FFD15E;
+@theme-warning-color: #000;
+
+@theme-danger-background: #faa;
+@theme-danger-color: #000;
+
+@theme-alert-background: #efe;
+@theme-alert-color: #000;
+
+@theme-primary-headline-color: #131111;
+@theme-secondary-headline-color: lighten(@theme-primary-headline-color, 30%);
+
+@theme-notes-text-color: @theme-muted-text-color;
+@theme-notes-background: transparent;
+
+@theme-masthead-background: @theme-light-background;
+@theme-masthead-icon-color: #000000;
+@theme-masthead-link-color: #444444;
+@theme-masthead-link-hover-color: #222222;
+@theme-masthead-link-current-color: @theme-primary-color;
+
+@theme-masthead-search-text-color: #000000;
+@theme-masthead-search-background: #ffffff;
+@theme-masthead-search-border-color: lighten(@theme-masthead-icon-color, 50%);
+@theme-masthead-search-focus-background: #eeeeee;
+@theme-masthead-search-focus-text-color: #00000;
+@theme-masthead-search-focus-border-color: @theme-primary-color;
+@theme-masthead-search-icon-color: lighten(@theme-masthead-icon-color, 20%);
+
+/* buttons */
+
+@theme-button-text-color: #fff;
+@theme-button-background: @theme-primary-color;
+@theme-button-hover-background: #fff;
+@theme-button-secondary-background: @theme-muted-text-color-alternate;
+@theme-button-secondary-hover-background: darken(@theme-button-secondary-background, 5%);
+
+/* dropdown */
+
+@theme-dropdown-background: rgba(250, 250, 250, 0.95);
+@theme-dropdown-color: @theme-text-color;
+@theme-dropdown-hover-background: @theme-primary-color-rgba;
+@theme-dropdown-border-color: #eee;
+@theme-dropdown-border: 1px solid @theme-dropdown-border-color;
+@theme-dropdown-nav-icon-color: #000;
+
+/* page list */
+
+@theme-page-list-link-color: #333;
+@theme-page-list-link-open-color: #111;
+@theme-page-list-icon-color: @theme-link-color; // #a9adb5;
+@theme-page-list-link-active-color: @theme-link-hover-color;
+@theme-page-list-link-hover-color: @theme-link-hover-color;
+@theme-page-list-action-link-color: #fff;
+@theme-page-list-action-link-background-color: @theme-link-color;
+@theme-page-list-action-link-hover-color: #fff;
+@theme-page-list-action-link-hover-background-color: @theme-primary-color;
+
+@theme-inputfield-border: 1px solid #dededf;
+@theme-inputfield-input-background: #fff;
+@theme-inputfield-input-border-color: #ccc #ddd #ddd #ddd;
+
+@theme-form-radio-checked-background: @theme-muted-text-color-alternate;
+
+@theme-offcanvas-text-color: @theme-text-color;
+@theme-offcanvas-link-color: @theme-text-color;
+@theme-offcanvas-link-hover-color: @theme-link-color;
+@theme-offcanvas-link-open-color: @theme-link-color;
+@theme-offcanvas-background: @theme-secondary-background;
+@theme-offcanvas-search-background: #fff;
+
+@theme-language-tab-background: transparent;
+@theme-language-tab-color: @theme-text-color;
+@theme-language-tab-current-background: #ddd;
+@theme-language-tab-current-color: @theme-primary-headline-color;
+@theme-language-tab-hover-background: @theme-muted-background;
+@theme-language-tab-hover-color: @theme-text-color;
+@theme-language-tab-empty-color: @theme-muted-text-color;
+
+@theme-table-header-color: @theme-muted-text-color-alternate;
+@theme-table-header-current-color: @theme-table-header-color;
+
+/****************************************************************
+ * General admin theme variables
+ *
+ * These mostly map @theme variables to Uikit and @pw admin them
+ * variables. These are not likely to need edits if making
+ * adjustments to the theme colors.
+ *
+ */
+
+// Global colors
+@global-color: @theme-text-color;
+
+@global-primary-background: darken(@theme-muted-background, 5%);
+@global-inverse-color: #000;
+
+@global-secondary-background: @theme-secondary-background;
+@global-secondary-color: @theme-text-color;
+@global-link-color: @theme-link-color;
+@global-link-hover-color: @theme-link-hover-color;
+@global-muted-background: @theme-muted-background;
+@global-muted-color: @theme-muted-text-color;
+@global-success-background: @theme-success-background;
+@global-warning-background: @theme-warning-background;
+@global-danger-background: @theme-danger-background;
+
+// Alert colors
+@alert-primary-background: @theme-alert-background;
+@alert-primary-color: @theme-alert-color;
+@alert-danger-background: @theme-danger-background;
+@alert-danger-color: @theme-danger-color;
+@alert-warning-background: @global-warning-background;
+@alert-warning-color: @theme-warning-color;
+
+// Dropdowns and primary navigation
+@dropdown-padding: 15px;
+
+@pw-masthead-height: 73px; // note: must also be updated in _masthead.php "data-pw-height" attribute
+@pw-dropdown-color: @theme-dropdown-color;
+@pw-dropdown-background: @theme-dropdown-background;
+@pw-dropdown-nav-item-color: @theme-dropdown-color;
+@pw-dropdown-nav-item-hover-color: #fff;
+@pw-dropdown-nav-item-hover-background: @theme-dropdown-hover-background;
+@pw-dropdown-separator-color: darken(@theme-dropdown-border-color, 7%);
+@pw-dropdown-highlight-color: #fff;
+@pw-dropdown-highlight-background-color: @dropdown-background;
+@pw-dropdown-nav-icon-color: inherit;
+@pw-dropdown-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+@pw-dropdown-line-height: 1.2em;
+@pw-dropdown-list-padding-vertical: 0px;
+@pw-dropdown-list-padding-horizontal: 0;
+@pw-dropdown-item-padding-vertical: 0.5em;
+@pw-dropdown-list-border-radius: 0;
+
+@navbar-nav-item-text-transform: uppercase;
+@navbar-nav-item-font-size: 18px;
+
+// Buttons
+@button-font-size: 18px;
+@button-text-transform: uppercase;
+@button-text-color: @global-link-color; // text-only button
+@button-text-hover-color: @theme-primary-color; // text-only button
+@pw-button-background: @theme-button-background;
+@pw-button-color: @theme-button-text-color;
+@pw-button-hover-background: darken(@theme-primary-color, 5%);
+@pw-button-hover-color: #fff;
+
+@pw-button-secondary-background: @theme-button-secondary-background;
+@pw-button-secondary-hover-background: darken(@pw-button-secondary-background, 5%);
+
+// Form and inputfields
+@pw-inputfield-border: @theme-inputfield-border;
+@pw-inputfield-repeater-background: @global-muted-background;
+@pw-inputfield-repeater-background-none: @pw-inputfield-repeater-background;
+@pw-inputfield-color-primary: @theme-primary-headline-color;
+@pw-inputfield-background-primary: lighten(@theme-primary-headline-color, 90%);
+@pw-inputfield-border-primary: 1px solid darken(@pw-inputfield-background-primary, 15%);
+@pw-inputfield-color-warning: @theme-warning-color;
+@pw-inputfield-background-warning: lighten(@theme-warning-background, 20%);
+@pw-inputfield-background-danger: lighten(@theme-danger-background, 50%);
+@pw-inputfield-header-color: @theme-text-color;
+@pw-inputfield-header-collapsed-color: @theme-muted-text-color-alternate;
+@pw-inputfield-header-hover-color: @theme-muted-text-color-alternate;
+@pw-inputfield-header-collapsed-hover-background: @theme-muted-background;
+@form-radio-checked-background: @theme-form-radio-checked-background;
+@form-radio-checked-focus-background: darken(@form-radio-checked-background, 7%);
+
+// jQuery UI
+@pw-ui-widget-overlay-background: rgba(0, 0, 0, 0.8);
+@pw-datepicker-background: @theme-dark-background;
+
+// Page list
+@pw-page-list-text-color: @global-color;
+@pw-page-list-muted-text-color: @global-muted-color;
+@pw-page-list-link-color: @theme-page-list-link-color;
+@pw-page-list-link-active-color: @global-link-color;
+@pw-page-list-link-hover-color: @global-link-hover-color;
+@pw-page-list-link-open-color: @theme-page-list-link-open-color;
+@pw-page-list-link-open-background-color: inherit;
+@pw-page-list-icon-color: @theme-page-list-icon-color;
+@pw-page-list-status-icon-color: #aaaaaa;
+@pw-page-list-action-link-color: @theme-page-list-action-link-color;
+@pw-page-list-action-link-background-color: @theme-page-list-action-link-background-color;
+@pw-page-list-action-link-hover-color: @theme-page-list-action-link-hover-color;
+@pw-page-list-action-link-hover-background-color: @theme-page-list-action-link-hover-background-color;
+
+// Tabs
+@tab-margin-horizontal: 0;
+@tab-item-padding-horizontal: 20px;
+@tab-item-padding-vertical: 10px;
+@tab-item-color: @global-link-color;
+@tab-item-hover-color: @global-link-hover-color;
+@tab-item-hover-text-decoration: none;
+@tab-item-active-color: @global-emphasis-color;
+@tab-item-disabled-color: @global-muted-color;
+@tab-border-width: @global-border-width;
+@tab-border: @global-border;
+@tab-item-border-width: @global-border-width;
+@tab-item-font-size: 16px;
+@tab-item-text-transform: none;
+@tab-item-active-border: @global-link-color;
+@tab-item-active-background: #fff;
+
+// Offcanvas bar
+@offcanvas-bar-color-mode: dark;
+@offcanvas-bar-padding-vertical-m: @offcanvas-bar-padding-vertical;
+@offcanvas-bar-padding-horizontal-m: @offcanvas-bar-padding-horizontal;
+
+// Sidebar
+@pw-sidebar-nav-border-color: darken(@theme-offcanvas-background, 4%);
+@pw-sidebar-nav-nested-border-color: @theme-offcanvas-background;
+@nav-parent-icon-color: darken(@theme-offcanvas-background, 12%);
+
+// Dialog modal windows
+@pw-dialog-titlebar-background: @theme-masthead-background;
+@pw-dialog-titlebar-color: #fff;
+
+// Breadcrumb
+@breadcrumb-divider-margin-horizontal: 15px;
+
+// Table
+@pw-table-header-color: @theme-text-color;
+@pw-table-header-current-color: darken(@pw-table-header-color, 10%);
+
+@global-font-family: 'Roboto Condensed',
+sans-serif;
+/**********************************************************************
+ * Styles
+ *
+ * Adjustments to the default Uikit admin theme styles to give more
+ * the look and feel of AdminThemeReno.
+ *
+ */
+
+.pw {
+	font-family: @global-font-family;
+}
+
+
+.hook-base-h2,
+.hook-base-h3,
+.hook-base-h4 {
+	color: @theme-secondary-headline-color;
+}
+
+// Tabs ---------------------------------------------------------------
+.hook-tab-item {
+	border: 1px solid transparent;
+	margin-left: -1px;
+	text-transform: uppercase;
+}
+
+.hook-tab-item-active() {
+	border: @pw-inputfield-border;
+	border-bottom-color: transparent;
+	border-top-left-radius: 1px;
+	border-top-right-radius: 1px;
+}
+
+.langTabs .ui-tabs-nav,
+.langTabs .uk-tab {
+	// using a different styling for language tabs in this theme
+	>li {
+		background: transparent;
+		margin: 3px 0 0;
+		border: none;
+		padding: 0 !important;
+		&:first-child {
+			// margin-left: 1px;
+		}
+		&.langTabEmpty>a {
+			color: @theme-language-tab-empty-color;
+		}
+		>a {
+			margin: 0 1px 0 0;
+			display: inline-block;
+			border: none;
+			border-radius: 0;
+			color: @theme-language-tab-color;
+			background: @theme-language-tab-background;
+			padding: 4px 15px;
+			font-size: @pw-tiny-font-size;
+			text-transform: uppercase;
+		}
+		>a:hover {
+			color: @theme-language-tab-hover-color;
+			background: @theme-language-tab-hover-background;
+		}
+		&.uk-active>a {
+			color: @theme-language-tab-current-color;
+			background: @pw-inputfield-background-primary;
+			border: 1px solid darken(@pw-inputfield-background-primary, 7%);
+			border-bottom: none;
+		}
+	}
+}
+
+.WireTabs.uk-tab>li.uk-active.pw-tab-muted {
+	background: @theme-muted-background;
+	>a {
+		border-bottom: none;
+	}
+}
+
+// Pagination ---------------------------------------------------------
+.hook-pagination-item() {
+	color: @theme-text-color;
+	background: @theme-muted-background;
+	border: @pw-inputfield-border;
+}
+
+.hook-pagination-item-hover() {
+	color: @theme-text-color;
+	background: darken(@theme-muted-background, 5%);
+	border: @pw-inputfield-border;
+}
+
+.hook-pagination-item-active() {
+	&,
+	a {
+		background: @theme-link-color;
+		color: @global-inverse-color;
+		border: @pw-inputfield-border;
+		border-color: @theme-link-color;
+	}
+}
+
+.hook-pagination-item-disabled() {
+	padding-left: 0;
+	padding-right: 0;
+	color: @theme-muted-text-color;
+	background: none;
+}
+
+.uk-pagination>li,
+.PageList {
+	background: transparent;
+	.PageListItem>a.PageListPage i {
+		padding-right: 0.5em;
+	}
+	.uk-pagination>li {
+		padding: 0;
+		margin-left: -1px;
+		>a {
+			border-radius: 0;
+		}
+		&:first-child>a {
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+		}
+		&:last-child>a {
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+		}
+		&.uk-disabled>span {
+			border: none;
+			color: @theme-muted-text-color;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+
+
+
+		margin: 0 0 0 -1px;
+		>.PageListLoading {
+			border: none;
+			display: inline-block;
+		}
+		&:first-child>a {
+			margin-left: 3px;
+		}
+		>a {
+			border: @pw-inputfield-border !important;
+		}
+		&.uk-active>a {
+			border-color: @theme-link-color !important;
+			background: @theme-link-color;
+			color: @pw-button-hover-color;
+		}
+	}
+}
+
+// Masthead and dropdowns ------------------------------------------
+#pw-masthead-mobile {
+	background-color: @theme-masthead-background;
+}
+
+#pw-masthead {
+	//box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+	background-color: @theme-masthead-background;
+	.uk-navbar-nav {
+		>li {
+			position: relative;
+			&,
+			>a {
+				color: @theme-masthead-link-color;
+				i {
+					color: @theme-masthead-icon-color;
+				}
+			}
+			&.uk-active,
+			&.uk-active>a {
+				color: @theme-masthead-link-current-color;
+			}
+			&>a.hover,
+			&>a:hover {
+				color: @theme-masthead-link-hover-color;
+				i {
+					color: @theme-masthead-link-hover-color;
+				}
+			}
+			&.uk-active>a:hover,
+			&>a.hover,
+			&>a:hover {
+				&:before {
+					// white triangle
+					content: " ";
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 0 7px 9px 7px;
+					border-color: transparent transparent @theme-dropdown-border-color transparent;
+					position: absolute;
+					bottom: -1px;
+					left: 40%;
+					z-index: 99;
+				}
+			}
+			/*
+      &.uk-active > a:not(.hover):not(:hover):after {
+        border-color: transparent transparent rgba(255,255,255,0.5) transparent;
+      }
+      */
+		}
+	}
+
+	.pw-search-form {
+		.pw-search-input {
+			color: @theme-masthead-search-text-color;
+			background: @theme-masthead-search-background;
+			border-color: @theme-masthead-search-border-color;
+			border-radius: 2em;
+			&:focus {
+				color: @theme-masthead-search-focus-text-color; //border-color: @theme-masthead-search-focus-border-color;
+				background: @theme-masthead-search-focus-background;
+				box-shadow: @pw-box-shadow;
+			}
+		}
+		.uk-form-icon {
+			color: @theme-masthead-search-icon-color;
+		}
+	}
+}
+
+ul.pw-dropdown-menu,
+ul.ui-menu {
+	border: @theme-dropdown-border;
+	margin-top: -2px; // border-top: none;
+	>li.ui-menu-item>ul.ui-menu {
+		border: @theme-dropdown-border !important;
+	}
+}
+
+// Notices ----------------------------------------------------
+.pw-notices {
+	margin-top: 0;
+	box-shadow: @pw-box-shadow;
+
+	>li {
+		margin: 0;
+	}
+	.NoticeMessage {
+		border-bottom: 1px solid @global-muted-background;
+		a.notice-remove {
+			color: @global-color;
+		}
+	}
+	.NoticeWarning,
+	.NoticeError {
+		border-bottom: 1px solid #fff;
+		a.notice-remove {
+			color: #fff;
+		}
+	}
+}
+
+// Offcanvas -------------------------------------------------
+#offcanvas-toggle {
+	cursor: pointer;
+	>i {
+		color: @theme-masthead-icon-color;
+	}
+	&:hover>i {
+		color: @theme-masthead-link-color;
+	}
+}
+
+#offcanvas-nav {
+	color: @theme-offcanvas-text-color;
+	.uk-offcanvas-bar {
+		background: @theme-offcanvas-background;
+		padding: 0;
+		box-shadow: 0 4px 7px rgba(0, 0, 0, 0.175);
+		border-right: 1px solid darken(@theme-offcanvas-background, 10%);
+	}
+	#offcanvas-nav-header {
+		display: none;
+	}
+	.pw-sidebar-nav {
+		li>a {
+			padding-left: 20px;
+			padding-right: 20px;
+			color: @theme-offcanvas-link-color;
+			&:hover {
+				color: @theme-offcanvas-link-hover-color;
+			}
+		}
+		li.uk-open {
+			padding-bottom: 0;
+			background: lighten(@theme-offcanvas-background, 3%);
+			>a {
+				color: @theme-offcanvas-link-open-color;
+			}
+		}
+		li.pw-nav-spinner {
+			padding-left: 20px;
+		}
+	}
+	.pw-search-form {
+		padding: 20px 20px 5px 20px;
+	}
+	.pw-search-input {
+		background: @theme-offcanvas-search-background;
+		border-radius: 5px;
+	}
+	.pw-logo {
+		display: none;
+	}
+}
+
+// Other ---------------------------------------------------------
+html.pw-sidebar-frame,
+html.pw-sidebar-frame body {
+	background: @global-muted-background;
+	#main {
+		background: @global-muted-background;
+	}
+}
+
+.Inputfields {
+	// background color for text fields
+	input:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]),
+	textarea {
+		background: @theme-inputfield-input-background;
+		border: 1px solid;
+		border-color: @theme-inputfield-input-border-color;
+		-webkit-appearance: none;
+		&:focus {
+			background: lighten(@theme-inputfield-input-background, 2%);
+			border-color: @theme-inputfield-input-border-color;
+		}
+	}
+}
+
+img.pw-logo {
+	max-height: 40px;
+}
+
+img.pw-logo-native {
+	&:hover {
+		opacity: 0.9;
+	}
+}
+
+#pw-content-head {
+	h1 {
+		color: @theme-primary-headline-color;
+	}
+}
+
+.uk-breadcrumb {
+	padding-bottom: 0;
+}
+
+#main .notes {
+	color: @theme-notes-text-color !important;
+	background: @theme-notes-background;
+}
+
+#pw-footer {
+	padding-top: 20px;
+	border-top: @pw-inputfield-border;
+	color: lighten(@theme-muted-text-color, 20%);
+	a {
+		color: lighten(@theme-muted-text-color, 10%);
+	}
+}
+
+
+// improved padding for tables
+.InputfieldContent>.AdminDataTable {
+	margin: 0 -20px -24px;
+	width: calc(~"100% + 40px");
+}
+
+.InputfieldContent .pw-table-responsive {
+	margin: 0 -20px -24px;
+
+	.AdminDataTable.AdminDataList,
+	table {
+		tr {
+			th,
+			td {
+				&:first-child {
+					padding-left: 20px
+				}
+				&:last-child {
+					padding-right: 20px
+				}
+			}
+
+		}
+	}
+}
+
+// hover color
+.PageList .PageListItem.PageListItemOpen,
+html.highlightRows .PageListItem:hover {
+	background-color: @pw-body-background !important;
+}
+
+html.highlightRowst,
+.pw .pw-table-responsive {
+	.AdminDataTable.AdminDataLis,
+	table {
+		tr {
+			&:hover {
+				td {
+					background-color: @theme-muted-background !important;
+				}
+			}
+		}
+	}
+}
+
+// remove lister version
+.detail.version {
+	display: none;
+}
+
+// improved padding on language tabs
+.Inputfields .langTabsContainer .pw-description,
+.Inputfields .langTabsContainer .description {
+	margin-bottom: 7px;
+}
+
+/* buttons --------------------------------------------------------------------*/
+
+button.ui-button {
+	position: relative;
+	z-index: 1;
+
+	&:hover {
+		z-index: 1;
+		box-shadow: 0 5px 15px @theme-primary-color-rgba;
+
+		+.ui-button {
+			z-index: 0;
+		}
+	}
+}
+
+
+// buttons shadow
+.InputfieldSubmit button,
+.pw-button-dropdown-wrap button {
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.InputfieldSubmit:hover button,
+.Inputfield_submit_save:hover button,
+.pw-button-dropdown-wrap:hover button {
+	box-shadow: 0 5px 15px @theme-primary-color-rgba;
+}
+
+
+
+/* Shadows --------------------------------------------------------------------*/
+
+// fliters:
+form.WireTab>ul {
+	box-shadow: @pw-box-shadow;
+}
+
+// active tab
+.WireTabs>.uk-active {
+	box-shadow: 0 0px 20px rgba(255, 255, 255, 0.5);
+}
+
+/*
+#pw-content-body>.InputfieldFormVertical>ul>li {
+	box-shadow: @pw-box-shadow;
+}*/
+
+.Inputfields .Inputfield {
+	&:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset) {
+		box-shadow: @pw-box-shadow;
+	}
+}
+
+form.Inputfield {
+	background: transparent;
+}
+
+//.WireTabs+.Inputfields {
+//	/* shaddows arround input fields */
+//	.template_ResourceEntry & {
+//		/* exclude single tab content for these templates (using aos_cols)*/
+//		/* aos columns: */
+//		>li.InputfieldRowFirst {
+//			// single tabs
+//			>ul {
+//				box-shadow: none;
+//			}
+//		}
+//		.aos_col_left,
+//		.aos_col_right {
+//			>div {
+//				box-shadow: @pw-box-shadow;
+//			}
+//		}
+//	}
+//
+//	/* shadow arround content fields: */
+//	.InputfieldFieldset {
+//		background-color: transparent;
+//	} // multicolumn aos_col_left & aos_col_right:
+//	>li {
+//		// single tabs
+//		>ul {
+//			// tab content
+//			box-shadow: @pw-box-shadow;
+//
+//		}
+//	}
+//	.aos & {
+//		// fix shaddow for delete tab with aos…
+//		#ProcessPageEditDelete>ul {
+//			box-shadow: none;
+//
+//			>li:not(.InputfieldButton) {
+//				box-shadow: @pw-box-shadow;
+//			}
+//		}
+//	}
+//}
+//.InputfieldButton.InputfieldRowLast, < trash
+/*
+.Inputfields .InputfieldSubmit {
+	#submit_publish {
+		float: none;
+	}
+	//move save button to right:
+	display: block;
+	text-align: right;
+	width: 100% !important;
+	.ui-button {
+		margin-right: 0;
+	}
+}*/
+
+.pw {
+
+	.chosen-container-active.chosen-with-drop .chosen-single {
+		box-shadow: none;
+		border-color: @theme-inputfield-input-border-color;
+	}
+	.chosen-container-single .chosen-single {
+		padding: 7px 25px 7px 7px;
+		background: @pw-inputfield-background;
+		border-color: @theme-inputfield-input-border-color;
+		height: auto;
+		border-radius: 0;
+		box-shadow: none;
+		abbr {
+			//close
+			top: 14px;
+		}
+		div {
+			// triangle: ;
+			top: 8px;
+		}
+	}
+	.chosen-container {
+
+		.chosen-choices {
+			border-color: @theme-inputfield-input-border-color;
+			background: @pw-inputfield-background;
+
+			li.search-choice {
+				background: @pw-inputfield-background-primary;
+				border-radius: 0;
+				padding: 7px 25px 7px 7px;
+				.search-choice-close {
+					top: 8px;
+				}
+			}
+			.search-field input {
+				padding-top: 6px;
+				line-height: 20px;
+				height: 32px;
+			}
+		}
+		.chosen-drop {
+			background: @pw-dropdown-background;
+			box-shadow: @pw-dropdown-box-shadow;
+			border-color: @theme-inputfield-input-border-color;
+			border-top-width: 0;
+		}
+		.chosen-results {
+			li.highlighted {
+				background: @theme-dropdown-hover-background;
+				color: @theme-dropdown-color;
+			}
+		}
+	}
+
+
+	.chosen-container-active .chosen-choices {
+		border-color: @theme-inputfield-input-border-color;
+		box-shadow: none;
+	}
+}
+
+/* for required fields */
+
+.InputfieldStateRequired>.InputfieldHeader:first-child:after {
+	color: inherit;
+	opacity: 0.7;
+}
+
+
+.pw {
+	/* image edit*/
+	// ugly metal handler
+	.ui-slider .ui-slider-handle {
+		background: @theme-link-color;
+		width: 17px;
+		height: 17px;
+		border-radius: 17px;
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+
+		&:hover {
+			background: @theme-link-hover-color;
+			box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+		}
+	}
+	.gridImage__overflow .focusArea .focusCircle,
+	.InputfieldImageEdit .focusArea .focusCircle {
+		// focus zone color
+		border-color: @theme-primary-color;
+		background: radial-gradient(ellipse at center, @theme-primary-color 0%, @theme-primary-color 14%, rgba(255, 255, 255, 0.5) 15%, rgba(255, 255, 255, 0.5) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1);
+	}
+
+	.gridImage__edit:hover {
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	.gridImage {
+
+		&.gridImageEditing .gridImage__inner {
+			background: @theme-primary-color-rgba;
+		}
+		.gridImage__inner {
+			&:hover {
+				background: @theme-primary-color-rgba;
+			}
+		}
+	}
+	/* lightboxes */
+	.ui-dialog .ui-dialog-titlebar .ui-button,
+	.ui-dialog .ui-dialog-titlebar {
+		font-size: 18px;
+		color: @theme-primary-headline-color;
+		&:hover {
+			box-shadow: none;
+		}
+	}
+
+	/* radio etc. */
+	.uk-checkbox:checked,
+	.uk-checkbox:indeterminate,
+	.uk-radio:checked {
+		background-color: @theme-muted-background;
+		border-color: @theme-muted-text-color;
+	}
+
+}
+
+::-moz-selection,
+::selection {
+	background-color: @theme-primary-color;
+	color: @theme-button-text-color;
+}
