@@ -977,27 +977,22 @@ class AdminThemeUikit extends AdminThemeFramework implements Module, Configurabl
 		$variant = $this->get('variant');
 		$moduleInfo = self::getModuleInfo();
 		$version = $moduleInfo['version'];
+		$url = $config->urls->httpSiteModules.basename(__DIR__);
 
 		switch ($variant) {
 			case 'pw':
 			case 'black':
 			case 'vibrant':
-			$variant = wire('config')->urls->AdminThemeUikit.'uikit/dist/css/uikit.'.$variant.'.min.css';
+			$variant = $url.'/uikit/dist/css/uikit.'.$variant.'.min.css';
 				break;
 
 			default:
-				$variant = wire('config')->urls->AdminThemeUikit.'uikit/dist/css/uikit.pw.min.css';
+				$variant = $url.'/uikit/dist/css/uikit.pw.min.css';
 				break;
 		}
-		if ($variant) {
-			if (strpos($variant, '//') === false) {
-				$variant = $config->urls->root.ltrim($variant, '/');
-			}
 
-			return $this->wire('sanitizer')->entities($variant.'?v='.$version);
-		}
+		return $this->wire('sanitizer')->entities($variant.'?v='.$version);
 
-		return $config->urls->AdminThemeUikit.'uikit/dist/css/uikit.pw.min.css?v='.$version;
 	}
 
 	/**
