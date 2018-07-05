@@ -6,5 +6,5 @@
 	"author": "Noël Bossart",
 	"autoload": "template=admin",
 	"icon": "diamond",
-	"requires": "ProcessWire>=3.0.94,AdminThemeUikit"
+	"requires": "ProcessWire>=3.0.94"
 }
