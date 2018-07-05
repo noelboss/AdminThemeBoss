@@ -1,11 +1,19 @@
 # Admin Theme Boss
-#### A light and clear theme based on Uikit 3.
+#### A light and clear theme based on Uikit 3
 
 The Theme comes with 3 color options and Roboto Condensed as default font.
 There are also slight tweeks to paddings etc. from the default theme.
 
-## Screenshots
+## Color Variants:
 
+### ProcessWire Blue
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/pw.png "Default ProcessWire Blue")
+
+### Vibrant
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/vibrant.png "Vibrant Color")
+
+### Black
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/black.png "Black Color")
 
 
 ## Requirements
@@ -26,7 +34,7 @@ Activate the core AdminThemeUikit in ProcessWire if not yet done.
 2. Open “Modules > Core > AdminThemeUikit”
 3. “Module file to use“ select  “/site/modules/AdminThemeBoss/AdminThemeUikit.module“
 
-![alt text](https://github.com/noelboss/AdminThemeBoss/raw/master/docs/images/activate.png "select  “/site/modules/AdminThemeBoss/AdminThemeUikit.module“")
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/acitvate.png "select  “/site/modules/AdminThemeBoss/AdminThemeUikit.module“")
 
 
 ## License: MIT
