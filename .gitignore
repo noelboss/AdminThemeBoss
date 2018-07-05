@@ -11,3 +11,6 @@
 /uikit/custom/.git
 /uikit/gitignore
 /git
+
+
+.php_cs.cache
