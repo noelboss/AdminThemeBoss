@@ -18,7 +18,7 @@ There are also slight tweeks to paddings etc. from the default theme.
 
 ## Requirements
 
-Requires AdminThemeUikit installed and activated. Make sure to activate Uikit first:
+Requires AdminThemeUikit installed and activated. Make sure to activate Uikit in your profile first:
 
 ![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/profile.png "Activate Uikit in your profile")
 
@@ -29,11 +29,19 @@ You can also set the default theme like so in you site/config.php
 
 ## Installation
 
+1. Make sure the above requirements are met
+1. Go to “Modules > Add New“
+2. Open “Add Module from URL“ and past the following url: https://github.com/noelboss/AdminThemeBoss/archive/master.zip
+3. Click “Download“
 
-Activate the core AdminThemeUikit in ProcessWire if not yet done.
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/installation.png "Installation using URL")
 
-1. Download the files from [GitHub](https://github.com/noelboss/AdminThemeBoss) or the [ProcessWire Modules Repository](https://modules.processwire.com/modules/admin-theme-uikit/).
-2. Copy all of the files for this module into /site/modules/AdminThemeBoss/
+
+### Manually
+
+1. Make sure the above requirements are met
+2. Download the theme files from [GitHub](https://github.com/noelboss/AdminThemeBoss) or the [ProcessWire Modules Repository](https://modules.processwire.com/modules/admin-theme-uikit/).
+3. Copy all of the files for this module into /site/modules/AdminThemeBoss/
 
 ## Activate
 
