@@ -41,4 +41,4 @@ Activate the core AdminThemeUikit in ProcessWire if not yet done.
 
 See included LICENSE file for full license text.
 
-© [noelboss.com](https://www.noelboss.com)
+© [noelboss.com](https://www.noelboss.com) | [ProcessWire Modules](https://modules.processwire.com/authors/noelboss/)
