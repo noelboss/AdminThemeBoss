@@ -1,10 +1,10 @@
 {
 	"title": "Admin Theme Boss",
-	"summary": "A light and clear theme based on Uikit 3",
+	"summary": "A light and clear theme based on Uikit 3, extending AdminThemeUikit",
 	"href": "https://github.com/noelboss/AdminThemeBoss",
-	"version": "0.1.4",
+	"version": "0.2.0",
 	"author": "Noël Bossart",
 	"autoload": "template=admin",
 	"icon": "diamond",
-	"requires": "ProcessWire>=3.0.94"
+	"requires": "ProcessWire>=3.0.94,AdminThemeUikit"
 }

@@ -1,4 +1,4 @@
-function updateAdminThemeUikitExample() {
+function updateAdminThemeBossExample() {
 	
 	var example = $('#_adminThemeExample');
 	example.removeClass(
@@ -45,8 +45,8 @@ function updateAdminThemeUikitExample() {
 
 $(document).ready(function() {
 	$('#_adminTheme').find('input[type=radio]').change(function() {
-		updateAdminThemeUikitExample();
+		updateAdminThemeBossExample();
 	});
 	$('#_adminTheme, #_adminTheme > *').css('background-color', '#fff');
-	updateAdminThemeUikitExample();
+	updateAdminThemeBossExample();
 });

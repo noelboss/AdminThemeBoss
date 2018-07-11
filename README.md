@@ -18,13 +18,13 @@ There are also slight tweeks to paddings etc. from the default theme.
 
 ## Requirements
 
-Requires AdminThemeUikit installed and activated. Make sure to activate Uikit in your profile first:
+Requires AdminThemeBoss installed and activated. Make sure to activate Uikit in your profile first:
 
 ![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/profile.png "Activate Uikit in your profile")
 
 You can also set the default theme like so in you site/config.php
 
-    $config->defaultAdminTheme = 'AdminThemeUikit';
+    $config->defaultAdminTheme = 'AdminThemeBoss';
 
 
 ## Installation
@@ -46,10 +46,10 @@ You can also set the default theme like so in you site/config.php
 ## Activate
 
 1. Go to “Modules > Refresh” in your admin
-2. Open “Modules > Core > AdminThemeUikit”
-3. “Module file to use“ select  “/site/modules/AdminThemeBoss/AdminThemeUikit.module“
+2. Open “Modules > Core > AdminThemeBoss”
+3. “Module file to use“ select  “/site/modules/AdminThemeBoss/AdminThemeBoss.module“
 
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/acitvate.png "select  “/site/modules/AdminThemeBoss/AdminThemeUikit.module“")
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/acitvate.png "select  “/site/modules/AdminThemeBoss/AdminThemeBoss.module“")
 
 
 ## License: MIT
