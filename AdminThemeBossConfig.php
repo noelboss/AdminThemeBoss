@@ -27,10 +27,19 @@ class AdminThemeBossConfig extends ModuleConfig
 	{
 		$this->add([
 			[
+				'name' => 'enablemodule',
+				'type' => 'checkbox',
+				'icon' => 'check',
+				'label' => $this->_('Enable Module'),
+				'description' => $this->_('Enable this theme. You can untoggle this option to disable the theme without uninstalling this module.'),
+				'value' => $this->get('enablemodule'),
+			],
+			[
 				'type' => 'fieldset',
 				'name' => 'theme-options',
 				'label' => $this->_('Theme Options'),
 				'icon' => 'paint-brush',
+				//'showIf' => 'enablemodule=1',
 				'children' => [
 					[
 						'name' => 'variant',
@@ -44,7 +53,7 @@ class AdminThemeBossConfig extends ModuleConfig
 						'options' => [
 							'pw' => $this->_('ProcessWire Blue'),
 							'vibrant' => $this->_('Vibrant Blue'),
-							'black' => $this->_('Black'),
+							'black' => $this->_('Dark Black'),
 						],
 					],
 					[
@@ -63,15 +72,8 @@ class AdminThemeBossConfig extends ModuleConfig
 				'label' => $this->_('Advanced Options'),
 				'icon' => 'cog',
 				'collapsed' => Inputfield::collapsedYes,
+				//'showIf' => 'enablemodule=1',
 				'children' => [
-					[
-						'name' => 'enablemodule',
-						'type' => 'checkbox',
-						'icon' => 'check',
-						'label' => $this->_('Enable Module'),
-						'description' => $this->_('Enable this theme. You can untoggle this option to disable the theme without uninstalling this module.'),
-						'value' => $this->get('enablemodule'),
-					],
 					[
 						'name' => 'allusers',
 						'type' => 'checkbox',
@@ -96,9 +98,9 @@ class AdminThemeBossConfig extends ModuleConfig
 	public function getDefaults()
 	{
 		return [
+			'enablemodule' => true,
 			'variant' => 'pw',
 			'extendedbreadcrumb' => true,
-			'enablemodule' => true,
 			'allusers' => true,
 			'useuikitlogo' => false,
 		];

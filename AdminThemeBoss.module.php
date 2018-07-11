@@ -6,7 +6,7 @@
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
  *
- * File created/changed: 2018-07-11T09:55:17+02:00
+ * File created/changed: 2018-07-11T14:49:18+02:00
  */
 
 namespace ProcessWire;
@@ -122,6 +122,8 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 			return;
 		}
 
+		$this->adminThemeUikit = $this->wire('modules')->get('AdminThemeUikit');
+
 		if ($this->get('allusers') && $this->user->admin_theme !== 'AdminThemeUikit') {
 			$this->user->setAndSave('admin_theme', 'AdminThemeUikit');
 		}
@@ -131,8 +133,6 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 		}
 
 		$this->addHookAfter('Page::render', $this, 'replaceUikitCSS');
-
-		$this->adminThemeUikit = $this->wire('modules')->get('AdminThemeUikit');
 	}
 
 	/**
