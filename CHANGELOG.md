@@ -5,9 +5,10 @@
 
 ## Version 0.2.0
 
-* Rewrite of the Module – now "extends" AdminThemeUikit by replacing the CSS
-* Added extended Breadcrumb
-* Added option to force all users theme
+* Theme is now a module extending AdminThemeUikit by replacing the CSS
+* This simplifies the installation, simply download the module and install it
+* Added extended breadcrumb with edit links
+* Added option to activate the theme for all users
 
 
 ## Version 0.1.4
