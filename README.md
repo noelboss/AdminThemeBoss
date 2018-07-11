@@ -26,7 +26,7 @@
 
 Requires AdminThemeUikit installed and activated.
 
-    $config->defaultAdminTheme = 'AdminThemeBoss';
+    $config->defaultAdminTheme = 'AdminThemeUikit';
 
 
 ## Installation
