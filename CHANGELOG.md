@@ -3,6 +3,11 @@
 © 2018 noelboss.com
 
 
+## Version 0.2.1
+
+* Styled login form
+
+
 ## Version 0.2.0
 
 * Theme is now a module extending AdminThemeUikit by replacing the CSS

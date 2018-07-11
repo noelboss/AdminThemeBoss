@@ -15871,19 +15871,9 @@ form.WireTab > ul {
 form.Inputfield {
   background: transparent;
 }
-/*
-.Inputfields .InputfieldSubmit {
-	#submit_publish {
-		float: none;
-	}
-	//move save button to right:
-	display: block;
-	text-align: right;
-	width: 100% !important;
-	.ui-button {
-		margin-right: 0;
-	}
-}*/
+.pw {
+  /* login page form */
+}
 .pw .chosen-container-active.chosen-with-drop .chosen-single {
   box-shadow: none;
   border-color: #ccc #ddd #ddd #ddd;
@@ -15932,6 +15922,48 @@ form.Inputfield {
 .pw .chosen-container-active .chosen-choices {
   border-color: #ccc #ddd #ddd #ddd;
   box-shadow: none;
+}
+.pw body.ProcessLogin #main {
+  margin: 0 !important;
+}
+@media (min-width: 1000px) {
+  .pw body.ProcessLogin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 66vw;
+    max-width: 900px;
+    padding: 5vh 2vw;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 2, 0.2);
+  }
+}
+.pw body.ProcessLogin .pw-notices {
+  margin-bottom: 2em;
+}
+.pw body.ProcessLogin .Inputfields .Inputfield {
+  box-shadow: none !important;
+}
+.pw body.ProcessLogin .Inputfields .Inputfield label {
+  text-transform: uppercase;
+}
+.pw body.ProcessLogin #pw-masthead-mobile {
+  margin-bottom: 2em;
+}
+.pw body.ProcessLogin #pw-masthead-mobile .pw-logo {
+  max-height: 60px;
+  /*border-radius: 50%;
+				box-shadow: @pw-box-shadow;*/
+}
+.pw body.ProcessLogin #socialsLoginForm ul.Inputfields {
+  margin-top: 3em;
+  padding-top: 2em;
+  border-top: 1px solid #dededf;
+  justify-content: center;
+}
+.pw body.ProcessLogin #pw-content-body > div {
+  display: inline-block;
+  margin: 0 1em;
 }
 /* for required fields */
 .InputfieldStateRequired > .InputfieldHeader:first-child:after {

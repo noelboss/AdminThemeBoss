@@ -49,8 +49,13 @@ Requires AdminThemeUikit installed and activated.
 4. Click “Install“ on the “AdminThemeBoss“ Module
 
 
+## Change Log
+
+See [CHANGELOG.md](CHANGELOG.md) file for full change log.
+
+
 ## License: MIT
 
-See included LICENSE file for full license text.
+See included [LICENSE](LICENSE) file for full license text.
 
 © [noelboss.com](https://www.noelboss.com) | [ProcessWire Modules](https://modules.processwire.com/authors/noelboss/)
