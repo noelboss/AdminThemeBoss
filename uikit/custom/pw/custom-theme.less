@@ -210,8 +210,8 @@
 @form-radio-checked-focus-background: darken(@form-radio-checked-background, 7%);
 
 // jQuery UI
-@pw-ui-widget-overlay-background: rgba(0, 0, 0, 0.8);
-@pw-datepicker-background: @theme-dark-background;
+@pw-ui-widget-overlay-background: @global-link-color;
+@pw-datepicker-background: @global-link-color;
 
 // Page list
 @pw-page-list-text-color: @global-color;
@@ -257,7 +257,7 @@
 
 // Dialog modal windows
 @pw-dialog-titlebar-background: @theme-masthead-background;
-@pw-dialog-titlebar-color: #fff;
+@pw-dialog-titlebar-color: @theme-text-color;
 
 // Breadcrumb
 @breadcrumb-divider-margin-horizontal: 15px;
@@ -453,28 +453,7 @@ sans-serif;
 					color: @theme-masthead-link-hover-color;
 				}
 			}
-			&.uk-active>a:hover,
-			&>a.hover,
-			&>a:hover {
-				&:before {
-					// white triangle
-					content: " ";
-					width: 0;
-					height: 0;
-					border-style: solid;
-					border-width: 0 7px 9px 7px;
-					border-color: transparent transparent @theme-dropdown-border-color transparent;
-					position: absolute;
-					bottom: -1px;
-					left: 40%;
-					z-index: 99;
-				}
-			}
-			/*
-      &.uk-active > a:not(.hover):not(:hover):after {
-        border-color: transparent transparent rgba(255,255,255,0.5) transparent;
-      }
-      */
+
 		}
 	}
 
@@ -496,6 +475,43 @@ sans-serif;
 	}
 }
 
+/* Dropdowns ------------------------------------------------------------*/
+
+// rounded corners and triangle
+li.aos_adminLangSwitcher>ul,
+body>ul.pw-dropdown-ready {
+	&:before {
+		// white triangle
+		content: " ";
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 7px 9px 7px;
+		border-color: transparent transparent @theme-dropdown-border-color transparent;
+		position: absolute;
+		top: -9px;
+		left: 30px;
+		z-index: 99;
+	}
+
+	border-radius: 15px;
+	>li:first-child,
+	>li:first-child>a {
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+	}
+	>li:last-child,
+	>li:last-child>a {
+		border-bottom-left-radius: 15px;
+		border-bottom-right-radius: 15px;
+	}
+
+}
+
+.ui-menu .ui-menu {
+	transform: translateX(-15px);
+}
+
 ul.pw-dropdown-menu,
 ul.ui-menu {
 	border: @theme-dropdown-border;
@@ -504,6 +520,33 @@ ul.ui-menu {
 		border: @theme-dropdown-border !important;
 	}
 }
+
+body>ul.ui-autocomplete {
+	margin-top: 15px;
+	transform: translateY(15px);
+}
+
+
+li.aos_adminLangSwitcher {
+	>ul {
+		filter: none; // box-shadow
+		background: transparent;
+		border-width: 0px;
+		box-shadow: @pw-dropdown-box-shadow;
+
+		li>a {
+			color: @pw-dropdown-nav-item-color;
+			background: @pw-dropdown-background;
+			&:active,
+			&:hover {
+				background: @theme-dropdown-hover-background;
+				color: @pw-dropdown-highlight-color;
+			}
+		}
+	}
+}
+
+
 
 // Notices ----------------------------------------------------
 .pw-notices {
@@ -647,23 +690,76 @@ img.pw-logo-native {
 	width: calc(~"100% + 40px");
 }
 
-.InputfieldContent .pw-table-responsive {
-	margin: 0 -20px -24px;
+.InputfieldContent {
+	// parents exluded…
+	.pw-table-responsive {
+		margin: 0 0 -24px;
+	}
+	.modules_section .pw-table-responsive {
+		margin: 0 -20px -24px;
 
-	.AdminDataTable.AdminDataList,
-	table {
-		tr {
-			th,
-			td {
-				&:first-child {
-					padding-left: 20px
+		.AdminDataTable.AdminDataList,
+		table {
+			tr {
+				th,
+				td {
+					&:first-child {
+						padding-left: 20px
+					}
+					&:last-child {
+						padding-right: 20px
+					}
 				}
-				&:last-child {
-					padding-right: 20px
-				}
+
 			}
-
 		}
+	}
+}
+
+// date picker
+.pw .ui-datepicker {
+	background: transparent;
+	box-shadow: none;
+	&#ui-datepicker-div {
+		// not inline:
+		z-index: 2 !important;
+		background: @pw-dropdown-background;
+		box-shadow: @pw-dropdown-box-shadow;
+		border-radius: 15px;
+	}
+	>div {
+		border-color: @pw-dropdown-separator-color;
+	}
+
+	table td {
+		.ui-state-default {
+			border-color: transparent;
+		}
+		.ui-state-hover,
+		.ui-state-active {
+			background: @theme-button-secondary-background, 15%;
+			color: @theme-button-text-color;
+		}
+		.ui-state-highlight,
+		.ui-state-highlight:hover {
+			background: @theme-dropdown-hover-background;
+			color: @theme-dropdown-color;
+		}
+	}
+
+	button {
+		border-width: 0px;
+	}
+	button.ui-datepicker-close {
+		background: @theme-primary-color;
+		color: @theme-button-text-color;
+		&:hover {
+			box-shadow: 0 5px 15px @theme-primary-color-rgba;
+		}
+	}
+	button.ui-datepicker-current {
+		background: @theme-button-secondary-background;
+		color: @theme-button-text-color;
 	}
 }
 
@@ -741,11 +837,6 @@ form.WireTab>ul {
 	box-shadow: 0 0px 20px rgba(255, 255, 255, 0.5);
 }
 
-/*
-#pw-content-body>.InputfieldFormVertical>ul>li {
-	box-shadow: @pw-box-shadow;
-}*/
-
 .Inputfields .Inputfield {
 	&:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset) {
 		box-shadow: @pw-box-shadow;
@@ -755,6 +846,8 @@ form.WireTab>ul {
 form.Inputfield {
 	background: transparent;
 }
+
+/* chosen fields -------------------------------------------------------------- */
 
 .pw {
 
@@ -889,12 +982,21 @@ form.Inputfield {
 .pw {
 	/* image edit*/
 	// ugly metal handler
+	.ui-slider,
+	.ui-slider-horizontal {
+		background: darken(@theme-dropdown-background, 7%);
+		.ui-slider-range-min {
+			background: darken(@theme-dropdown-background, 10%);
+		}
+
+	}
 	.ui-slider .ui-slider-handle {
 		background: @theme-link-color;
 		width: 17px;
 		height: 17px;
 		border-radius: 17px;
 		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+		cursor: pointer;
 
 		&:hover {
 			background: @theme-link-hover-color;

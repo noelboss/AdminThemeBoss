@@ -99,8 +99,6 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 					}
 					// modify open
 					$breadcrumb->url = "../?open=$pageid";
-				} else {
-					bd(wire('process'));
 				}
 			}
 			$out .= "<li><a href='$breadcrumb->url'>$title</a>$edit</li>";

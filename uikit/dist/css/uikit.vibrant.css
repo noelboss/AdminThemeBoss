@@ -13305,12 +13305,12 @@ body .ui-tooltip {
   margin: 0;
   background: #fff;
   border: none;
-  color: #fff;
+  color: #575555;
   border-radius: 0;
   line-height: 1.5;
 }
 .ui-dialog .ui-dialog-titlebar .ui-button {
-  color: #fff;
+  color: #575555;
   border: none;
   background: none;
   outline: none;
@@ -13331,7 +13331,7 @@ body .ui-tooltip {
   max-width: 100%;
 }
 .ui-widget-overlay {
-  background: rgba(0, 0, 0, 0.8);
+  background: #333335;
 }
 /****************************************************************
  * ui-button
@@ -13520,7 +13520,7 @@ a.tooltip:hover {
   border: none;
   border-radius: 3px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-  background: #131010;
+  background: #333335;
   color: #000;
 }
 .ui-datepicker table {
@@ -13541,20 +13541,20 @@ a.tooltip:hover {
 .ui-datepicker table td .ui-state-default {
   background: none;
   text-align: center;
-  border: 1px solid #131010;
+  border: 1px solid #333335;
   border-radius: 3px;
   line-height: 1.2em;
   color: #000;
 }
 .ui-datepicker table td .ui-state-default:hover {
-  background: #292323;
-  border: 1px solid #292323;
+  background: #47474a;
+  border: 1px solid #47474a;
   color: #000;
 }
 .ui-datepicker table td .ui-state-highlight,
 .ui-datepicker table td .ui-state-highlight:hover {
-  border: 1px solid #292323;
-  background: #292323;
+  border: 1px solid #47474a;
+  background: #47474a;
   color: #000;
 }
 .ui-datepicker table td .ui-state-active,
@@ -13576,7 +13576,7 @@ a.tooltip:hover {
   background: none;
   border-radius: 0;
   border-width: 0 0 1px 0;
-  border-bottom: 1px solid #292323;
+  border-bottom: 1px solid #47474a;
   padding: 0 0 0.8em 0;
   margin: 0 0 0.5em 0;
   line-height: 1;
@@ -13585,7 +13585,7 @@ a.tooltip:hover {
   right: 0;
   background: none;
   font-weight: normal;
-  color: #584a4a;
+  color: #727276;
 }
 .ui-datepicker .ui-datepicker-next .ui-icon {
   display: none;
@@ -13610,7 +13610,7 @@ a.tooltip:hover {
   left: 0;
   background: none;
   font-weight: normal;
-  color: #584a4a;
+  color: #727276;
 }
 .ui-datepicker .ui-datepicker-prev .ui-icon {
   display: none;
@@ -13633,8 +13633,8 @@ a.tooltip:hover {
 }
 .ui-datepicker button.ui-datepicker-current {
   color: #000;
-  background: #4a3f3f;
-  border-color: #4a3f3f;
+  background: #656569;
+  border-color: #656569;
   font-size: 1em;
 }
 .ui-datepicker button.ui-datepicker-current:before {
@@ -13661,12 +13661,12 @@ a.tooltip:hover {
 }
 .ui-datepicker .ui-slider,
 .ui-datepicker .ui-slider-horizontal {
-  background: #4a3f3f;
+  background: #656569;
 }
 .ui-datepicker .ui-timepicker-div {
   padding: 15px 0 15px 0 !important;
-  border-top: 1px solid #241e1e;
-  border-bottom: 1px solid #241e1e;
+  border-top: 1px solid #424245;
+  border-bottom: 1px solid #424245;
   margin-top: 1em;
 }
 .ui-datepicker .ui-timepicker-div #ui_tpicker_time_Inputfield_date {
@@ -15620,11 +15620,6 @@ ul.uk-navbar-nav ul {
 }
 #pw-masthead .uk-navbar-nav > li {
   position: relative;
-  /*
-      &.uk-active > a:not(.hover):not(:hover):after {
-        border-color: transparent transparent rgba(255,255,255,0.5) transparent;
-      }
-      */
 }
 #pw-masthead .uk-navbar-nav > li,
 #pw-masthead .uk-navbar-nav > li > a {
@@ -15646,20 +15641,6 @@ ul.uk-navbar-nav ul {
 #pw-masthead .uk-navbar-nav > li > a:hover i {
   color: #222222;
 }
-#pw-masthead .uk-navbar-nav > li.uk-active > a:hover:before,
-#pw-masthead .uk-navbar-nav > li > a.hover:before,
-#pw-masthead .uk-navbar-nav > li > a:hover:before {
-  content: " ";
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 7px 9px 7px;
-  border-color: transparent transparent #eee transparent;
-  position: absolute;
-  bottom: -1px;
-  left: 40%;
-  z-index: 99;
-}
 #pw-masthead .pw-search-form .pw-search-input {
   color: #000000;
   background: #ffffff;
@@ -15674,6 +15655,41 @@ ul.uk-navbar-nav ul {
 #pw-masthead .pw-search-form .uk-form-icon {
   color: #333333;
 }
+/* Dropdowns ------------------------------------------------------------*/
+li.aos_adminLangSwitcher > ul,
+body > ul.pw-dropdown-ready {
+  border-radius: 15px;
+}
+li.aos_adminLangSwitcher > ul:before,
+body > ul.pw-dropdown-ready:before {
+  content: " ";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 7px 9px 7px;
+  border-color: transparent transparent #eee transparent;
+  position: absolute;
+  top: -9px;
+  left: 30px;
+  z-index: 99;
+}
+li.aos_adminLangSwitcher > ul > li:first-child,
+body > ul.pw-dropdown-ready > li:first-child,
+li.aos_adminLangSwitcher > ul > li:first-child > a,
+body > ul.pw-dropdown-ready > li:first-child > a {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+li.aos_adminLangSwitcher > ul > li:last-child,
+body > ul.pw-dropdown-ready > li:last-child,
+li.aos_adminLangSwitcher > ul > li:last-child > a,
+body > ul.pw-dropdown-ready > li:last-child > a {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.ui-menu .ui-menu {
+  transform: translateX(-15px);
+}
 ul.pw-dropdown-menu,
 ul.ui-menu {
   border: 1px solid #eee;
@@ -15682,6 +15698,25 @@ ul.ui-menu {
 ul.pw-dropdown-menu > li.ui-menu-item > ul.ui-menu,
 ul.ui-menu > li.ui-menu-item > ul.ui-menu {
   border: 1px solid #eee !important;
+}
+body > ul.ui-autocomplete {
+  margin-top: 15px;
+  transform: translateY(15px);
+}
+li.aos_adminLangSwitcher > ul {
+  filter: none;
+  background: transparent;
+  border-width: 0px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+li.aos_adminLangSwitcher > ul li > a {
+  color: #575555;
+  background: rgba(250, 250, 250, 0.95);
+}
+li.aos_adminLangSwitcher > ul li > a:active,
+li.aos_adminLangSwitcher > ul li > a:hover {
+  background: rgba(0, 190, 215, 0.6);
+  color: #fff;
 }
 .pw-notices {
   margin-top: 0;
@@ -15802,19 +15837,62 @@ img.pw-logo-native:hover {
   width: calc(100% + 40px);
 }
 .InputfieldContent .pw-table-responsive {
+  margin: 0 0 -24px;
+}
+.InputfieldContent .modules_section .pw-table-responsive {
   margin: 0 -20px -24px;
 }
-.InputfieldContent .pw-table-responsive .AdminDataTable.AdminDataList tr th:first-child,
-.InputfieldContent .pw-table-responsive table tr th:first-child,
-.InputfieldContent .pw-table-responsive .AdminDataTable.AdminDataList tr td:first-child,
-.InputfieldContent .pw-table-responsive table tr td:first-child {
+.InputfieldContent .modules_section .pw-table-responsive .AdminDataTable.AdminDataList tr th:first-child,
+.InputfieldContent .modules_section .pw-table-responsive table tr th:first-child,
+.InputfieldContent .modules_section .pw-table-responsive .AdminDataTable.AdminDataList tr td:first-child,
+.InputfieldContent .modules_section .pw-table-responsive table tr td:first-child {
   padding-left: 20px;
 }
-.InputfieldContent .pw-table-responsive .AdminDataTable.AdminDataList tr th:last-child,
-.InputfieldContent .pw-table-responsive table tr th:last-child,
-.InputfieldContent .pw-table-responsive .AdminDataTable.AdminDataList tr td:last-child,
-.InputfieldContent .pw-table-responsive table tr td:last-child {
+.InputfieldContent .modules_section .pw-table-responsive .AdminDataTable.AdminDataList tr th:last-child,
+.InputfieldContent .modules_section .pw-table-responsive table tr th:last-child,
+.InputfieldContent .modules_section .pw-table-responsive .AdminDataTable.AdminDataList tr td:last-child,
+.InputfieldContent .modules_section .pw-table-responsive table tr td:last-child {
   padding-right: 20px;
+}
+.pw .ui-datepicker {
+  background: transparent;
+  box-shadow: none;
+}
+.pw .ui-datepicker#ui-datepicker-div {
+  z-index: 2 !important;
+  background: rgba(250, 250, 250, 0.95);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+.pw .ui-datepicker > div {
+  border-color: #dcdcdc;
+}
+.pw .ui-datepicker table td .ui-state-default {
+  border-color: transparent;
+}
+.pw .ui-datepicker table td .ui-state-hover,
+.pw .ui-datepicker table td .ui-state-active {
+  background: #777, 15%;
+  color: #fff;
+}
+.pw .ui-datepicker table td .ui-state-highlight,
+.pw .ui-datepicker table td .ui-state-highlight:hover {
+  background: rgba(0, 190, 215, 0.6);
+  color: #575555;
+}
+.pw .ui-datepicker button {
+  border-width: 0px;
+}
+.pw .ui-datepicker button.ui-datepicker-close {
+  background: #00BED7;
+  color: #fff;
+}
+.pw .ui-datepicker button.ui-datepicker-close:hover {
+  box-shadow: 0 5px 15px rgba(0, 190, 215, 0.6);
+}
+.pw .ui-datepicker button.ui-datepicker-current {
+  background: #777;
+  color: #fff;
 }
 .PageList .PageListItem.PageListItemOpen,
 html.highlightRows .PageListItem:hover {
@@ -15861,16 +15939,13 @@ form.WireTab > ul {
 .WireTabs > .uk-active {
   box-shadow: 0 0px 20px rgba(255, 255, 255, 0.5);
 }
-/*
-#pw-content-body>.InputfieldFormVertical>ul>li {
-	box-shadow: @pw-box-shadow;
-}*/
 .Inputfields .Inputfield:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset) {
   box-shadow: 0 10px 30px -10px rgba(0, 0, 2, 0.2);
 }
 form.Inputfield {
   background: transparent;
 }
+/* chosen fields -------------------------------------------------------------- */
 .pw {
   /* login page form */
 }
@@ -15975,12 +16050,21 @@ form.Inputfield {
   /* lightboxes */
   /* radio etc. */
 }
+.pw .ui-slider,
+.pw .ui-slider-horizontal {
+  background: rgba(232, 232, 232, 0.95);
+}
+.pw .ui-slider .ui-slider-range-min,
+.pw .ui-slider-horizontal .ui-slider-range-min {
+  background: rgba(225, 225, 225, 0.95);
+}
 .pw .ui-slider .ui-slider-handle {
   background: #333335;
   width: 17px;
   height: 17px;
   border-radius: 17px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 .pw .ui-slider .ui-slider-handle:hover {
   background: #010101;
