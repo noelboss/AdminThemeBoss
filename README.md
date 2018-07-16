@@ -21,6 +21,8 @@
 ### Dark Black
 ![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/black.png "Dark Black Color")
 
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/login.png "Dark Black Color Login")
+
 
 ## Requirements
 

@@ -15656,10 +15656,12 @@ ul.uk-navbar-nav ul {
   color: #333333;
 }
 /* Dropdowns ------------------------------------------------------------*/
+body > ul.ui-autocomplete,
 li.aos_adminLangSwitcher > ul,
 body > ul.pw-dropdown-ready {
   border-radius: 15px;
 }
+body > ul.ui-autocomplete:before,
 li.aos_adminLangSwitcher > ul:before,
 body > ul.pw-dropdown-ready:before {
   content: " ";
@@ -15673,22 +15675,23 @@ body > ul.pw-dropdown-ready:before {
   left: 30px;
   z-index: 99;
 }
+body > ul.ui-autocomplete > li:first-child,
 li.aos_adminLangSwitcher > ul > li:first-child,
 body > ul.pw-dropdown-ready > li:first-child,
+body > ul.ui-autocomplete > li:first-child > a,
 li.aos_adminLangSwitcher > ul > li:first-child > a,
 body > ul.pw-dropdown-ready > li:first-child > a {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+body > ul.ui-autocomplete > li:last-child,
 li.aos_adminLangSwitcher > ul > li:last-child,
 body > ul.pw-dropdown-ready > li:last-child,
+body > ul.ui-autocomplete > li:last-child > a,
 li.aos_adminLangSwitcher > ul > li:last-child > a,
 body > ul.pw-dropdown-ready > li:last-child > a {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-}
-.ui-menu .ui-menu {
-  transform: translateX(-15px);
 }
 ul.pw-dropdown-menu,
 ul.ui-menu {
@@ -15699,15 +15702,18 @@ ul.pw-dropdown-menu > li.ui-menu-item > ul.ui-menu,
 ul.ui-menu > li.ui-menu-item > ul.ui-menu {
   border: 1px solid #eee !important;
 }
-body > ul.ui-autocomplete {
-  margin-top: 15px;
-  transform: translateY(15px);
+li.aos_adminLangSwitcher > a:after {
+  display: none;
 }
 li.aos_adminLangSwitcher > ul {
   filter: none;
   background: transparent;
   border-width: 0px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+li.aos_adminLangSwitcher > ul:before {
+  left: auto;
+  right: 30px;
 }
 li.aos_adminLangSwitcher > ul li > a {
   color: #575555;
@@ -15717,6 +15723,11 @@ li.aos_adminLangSwitcher > ul li > a:active,
 li.aos_adminLangSwitcher > ul li > a:hover {
   background: rgba(0, 190, 215, 0.6);
   color: #fff;
+}
+body > ul.ui-autocomplete:before,
+#_ProcessPageEditViewDropdown:before,
+.pw-button-dropdown:before {
+  display: none !important;
 }
 .pw-notices {
   margin-top: 0;

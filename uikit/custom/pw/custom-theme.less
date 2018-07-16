@@ -478,6 +478,7 @@ sans-serif;
 /* Dropdowns ------------------------------------------------------------*/
 
 // rounded corners and triangle
+body>ul.ui-autocomplete,
 li.aos_adminLangSwitcher>ul,
 body>ul.pw-dropdown-ready {
 	&:before {
@@ -508,10 +509,6 @@ body>ul.pw-dropdown-ready {
 
 }
 
-.ui-menu .ui-menu {
-	transform: translateX(-15px);
-}
-
 ul.pw-dropdown-menu,
 ul.ui-menu {
 	border: @theme-dropdown-border;
@@ -521,14 +518,17 @@ ul.ui-menu {
 	}
 }
 
-body>ul.ui-autocomplete {
-	margin-top: 15px;
-	transform: translateY(15px);
-}
-
 
 li.aos_adminLangSwitcher {
+	>a:after {
+		display: none;
+	}
+
 	>ul {
+		&:before {
+			left: auto;
+			right: 30px;
+		}
 		filter: none; // box-shadow
 		background: transparent;
 		border-width: 0px;
@@ -543,6 +543,15 @@ li.aos_adminLangSwitcher {
 				color: @pw-dropdown-highlight-color;
 			}
 		}
+	}
+}
+
+// dropdowns inside content and buttons, remove triangle
+body>ul.ui-autocomplete,
+#_ProcessPageEditViewDropdown,
+.pw-button-dropdown {
+	&:before {
+		display: none !important;
 	}
 }
 
