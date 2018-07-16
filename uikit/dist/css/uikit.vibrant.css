@@ -16069,7 +16069,7 @@ form.Inputfield {
 .pw .ui-slider-horizontal .ui-slider-range-min {
   background: rgba(225, 225, 225, 0.95);
 }
-.pw .ui-slider .ui-slider-handle {
+.pw .ui-slider .ui-state-default.ui-slider-handle {
   background: #333335;
   width: 17px;
   height: 17px;
@@ -16077,7 +16077,7 @@ form.Inputfield {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
-.pw .ui-slider .ui-slider-handle:hover {
+.pw .ui-slider .ui-state-default.ui-slider-handle:hover {
   background: #010101;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
 }
@@ -16123,4 +16123,7 @@ form.Inputfield {
 ::selection {
   background-color: #00BED7;
   color: #fff;
+}
+.NotificationBug {
+  background: #777;
 }

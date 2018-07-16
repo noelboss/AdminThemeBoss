@@ -3,6 +3,11 @@
 © 2018 noelboss.com
 
 
+## Version 0.2.3
+
+* Fixed slider design
+
+
 ## Version 0.2.2
 
 * Design tweaks to dropdowns and time-picker
