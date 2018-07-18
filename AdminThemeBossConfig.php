@@ -6,7 +6,7 @@
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
  *
- * File created/changed: 2018-07-11T09:56:38+02:00
+ * File created/changed: 2018-07-18T11:36:17+02:00
  */
 
 namespace ProcessWire;
@@ -61,7 +61,8 @@ class AdminThemeBossConfig extends ModuleConfig
 						'type' => 'checkbox',
 						'icon' => 'link',
 						'label' => $this->_('Extended Breadcrumb'),
-						'description' => $this->_('If set, the default breadcrumb will be extended with edit links.'),
+						'description' => $this->_('If set, the default breadcrumb will be extended with edit links'),
+						'notes' => $this->_('Only applies if Module BreadcrumbDropdowns is not installed.'),
 						'value' => $this->get('extendedbreadcrumb'),
 					],
 				],

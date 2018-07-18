@@ -174,7 +174,7 @@
 @pw-dropdown-list-padding-vertical: 0px;
 @pw-dropdown-list-padding-horizontal: 0;
 @pw-dropdown-item-padding-vertical: 0.5em;
-@pw-dropdown-list-border-radius: 0;
+@pw-dropdown-list-border-radius: 15px;
 
 @navbar-nav-item-text-transform: uppercase;
 @navbar-nav-item-font-size: 18px;
@@ -479,6 +479,7 @@ sans-serif;
 
 // rounded corners and triangle
 body>ul.ui-autocomplete,
+ul.breadcrumb-dropdown,
 li.aos_adminLangSwitcher>ul,
 body>ul.pw-dropdown-ready {
 	&:before {
@@ -495,20 +496,25 @@ body>ul.pw-dropdown-ready {
 		z-index: 99;
 	}
 
-	border-radius: 15px;
+	border-radius: @pw-dropdown-list-border-radius;
 	>li:first-child,
-	>li:first-child>a {
-		border-top-left-radius: 15px;
-		border-top-right-radius: 15px;
+	>li:first-child>a,
+	ul>li:first-child,
+	ul>li:first-child>a {
+		border-top-left-radius: @pw-dropdown-list-border-radius;
+		border-top-right-radius: @pw-dropdown-list-border-radius;
 	}
 	>li:last-child,
-	>li:last-child>a {
-		border-bottom-left-radius: 15px;
-		border-bottom-right-radius: 15px;
+	>li:last-child>a,
+	ul>li:last-child,
+	ul>li:last-child>a {
+		border-bottom-left-radius: @pw-dropdown-list-border-radius;
+		border-bottom-right-radius: @pw-dropdown-list-border-radius;
 	}
 
 }
 
+ul.breadcrumb-dropdown,
 ul.pw-dropdown-menu,
 ul.ui-menu {
 	border: @theme-dropdown-border;
@@ -523,7 +529,6 @@ li.aos_adminLangSwitcher {
 	>a:after {
 		display: none;
 	}
-
 	>ul {
 		&:before {
 			left: auto;
@@ -556,6 +561,42 @@ body>ul.ui-autocomplete,
 }
 
 
+.uk-breadcrumb {
+	padding-bottom: 0;
+
+	>li {
+		font-size: .875rem;
+		color: @theme-muted-text-color;
+	}
+
+	ul.breadcrumb-dropdown {
+		&:before {
+			display: none;
+		}
+
+		background: @pw-dropdown-background;
+		box-shadow: @pw-dropdown-box-shadow;
+		border: @theme-dropdown-border;
+
+		li.current {
+			a {
+				color: @theme-link-color;
+			}
+		}
+
+		>li>a {
+			color: @pw-dropdown-nav-item-color;
+			background: @pw-dropdown-background;
+			border-bottom-width: 0px;
+			padding: 5px 15px;
+			&:active,
+			&:hover {
+				background: @theme-dropdown-hover-background;
+				color: @pw-dropdown-highlight-color;
+			}
+		}
+	}
+}
 
 // Notices ----------------------------------------------------
 .pw-notices {
@@ -674,9 +715,6 @@ img.pw-logo-native {
 	}
 }
 
-.uk-breadcrumb {
-	padding-bottom: 0;
-}
 
 #main .notes {
 	color: @theme-notes-text-color !important;

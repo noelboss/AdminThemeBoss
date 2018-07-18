@@ -13726,7 +13726,7 @@ a.tooltip:hover {
   font-size: 0.875rem;
   line-height: 1.2em;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 0;
+  border-radius: 15px;
   display: none;
   border: none;
 }
@@ -13794,7 +13794,7 @@ a.tooltip:hover {
   display: none;
   border: none;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 0;
+  border-radius: 15px;
   font-size: 0.875rem;
 }
 .ui-menu .ui-menu-item .ui-menu.navJSON .ui-menu-item:not(.add):not(.highlight) {
@@ -15657,11 +15657,13 @@ ul.uk-navbar-nav ul {
 }
 /* Dropdowns ------------------------------------------------------------*/
 body > ul.ui-autocomplete,
+ul.breadcrumb-dropdown,
 li.aos_adminLangSwitcher > ul,
 body > ul.pw-dropdown-ready {
   border-radius: 15px;
 }
 body > ul.ui-autocomplete:before,
+ul.breadcrumb-dropdown:before,
 li.aos_adminLangSwitcher > ul:before,
 body > ul.pw-dropdown-ready:before {
   content: " ";
@@ -15676,28 +15678,50 @@ body > ul.pw-dropdown-ready:before {
   z-index: 99;
 }
 body > ul.ui-autocomplete > li:first-child,
+ul.breadcrumb-dropdown > li:first-child,
 li.aos_adminLangSwitcher > ul > li:first-child,
 body > ul.pw-dropdown-ready > li:first-child,
 body > ul.ui-autocomplete > li:first-child > a,
+ul.breadcrumb-dropdown > li:first-child > a,
 li.aos_adminLangSwitcher > ul > li:first-child > a,
-body > ul.pw-dropdown-ready > li:first-child > a {
+body > ul.pw-dropdown-ready > li:first-child > a,
+body > ul.ui-autocomplete ul > li:first-child,
+ul.breadcrumb-dropdown ul > li:first-child,
+li.aos_adminLangSwitcher > ul ul > li:first-child,
+body > ul.pw-dropdown-ready ul > li:first-child,
+body > ul.ui-autocomplete ul > li:first-child > a,
+ul.breadcrumb-dropdown ul > li:first-child > a,
+li.aos_adminLangSwitcher > ul ul > li:first-child > a,
+body > ul.pw-dropdown-ready ul > li:first-child > a {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 body > ul.ui-autocomplete > li:last-child,
+ul.breadcrumb-dropdown > li:last-child,
 li.aos_adminLangSwitcher > ul > li:last-child,
 body > ul.pw-dropdown-ready > li:last-child,
 body > ul.ui-autocomplete > li:last-child > a,
+ul.breadcrumb-dropdown > li:last-child > a,
 li.aos_adminLangSwitcher > ul > li:last-child > a,
-body > ul.pw-dropdown-ready > li:last-child > a {
+body > ul.pw-dropdown-ready > li:last-child > a,
+body > ul.ui-autocomplete ul > li:last-child,
+ul.breadcrumb-dropdown ul > li:last-child,
+li.aos_adminLangSwitcher > ul ul > li:last-child,
+body > ul.pw-dropdown-ready ul > li:last-child,
+body > ul.ui-autocomplete ul > li:last-child > a,
+ul.breadcrumb-dropdown ul > li:last-child > a,
+li.aos_adminLangSwitcher > ul ul > li:last-child > a,
+body > ul.pw-dropdown-ready ul > li:last-child > a {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
+ul.breadcrumb-dropdown,
 ul.pw-dropdown-menu,
 ul.ui-menu {
   border: 1px solid #eee;
   margin-top: -2px;
 }
+ul.breadcrumb-dropdown > li.ui-menu-item > ul.ui-menu,
 ul.pw-dropdown-menu > li.ui-menu-item > ul.ui-menu,
 ul.ui-menu > li.ui-menu-item > ul.ui-menu {
   border: 1px solid #eee !important;
@@ -15728,6 +15752,35 @@ body > ul.ui-autocomplete:before,
 #_ProcessPageEditViewDropdown:before,
 .pw-button-dropdown:before {
   display: none !important;
+}
+.uk-breadcrumb {
+  padding-bottom: 0;
+}
+.uk-breadcrumb > li {
+  font-size: .875rem;
+  color: #777;
+}
+.uk-breadcrumb ul.breadcrumb-dropdown {
+  background: rgba(250, 250, 250, 0.95);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #eee;
+}
+.uk-breadcrumb ul.breadcrumb-dropdown:before {
+  display: none;
+}
+.uk-breadcrumb ul.breadcrumb-dropdown li.current a {
+  color: #333335;
+}
+.uk-breadcrumb ul.breadcrumb-dropdown > li > a {
+  color: #575555;
+  background: rgba(250, 250, 250, 0.95);
+  border-bottom-width: 0px;
+  padding: 5px 15px;
+}
+.uk-breadcrumb ul.breadcrumb-dropdown > li > a:active,
+.uk-breadcrumb ul.breadcrumb-dropdown > li > a:hover {
+  background: rgba(53, 132, 234, 0.6);
+  color: #fff;
 }
 .pw-notices {
   margin-top: 0;
@@ -15827,9 +15880,6 @@ img.pw-logo-native:hover {
 }
 #pw-content-head h1 {
   color: #131111;
-}
-.uk-breadcrumb {
-  padding-bottom: 0;
 }
 #main .notes {
   color: #777 !important;

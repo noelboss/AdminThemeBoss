@@ -2,6 +2,10 @@
 
 © 2018 noelboss.com
 
+## Version 0.2.4
+
+* Added compatibility to [BreadcrumbDropdowns module](https://modules.processwire.com/modules/breadcrumb-dropdowns/)
+
 
 ## Version 0.2.3
 

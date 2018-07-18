@@ -6,7 +6,7 @@
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
  *
- * File created/changed: 2018-07-11T14:49:18+02:00
+ * File created/changed: 2018-07-18T11:34:58+02:00
  */
 
 namespace ProcessWire;
@@ -126,7 +126,7 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 			$this->user->setAndSave('admin_theme', 'AdminThemeUikit');
 		}
 
-		if ($this->get('extendedbreadcrumb')) {
+		if ($this->get('extendedbreadcrumb') && !$this->wire('modules')->isInstalled('BreadcrumbDropdowns')) {
 			$this->addHookAfter('AdminThemeUikit::renderBreadcrumbs', $this, 'renderBreadcrumbs');
 		}
 
