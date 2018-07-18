@@ -34,10 +34,11 @@ Requires AdminThemeUikit installed and activated.
 ## Installation
 
 1. Make sure the above requirements are met
-1. Go to “Modules > Add New“
-2. Open “Add Module from URL“ and past the following url: https://github.com/noelboss/AdminThemeBoss/archive/master.zip
-3. Click “Download“
-4. Click “Install“ on the “AdminThemeBoss“ Module
+1. Go to “Modules > Site > Add New“
+2. Paste the Module Class Name “AdminThemeBoss“ into the field “Add Module From Directory“
+3. Click “Download And Install“
+4. On the overview, click “Download And Install“ again
+5. On the following screen, click “Install Now“
 
 ![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/installation.png "Installation using URL")
 
