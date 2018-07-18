@@ -6,7 +6,7 @@
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
  *
- * File created/changed: 2018-07-18T11:36:17+02:00
+ * File created/changed: 2018-07-18T13:33:35+02:00
  */
 
 namespace ProcessWire;
@@ -26,14 +26,6 @@ class AdminThemeBossConfig extends ModuleConfig
 	public function __construct()
 	{
 		$this->add([
-			[
-				'name' => 'enablemodule',
-				'type' => 'checkbox',
-				'icon' => 'check',
-				'label' => $this->_('Enable Module'),
-				'description' => $this->_('Enable this theme. You can untoggle this option to disable the theme without uninstalling this module.'),
-				'value' => $this->get('enablemodule'),
-			],
 			[
 				'type' => 'fieldset',
 				'name' => 'theme-options',

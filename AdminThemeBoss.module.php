@@ -6,7 +6,7 @@
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
  *
- * File created/changed: 2018-07-18T11:34:58+02:00
+ * File created/changed: 2018-07-18T13:39:35+02:00
  */
 
 namespace ProcessWire;
@@ -116,10 +116,6 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 	 */
 	public function init()
 	{
-		if (!$this->get('enablemodule')) {
-			return;
-		}
-
 		$this->adminThemeUikit = $this->wire('modules')->get('AdminThemeUikit');
 
 		if ($this->get('allusers') && $this->user->admin_theme !== 'AdminThemeUikit') {
@@ -154,7 +150,7 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 		$variant = $this->get('variant');
 
 		$version = $moduleInfo['version'];
-		$url = $config->urls->httpSiteModules.basename(__DIR__);
+		$url = $this->wire('config')->urls->AdminThemeBoss;
 
 		switch ($variant) {
 			case 'pw':
