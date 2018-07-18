@@ -28,8 +28,6 @@
 
 Requires AdminThemeUikit installed and activated.
 
-    $config->defaultAdminTheme = 'AdminThemeUikit';
-
 
 ## Installation
 
