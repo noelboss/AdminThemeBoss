@@ -6,28 +6,13 @@
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
  *
- * File created/changed: 2018-07-18T13:39:35+02:00
+ * File created/changed: 2018-07-18T13:50:36+02:00
  */
 
 namespace ProcessWire;
 
 /**
- * AdminThemeBoss.
- *
- * @property bool $isSuperuser Is current user a superuser?
- * @property bool $isEditor Does current user have page-edit permission?
- * @property bool $isLoggedIn Is current user logged in?
- * @property bool $useOffset Use offset/margin for all Inputfields?
- * @property array $noBorderTypes Inputfield class names that should always use the noBorder option (when 100% width).
- * @property array $cardTypes Inputfield class names that should always use the card option.
- * @property array $offsetTypes Inputfield class names that should always use the offset option.
- * @property string $logoURL URL to custom logo, relative to PW installation root.
- * @property string $variant URL to custom CSS file, relative to PW installation root.
- * @property string $layout Layout type (blank=default, sidenav=multi-pane, sidenav-tree=left-tree, sidenav-tree-alt=right-tree)
- * @property int $logoAction Logo click action (0=admin root page list, 1=offcanvas nav)
- * @property string $userLabel Text containing user {vars} to use for user label in masthead (default="{Name}")
- * @property int $maxWidth Maximum layout width in pixels, or 0 for no max (default=1600).
- * @property bool|int $groupNotices Whether or not notices should be grouped by type
+ * AdminThemeBoss Class.
  */
 class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 {
@@ -163,7 +148,6 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 				$variant = $url.'/uikit/dist/css/uikit.pw.min.css';
 				break;
 		}
-
 		// replace CSS and Logo
 		$event->return = str_replace($themecss, $variant, $event->return);
 
