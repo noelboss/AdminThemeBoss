@@ -2,6 +2,14 @@
 
 © 2018 noelboss.com
 
+
+## Version 0.2.5
+
+* Compatibility improvements for some [AdminOnSteroids features](https://modules.processwire.com/modules/admin-on-steroids/)
+* Compatibility improvements for [Admin Helper Module](https://modules.processwire.com/modules/admin-help/)
+* Added info on how to modify the theme to [README.md](README.md)
+
+
 ## Version 0.2.4
 
 * Added compatibility to [BreadcrumbDropdowns module](https://modules.processwire.com/modules/breadcrumb-dropdowns/)

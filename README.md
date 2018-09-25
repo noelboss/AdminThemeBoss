@@ -56,6 +56,25 @@ Requires AdminThemeUikit installed and activated.
 
 See [CHANGELOG.md](CHANGELOG.md) file for full change log.
 
+## Modify yourself
+
+This is how you modify the themes less files on your own: Run “yarn watch“ to recompile css on file change:
+
+	# Change into Uikit Folder:
+	$ cd AdminThemeBoss/uikit
+
+	# recompile on change
+	$ yarn watch
+
+	# or with npm:
+	$ npm run watch
+
+Now you can modify the less file(s) under “AdminThemeBoss/uikit/custom/…“.
+The primary theme file is “AdminThemeBoss/uikit/custom/pw/custom-theme.less“.
+
+
+If you wan't to add your own theme, modify “AdminThemeBoss/uikit/themes.json“ and add your new less file ro “AdminThemeBoss/uikit/custom/newtheme.less“.
+
 
 ## License: MIT
 

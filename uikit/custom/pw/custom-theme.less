@@ -551,6 +551,92 @@ li.aos_adminLangSwitcher {
 	}
 }
 
+// aos column breack on mobile
+.aos_col_right,
+.aos_col_left {
+	@media (max-width: 1149px) {
+		+.gutter {
+			display: none !important;
+		}
+		float: none !important;
+		width: 100% !important;
+	}
+}
+
+
+// aos notice and description
+#main #content {
+	p.notes,
+	p.description {
+		box-shadow: @pw-dropdown-box-shadow !important;
+		background: @pw-dropdown-background !important;
+		/*border-radius: @pw-dropdown-list-border-radius;
+		& .tooltipOverlay{
+			border-radius:
+		}*/
+		font-size: 1px;
+		&:hover {
+			font-size: 1rem; //font-weight: bold;
+		} //color: @theme-text-color;
+		&:before {
+			color: @theme-text-color;
+			margin-top: -3px;
+			width: 22px;
+			padding: 0;
+			line-height: 22px !important; //border-left: @theme-inputfield-border;
+			box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+		}
+		&:after {
+			border-top-color: @pw-dropdown-background;
+		}
+	}
+}
+
+// aos backgrounds
+#wrap_Inputfield_enabledSubmodules>.InputfieldContent,
+#wrap_Inputfield_enabledSubmodules>label,
+html.highlightRows .AdminDataTable.AdminDataList tr:hover td,
+html.highlightRows .PageListItem:hover {
+	background: @pw-dropdown-background;
+}
+
+.uk-table-divider>:first-child>tr:not(:first-child),
+.uk-table-divider>:not(:first-child)>tr,
+.uk-table-divider>tr:not(:first-child) {
+	:hover {
+		background: @pw-dropdown-background;
+	}
+}
+
+// aos all checkboxes
+#main #checkAllCheckboxes {
+	border-color: transparent;
+
+	box-shadow: @pw-dropdown-box-shadow;
+	margin-left: 0 !important;
+
+	-ms-transform: translate(-25%, -20%);
+	transform: translate(-25%, -20%);
+
+	background: @pw-dropdown-background;
+	&:hover {
+		background: @theme-primary-color;
+	}
+
+	i:before {
+		color: @theme-primary-color;
+	}
+	&:hover i:before {
+		color: #fff;
+	}
+}
+
+// header add transparency (for sticky)
+#pw-mastheads>header {
+	background: rgba(255, 255, 255, 0.95);
+	box-shadow: 0 10px 20px rgba(255, 255, 255, 0.95);
+}
+
 // dropdowns inside content and buttons, remove triangle
 body>ul.ui-autocomplete,
 #_ProcessPageEditViewDropdown,
@@ -885,7 +971,7 @@ form.WireTab>ul {
 }
 
 .Inputfields .Inputfield {
-	&:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset) {
+	&:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset):not(.InputfieldSubmit) {
 		box-shadow: @pw-box-shadow;
 	}
 }
@@ -1111,4 +1197,56 @@ form.Inputfield {
 // Notifications
 .NotificationBug {
 	background: @theme-button-secondary-background;
+}
+
+// Admin Help Module
+.ProcessAdminHelp {
+	#pw-content-head h1 {
+		display: none;
+	}
+}
+
+#main #_AdminHelpTabHelp {
+	color: @theme-primary-color;
+}
+
+#main #help-container,
+#main .help-doc {
+	a {
+		color: @theme-link-color;
+		text-decoration: underline;
+		i {
+			color: @theme-link-hover-color;
+		}
+	}
+
+	h1 {
+		&:before {
+			content: '' !important;
+			display: none;
+		}
+	}
+}
+
+#main .help-doc h1,
+#main .cbp-ntaccordion h3.cbp-nttrigger {
+	font-family: @global-font-family;
+	font-size: reset;
+	color: @theme-primary-color;
+	padding: reset;
+	font-weight: reset;
+	i.fa-file-text-o {
+		display: none;
+	}
+	&:before {
+		font-size: 1em;
+		font-family: monospace;
+		font-weight: bold;
+		content: "+";
+		vertical-align: 3px;
+		margin-right: 0;
+	}
+	&:hover:before {
+		content: "-";
+	}
 }
