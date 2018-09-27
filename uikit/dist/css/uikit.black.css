@@ -13726,7 +13726,7 @@ a.tooltip:hover {
   font-size: 0.875rem;
   line-height: 1.2em;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
+  border-radius: 5px;
   display: none;
   border: none;
 }
@@ -13794,7 +13794,7 @@ a.tooltip:hover {
   display: none;
   border: none;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
+  border-radius: 5px;
   font-size: 0.875rem;
 }
 .ui-menu .ui-menu-item .ui-menu.navJSON .ui-menu-item:not(.add):not(.highlight) {
@@ -14311,7 +14311,7 @@ table .InputfieldIsOffset,
 }
 .Inputfield.InputfieldStateCollapsed > .InputfieldHeader:hover {
   color: #5e5e5e;
-  background: #fafafb;
+  background: linear-gradient(#fff, #fafafb);
 }
 .Inputfield.InputfieldStateCollapsed > .InputfieldHeaderHidden {
   display: block;
@@ -14378,7 +14378,7 @@ table .InputfieldIsOffset,
 /*** InputfieldFieldset ***************************************************/
 .InputfieldFieldset > .InputfieldHeader,
 .InputfieldFieldset > .InputfieldContent {
-  background: #fafafb;
+  background: linear-gradient(#fff, #fafafb);
 }
 .InputfieldFieldset.WireTab {
   outline: none;
@@ -15660,7 +15660,7 @@ body > ul.ui-autocomplete,
 ul.breadcrumb-dropdown,
 li.aos_adminLangSwitcher > ul,
 body > ul.pw-dropdown-ready {
-  border-radius: 15px;
+  border-radius: 5px;
 }
 body > ul.ui-autocomplete:before,
 ul.breadcrumb-dropdown:before,
@@ -15693,8 +15693,8 @@ body > ul.ui-autocomplete ul > li:first-child > a,
 ul.breadcrumb-dropdown ul > li:first-child > a,
 li.aos_adminLangSwitcher > ul ul > li:first-child > a,
 body > ul.pw-dropdown-ready ul > li:first-child > a {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 body > ul.ui-autocomplete > li:last-child,
 ul.breadcrumb-dropdown > li:last-child,
@@ -15712,111 +15712,27 @@ body > ul.ui-autocomplete ul > li:last-child > a,
 ul.breadcrumb-dropdown ul > li:last-child > a,
 li.aos_adminLangSwitcher > ul ul > li:last-child > a,
 body > ul.pw-dropdown-ready ul > li:last-child > a {
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 ul.breadcrumb-dropdown,
 ul.pw-dropdown-menu,
 ul.ui-menu {
-  border: 1px solid #eee;
+  border: 0px solid #eee;
+  -webkit-backdrop-filter: blur(20px) drop-shadow(4px 4px 10px blue);
+  backdrop-filter: blur(20px) drop-shadow(4px 4px 10px blue);
   margin-top: -2px;
 }
 ul.breadcrumb-dropdown > li.ui-menu-item > ul.ui-menu,
 ul.pw-dropdown-menu > li.ui-menu-item > ul.ui-menu,
 ul.ui-menu > li.ui-menu-item > ul.ui-menu {
-  border: 1px solid #eee !important;
-}
-li.aos_adminLangSwitcher > a:after {
-  display: none;
-}
-li.aos_adminLangSwitcher > ul {
-  filter: none;
-  background: transparent;
-  border-width: 0px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-}
-li.aos_adminLangSwitcher > ul:before {
-  left: auto;
-  right: 30px;
-}
-li.aos_adminLangSwitcher > ul li > a {
-  color: #575555;
-  background: rgba(250, 250, 250, 0.95);
-}
-li.aos_adminLangSwitcher > ul li > a:active,
-li.aos_adminLangSwitcher > ul li > a:hover {
-  background: rgba(0, 0, 2, 0.6);
-  color: #fff;
-}
-@media (max-width: 1149px) {
-  .aos_col_right,
-  .aos_col_left {
-    float: none !important;
-    width: 100% !important;
-  }
-  .aos_col_right + .gutter,
-  .aos_col_left + .gutter {
-    display: none !important;
-  }
-}
-#main #content p.notes,
-#main #content p.description {
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15) !important;
-  background: rgba(250, 250, 250, 0.95) !important;
-  /*border-radius: @pw-dropdown-list-border-radius;
-		& .tooltipOverlay{
-			border-radius:
-		}*/
-  font-size: 1px;
-}
-#main #content p.notes:hover,
-#main #content p.description:hover {
-  font-size: 1rem;
-}
-#main #content p.notes:before,
-#main #content p.description:before {
-  color: #575555;
-  margin-top: -3px;
-  width: 22px;
-  padding: 0;
-  line-height: 22px !important;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
-}
-#main #content p.notes:after,
-#main #content p.description:after {
-  border-top-color: rgba(250, 250, 250, 0.95);
-}
-#wrap_Inputfield_enabledSubmodules > .InputfieldContent,
-#wrap_Inputfield_enabledSubmodules > label,
-html.highlightRows .AdminDataTable.AdminDataList tr:hover td,
-html.highlightRows .PageListItem:hover {
-  background: rgba(250, 250, 250, 0.95);
-}
-.uk-table-divider > :first-child > tr:not(:first-child) :hover,
-.uk-table-divider > :not(:first-child) > tr :hover,
-.uk-table-divider > tr:not(:first-child) :hover {
-  background: rgba(250, 250, 250, 0.95);
-}
-#main #checkAllCheckboxes {
-  border-color: transparent;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  margin-left: 0 !important;
-  -ms-transform: translate(-25%, -20%);
-  transform: translate(-25%, -20%);
-  background: rgba(250, 250, 250, 0.95);
-}
-#main #checkAllCheckboxes:hover {
-  background: #000002;
-}
-#main #checkAllCheckboxes i:before {
-  color: #000002;
-}
-#main #checkAllCheckboxes:hover i:before {
-  color: #fff;
+  border: 0px solid #eee !important;
 }
 #pw-mastheads > header {
+  -webkit-backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
+  backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 20px #ffffff;
 }
 body > ul.ui-autocomplete:before,
 #_ProcessPageEditViewDropdown:before,
@@ -15833,7 +15749,7 @@ body > ul.ui-autocomplete:before,
 .uk-breadcrumb ul.breadcrumb-dropdown {
   background: rgba(250, 250, 250, 0.95);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  border: 1px solid #eee;
+  border: 0px solid #eee;
 }
 .uk-breadcrumb ul.breadcrumb-dropdown:before {
   display: none;
@@ -15929,6 +15845,9 @@ html.pw-sidebar-frame body {
 html.pw-sidebar-frame #main,
 html.pw-sidebar-frame body #main {
   background: #fafafb;
+}
+.InputfieldFieldset > .InputfieldHeader {
+  background: transparent;
 }
 .Inputfields input:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]),
 .Inputfields textarea {
@@ -16072,6 +15991,9 @@ form.WireTab > ul {
 }
 .Inputfields .Inputfield:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset):not(.InputfieldSubmit) {
   box-shadow: 0 10px 30px -10px rgba(0, 0, 2, 0.2);
+}
+.InputfieldContent > .Inputfields > .Inputfield .Inputfields .Inputfield:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset):not(.InputfieldSubmit) {
+  box-shadow: none;
 }
 form.Inputfield {
   background: transparent;
@@ -16246,6 +16168,102 @@ form.Inputfield {
 }
 .NotificationBug {
   background: #777;
+}
+li.aos_adminLangSwitcher > a:after {
+  display: none;
+}
+li.aos_adminLangSwitcher > ul {
+  filter: none;
+  background: transparent;
+  border-width: 0px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+li.aos_adminLangSwitcher > ul:before {
+  left: auto;
+  right: 30px;
+}
+li.aos_adminLangSwitcher > ul li > a {
+  color: #575555;
+  background: rgba(250, 250, 250, 0.95);
+}
+li.aos_adminLangSwitcher > ul li > a:active,
+li.aos_adminLangSwitcher > ul li > a:hover {
+  background: rgba(0, 0, 2, 0.6);
+  color: #fff;
+}
+@media (max-width: 1149px) {
+  .aos_col_right,
+  .aos_col_left {
+    float: none !important;
+    width: 100% !important;
+  }
+  .aos_col_right + .gutter,
+  .aos_col_left + .gutter {
+    display: none !important;
+  }
+}
+.tooltipDesc #main #content p.notes,
+.tooltipNotes #main #content p.notes,
+.tooltipDesc #main #content p.description,
+.tooltipNotes #main #content p.description {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15) !important;
+  background: rgba(250, 250, 250, 0.95) !important;
+  /*border-radius: @pw-dropdown-list-border-radius;
+		& .tooltipOverlay{
+			border-radius:
+		}*/
+  font-size: 1px;
+}
+.tooltipDesc #main #content p.notes:hover,
+.tooltipNotes #main #content p.notes:hover,
+.tooltipDesc #main #content p.description:hover,
+.tooltipNotes #main #content p.description:hover {
+  font-size: 1rem;
+}
+.tooltipDesc #main #content p.notes:before,
+.tooltipNotes #main #content p.notes:before,
+.tooltipDesc #main #content p.description:before,
+.tooltipNotes #main #content p.description:before {
+  color: #575555;
+  margin-top: -3px;
+  width: 22px;
+  padding: 0;
+  line-height: 22px !important;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+}
+.tooltipDesc #main #content p.notes:after,
+.tooltipNotes #main #content p.notes:after,
+.tooltipDesc #main #content p.description:after,
+.tooltipNotes #main #content p.description:after {
+  border-top-color: rgba(250, 250, 250, 0.95);
+}
+#wrap_Inputfield_enabledSubmodules > .InputfieldContent,
+#wrap_Inputfield_enabledSubmodules > label,
+html.highlightRows .AdminDataTable.AdminDataList tr:hover td,
+html.highlightRows .PageListItem:hover {
+  background: rgba(250, 250, 250, 0.95);
+}
+.uk-table-divider > :first-child > tr:not(:first-child) :hover,
+.uk-table-divider > :not(:first-child) > tr :hover,
+.uk-table-divider > tr:not(:first-child) :hover {
+  background: rgba(250, 250, 250, 0.95);
+}
+#main #checkAllCheckboxes {
+  border-color: transparent;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  margin-left: 0 !important;
+  -ms-transform: translate(-25%, -20%);
+  transform: translate(-25%, -20%);
+  background: rgba(250, 250, 250, 0.95);
+}
+#main #checkAllCheckboxes:hover {
+  background: #000002;
+}
+#main #checkAllCheckboxes i:before {
+  color: #000002;
+}
+#main #checkAllCheckboxes:hover i:before {
+  color: #fff;
 }
 .ProcessAdminHelp #pw-content-head h1 {
   display: none;

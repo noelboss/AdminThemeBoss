@@ -83,7 +83,7 @@
 @theme-dropdown-color: @theme-text-color;
 @theme-dropdown-hover-background: @theme-primary-color-rgba;
 @theme-dropdown-border-color: #eee;
-@theme-dropdown-border: 1px solid @theme-dropdown-border-color;
+@theme-dropdown-border: 0px solid @theme-dropdown-border-color;
 @theme-dropdown-nav-icon-color: #000;
 
 /* page list */
@@ -174,7 +174,7 @@
 @pw-dropdown-list-padding-vertical: 0px;
 @pw-dropdown-list-padding-horizontal: 0;
 @pw-dropdown-item-padding-vertical: 0.5em;
-@pw-dropdown-list-border-radius: 15px;
+@pw-dropdown-list-border-radius: 5px;
 
 @navbar-nav-item-text-transform: uppercase;
 @navbar-nav-item-font-size: 18px;
@@ -205,7 +205,10 @@
 @pw-inputfield-header-color: @theme-text-color;
 @pw-inputfield-header-collapsed-color: @theme-muted-text-color-alternate;
 @pw-inputfield-header-hover-color: @theme-muted-text-color-alternate;
-@pw-inputfield-header-collapsed-hover-background: @theme-muted-background;
+@pw-inputfield-header-collapsed-hover-background: linear-gradient(@global-background, @theme-muted-background);
+
+@pw-inputfield-fieldset-background: linear-gradient(@global-background, @theme-muted-background);
+
 @form-radio-checked-background: @theme-form-radio-checked-background;
 @form-radio-checked-focus-background: darken(@form-radio-checked-background, 7%);
 
@@ -518,6 +521,8 @@ ul.breadcrumb-dropdown,
 ul.pw-dropdown-menu,
 ul.ui-menu {
 	border: @theme-dropdown-border;
+	-webkit-backdrop-filter: blur(20px) drop-shadow(4px 4px 10px blue);
+	backdrop-filter: blur(20px) drop-shadow(4px 4px 10px blue);
 	margin-top: -2px; // border-top: none;
 	>li.ui-menu-item>ul.ui-menu {
 		border: @theme-dropdown-border !important;
@@ -525,116 +530,14 @@ ul.ui-menu {
 }
 
 
-li.aos_adminLangSwitcher {
-	>a:after {
-		display: none;
-	}
-	>ul {
-		&:before {
-			left: auto;
-			right: 30px;
-		}
-		filter: none; // box-shadow
-		background: transparent;
-		border-width: 0px;
-		box-shadow: @pw-dropdown-box-shadow;
-
-		li>a {
-			color: @pw-dropdown-nav-item-color;
-			background: @pw-dropdown-background;
-			&:active,
-			&:hover {
-				background: @theme-dropdown-hover-background;
-				color: @pw-dropdown-highlight-color;
-			}
-		}
-	}
-}
-
-// aos column breack on mobile
-.aos_col_right,
-.aos_col_left {
-	@media (max-width: 1149px) {
-		+.gutter {
-			display: none !important;
-		}
-		float: none !important;
-		width: 100% !important;
-	}
-}
-
-
-// aos notice and description
-#main #content {
-	p.notes,
-	p.description {
-		box-shadow: @pw-dropdown-box-shadow !important;
-		background: @pw-dropdown-background !important;
-		/*border-radius: @pw-dropdown-list-border-radius;
-		& .tooltipOverlay{
-			border-radius:
-		}*/
-		font-size: 1px;
-		&:hover {
-			font-size: 1rem; //font-weight: bold;
-		} //color: @theme-text-color;
-		&:before {
-			color: @theme-text-color;
-			margin-top: -3px;
-			width: 22px;
-			padding: 0;
-			line-height: 22px !important; //border-left: @theme-inputfield-border;
-			box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
-		}
-		&:after {
-			border-top-color: @pw-dropdown-background;
-		}
-	}
-}
-
-// aos backgrounds
-#wrap_Inputfield_enabledSubmodules>.InputfieldContent,
-#wrap_Inputfield_enabledSubmodules>label,
-html.highlightRows .AdminDataTable.AdminDataList tr:hover td,
-html.highlightRows .PageListItem:hover {
-	background: @pw-dropdown-background;
-}
-
-.uk-table-divider>:first-child>tr:not(:first-child),
-.uk-table-divider>:not(:first-child)>tr,
-.uk-table-divider>tr:not(:first-child) {
-	:hover {
-		background: @pw-dropdown-background;
-	}
-}
-
-// aos all checkboxes
-#main #checkAllCheckboxes {
-	border-color: transparent;
-
-	box-shadow: @pw-dropdown-box-shadow;
-	margin-left: 0 !important;
-
-	-ms-transform: translate(-25%, -20%);
-	transform: translate(-25%, -20%);
-
-	background: @pw-dropdown-background;
-	&:hover {
-		background: @theme-primary-color;
-	}
-
-	i:before {
-		color: @theme-primary-color;
-	}
-	&:hover i:before {
-		color: #fff;
-	}
-}
 
 // header add transparency (for sticky)
 #pw-mastheads>header {
+	-webkit-backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
+	backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
+
 	background: rgba(255, 255, 255, 0.95);
-	box-shadow: 0 10px 20px rgba(255, 255, 255, 0.95);
+	box-shadow: 0 10px 20px rgba(255, 255, 255, 1);
 }
 
 // dropdowns inside content and buttons, remove triangle
@@ -767,6 +670,13 @@ html.pw-sidebar-frame body {
 	background: @global-muted-background;
 	#main {
 		background: @global-muted-background;
+	}
+}
+
+.InputfieldFieldset {
+	// fieldset containing other Inputfield elements
+	>.InputfieldHeader {
+		background: transparent;
 	}
 }
 
@@ -958,6 +868,7 @@ button.ui-button {
 
 
 
+
 /* Shadows --------------------------------------------------------------------*/
 
 // fliters:
@@ -970,11 +881,17 @@ form.WireTab>ul {
 	box-shadow: 0 0px 20px rgba(255, 255, 255, 0.5);
 }
 
+
 .Inputfields .Inputfield {
 	&:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset):not(.InputfieldSubmit) {
 		box-shadow: @pw-box-shadow;
+
+		.InputfieldContent>.Inputfields>.Inputfield & {
+			box-shadow: none;
+		}
 	}
 }
+
 
 form.Inputfield {
 	background: transparent;
@@ -1199,7 +1116,120 @@ form.Inputfield {
 	background: @theme-button-secondary-background;
 }
 
-// Admin Help Module
+
+
+li.aos_adminLangSwitcher {
+	>a:after {
+		display: none;
+	}
+	>ul {
+		&:before {
+			left: auto;
+			right: 30px;
+		}
+		filter: none; // box-shadow
+		background: transparent;
+		border-width: 0px;
+		box-shadow: @pw-dropdown-box-shadow;
+
+		li>a {
+			color: @pw-dropdown-nav-item-color;
+			background: @pw-dropdown-background;
+			&:active,
+			&:hover {
+				background: @theme-dropdown-hover-background;
+				color: @pw-dropdown-highlight-color;
+			}
+		}
+	}
+}
+
+// aos column breack on mobile
+.aos_col_right,
+.aos_col_left {
+	@media (max-width: 1149px) {
+		+.gutter {
+			display: none !important;
+		}
+		float: none !important;
+		width: 100% !important;
+	}
+}
+
+
+// Admin On Steroids –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+// aos notice and description
+.tooltipDesc,
+.tooltipNotes {
+	#main #content {
+		p.notes,
+		p.description {
+			box-shadow: @pw-dropdown-box-shadow !important;
+			background: @pw-dropdown-background !important;
+			/*border-radius: @pw-dropdown-list-border-radius;
+		& .tooltipOverlay{
+			border-radius:
+		}*/
+			font-size: 1px;
+			&:hover {
+				font-size: 1rem; //font-weight: bold;
+			} //color: @theme-text-color;
+			&:before {
+				color: @theme-text-color;
+				margin-top: -3px;
+				width: 22px;
+				padding: 0;
+				line-height: 22px !important; //border-left: @theme-inputfield-border;
+				box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+			}
+			&:after {
+				border-top-color: @pw-dropdown-background;
+			}
+		}
+	}
+}
+
+// aos backgrounds
+#wrap_Inputfield_enabledSubmodules>.InputfieldContent,
+#wrap_Inputfield_enabledSubmodules>label,
+html.highlightRows .AdminDataTable.AdminDataList tr:hover td,
+html.highlightRows .PageListItem:hover {
+	background: @pw-dropdown-background;
+}
+
+.uk-table-divider>:first-child>tr:not(:first-child),
+.uk-table-divider>:not(:first-child)>tr,
+.uk-table-divider>tr:not(:first-child) {
+	:hover {
+		background: @pw-dropdown-background;
+	}
+}
+
+// aos all checkboxes
+#main #checkAllCheckboxes {
+	border-color: transparent;
+
+	box-shadow: @pw-dropdown-box-shadow;
+	margin-left: 0 !important;
+
+	-ms-transform: translate(-25%, -20%);
+	transform: translate(-25%, -20%);
+
+	background: @pw-dropdown-background;
+	&:hover {
+		background: @theme-primary-color;
+	}
+
+	i:before {
+		color: @theme-primary-color;
+	}
+	&:hover i:before {
+		color: #fff;
+	}
+}
+
+
+// Admin Help Module –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 .ProcessAdminHelp {
 	#pw-content-head h1 {
 		display: none;

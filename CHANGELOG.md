@@ -2,6 +2,11 @@
 
 © 2018 noelboss.com
 
+## Version 0.2.6
+
+* Fixed issues with descriptions and notes
+* Small improvements on backgrounds and shaddows etc
+
 
 ## Version 0.2.5
 
