@@ -6,7 +6,7 @@
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
  *
- * File created/changed: 2018-07-18T13:50:36+02:00
+ * File created/changed: 2018-10-09T15:54:14+02:00
  */
 
 namespace ProcessWire;
@@ -28,10 +28,60 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 
 	private $adminThemeUikit;
 
+	public function ___upgrade()
+	{
+		$this->message('unstall');
+		$this->setSettings();
+	}
+
+	public function ___install()
+	{
+		$this->message('unstall');
+		$this->cache->saveFor($this, 'cssBackup', $this->wire('modules')->getConfig('AdminThemeUikit', 'cssURL'));
+		$this->cache->saveFor($this, 'logoBackup', $this->wire('modules')->getConfig('AdminThemeUikit', 'logoURL'));
+		$this->setSettings();
+	}
+
+	public function ___uninstall()
+	{
+		$this->message('uninstalled!');
+		$this->resetSettings();
+		$this->cache->deleteFor($this);
+	}
+
 	/*******************************************************************************************
 	 * MARKUP RENDERING METHODS
 	 *
 	 */
+
+	/**
+	 * Initialize and attach hooks.
+	 */
+	public function init()
+	{
+		$this->adminThemeUikit = $this->modules->AdminThemeUikit;
+		if ($this->get('allusers') && $this->user->admin_theme !== 'AdminThemeUikit') {
+			$this->user->setAndSave('admin_theme', 'AdminThemeUikit');
+		}
+
+		if ($this->get('extendedbreadcrumb') && !$this->wire('modules')->isInstalled('BreadcrumbDropdowns')) {
+			$this->addHookAfter('AdminThemeUikit::renderBreadcrumbs', $this, 'renderBreadcrumbs');
+		}
+
+		$this->addHookAfter('Modules::saveConfig', function (HookEvent $event) {
+			$class = $event->arguments(0);
+			bd($event->arguments(1));
+
+			if ($class == 'AdminThemeBoss') {
+				foreach ($event->arguments(1) as $key => $value) {
+					$this->set($key, $value);
+				}
+				$this->setSettings();
+			}
+
+			return $event;
+		});
+	}
 
 	/**
 	 * Render a list of breadcrumbs (list items), excluding the containing <ul>.
@@ -97,41 +147,57 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 	}
 
 	/**
-	 * Initialize and attach hooks.
+	 * Get the primary Uikit CSS file to use.
+	 *
+	 * @return string
+	 *
+	 * @param mixed $event
 	 */
-	public function init()
+	private function setSettings()
 	{
-		$this->adminThemeUikit = $this->wire('modules')->get('AdminThemeUikit');
+		$this->message('Set css settings: '.$this->getVariant());
 
-		if ($this->get('allusers') && $this->user->admin_theme !== 'AdminThemeUikit') {
-			$this->user->setAndSave('admin_theme', 'AdminThemeUikit');
+		$this->modules->saveConfig('AdminThemeUikit', 'cssURL', $this->getVariant());
+		if ($this->get('uselogo')) {
+			$this->message('Set logo settings');
+			$this->modules->saveConfig('AdminThemeUikit', 'logoURL', $this->config->urls($this->className()).self::logo);
+		} else {
+			$conf['logoURL'] = $this->resetLogo();
 		}
-
-		if ($this->get('extendedbreadcrumb') && !$this->wire('modules')->isInstalled('BreadcrumbDropdowns')) {
-			$this->addHookAfter('AdminThemeUikit::renderBreadcrumbs', $this, 'renderBreadcrumbs');
-		}
-
-		$this->addHookAfter('Page::render', $this, 'replaceUikitCSS');
 	}
 
 	/**
 	 * Get the primary Uikit CSS file to use.
 	 *
 	 * @return string
+	 *
+	 * @param mixed $event
 	 */
-	public function replaceUikitCSS(HookEvent $event)
+	private function resetSettings()
 	{
-		$page = $event->object;
+		$this->message('Restored old settings');
 
-		if ($page->template->name !== 'admin') {
-			return;
-		}
+		$this->modules->saveConfig('AdminThemeUikit', 'cssURL', $this->cache->getFor($this, 'cssBackup'));
+		$this->resetLogo();
+	}
 
+	/**
+	 * Get the primary Uikit CSS file to use.
+	 *
+	 * @return string
+	 *
+	 * @param mixed $event
+	 */
+	private function resetLogo()
+	{
+		$this->message('restored logo settings');
+		$this->modules->saveConfig('AdminThemeUikit', 'logoURL', $this->cache->getFor($this, 'logoBackup'));
+	}
+
+	private function getVariant()
+	{
 		$moduleInfo = $this->wire('modules')->getModuleInfo($this);
 
-		$themecss = $this->adminThemeUikit->getUikitCSS();
-
-		$config = $this->wire('config');
 		$variant = $this->get('variant');
 
 		$version = $moduleInfo['version'];
@@ -141,22 +207,14 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 			case 'pw':
 			case 'black':
 			case 'vibrant':
-				$variant = $url.'/uikit/dist/css/uikit.'.$variant.'.min.css';
+				$variant = $url.'uikit/dist/css/uikit.'.$variant.'.min.css?'.$version;
 				break;
 
 			default:
-				$variant = $url.'/uikit/dist/css/uikit.pw.min.css';
+				$variant = $url.'uikit/dist/css/uikit.pw.min.css?'.$version;
 				break;
 		}
-		// replace CSS and Logo
-		$event->return = str_replace($themecss, $variant, $event->return);
 
-		if (!$this->get('useuikitlogo')) {
-			$themelogo = $this->adminThemeUikit->getLogoURL();
-			$logoURL = $config->urls($this->className()).self::logo;
-			$event->return = str_replace($themelogo, $logoURL, $event->return);
-		}
-
-		return true;
+		return $variant;
 	}
 }

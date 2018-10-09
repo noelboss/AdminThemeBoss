@@ -6,7 +6,7 @@
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
  *
- * File created/changed: 2018-07-18T13:33:35+02:00
+ * File created/changed: 2018-10-09T15:35:44+02:00
  */
 
 namespace ProcessWire;
@@ -25,6 +25,8 @@ class AdminThemeBossConfig extends ModuleConfig
 {
 	public function __construct()
 	{
+		$adminThemeUrl = $this->modules->getModuleEditUrl('AdminThemeUikit');
+
 		$this->add([
 			[
 				'type' => 'fieldset',
@@ -53,6 +55,7 @@ class AdminThemeBossConfig extends ModuleConfig
 						'type' => 'checkbox',
 						'icon' => 'link',
 						'label' => $this->_('Extended Breadcrumb'),
+						'checkboxLabel' => $this->_('Yes, use extended breadcrumb'),
 						'description' => $this->_('If set, the default breadcrumb will be extended with edit links'),
 						'notes' => $this->_('Only applies if Module BreadcrumbDropdowns is not installed.'),
 						'value' => $this->get('extendedbreadcrumb'),
@@ -70,17 +73,19 @@ class AdminThemeBossConfig extends ModuleConfig
 					[
 						'name' => 'allusers',
 						'type' => 'checkbox',
-						'icon' => 'lock',
+						'icon' => 'user',
 						'label' => $this->_('Enable For All Users'),
-						'description' => $this->_('If enabled, AdminThemeUikit will be set as theme for all users.'),
+						'checkboxLabel' => $this->_('Yes'),
+						'description' => $this->_('If enabled, [AdminThemeUikit]('.$adminThemeUrl.') will be set as theme for all users.'),
 						'value' => $this->get('allusers'),
 					],
 					[
-						'name' => 'useuikitlogo',
+						'name' => 'uselogo',
 						'type' => 'checkbox',
-						'icon' => 'reply',
-						'label' => $this->_('Use AdminThemeUikit Logo'),
-						'description' => $this->_('Instead of a adark logo, use the one specified in the AdminThemeUikit settings.'),
+						'icon' => 'bookmark',
+						'label' => $this->_('Use Dark ProcessWire Logo'),
+						'checkboxLabel' => $this->_('Yes'),
+						'description' => $this->_('Set a dark theme logo for the [AdminThemeUikit]('.$adminThemeUrl.') logo settings.'),
 						'value' => $this->get('useuikitlogo'),
 					],
 				],
@@ -95,7 +100,7 @@ class AdminThemeBossConfig extends ModuleConfig
 			'variant' => 'pw',
 			'extendedbreadcrumb' => true,
 			'allusers' => true,
-			'useuikitlogo' => false,
+			'uselogo' => true,
 		];
 	}
 }
