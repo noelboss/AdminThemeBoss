@@ -1,5 +1,4 @@
 /* eslint-env node */
-const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 const util = require('./util');
@@ -13,19 +12,36 @@ argv._.forEach(arg => {
 const numArgs = Object.keys(argv).length;
 argv.all = argv.all || numArgs <= 1; // no arguments passed, so compile all
 
-const minify = !(argv.debug || argv.nominify || argv.nominify || argv.d);
+const minify = !(argv.debug || argv.nominify || argv.d);
+
+// TODO, reference camelize function from utils when seperated
+const camelizeRe = /-(\w)/g;
+
+function camelize(str) {
+    return str.replace(camelizeRe, toUpper);
+}
+
+function toUpper(_, c) {
+    return c ? c.toUpperCase() : '';
+}
+
+// -----
 
 // map component build jobs
 const components = glob.sync('src/js/components/*.js').reduce((components, file) => {
 
     const name = path.basename(file, '.js');
 
-    components[name] = () => util.compile(file, `dist/${file.substring(4, file.length - 3)}`, {
-        name,
-        minify,
-        external: ['uikit'],
-        globals: {uikit: 'UIkit'}
-    });
+    components[name] = () => {
+        return util.compile( __dirname + '/componentWrapper.js', `dist/${file.substring(4, file.length - 3)}`, {
+            name,
+            minify,
+            external: ['uikit', 'uikit-util'],
+            globals: {uikit: 'UIkit', 'uikit-util': 'UIkit.util'},
+            aliases: {component: path.join(__dirname, '..', file.substr(0, file.length - 3))},
+            replaces: {NAME: `'${camelize(name)}'`}
+        });
+    };
 
     return components;
 }, {});
@@ -34,14 +50,11 @@ const steps = {
 
     core: () => util.compile('src/js/uikit-core.js', 'dist/js/uikit-core', {minify}),
     uikit: () => util.compile('src/js/uikit.js', 'dist/js/uikit', {minify, bundled: true}),
-    icons: () => util.write('dist/icons.json', util.icons('{src/images,custom}/icons/*.svg'))
-        .then(() => util.compile('src/js/icons.js', 'dist/js/uikit-icons', {
-            minify,
-            name: 'icons',
-            aliases: {icons: 'dist/icons'}
-        }))
-        .then(() => fs.unlink('dist/icons.json', () => {
-        })),
+    icons: () => util.compile('src/js/icons.js', 'dist/js/uikit-icons', {
+        minify,
+        name: 'icons',
+        replaces: {ICONS: util.icons('{src/images,custom}/icons/*.svg')}
+    }),
     tests: () => util.compile('tests/js/index.js', 'tests/js/test', {minify, name: 'test'})
 
 };
@@ -79,8 +92,6 @@ if (argv.h || argv.help) {
 
 function collectJobs() {
 
-    const jobs = [];
-
     // if parameter components is set or all or none(implicit all), add all components
     if (argv.components || argv.all) {
         Object.assign(argv, components);
@@ -94,7 +105,6 @@ function collectJobs() {
     Object.assign(steps, components);
 
     // Object.keys(argv).forEach(step => components[step] && componentJobs.push(components[step]()));
-    Object.keys(argv).forEach(step => steps[step] && jobs.push(steps[step]()));
+    return Object.keys(argv).filter(step => steps[step]).map(step => steps[step]());
 
-    return jobs;
 }

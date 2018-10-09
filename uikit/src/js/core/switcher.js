@@ -1,158 +1,149 @@
-import {Togglable} from '../mixin/index';
-import {$$, addClass, attr, data, filter, getIndex, hasClass, index, isTouch, matches, queryAll, removeClass} from '../util/index';
+import Togglable from '../mixin/togglable';
+import {$$, addClass, attr, data, filter, getIndex, hasClass, index, isTouch, matches, queryAll, removeClass} from 'uikit-util';
 
-export default function (UIkit) {
+export default {
 
-    UIkit.component('switcher', {
+    mixins: [Togglable],
 
-        mixins: [Togglable],
+    args: 'connect',
 
-        args: 'connect',
+    props: {
+        connect: String,
+        toggle: String,
+        active: Number,
+        swiping: Boolean
+    },
 
-        props: {
-            connect: String,
-            toggle: String,
-            active: Number,
-            swiping: Boolean
+    data: {
+        connect: '~.uk-switcher',
+        toggle: '> *',
+        active: 0,
+        swiping: true,
+        cls: 'uk-active',
+        clsContainer: 'uk-switcher',
+        attrItem: 'uk-switcher-item',
+        queued: true
+    },
+
+    computed: {
+
+        connects({connect}, $el) {
+            return queryAll(connect, $el);
         },
 
-        defaults: {
-            connect: '~.uk-switcher',
-            toggle: '> *',
-            active: 0,
-            swiping: true,
-            cls: 'uk-active',
-            clsContainer: 'uk-switcher',
-            attrItem: 'uk-switcher-item',
-            queued: true
-        },
+        toggles({toggle}, $el) {
+            return $$(toggle, $el);
+        }
 
-        computed: {
+    },
 
-            connects({connect}, $el) {
-                return queryAll(connect, $el);
+    events: [
+
+        {
+
+            name: 'click',
+
+            delegate() {
+                return `${this.toggle}:not(.uk-disabled)`;
             },
 
-            toggles({toggle}, $el) {
-                return $$(toggle, $el);
+            handler(e) {
+                e.preventDefault();
+                this.show(e.current);
             }
 
         },
 
-        events: [
+        {
+            name: 'click',
 
-            {
-
-                name: 'click',
-
-                delegate() {
-                    return `${this.toggle}:not(.uk-disabled)`;
-                },
-
-                handler(e) {
-                    e.preventDefault();
-                    this.show(e.current);
-                }
-
+            el() {
+                return this.connects;
             },
 
-            {
-                name: 'click',
-
-                el() {
-                    return this.connects;
-                },
-
-                delegate() {
-                    return `[${this.attrItem}],[data-${this.attrItem}]`;
-                },
-
-                handler(e) {
-                    e.preventDefault();
-                    this.show(data(e.current, this.attrItem));
-                }
+            delegate() {
+                return `[${this.attrItem}],[data-${this.attrItem}]`;
             },
 
-            {
-                name: 'swipeRight swipeLeft',
-
-                filter() {
-                    return this.swiping;
-                },
-
-                el() {
-                    return this.connects;
-                },
-
-                handler(e) {
-                    if (!isTouch(e)) {
-                        return;
-                    }
-
-                    e.preventDefault();
-                    if (!window.getSelection().toString()) {
-                        this.show(e.type === 'swipeLeft' ? 'next' : 'previous');
-                    }
-                }
+            handler(e) {
+                e.preventDefault();
+                this.show(data(e.current, this.attrItem));
             }
-
-        ],
-
-        update() {
-
-            this.connects.forEach(list => this.updateAria(list.children));
-            this.show(filter(this.toggles, `.${this.cls}`)[0] || this.toggles[this.active] || this.toggles[0]);
-
         },
 
-        methods: {
+        {
+            name: 'swipeRight swipeLeft',
 
-            show(item) {
+            filter() {
+                return this.swiping;
+            },
 
-<<<<<<< HEAD
-                var length = this.toggles.length,
-					prev = !!this.connects.length && index(filter(this.connects[0].children, `.${this.cls}`)[0]),
-                    hasPrev = prev >= 0,
-                    next = getIndex(item, this.toggles, prev),
-                    dir = item === 'previous' ? -1 : 1,
-                    toggle;
-=======
-                const {length} = this.toggles;
-                const prev = !!this.connects.length && index(filter(this.connects[0].children, `.${this.cls}`)[0]);
-                const hasPrev = prev >= 0;
-                const dir = item === 'previous' ? -1 : 1;
->>>>>>> 075faf708aa9ebd4ef42ef23c6d6b6c147dc1560
+            el() {
+                return this.connects;
+            },
 
-                let toggle, next = getIndex(item, this.toggles, prev);
-
-                for (let i = 0; i < length; i++, next = (next + dir + length) % length) {
-                    if (!matches(this.toggles[next], '.uk-disabled, [disabled]')) {
-                        toggle = this.toggles[next];
-                        break;
-                    }
+            handler(e) {
+                if (!isTouch(e)) {
+                    return;
                 }
 
-                if (!toggle || prev >= 0 && hasClass(toggle, this.cls) || prev === next) {
-                   return;
+                e.preventDefault();
+                if (!window.getSelection().toString()) {
+                    this.show(e.type === 'swipeLeft' ? 'next' : 'previous');
                 }
-
-                removeClass(this.toggles, this.cls);
-                attr(this.toggles, 'aria-expanded', false);
-                addClass(toggle, this.cls);
-                attr(toggle, 'aria-expanded', true);
-
-                this.connects.forEach(list => {
-                    if (!hasPrev) {
-                        this.toggleNow(list.children[next]);
-                    } else {
-                        this.toggleElement([list.children[prev], list.children[next]]);
-                    }
-                });
-
             }
+        }
+
+    ],
+
+    update() {
+
+        this.connects.forEach(list => this.updateAria(list.children));
+        this.show(filter(this.toggles, `.${this.cls}`)[0] || this.toggles[this.active] || this.toggles[0]);
+
+    },
+
+    methods: {
+
+        index() {
+            return !!this.connects.length && index(filter(this.connects[0].children, `.${this.cls}`)[0]);
+        },
+
+        show(item) {
+
+            const {length} = this.toggles;
+            const prev = this.index();
+            const hasPrev = prev >= 0;
+            const dir = item === 'previous' ? -1 : 1;
+
+            let toggle, next = getIndex(item, this.toggles, prev);
+
+            for (let i = 0; i < length; i++, next = (next + dir + length) % length) {
+                if (!matches(this.toggles[next], '.uk-disabled, [disabled]')) {
+                    toggle = this.toggles[next];
+                    break;
+                }
+            }
+
+            if (!toggle || prev >= 0 && hasClass(toggle, this.cls) || prev === next) {
+                return;
+            }
+
+            removeClass(this.toggles, this.cls);
+            attr(this.toggles, 'aria-expanded', false);
+            addClass(toggle, this.cls);
+            attr(toggle, 'aria-expanded', true);
+
+            this.connects.forEach(list => {
+                if (!hasPrev) {
+                    this.toggleNow(list.children[next]);
+                } else {
+                    this.toggleElement([list.children[prev], list.children[next]]);
+                }
+            });
 
         }
 
-    });
+    }
 
-}
+};

@@ -54,7 +54,7 @@ export function ajax(url, options) {
     });
 }
 
-export function getImage(src) {
+export function getImage(src, srcset, sizes) {
 
     return new Promise((resolve, reject) => {
         const img = new Image();
@@ -62,6 +62,8 @@ export function getImage(src) {
         img.onerror = reject;
         img.onload = () => resolve(img);
 
+        sizes && (img.sizes = sizes);
+        srcset && (img.srcset = srcset);
         img.src = src;
     });
 

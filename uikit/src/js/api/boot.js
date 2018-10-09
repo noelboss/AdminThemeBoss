@@ -1,5 +1,5 @@
 import {getComponentName} from './component';
-import {fastdom, hasAttr} from '../util/index';
+import {fastdom, hasAttr} from 'uikit-util';
 
 export default function (UIkit) {
 
@@ -50,7 +50,7 @@ export default function (UIkit) {
             ? applyChildList(mutation)
             : applyAttribute(mutation);
 
-        update && UIkit.update('update', target, true);
+        update && UIkit.update(target);
 
     }
 
@@ -62,7 +62,7 @@ export default function (UIkit) {
 
         const name = getComponentName(attributeName);
 
-        if (!name || !(name in UIkit.components)) {
+        if (!name || !(name in UIkit)) {
             return;
         }
 

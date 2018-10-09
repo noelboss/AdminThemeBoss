@@ -1,127 +1,115 @@
-import LightboxPanel from './internal/lightbox-panel';
+import LightboxPanel from './lightbox-panel';
+import {$$, assign, data, index} from 'uikit-util';
 
-function plugin(UIkit) {
+export default {
 
-    if (plugin.installed) {
-        return;
-    }
+    install,
 
-    UIkit.use(LightboxPanel);
+    props: {toggle: String},
 
-    const {util} = UIkit;
-    const {$$, assign, data, index} = util;
-    const {options} = UIkit.components.lightboxPanel;
+    data: {toggle: 'a'},
 
-    UIkit.component('lightbox', {
+    computed: {
 
-        attrs: true,
+        toggles({toggle}, $el) {
+            return $$(toggle, $el);
+        }
 
-        props: assign({toggle: String}, options.props),
+    },
 
-        defaults: assign({toggle: 'a'}, Object.keys(options.props).reduce((defaults, key) => {
-            defaults[key] = options.defaults[key];
-            return defaults;
-        }, {})),
+    disconnected() {
+        this._destroy();
+    },
 
-        computed: {
+    events: [
 
-            toggles({toggle}, $el) {
-                return $$(toggle, $el);
-            }
+        {
 
-        },
+            name: 'click',
 
-        disconnected() {
-            this._destroy();
-        },
-
-        events: [
-
-            {
-
-                name: 'click',
-
-                delegate() {
-                    return `${this.toggle}:not(.uk-disabled)`;
-                },
-
-                handler(e) {
-                    e.preventDefault();
-                    e.current.blur();
-                    this.show(index(this.toggles, e.current));
-                }
-
-            }
-
-        ],
-
-        update(data) {
-
-            if (this.panel && this.animation) {
-                this.panel.$props.animation = this.animation;
-                this.panel.$emit();
-            }
-
-            if (!this.panel || data.toggles && isEqualList(data.toggles, this.toggles)) {
-                return;
-            }
-
-            data.toggles = this.toggles;
-            this._destroy();
-            this._init();
-
-        },
-
-        methods: {
-
-            _init() {
-                return this.panel = this.panel || UIkit.lightboxPanel(assign({}, this.$props, {
-                    items: this.toggles.reduce((items, el) => {
-                        items.push(['href', 'caption', 'type', 'poster', 'alt'].reduce((obj, attr) => {
-                            obj[attr === 'href' ? 'source' : attr] = data(el, attr);
-                            return obj;
-                        }, {}));
-                        return items;
-                    }, [])
-                }));
+            delegate() {
+                return `${this.toggle}:not(.uk-disabled)`;
             },
 
-            _destroy() {
-                if (this.panel) {
-                    this.panel.$destroy(true);
-                    this.panel = null;
-                }
-            },
-
-            show(index) {
-
-                if (!this.panel) {
-                    this._init();
-                }
-
-                return this.panel.show(index);
-
-            },
-
-            hide() {
-
-                return this.panel && this.panel.hide();
-
+            handler(e) {
+                e.preventDefault();
+                e.current.blur();
+                this.show(index(this.toggles, e.current));
             }
 
         }
 
-    });
+    ],
 
-    function isEqualList(listA, listB) {
-        return listA.length === listB.length
-            && listA.every((el, i) => el !== listB[i]);
+    update(data) {
+
+        data.toggles = this.panel && data.toggles || this.toggles;
+
+        if (!this.panel || isEqualList(data.toggles, this.toggles)) {
+            return;
+        }
+
+        data.toggles = this.toggles;
+        this._destroy();
+        this._init();
+
+    },
+
+    methods: {
+
+        _init() {
+            return this.panel = this.panel || this.$create('lightboxPanel', assign({}, this.$props, {
+                items: this.toggles.reduce((items, el) => {
+                    items.push(['href', 'caption', 'type', 'poster', 'alt'].reduce((obj, attr) => {
+                        obj[attr === 'href' ? 'source' : attr] = data(el, attr);
+                        return obj;
+                    }, {}));
+                    return items;
+                }, [])
+            }));
+        },
+
+        _destroy() {
+            if (this.panel) {
+                this.panel.$destroy(true);
+                this.panel = null;
+            }
+        },
+
+        show(index) {
+
+            if (!this.panel) {
+                this._init();
+            }
+
+            return this.panel.show(index);
+
+        },
+
+        hide() {
+
+            return this.panel && this.panel.hide();
+
+        }
+
     }
 
+};
+
+function isEqualList(listA, listB) {
+    return listA.length === listB.length
+        && listA.every((el, i) => el === listB[i]);
 }
 
-if (!BUNDLED && typeof window !== 'undefined' && window.UIkit) {
-    window.UIkit.use(plugin);
-}
+function install(UIkit, Lightbox) {
 
-export default plugin;
+    if (!UIkit.lightboxPanel) {
+        UIkit.component('lightboxPanel', LightboxPanel);
+    }
+
+    assign(
+        Lightbox.props,
+        UIkit.component('lightboxPanel').options.props
+    );
+
+}

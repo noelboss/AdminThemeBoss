@@ -1,4 +1,4 @@
-import {assign, createEvent, fastdom, includes, isPlainObject, ready} from '../util/index';
+import {assign, createEvent, fastdom, includes, isPlainObject} from 'uikit-util';
 
 export default function (UIkit) {
 
@@ -18,6 +18,7 @@ export default function (UIkit) {
         }
 
         this._data = {};
+        this._initProps();
 
         this._callHook('beforeConnect');
         this._connected = true;
@@ -26,11 +27,6 @@ export default function (UIkit) {
         this._initObserver();
 
         this._callHook('connected');
-
-        if (!this._isReady) {
-            ready(() => this._callReady());
-        }
-
         this._callUpdate();
     };
 
@@ -52,18 +48,6 @@ export default function (UIkit) {
 
         this._connected = false;
 
-    };
-
-    UIkit.prototype._callReady = function () {
-
-        if (this._isReady) {
-            return;
-        }
-
-        this._isReady = true;
-        this._callHook('ready');
-        this._resetComputeds();
-        this._callUpdate();
     };
 
     UIkit.prototype._callUpdate = function (e) {
@@ -92,7 +76,7 @@ export default function (UIkit) {
             if (read && !includes(fastdom.reads, reads[i])) {
                 reads[i] = fastdom.read(() => {
 
-                    const result = read.call(this, this._data, e);
+                    const result = this._connected && read.call(this, this._data, e);
 
                     if (result === false && write) {
                         fastdom.clear(writes[i]);
@@ -106,7 +90,7 @@ export default function (UIkit) {
 
             if (write && !includes(fastdom.writes, writes[i])) {
                 writes[i] = fastdom.write(() => {
-                    write.call(this, this._data, e);
+                    this._connected && write.call(this, this._data, e);
                     delete writes[i];
                 });
             }

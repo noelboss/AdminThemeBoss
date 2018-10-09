@@ -1,7 +1,7 @@
 import {attr} from './attr';
 import {once} from './event';
 import {Promise} from './promise';
-import {assign, includes, isString, toNode} from './lang';
+import {assign, includes, isString, noop, toNode} from './lang';
 
 let id = 0;
 
@@ -61,7 +61,7 @@ export class Player {
                         poller && clearInterval(poller);
                     });
 
-                attr(this.el, 'src', `${this.el.src}${includes(this.el.src, '?') ? '&' : '?'}${youtube ? 'enablejsapi=1' : `api=1&player_id=${id}`}`);
+                attr(this.el, 'src', `${this.el.src}${includes(this.el.src, '?') ? '&' : '?'}${youtube ? 'enablejsapi=1' : `api=1&player_id=${this.id}`}`);
 
             });
 
@@ -81,7 +81,11 @@ export class Player {
             this.enableApi().then(() => post(this.el, {func: 'playVideo', method: 'play'}));
         } else if (this.isHTML5()) {
             try {
-                this.el.play();
+                const promise = this.el.play();
+
+                if (promise) {
+                    promise.catch(noop);
+                }
             } catch (e) {}
         }
     }

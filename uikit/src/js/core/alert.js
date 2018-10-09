@@ -1,54 +1,49 @@
-import {Class, Togglable} from '../mixin/index';
-import {assign} from '../util/index';
+import Class from '../mixin/class';
+import Togglable from '../mixin/togglable';
+import {assign} from 'uikit-util';
 
-export default function (UIkit) {
+export default {
 
-    UIkit.component('alert', {
+    mixins: [Class, Togglable],
 
-        attrs: true,
+    args: 'animation',
 
-        mixins: [Class, Togglable],
+    props: {
+        close: String
+    },
 
-        args: 'animation',
+    data: {
+        animation: [true],
+        selClose: '.uk-alert-close',
+        duration: 150,
+        hideProps: assign({opacity: 0}, Togglable.data.hideProps)
+    },
 
-        props: {
-            close: String
-        },
+    events: [
 
-        defaults: {
-            animation: [true],
-            selClose: '.uk-alert-close',
-            duration: 150,
-            hideProps: assign({opacity: 0}, Togglable.defaults.hideProps)
-        },
+        {
 
-        events: [
+            name: 'click',
 
-            {
+            delegate() {
+                return this.selClose;
+            },
 
-                name: 'click',
-
-                delegate() {
-                    return this.selClose;
-                },
-
-                handler(e) {
-                    e.preventDefault();
-                    this.close();
-                }
-
-            }
-
-        ],
-
-        methods: {
-
-            close() {
-                this.toggleElement(this.$el).then(() => this.$destroy(true));
+            handler(e) {
+                e.preventDefault();
+                this.close();
             }
 
         }
 
-    });
+    ],
 
-}
+    methods: {
+
+        close() {
+            this.toggleElement(this.$el).then(() => this.$destroy(true));
+        }
+
+    }
+
+};

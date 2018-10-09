@@ -1,99 +1,88 @@
-import {css, endsWith, height, isNumeric, isString, offset, query, toFloat} from '../util/index';
+import FlexBug from '../mixin/flex-bug';
+import {boxModelAdjust, css, endsWith, height, isNumeric, isString, offset, query, toFloat} from 'uikit-util';
 
-export default function (UIkit) {
+export default {
 
-    UIkit.component('height-viewport', {
+    mixins: [FlexBug],
 
-        props: {
-            expand: Boolean,
-            offsetTop: Boolean,
-            offsetBottom: Boolean,
-            minHeight: Number
-        },
+    props: {
+        expand: Boolean,
+        offsetTop: Boolean,
+        offsetBottom: Boolean,
+        minHeight: Number
+    },
 
-        defaults: {
-            expand: false,
-            offsetTop: false,
-            offsetBottom: false,
-            minHeight: 0
-        },
+    data: {
+        expand: false,
+        offsetTop: false,
+        offsetBottom: false,
+        minHeight: 0
+    },
 
-        update: {
+    update: {
 
-            write() {
+        read() {
 
-                css(this.$el, 'boxSizing', 'border-box');
+            let minHeight = '';
+            const box = boxModelAdjust('height', this.$el, 'content-box');
 
-                const viewport = height(window);
-                let minHeight, offsetTop = 0;
+            if (this.expand) {
 
-                if (this.expand) {
+                minHeight = height(window) - (offsetHeight(document.documentElement) - offsetHeight(this.$el)) - box || '';
 
-                    css(this.$el, {height: '', minHeight: ''});
+            } else {
 
-                    const diff = viewport - offsetHeight(document.documentElement);
+                // on mobile devices (iOS and Android) window.innerHeight !== 100vh
+                minHeight = 'calc(100vh';
 
-                    if (diff > 0) {
-                        minHeight = offsetHeight(this.$el) + diff;
-                    }
-
-                } else {
+                if (this.offsetTop) {
 
                     const {top} = offset(this.$el);
-
-                    if (top < viewport / 2 && this.offsetTop) {
-                        offsetTop += top;
-                    }
-
-                    if (this.offsetBottom === true) {
-
-                        offsetTop += offsetHeight(this.$el.nextElementSibling);
-
-                    } else if (isNumeric(this.offsetBottom)) {
-
-                        offsetTop += (viewport / 100) * this.offsetBottom;
-
-                    } else if (this.offsetBottom && endsWith(this.offsetBottom, 'px')) {
-
-                        offsetTop += toFloat(this.offsetBottom);
-
-                    } else if (isString(this.offsetBottom)) {
-
-                        offsetTop += offsetHeight(query(this.offsetBottom, this.$el));
-
-                    }
-
-                    // on mobile devices (iOS and Android) window.innerHeight !== 100vh
-                    minHeight = offsetTop ? `calc(100vh - ${offsetTop}px)` : '100vh';
+                    minHeight += top < height(window) / 2 ? ` - ${top}px` : '';
 
                 }
 
-                if (!minHeight) {
-                    return;
+                if (this.offsetBottom === true) {
+
+                    minHeight += ` - ${offsetHeight(this.$el.nextElementSibling)}px`;
+
+                } else if (isNumeric(this.offsetBottom)) {
+
+                    minHeight += ` - ${this.offsetBottom}vh`;
+
+                } else if (this.offsetBottom && endsWith(this.offsetBottom, 'px')) {
+
+                    minHeight += ` - ${toFloat(this.offsetBottom)}px`;
+
+                } else if (isString(this.offsetBottom)) {
+
+                    minHeight += ` - ${offsetHeight(query(this.offsetBottom, this.$el))}px`;
+
                 }
 
-                css(this.$el, {height: '', minHeight});
+                minHeight += `${box ? ` - ${box}px` : ''})`;
 
-                const elHeight = this.$el.offsetHeight;
-                if (this.minHeight && this.minHeight > elHeight) {
-                    css(this.$el, 'minHeight', this.minHeight);
-                }
+            }
 
-                // IE 11 fix (min-height on a flex container won't apply to its flex items)
-                if (viewport - offsetTop >= elHeight) {
-                    css(this.$el, 'height', minHeight);
-                }
+            return {minHeight};
+        },
 
-            },
+        write({minHeight}) {
 
-            events: ['load', 'resize']
+            css(this.$el, {minHeight});
 
-        }
+            if (this.minHeight && toFloat(css(this.$el, 'minHeight')) < this.minHeight) {
+                css(this.$el, 'minHeight', this.minHeight);
+            }
 
-    });
+        },
 
-    function offsetHeight(el) {
-        return el && el.offsetHeight || 0;
+        events: ['load', 'resize']
+
     }
 
+};
+
+function offsetHeight(el) {
+    return el && el.offsetHeight || 0;
 }

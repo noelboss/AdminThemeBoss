@@ -1,6 +1,7 @@
 import {css} from './style';
+import {attr} from './attr';
 import {isVisible} from './filter';
-import {clamp, each, endsWith, includes, intersectRect, isDocument, isUndefined, isWindow, toFloat, toNode, ucfirst} from './lang';
+import {clamp, each, endsWith, includes, intersectRect, isDocument, isUndefined, isWindow, pointInRect, toFloat, toNode, ucfirst} from './lang';
 
 const dirs = {
     width: ['x', 'left', 'right'],
@@ -107,9 +108,11 @@ export function offset(element, coordinates) {
         ['left', 'top'].forEach(prop => {
             if (prop in coordinates) {
                 const value = css(element, prop);
-                element.style[prop] = `${(coordinates[prop] - currentOffset[prop])
-                + toFloat(pos === 'absolute' && value === 'auto' ? position(element)[prop] : value)
-                    }px`;
+                css(element, prop, coordinates[prop] - currentOffset[prop]
+                    + toFloat(pos === 'absolute' && value === 'auto'
+                        ? position(element)[prop]
+                        : value)
+                );
             }
         });
 
@@ -140,16 +143,22 @@ function getDimensions(element) {
         };
     }
 
-    let display = false;
+    let style, hidden;
+
     if (!isVisible(element)) {
-        display = element.style.display;
-        element.style.display = 'block';
+        style = attr(element, 'style');
+        hidden = attr(element, 'hidden');
+
+        attr(element, {
+            style: `${style || ''};display:block !important;`,
+            hidden: null
+        });
     }
 
     const rect = element.getBoundingClientRect();
 
-    if (display !== false) {
-        element.style.display = display;
+    if (!isUndefined(style)) {
+        attr(element, {style, hidden});
     }
 
     return {
@@ -165,28 +174,17 @@ function getDimensions(element) {
 export function position(element) {
     element = toNode(element);
 
-    const parent = offsetParent(element);
-    const parentOffset = parent === docEl(element) ? {top: 0, left: 0} : offset(parent);
+    const parent = element.offsetParent || docEl(element);
+    const parentOffset = offset(parent);
     const {top, left} = ['top', 'left'].reduce((props, prop) => {
         const propName = ucfirst(prop);
         props[prop] -= parentOffset[prop]
-            + (toFloat(css(element, `margin${propName}`)) || 0)
-            + (toFloat(css(parent, `border${propName}Width`)) || 0);
+            + toFloat(css(element, `margin${propName}`))
+            + toFloat(css(parent, `border${propName}Width`));
         return props;
     }, offset(element));
 
     return {top, left};
-}
-
-function offsetParent(element) {
-
-    let parent = toNode(element).offsetParent;
-
-    while (parent && css(parent, 'position') === 'static') {
-        parent = parent.offsetParent;
-    }
-
-    return parent || docEl(element);
 }
 
 export const height = dimension('height');
@@ -212,13 +210,13 @@ function dimension(prop) {
             value = css(element, prop);
             value = value === 'auto' ? element[`offset${propName}`] : toFloat(value) || 0;
 
-            return getContentSize(prop, element, value);
+            return value - boxModelAdjust(prop, element);
 
         } else {
 
             css(element, prop, !value && value !== 0
                 ? ''
-                : getContentSize(prop, element, value) + 'px'
+                : +value + boxModelAdjust(prop, element) + 'px'
             );
 
         }
@@ -226,12 +224,14 @@ function dimension(prop) {
     };
 }
 
-function getContentSize(prop, element, value) {
-    return css(element, 'boxSizing') === 'border-box' ? dirs[prop].slice(1).map(ucfirst).reduce((value, prop) =>
-        value
-        - toFloat(css(element, `padding${prop}`))
-        - toFloat(css(element, `border${prop}Width`))
-        , value) : value;
+export function boxModelAdjust(prop, element, sizing = 'border-box') {
+    return css(element, 'boxSizing') === sizing
+        ? dirs[prop].slice(1).map(ucfirst).reduce((value, prop) =>
+            value
+            + toFloat(css(element, `padding${prop}`))
+            + toFloat(css(element, `border${prop}Width`))
+            , 0)
+        : 0;
 }
 
 function moveTo(position, attach, dim, factor) {
@@ -290,44 +290,98 @@ export function flipPosition(pos) {
     }
 }
 
-export function isInView(element, top = 0, left = 0) {
+export function isInView(element, topOffset = 0, leftOffset = 0, relativeToViewport) {
+
+    if (!isVisible(element)) {
+        return false;
+    }
 
     element = toNode(element);
 
     const win = window(element);
-    return intersectRect(element.getBoundingClientRect(), {
-        top,
-        left,
-        bottom: top + height(win),
-        right: left + width(win)
-    });
+    let client, bounding;
+
+    if (relativeToViewport) {
+
+        client = element.getBoundingClientRect();
+        bounding = {
+            top: -topOffset,
+            left: -leftOffset,
+            bottom: topOffset + height(win),
+            right: leftOffset + width(win)
+        };
+
+    } else {
+
+        const [elTop, elLeft] = offsetPosition(element);
+        const {pageYOffset: top, pageXOffset: left} = win;
+
+        client = {
+            top: elTop,
+            left: elLeft,
+            bottom: elTop + element.offsetHeight,
+            right: elTop + element.offsetWidth
+        };
+        bounding = {
+            top: top - topOffset,
+            left: left - leftOffset,
+            bottom: top + topOffset + height(win),
+            right: left + leftOffset + width(win)
+        };
+    }
+
+    return intersectRect(client, bounding) || pointInRect({x: client.left, y: client.top}, bounding);
+
 }
 
-export function scrolledOver(element) {
+export function scrolledOver(element, heightOffset = 0) {
+
+    if (!isVisible(element)) {
+        return 0;
+    }
 
     element = toNode(element);
 
     const win = window(element);
     const doc = document(element);
-    const elHeight = element.offsetHeight;
-    const top = positionTop(element);
+    const elHeight = element.offsetHeight + heightOffset;
+    const [top] = offsetPosition(element);
     const vp = height(win);
     const vh = vp + Math.min(0, top - vp);
-    const diff = Math.max(0, vp - (height(doc) - (top + elHeight)));
+    const diff = Math.max(0, vp - (height(doc) + heightOffset - (top + elHeight)));
 
     return clamp(((vh + win.pageYOffset - top) / ((vh + (elHeight - (diff < vp ? diff : 0))) / 100)) / 100);
 }
 
-function positionTop(element) {
-    let top = 0;
+export function scrollTop(element, top) {
+    element = toNode(element);
+
+    if (isWindow(element) || isDocument(element)) {
+        const {scrollTo, pageXOffset} = window(element);
+        scrollTo(pageXOffset, top);
+    } else {
+        element.scrollTop = top;
+    }
+}
+
+export function offsetPosition(element) {
+    const offset = [0, 0];
 
     do {
 
-        top += element.offsetTop;
+        offset[0] += element.offsetTop;
+        offset[1] += element.offsetLeft;
+
+        if (css(element, 'position') === 'fixed') {
+            const win = window(element);
+            offset[0] += win.pageYOffset;
+            offset[1] += win.pageXOffset;
+            return offset;
+        }
 
     } while ((element = element.offsetParent));
 
-    return top;
+    return offset;
 }
 
 function window(element) {

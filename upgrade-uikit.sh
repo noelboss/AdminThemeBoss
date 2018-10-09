@@ -9,7 +9,13 @@ cp -R uikit/custom uikit-new
 cp -R uikit/themes.json uikit-new
 
 # Rename old and uikit folder
-mv uikit .uikit-old
+mkdir bak
+
+d=$(date +%Y-%m-%d-%H%-M%-S);
+
+mkdir "./bak"
+mkdir "./bak/uikit-$d"
+
 mv uikit-new uikit
 
 # Go to new directory

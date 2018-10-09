@@ -1,83 +1,67 @@
-import ParallaxMixin from '../mixin/parallax';
+import Parallax from '../mixin/parallax';
+import {clamp, css, scrolledOver, query} from 'uikit-util';
 
-function plugin(UIkit) {
+export default {
 
-    if (plugin.installed) {
-        return;
-    }
+    mixins: [Parallax],
 
-    UIkit.use(ParallaxMixin);
+    props: {
+        target: String,
+        viewport: Number,
+        easing: Number,
+    },
 
-    const {mixin, util} = UIkit;
-    const {clamp, css, scrolledOver, query} = util;
+    data: {
+        target: false,
+        viewport: 1,
+        easing: 1,
+    },
 
-    UIkit.component('parallax', {
+    computed: {
 
-        mixins: [mixin.parallax],
+        target({target}, $el) {
+            return target && query(target, $el) || $el;
+        }
 
-        props: {
-            target: String,
-            viewport: Number,
-            easing: Number,
-        },
+    },
 
-        defaults: {
-            target: false,
-            viewport: 1,
-            easing: 1,
-        },
+    update: {
 
-        computed: {
+        read({percent, active}, {type}) {
 
-            target({target}, $el) {
-                return target && query(target, $el) || $el;
+            if (type !== 'scroll') {
+                percent = false;
             }
 
-        },
-
-        update: [
-
-            {
-
-                read({percent}) {
-                    return {
-                        prev: percent,
-                        percent: ease(scrolledOver(this.target) / (this.viewport || 1), this.easing)
-                    };
-                },
-
-                write({prev, percent, active}, {type}) {
-
-                    if (type !== 'scroll') {
-                        prev = false;
-                    }
-
-                    if (!active) {
-                        this.reset();
-                        return;
-                    }
-
-                    if (prev !== percent) {
-                        css(this.$el, this.getCss(percent));
-                    }
-
-                },
-
-                events: ['scroll', 'load', 'resize']
+            if (!active) {
+                return;
             }
 
-        ]
+            const prev = percent;
+            percent = ease(scrolledOver(this.target) / (this.viewport || 1), this.easing);
 
-    });
+            return {
+                percent,
+                style: prev !== percent ? this.getCss(percent) : false
+            };
+        },
 
-    function ease(percent, easing) {
-        return clamp(percent * (1 - (easing - easing * percent)));
+        write({style, active}) {
+
+            if (!active) {
+                this.reset();
+                return;
+            }
+
+            style && css(this.$el, style);
+
+        },
+
+        events: ['scroll', 'load', 'resize']
     }
 
-}
+};
 
-if (!BUNDLED && typeof window !== 'undefined' && window.UIkit) {
-    window.UIkit.use(plugin);
+function ease(percent, easing) {
+    return clamp(percent * (1 - (easing - easing * percent)));
 }
-
-export default plugin;
