@@ -6,7 +6,7 @@
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
  *
- * File created/changed: 2018-10-09T15:54:14+02:00
+ * File created/changed: 2018-10-09T17:00:29+02:00
  */
 
 namespace ProcessWire;
@@ -30,13 +30,13 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 
 	public function ___upgrade()
 	{
-		$this->message('unstall');
+		//$this->message('unstall');
 		$this->setSettings();
 	}
 
 	public function ___install()
 	{
-		$this->message('unstall');
+		//$this->message('unstall');
 		$this->cache->saveFor($this, 'cssBackup', $this->wire('modules')->getConfig('AdminThemeUikit', 'cssURL'));
 		$this->cache->saveFor($this, 'logoBackup', $this->wire('modules')->getConfig('AdminThemeUikit', 'logoURL'));
 		$this->setSettings();
@@ -44,7 +44,7 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 
 	public function ___uninstall()
 	{
-		$this->message('uninstalled!');
+		//$this->message('uninstalled!');
 		$this->resetSettings();
 		$this->cache->deleteFor($this);
 	}
@@ -155,11 +155,11 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 	 */
 	private function setSettings()
 	{
-		$this->message('Set css settings: '.$this->getVariant());
+		//$this->message('Set css settings: '.$this->getVariant());
 
 		$this->modules->saveConfig('AdminThemeUikit', 'cssURL', $this->getVariant());
 		if ($this->get('uselogo')) {
-			$this->message('Set logo settings');
+			//$this->message('Set logo settings');
 			$this->modules->saveConfig('AdminThemeUikit', 'logoURL', $this->config->urls($this->className()).self::logo);
 		} else {
 			$conf['logoURL'] = $this->resetLogo();
@@ -175,7 +175,7 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 	 */
 	private function resetSettings()
 	{
-		$this->message('Restored old settings');
+		//$this->message('Restored old settings');
 
 		$this->modules->saveConfig('AdminThemeUikit', 'cssURL', $this->cache->getFor($this, 'cssBackup'));
 		$this->resetLogo();
@@ -190,7 +190,7 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 	 */
 	private function resetLogo()
 	{
-		$this->message('restored logo settings');
+		//$this->message('restored logo settings');
 		$this->modules->saveConfig('AdminThemeUikit', 'logoURL', $this->cache->getFor($this, 'logoBackup'));
 	}
 
