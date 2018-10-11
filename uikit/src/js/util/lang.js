@@ -214,7 +214,7 @@ export function sortBy(collection, prop) {
 }
 
 export function clamp(number, min = 0, max = 1) {
-    return Math.min(Math.max(toNumber(number) || 0, min), max);
+    return Math.min(Math.max(number, min), max);
 }
 
 export function noop() {}

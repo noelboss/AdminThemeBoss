@@ -11745,6 +11745,19 @@ table.AdminDataTable:not(.uk-table) .pw-table-sort-value {
   opacity: 0.4;
   font-weight: normal;
 }
+.pw-table-resizable td,
+.pw-table-resizable th {
+  border-left-style: solid;
+  border-left-color: #e5e5e5;
+  border-left-width: 1px;
+}
+.pw-table-resizable td:first-child,
+.pw-table-resizable th:first-child {
+  border-left: none;
+}
+.pw-table-resizable .tablesorter-resizable-handle {
+  margin-left: 37px;
+}
 .uk-tab > li.uk-active {
   background: #fff;
 }
@@ -11766,6 +11779,40 @@ table.AdminDataTable:not(.uk-table) .pw-table-sort-value {
 b,
 b b {
   font-weight: bold;
+}
+.uk-form-small:not(textarea):not([multiple]) {
+  height: 30px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.uk-form-large:not(textarea):not([multiple]) {
+  height: 55px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.InputfieldFormSmallInputs input:not([type=checkbox]):not([type=radio]):not([type=hidden]):not([type=button]):not([type=submit]):not([type=range]):not(.uk-form-large):not(.uk-form-medium),
+.InputfieldFormSmallInputs select:not([multiple]):not(.uk-form-large):not(.uk-form-medium) {
+  font-size: 0.875rem;
+  height: 30px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.InputfieldFormSmallInputs textarea:not(.uk-form-large):not(.uk-form-medium) {
+  font-size: 0.875rem;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.InputfieldFormLargeInputs input:not([type=checkbox]):not([type=radio]):not([type=hidden]):not([type=button]):not([type=submit]):not([type=range]):not(.uk-form-small):not(.uk-form-medium),
+.InputfieldFormLargeInputs select:not([multiple]):not(.uk-form-small):not(.uk-form-medium) {
+  font-size: 1.25rem;
+  height: 55px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.InputfieldFormLargeInputs textarea:not(.uk-form-small):not(.uk-form-medium) {
+  font-size: 1.25rem;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 /* Layout helpers
 ----------------------------------*/
@@ -12354,7 +12401,7 @@ button.ui-button::-moz-focus-inner {
   height: 100%;
 }
 .ui-progressbar .ui-progressbar-overlay {
-  background: url("../../custom/pw/images/animated-overlay.gif");
+  background: url("../../../AdminThemeUikit/pw/images/animated-overlay.gif");
   height: 100%;
   filter: alpha(opacity=25);
   opacity: 0.25;
@@ -12534,7 +12581,7 @@ body .ui-tooltip {
 ----------------------------------*/
 .ui-widget-content {
   border: 1px solid #aaaaaa;
-  background: #ffffff url(../../custom/pw/images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
+  background: #ffffff url(../../../AdminThemeUikit/pw/images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
   color: #222222;
 }
 .ui-widget-content a {
@@ -12542,7 +12589,7 @@ body .ui-tooltip {
 }
 .ui-widget-header {
   border: 1px solid #aaaaaa;
-  background: #cccccc url(../../custom/pw/images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
+  background: #cccccc url(../../../AdminThemeUikit/pw/images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
   color: #222222;
   font-weight: bold;
 }
@@ -12555,7 +12602,7 @@ body .ui-tooltip {
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
   border: 1px solid #d3d3d3;
-  background: #e6e6e6 url(../../custom/pw/images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
+  background: #e6e6e6 url(../../../AdminThemeUikit/pw/images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
   font-weight: normal;
   color: #555555;
 }
@@ -12572,7 +12619,7 @@ body .ui-tooltip {
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
   border: 1px solid #999999;
-  background: #dadada url(../../custom/pw/images/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x;
+  background: #dadada url(../../../AdminThemeUikit/pw/images/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x;
   font-weight: normal;
   color: #212121;
 }
@@ -12587,7 +12634,7 @@ body .ui-tooltip {
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
   border: 1px solid #aaaaaa;
-  background: #ffffff url(../../custom/pw/images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
+  background: #ffffff url(../../../AdminThemeUikit/pw/images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
   font-weight: normal;
   color: #212121;
 }
@@ -12602,7 +12649,7 @@ body .ui-tooltip {
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
-  background: #fbf9ee url(../../custom/pw/images/ui-bg_glass_55_fbf9ee_1x400.png) 50% 50% repeat-x;
+  background: #fbf9ee url(../../../AdminThemeUikit/pw/images/ui-bg_glass_55_fbf9ee_1x400.png) 50% 50% repeat-x;
   color: #363636;
 }
 .ui-state-highlight:not(:input),
@@ -12623,7 +12670,7 @@ body .ui-tooltip {
 .ui-state-error,
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
-  background: #fef1ec url(../../custom/pw/images/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x;
+  background: #fef1ec url(../../../AdminThemeUikit/pw/images/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x;
   color: #cd0a0a;
 }
 .ui-state-error:not(:input),
@@ -12678,27 +12725,27 @@ body .ui-tooltip {
 }
 .ui-icon,
 .ui-widget-content .ui-icon {
-  background-image: url(../../custom/pw/images/ui-icons_222222_256x240.png);
+  background-image: url(../../../AdminThemeUikit/pw/images/ui-icons_222222_256x240.png);
 }
 .ui-widget-header .ui-icon {
-  background-image: url(../../custom/pw/images/ui-icons_222222_256x240.png);
+  background-image: url(../../../AdminThemeUikit/pw/images/ui-icons_222222_256x240.png);
 }
 .ui-state-default .ui-icon {
-  background-image: url(../../custom/pw/images/ui-icons_888888_256x240.png);
+  background-image: url(../../../AdminThemeUikit/pw/images/ui-icons_888888_256x240.png);
 }
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon {
-  background-image: url(../../custom/pw/images/ui-icons_454545_256x240.png);
+  background-image: url(../../../AdminThemeUikit/pw/images/ui-icons_454545_256x240.png);
 }
 .ui-state-active .ui-icon {
-  background-image: url(../../custom/pw/images/ui-icons_454545_256x240.png);
+  background-image: url(../../../AdminThemeUikit/pw/images/ui-icons_454545_256x240.png);
 }
 .ui-state-highlight .ui-icon {
-  background-image: url(../../custom/pw/images/ui-icons_2e83ff_256x240.png);
+  background-image: url(../../../AdminThemeUikit/pw/images/ui-icons_2e83ff_256x240.png);
 }
 .ui-state-error .ui-icon,
 .ui-state-error-text .ui-icon {
-  background-image: url(../../custom/pw/images/ui-icons_cd0a0a_256x240.png);
+  background-image: url(../../../AdminThemeUikit/pw/images/ui-icons_cd0a0a_256x240.png);
 }
 /* positioning */
 .ui-icon-blank {
@@ -13288,7 +13335,7 @@ body .ui-tooltip {
 .ui-state-hover .ui-icon,
 .ui-state-highlight .ui-icon,
 .ui-state-error .ui-icon {
-  background-image: url(../../custom/pw/images/ui-icons_ffffff_256x240.png);
+  background-image: url(../../../AdminThemeUikit/pw/images/ui-icons_ffffff_256x240.png);
 }
 /****************************************************************
  * asmSelect and related
@@ -13540,10 +13587,10 @@ button.ui-button.pw-button-dropdown-toggle {
   width: 17px;
   height: 21px;
   background-color: transparent;
-  background: url(../../custom/pw/images/slider_handles.png) 0 0 no-repeat;
+  background: url(../../../AdminThemeUikit/pw/images/slider_handles.png) 0 0 no-repeat;
 }
 body.hidpi-device .ui-slider .ui-slider-handle {
-  background: url(../../custom/pw/images/slider_handles2x.png) 0 0 no-repeat;
+  background: url(../../../AdminThemeUikit/pw/images/slider_handles2x.png) 0 0 no-repeat;
   background-size: 34px 21px;
 }
 /****************************************************************
@@ -13881,7 +13928,14 @@ a.tooltip:hover {
   font-size: 0.875rem;
 }
 .ui-menu .ui-menu-item .ui-menu.navJSON .ui-menu-item:not(.add):not(.highlight) a {
-  padding: 0.5em 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.ui-menu .ui-menu-item .ui-menu.navJSON .ui-menu-item:not(.add):not(.highlight):first-child {
+  padding-top: 0.5em;
+}
+.ui-menu .ui-menu-item .ui-menu.navJSON .ui-menu-item:not(.add):not(.highlight):last-child {
+  padding-bottom: 0.5em;
 }
 .ui-menu .ui-menu-item .ui-menu.navJSON .ui-menu-item.add a,
 .ui-menu .ui-menu-item .ui-menu.navJSON .ui-menu-item.highlight a {
@@ -13902,8 +13956,8 @@ a.tooltip:hover {
   padding-bottom: 0px;
 }
 .pw-dropdown-menu-shorter .ui-menu-item a {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .pw-dropdown-menu-shorter .uk-nav-divider {
   margin-top: 0px;
@@ -13946,10 +14000,7 @@ a.tooltip:hover {
   line-height: 1.4;
 }
 .PageList .ProcessListerTable tr.open {
-  background-color: #fafafb;
-}
-.PageList .ProcessListerTable tr.open > td:first-child {
-  padding-left: 10px !important;
+  background: linear-gradient(to right, transparent 0%, #fafafb 100%);
 }
 .PageList .ProcessListerTable tr.open > td:first-child a.actions_toggle {
   color: #010101;
@@ -14006,7 +14057,7 @@ a.tooltip:hover {
 }
 .PageList .PageListItem:hover {
   border-color: #eee;
-  background: #eee;
+  background: inherit;
 }
 .PageList .PageListItem.PageListItemOpen {
   border-color: #e5e5e5;
@@ -14272,6 +14323,17 @@ body:not(.pw-narrow-width) .PageList .PageListItem.PageListNoChildren > a.PageLi
 .Inputfield select {
   max-width: 100%;
 }
+.Inputfield .uk-select:not(.InputfieldSetWidth):not(.InputfieldMaxWidth) {
+  width: auto;
+}
+.Inputfield .uk-select:not([multiple]):not([size]) {
+  padding-right: 30px !important;
+}
+.Inputfield .InputfieldContent table td .uk-select:not(.InputfieldSetWidth),
+.Inputfield.InputfieldColumnWidth > .InputfieldContent .uk-select:not(.InputfieldSetWidth) {
+  width: 100%;
+  padding-right: initial;
+}
 .Inputfield textarea:not(.uk-textarea) {
   /* 1 */
   box-sizing: border-box;
@@ -14302,6 +14364,11 @@ body:not(.pw-narrow-width) .PageList .PageListItem.PageListNoChildren > a.PageLi
 }
 .Inputfield input[size] {
   width: auto;
+}
+@media screen and (max-width: 767px) {
+  body.AdminThemeUikitNoGrid .InputfieldColumnWidth {
+    width: 100% !important;
+  }
 }
 .Inputfields .InputfieldIsOffset:not(.InputfieldColumnWidth) {
   margin-top: 20px;
@@ -14406,8 +14473,14 @@ table .InputfieldIsOffset,
   background: #fff;
   padding: 1px 20px 23px 20px;
 }
+.InputfieldContent > .InputfieldError {
+  display: block;
+  padding: 5px 12px 5px 5px;
+}
 .InputfieldContent > textarea,
 .LanguageSupport > textarea,
+.InputfieldContent > select.InputfieldMaxWidth,
+.LanguageSupport > select.InputfieldMaxWidth,
 .InputfieldContent > input.InputfieldMaxWidth,
 .LanguageSupport > input.InputfieldMaxWidth {
   width: 100%;
@@ -14536,8 +14609,12 @@ table.AdminDataTable .Inputfields .Inputfield .InputfieldContent {
   padding: 0;
 }
 /*** Inputfield color support ********************************************************/
-.InputfieldIsPrimary:not(.InputfieldNoBorder):not(.InputfieldHideBorder) {
-  outline: 1px solid #d4cfcf !important;
+.InputfieldIsPrimary:not(.InputfieldNoBorder) {
+  /*
+    &:not(.InputfieldHideBorder) {
+      outline: @pw-inputfield-border-primary !important;
+    }
+    */
 }
 .InputfieldIsPrimary:not(.InputfieldNoBorder) > .InputfieldHeader,
 .InputfieldIsPrimary:not(.InputfieldNoBorder) > .InputfieldContent {
@@ -14554,8 +14631,12 @@ table.AdminDataTable .Inputfields .Inputfield .InputfieldContent {
 .InputfieldIsSecondary > .InputfieldContent {
   background: #ffffff;
 }
-.InputfieldIsSuccess:not(.InputfieldNoBorder):not(.InputfieldHideBorder) {
-  outline: 1px solid #b3dde9 !important;
+.InputfieldIsSuccess:not(.InputfieldNoBorder) {
+  /*
+    &:not(.InputfieldHideBorder) {
+      outline: @pw-inputfield-border-success !important;
+    }
+    */
 }
 .InputfieldIsSuccess:not(.InputfieldNoBorder) > .InputfieldHeader,
 .InputfieldIsSuccess:not(.InputfieldNoBorder) > .InputfieldContent {
@@ -14564,8 +14645,12 @@ table.AdminDataTable .Inputfields .Inputfield .InputfieldContent {
 .InputfieldIsSuccess > .InputfieldHeader {
   color: #8bccde;
 }
-.InputfieldIsHighlight:not(.InputfieldNoBorder):not(.InputfieldHideBorder) {
-  outline: 1px solid #dededf !important;
+.InputfieldIsHighlight:not(.InputfieldNoBorder) {
+  /*
+    &:not(.InputfieldHideBorder) {
+      outline: @pw-inputfield-border-highlight !important;
+    }
+    */
 }
 .InputfieldIsHighlight:not(.InputfieldNoBorder) > .InputfieldHeader,
 .InputfieldIsHighlight:not(.InputfieldNoBorder) > .InputfieldContent {
@@ -14574,8 +14659,12 @@ table.AdminDataTable .Inputfields .Inputfield .InputfieldContent {
 .InputfieldIsHighlight > .InputfieldHeader {
   color: inherit;
 }
-.InputfieldIsWarning:not(.InputfieldNoBorder):not(.InputfieldHideBorder) {
-  outline: 1px solid #ffe091 !important;
+.InputfieldIsWarning:not(.InputfieldNoBorder) {
+  /*
+    &:not(.InputfieldHideBorder) {
+      outline: @pw-inputfield-border-warning !important;
+    }
+    */
 }
 .InputfieldIsWarning:not(.InputfieldNoBorder) > .InputfieldHeader,
 .InputfieldIsWarning:not(.InputfieldNoBorder) > .InputfieldContent {
@@ -14584,10 +14673,14 @@ table.AdminDataTable .Inputfields .Inputfield .InputfieldContent {
 .InputfieldIsWarning > .InputfieldHeader {
   color: #000;
 }
-.InputfieldStateError:not(.InputfieldNoBorder):not(.InputfieldHideBorder),
-.InputfieldIsDanger:not(.InputfieldNoBorder):not(.InputfieldHideBorder),
-.InputfieldIsError:not(.InputfieldNoBorder):not(.InputfieldHideBorder) {
-  outline: 1px solid #ffdddd !important;
+.InputfieldStateError:not(.InputfieldNoBorder),
+.InputfieldIsDanger:not(.InputfieldNoBorder),
+.InputfieldIsError:not(.InputfieldNoBorder) {
+  /*
+    &:not(.InputfieldHideBorder) {
+     outline: @pw-inputfield-border-danger !important;
+    }
+    */
 }
 .InputfieldStateError:not(.InputfieldNoBorder) > .InputfieldHeader,
 .InputfieldIsDanger:not(.InputfieldNoBorder) > .InputfieldHeader,
@@ -15082,6 +15175,9 @@ body .ProDraftsNotice {
 .ProcessField .Inputfield_columnWidth .InputfieldColumnWidthSlider {
   top: 14px;
 }
+.ProcessPageEdit.modal form#ProcessPageEdit.ProcessPageEditSingleField {
+  margin-top: -20px;
+}
 html,
 body {
   background: #fff;
@@ -15319,9 +15415,6 @@ body.pw-init .pw-button-dropdown {
   display: none;
 }
 body.pw-init .WireTab {
-  display: none;
-}
-body.pw-init #pw-masthead > * {
   display: none;
 }
 ul.uk-navbar-nav ul {
@@ -15727,12 +15820,16 @@ ul.uk-navbar-nav ul {
   border-radius: 2em;
 }
 #pw-masthead .pw-search-form .pw-search-input:focus {
-  color: #00000 0;
+  color: #333335;
   background: #eeeeee;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 2, 0.2);
 }
 #pw-masthead .pw-search-form .uk-form-icon {
   color: #333333;
+}
+.ui-autocomplete a:hover .uk-text-muted {
+  color: inherit !important;
+  opacity: 0.9;
 }
 /* Dropdowns ------------------------------------------------------------*/
 body > ul.ui-autocomplete,
@@ -16313,9 +16410,9 @@ html.highlightRows .AdminDataTable.AdminDataList tr:hover td,
 html.highlightRows .PageListItem:hover {
   background: rgba(250, 250, 250, 0.95);
 }
-.uk-table-divider > :first-child > tr:not(:first-child) :hover,
-.uk-table-divider > :not(:first-child) > tr :hover,
-.uk-table-divider > tr:not(:first-child) :hover {
+.uk-table-divider > :first-child > tr:not(:first-child):hover,
+.uk-table-divider > :not(:first-child) > tr:hover,
+.uk-table-divider > tr:not(:first-child):hover {
   background: rgba(250, 250, 250, 0.95);
 }
 #main #checkAllCheckboxes {

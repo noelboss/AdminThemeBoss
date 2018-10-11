@@ -6,7 +6,7 @@
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
  *
- * File created/changed: 2018-10-09T17:01:34+02:00
+ * File created/changed: 2018-10-11T14:25:54+02:00
  */
 
 namespace ProcessWire;
@@ -70,7 +70,7 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 
 		$this->addHookAfter('Modules::saveConfig', function (HookEvent $event) {
 			$class = $event->arguments(0);
-			bd($event->arguments(1));
+			// bd($event->arguments(1));
 
 			if ($class == 'AdminThemeBoss') {
 				foreach ($event->arguments(1) as $key => $value) {
@@ -201,20 +201,16 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 		$variant = $this->get('variant');
 
 		$version = $moduleInfo['version'];
-		$url = $this->wire('config')->urls->AdminThemeBoss;
+		$url = $this->config->urls->AdminThemeBoss;
 
-		switch ($variant) {
-			case 'pw':
-			case 'black':
-			case 'vibrant':
-				$variant = $url.'uikit/dist/css/uikit.'.$variant.'.min.css?'.$version;
-				break;
+		// default
+		$file = $url.'uikit/dist/css/uikit.pw.min.css?'.$version;
 
-			default:
-				$variant = $url.'uikit/dist/css/uikit.pw.min.css?'.$version;
-				break;
+		$exists = is_file($this->config->paths->AdminThemeBoss.'uikit/dist/css/uikit.'.$variant.'.min.css');
+		if ($exists) {
+			$file = $url.'uikit/dist/css/uikit.'.$variant.'.min.css?'.$version;
 		}
 
-		return $variant;
+		return $file;
 	}
 }

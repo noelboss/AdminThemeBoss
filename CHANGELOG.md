@@ -2,6 +2,17 @@
 
 © 2018 noelboss.com
 
+## Version 0.4.0
+
+* Closer integration with AdminThemeUikit: Based on its uikit and extending custom code
+* Added new Pink Theme Variant:
+* Bugfixes
+
+## Version 0.3.0
+
+* Introdoced a new way to inject CSS and Logo using configurations from AdminThemeUikit
+* Upgraded uikit to 3.0.0-rc.17
+
 ## Version 0.2.6
 
 * Fixed issues with descriptions and notes

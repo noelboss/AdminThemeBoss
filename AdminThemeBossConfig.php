@@ -6,7 +6,7 @@
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
  *
- * File created/changed: 2018-10-09T15:35:44+02:00
+ * File created/changed: 2018-10-11T14:17:03+02:00
  */
 
 namespace ProcessWire;
@@ -48,17 +48,8 @@ class AdminThemeBossConfig extends ModuleConfig
 							'pw' => $this->_('ProcessWire Blue'),
 							'vibrant' => $this->_('Vibrant Blue'),
 							'black' => $this->_('Dark Black'),
+							'pink' => $this->_('Happy Pink'),
 						],
-					],
-					[
-						'name' => 'extendedbreadcrumb',
-						'type' => 'checkbox',
-						'icon' => 'link',
-						'label' => $this->_('Extended Breadcrumb'),
-						'checkboxLabel' => $this->_('Yes, use extended breadcrumb'),
-						'description' => $this->_('If set, the default breadcrumb will be extended with edit links'),
-						'notes' => $this->_('Only applies if Module BreadcrumbDropdowns is not installed.'),
-						'value' => $this->get('extendedbreadcrumb'),
 					],
 				],
 			],
@@ -70,6 +61,16 @@ class AdminThemeBossConfig extends ModuleConfig
 				'collapsed' => Inputfield::collapsedYes,
 				//'showIf' => 'enablemodule=1',
 				'children' => [
+					[
+						'name' => 'extendedbreadcrumb',
+						'type' => 'checkbox',
+						'icon' => 'link',
+						'label' => $this->_('Extended Breadcrumb'),
+						'checkboxLabel' => $this->_('Yes, use extended breadcrumb'),
+						'description' => $this->_('If set, the default breadcrumb will be extended with edit links'),
+						'notes' => $this->_('Only applies if Module BreadcrumbDropdowns is not installed.'),
+						'value' => $this->get('extendedbreadcrumb'),
+					],
 					[
 						'name' => 'allusers',
 						'type' => 'checkbox',

@@ -13,11 +13,9 @@
 - Fix Modal not hiding upon being destroyed
 - Fix using node as offset in position mixin
 - Fix using Height Match component on elements with different offsetParents
-- Fix rounding error in Height Match component
 - Fix `scope` command for already scoped css, comments are removed from generated css files
 - Fix Sticky placeholder height on resize
 - Fix starting/stopping of autoplay in Lightbox
-- Fix initially wrong position of background image in Parallax component
 
 ## 3.0.0 rc 17 (September 27, 2018)
 
