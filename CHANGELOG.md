@@ -2,6 +2,11 @@
 
 © 2018 noelboss.com
 
+## Version 0.4.1
+
+* Fix for subfolder installations: AdminThemeUikit requires relative paths
+
+
 ## Version 0.4.0
 
 * Closer integration with AdminThemeUikit: Based on its uikit and extending custom code

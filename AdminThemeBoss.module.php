@@ -6,7 +6,7 @@
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
  *
- * File created/changed: 2018-10-11T14:25:54+02:00
+ * File created/changed: 2018-10-11T21:31:50+02:00
  */
 
 namespace ProcessWire;
@@ -37,8 +37,8 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 	public function ___install()
 	{
 		//$this->message('unstall');
-		$this->cache->saveFor($this, 'cssBackup', $this->wire('modules')->getConfig('AdminThemeUikit', 'cssURL'));
-		$this->cache->saveFor($this, 'logoBackup', $this->wire('modules')->getConfig('AdminThemeUikit', 'logoURL'));
+		$this->cache->saveFor($this, 'cssBackup', $this->modules->getConfig('AdminThemeUikit', 'cssURL'));
+		$this->cache->saveFor($this, 'logoBackup', $this->modules->getConfig('AdminThemeUikit', 'logoURL'));
 		$this->setSettings();
 	}
 
@@ -70,7 +70,7 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 
 		$this->addHookAfter('Modules::saveConfig', function (HookEvent $event) {
 			$class = $event->arguments(0);
-			// bd($event->arguments(1));
+			//bd($event->arguments(1));
 
 			if ($class == 'AdminThemeBoss') {
 				foreach ($event->arguments(1) as $key => $value) {
@@ -156,11 +156,13 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 	private function setSettings()
 	{
 		//$this->message('Set css settings: '.$this->getVariant());
-
 		$this->modules->saveConfig('AdminThemeUikit', 'cssURL', $this->getVariant());
+
 		if ($this->get('uselogo')) {
 			//$this->message('Set logo settings');
-			$this->modules->saveConfig('AdminThemeUikit', 'logoURL', $this->config->urls($this->className()).self::logo);
+			$url = '/site/modules/AdminThemeBoss/';
+
+			$this->modules->saveConfig('AdminThemeUikit', 'logoURL', $url.self::logo);
 		} else {
 			$conf['logoURL'] = $this->resetLogo();
 		}
@@ -201,7 +203,7 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 		$variant = $this->get('variant');
 
 		$version = $moduleInfo['version'];
-		$url = $this->config->urls->AdminThemeBoss;
+		$url = '/site/modules/AdminThemeBoss/';
 
 		// default
 		$file = $url.'uikit/dist/css/uikit.pw.min.css?'.$version;
