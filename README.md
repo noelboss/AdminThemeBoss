@@ -61,6 +61,9 @@ This is how you modify the themes less files on your own: Run “yarn watch“ t
 	# Change into Uikit Folder:
 	$ cd AdminThemeBoss/uikit
 
+	# install node_modules:
+	$ yarn
+
 	# recompile on change
 	$ yarn watch
 
