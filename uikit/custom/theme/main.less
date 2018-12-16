@@ -148,7 +148,7 @@
 // Global colors
 @global-color: @theme-text-color;
 
-@global-primary-background: #fff;
+@global-primary-background: darken(@theme-muted-background, 2%);
 @global-inverse-color: #000;
 
 @global-secondary-background: @theme-secondary-background;
@@ -483,55 +483,56 @@ sans-serif;
 	}
 
 } // Masthead and dropdowns ------------------------------------------
-#pw-masthead-mobile {
-	background-color: @theme-masthead-background;
-}
-
-#pw-masthead {
-	//box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
-	background-color: @theme-masthead-background;
-	.uk-navbar-nav {
-		>li {
-			position: relative;
-			&,
-			>a {
-				color: @theme-masthead-link-color;
-				i {
-					color: @theme-masthead-icon-color;
+.AdminThemeUikit {
+	#pw-masthead-mobile {
+		background-color: @theme-masthead-background;
+	}
+	#pw-masthead {
+		//box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+		background-color: @theme-masthead-background;
+		.uk-navbar-nav {
+			>li {
+				position: relative;
+				&,
+				>a {
+					color: @theme-masthead-link-color;
+					i {
+						color: @theme-masthead-icon-color;
+					}
 				}
-			}
-			&.uk-active,
-			&.uk-active>a {
-				color: @theme-masthead-link-current-color;
-			}
-			&>a.hover,
-			&>a:hover {
-				color: @theme-masthead-link-hover-color;
-				i {
+				&.uk-active,
+				&.uk-active>a {
+					color: @theme-masthead-link-current-color;
+				}
+				&>a.hover,
+				&>a:hover {
 					color: @theme-masthead-link-hover-color;
+					i {
+						color: @theme-masthead-link-hover-color;
+					}
+				}
+
+			}
+		}
+
+		.pw-search-form {
+			.pw-search-input {
+				color: @theme-masthead-search-text-color;
+				background: @theme-masthead-search-background;
+				border-color: @theme-masthead-search-border-color;
+				border-radius: 2em;
+				&:focus {
+					color: @theme-masthead-search-focus-text-color;
+					background: @theme-masthead-search-focus-background;
+					box-shadow: @pw-box-shadow;
 				}
 			}
-
-		}
-	}
-
-	.pw-search-form {
-		.pw-search-input {
-			color: @theme-masthead-search-text-color;
-			background: @theme-masthead-search-background;
-			border-color: @theme-masthead-search-border-color;
-			border-radius: 2em;
-			&:focus {
-				color: @theme-masthead-search-focus-text-color;
-				background: @theme-masthead-search-focus-background;
-				box-shadow: @pw-box-shadow;
+			.uk-form-icon {
+				color: @theme-masthead-search-icon-color;
 			}
 		}
-		.uk-form-icon {
-			color: @theme-masthead-search-icon-color;
-		}
-	}
 
+	}
 } // fix small text in dropdowns (search)
 .ui-autocomplete {
 	a:hover {
@@ -618,13 +619,15 @@ ul.ui-menu {
 }
 
 // header add transparency (for sticky)
-#pw-mastheads>header {
+.AdminThemeUikit #pw-mastheads>header {
 	-webkit-backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
 	backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
 
 	background: rgba(255, 255, 255, 0.95);
 	box-shadow: 0 10px 20px rgba(255, 255, 255, 1);
-} // dropdowns inside content and buttons, remove triangle
+}
+
+// dropdowns inside content and buttons, remove triangle
 body>ul.ui-autocomplete,
 #_ProcessPageEditViewDropdown,
 .pw-button-dropdown {
@@ -1048,58 +1051,117 @@ form.Inputfield {
 
 	/* login page form */
 	body.ProcessLogin {
+		position: relative;
+		top: 5vw;
+		width: 450px;
+		max-width: 90vw;
 
-		#main {
-			margin: 0 !important;
-		}
+		margin: 0 auto;
+		padding: 15px;
 
+		background: @global-muted-background;
+		box-shadow: inset 0px 0px 127px 0px rgba(180, 180, 185, 0.1),
+		0 0px 1px 0px rgba(250, 250, 255, 0.95),
+		0 10px 50px -30px @theme-primary-color-rgba;
+		border-radius: 10px;
+		border: 1px solid #eee;
 
 		@media (min-width: 1000px) {
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translateY(-50%) translateX(-50%);
-
-			width: 66vw;
-			max-width: 900px;
-			padding: 5vh 2vw;
-			box-shadow: @pw-box-shadow;
-
+			padding: 30px;
 
 		}
+
 		.pw-notices {
 			margin-bottom: 2em;
 		}
 
-		.Inputfields .Inputfield {
-			box-shadow: none !important;
-			label {
-				text-transform: uppercase;
-			}
-		}
+
 		#pw-masthead-mobile {
+			background-color: transparent;
 			margin-bottom: 2em;
 
 			.pw-logo {
 				max-height: 60px;
-				/*border-radius: 50%;
-				box-shadow: @pw-box-shadow;*/
 			}
+		}
+
+		>#main {
+			margin: 0 !important;
+			padding: 0 !important;
+			#ProcessLoginForm {
+				width: auto;
+
+				.Inputfields {
+					display: flex;
+
+				}
+				.Inputfield {
+					display: flex;
+					box-shadow: none !important;
+					background: transparent;
+					width: 100%;
+					float: none;
+
+					input {
+						border-radius: 4px;
+					}
+
+					>div,
+					>label {
+						text-transform: uppercase;
+						background: transparent;
+					}
+					label {
+						cursor: pointer;
+					}
+				}
+
+
+			}
+
 		}
 
 		#socialsLoginForm ul.Inputfields {
 			// 0auth login centered
-			margin-top: 3em;
-			padding-top: 2em;
-			border-top: @theme-inputfield-border;
+			margin-top: 1em;
+			padding-top: 1em;
 			justify-content: center;
 
+			.ui-button {
+				font-size: 1em;
+				padding: 0 1em;
+				line-height: 1.75em;
 
+				&.ui-state-default {
+					background-color: lighten(@theme-button-secondary-background, 25%);
+					box-shadow: none;
+				}
+				&.ui-state-hover {
+					background-color: reset;
+				}
+			}
+
+			.InputfieldButton,
+			.InputfieldSubmit {
+				display: block;
+			}
 		}
+
 		#pw-content-body {
+			// password links
 			>div {
 				display: inline-block;
-				margin: 0 1em;
+				margin: 0 0.75em;
+				padding-top: 0.75em;
+				a {
+					font-size: 0.9em;
+					text-transform: uppercase;
+					color: lighten(@theme-muted-text-color-alternate, 5%);
+				}
 			}
 		}
 	}
@@ -1199,9 +1261,11 @@ form.Inputfield {
 	}
 
 	/* checkbox switch toggle */
+	.LanguageSupport label.checkbox.detail,
 	.uk-form-controls-text label:only-of-type {
 		cursor: pointer;
 
+		input[type=checkbox],
 		input.uk-checkbox {
 			font-size: .7rem;
 			margin-top: 0;
@@ -1214,6 +1278,7 @@ form.Inputfield {
 			border-radius: 3em;
 			box-shadow: inset 5em 0 0 0 #DDD;
 			flex-shrink: 0;
+			vertical-align: bottom;
 
 			&:after {
 				content: "";

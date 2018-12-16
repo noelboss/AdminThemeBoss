@@ -4,9 +4,10 @@
 ### Features
 
 * Four unique color options: blue, vibrant, black & pink
-* Beautiful typografy using Roboto Condensed
+* Beautiful redesigned login screen
+* Modern typografy using Roboto Condensed
 * Extended breadcrumb with edit links
-* Extends AdminThemeUikit, you can continue using all AdminThemeUikit features
+* Extends the default AdminThemeUikit so you can continue using all current (and future) AdminThemeUikit features
 * Option to activate theme for all users
 
 
@@ -18,6 +19,7 @@
 
 ![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/pw.png "Default ProcessWire Blue")
 
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/pw-login.png "Default ProcessWire Blue Login")
 
 ### Dark Black
 
@@ -25,12 +27,14 @@
 
 ![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/black.png "Dark Black")
 
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/login.png "Dark Black Login")
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/black-login.png "Dark Black Login")
 
 
 ### Vibrant Blue
 
 ![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/vibrant.png "Vibrant Blue")
+
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/vibrant-login.png "Vibrant Blue Login")
 
 
 ### Happy Pink
@@ -66,7 +70,8 @@ Requires AdminThemeUikit installed and activated.
 
 ## Change Log
 
-See [CHANGELOG.md](CHANGELOG.md) file for full change log.
+See [CHANGELOG.md](https://github.com/noelboss/AdminThemeBoss/blob/master/CHANGELOG.md) file for full change log.
+
 
 ## Modify yourself
 
@@ -93,6 +98,6 @@ If you wan't to add your own theme, modify “AdminThemeBoss/uikit/themes.json�
 
 ## License: MIT
 
-See included [LICENSE](LICENSE) file for full license text.
+See included [LICENSE](https://github.com/noelboss/AdminThemeBoss/blob/master/LICENSE) file for full license text.
 
 © [noelboss.com](https://www.noelboss.com) | [ProcessWire Modules](https://modules.processwire.com/authors/noelboss/)

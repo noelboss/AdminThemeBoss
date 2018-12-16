@@ -1,0 +1,66 @@
+.pw {
+
+	/* login page form */
+	body.ProcessLogin {
+
+		background: #222;
+
+		box-shadow: inset 0px 0px 127px 0px rgba(0, 0, 5, 0.5),
+		0 0px 1px 0px rgba(0, 0, 0, 0.95),
+		0 10px 50px -30px @theme-primary-color-rgba;
+
+		#pw-masthead-mobile .pw-logo {
+			filter: invert(100%);
+		}
+		#main {
+			input {
+				border-radius: 4px;
+				background-color: rgba(40, 40, 40, 0.3);
+				color: #eee;
+				border-color: #000;
+				&:hover,
+				&:focus {
+					background-color: rgba(60, 60, 60, 0.4);
+					color: #fff;
+				}
+				&:focus {
+					border-color: #999;
+				}
+			}
+			label {
+				color: lighten(@theme-muted-text-color-alternate, 20%);
+			}
+			button {
+				background-color: lighten(@theme-muted-text-color-alternate, 30%);
+				color: #000;
+				&:hover {
+					color: lighten(@theme-muted-text-color-alternate, 30%);
+					background-color: #000;
+				}
+			}
+		}
+		#socialsLoginForm ul.Inputfields {
+
+			.ui-button {
+				&.ui-state-default {
+					background-color: #151515;
+					box-shadow: none;
+					color: lighten(@theme-muted-text-color-alternate, 20%);
+				}
+			}
+		}
+
+		#pw-content-body {
+			// password links
+			>div {
+				a {
+					color: lighten(@theme-muted-text-color-alternate, 15%);
+					&:hover {
+						color: #fff;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}

@@ -496,7 +496,7 @@ a.uk-link-heading:not(:hover),
 }
 a.uk-link-heading:hover,
 .uk-link-heading a:hover {
-  color: #fff;
+  color: #f4f4f6;
   text-decoration: none;
 }
 /* Reset
@@ -1438,7 +1438,7 @@ button.uk-icon:not(:disabled) {
   outline: none;
   background-color: #fff;
   color: #575555;
-  border-color: #fff;
+  border-color: #f4f4f6;
 }
 /* Disabled */
 .uk-input:disabled,
@@ -1616,7 +1616,7 @@ select.uk-form-width-xsmall {
 .uk-radio:focus,
 .uk-checkbox:focus {
   outline: none;
-  border-color: #fff;
+  border-color: #f4f4f6;
 }
 /*
  * Checked
@@ -1913,20 +1913,20 @@ select.uk-form-width-xsmall {
  * Primary
  */
 .uk-button-primary {
-  background-color: #fff;
+  background-color: #f4f4f6;
   color: #000;
   border: 1px solid transparent;
 }
 /* Hover + Focus */
 .uk-button-primary:hover,
 .uk-button-primary:focus {
-  background-color: #f2f2f2;
+  background-color: #e6e6eb;
   color: #000;
 }
 /* OnClick + Active */
 .uk-button-primary:active,
 .uk-button-primary.uk-active {
-  background-color: #e6e6e6;
+  background-color: #d8d8e0;
   color: #000;
 }
 /*
@@ -2193,7 +2193,7 @@ select.uk-form-width-xsmall {
  * Primary
  */
 .uk-section-primary {
-  background: #fff;
+  background: #f4f4f6;
 }
 /*
  * Secondary
@@ -2692,7 +2692,7 @@ select.uk-form-width-xsmall {
  * Primary
  */
 .uk-tile-primary {
-  background: #fff;
+  background: #f4f4f6;
 }
 /*
  * Secondary
@@ -2816,7 +2816,7 @@ select.uk-form-width-xsmall {
  * Primary
  */
 .uk-card-primary {
-  background: #fff;
+  background: #f4f4f6;
   color: #000;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
@@ -2824,7 +2824,7 @@ select.uk-form-width-xsmall {
   color: #000;
 }
 .uk-card-primary.uk-card-hover:hover {
-  background-color: #fff;
+  background-color: #f4f4f6;
   box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
 }
 /*
@@ -3161,7 +3161,7 @@ select.uk-form-width-xsmall {
   border-radius: 500px;
   vertical-align: middle;
   /* 1 */
-  background: #fff;
+  background: #f4f4f6;
   color: #000;
   font-size: 0.875rem;
   /* 2 */
@@ -3184,7 +3184,7 @@ select.uk-form-width-xsmall {
 .uk-label {
   display: inline-block;
   padding: 0 10px;
-  background: #fff;
+  background: #f4f4f6;
   line-height: 1.5;
   font-size: 0.875rem;
   color: #000;
@@ -4235,7 +4235,7 @@ ul.uk-nav-sub {
 }
 /* Active */
 .uk-subnav-pill > .uk-active > a {
-  background-color: #fff;
+  background-color: #f4f4f6;
   color: #000;
 }
 /* Disabled
@@ -4346,7 +4346,7 @@ ul.uk-nav-sub {
 .uk-pagination > * > :focus {
   color: #000;
   text-decoration: none;
-  background: #fff;
+  background: #f4f4f6;
   color: #575555;
   background: #ececf0;
   border: 1px solid #eeeeef;
@@ -4357,7 +4357,7 @@ ul.uk-nav-sub {
 }
 .uk-pagination > .uk-active > *,
 .uk-pagination > .uk-active > * a {
-  background: #fff;
+  background: #f4f4f6;
   color: #000;
 }
 .uk-pagination > .uk-active > *,
@@ -5829,7 +5829,7 @@ ul.uk-nav-sub {
  * Primary
  */
 .uk-notification-message-primary {
-  color: #fff;
+  color: #f4f4f6;
 }
 /*
  * Success
@@ -5970,14 +5970,14 @@ ul.uk-nav-sub {
  * 1. Remove right border in IE11 and Edge
  */
 .uk-progress::-webkit-progress-value {
-  background-color: #fff;
+  background-color: #f4f4f6;
   transition: width 0.6s ease;
 }
 .uk-progress::-moz-progress-bar {
-  background-color: #fff;
+  background-color: #f4f4f6;
 }
 .uk-progress::-ms-fill {
-  background-color: #fff;
+  background-color: #f4f4f6;
   transition: width 0.6s ease;
   /* 1 */
   border: 0;
@@ -7016,7 +7016,7 @@ ul.uk-nav-sub {
   color: #777 !important;
 }
 .uk-text-primary {
-  color: #fff !important;
+  color: #f4f4f6 !important;
 }
 .uk-text-success {
   color: #8bccde !important;
@@ -7042,11 +7042,11 @@ ul.uk-nav-sub {
   /* 2 */
   display: inline-block;
   /* 3 */
-  color: #fff !important;
+  color: #f4f4f6 !important;
 }
 @supports (-webkit-background-clip: text) {
   .uk-text-background {
-    background-color: #fff;
+    background-color: #f4f4f6;
   }
 }
 /* Alignment modifiers
@@ -7345,7 +7345,7 @@ iframe.uk-cover {
   background-color: #fafafb;
 }
 .uk-background-primary {
-  background-color: #fff;
+  background-color: #f4f4f6;
 }
 .uk-background-secondary {
   background-color: rgba(250, 250, 250, 0.9);
@@ -13348,8 +13348,8 @@ body .ui-tooltip {
 }
 .pw-content li.ui-state-default,
 .pw-content .ui-widget-content li.ui-state-default {
-  background: #fff;
-  border-color: #fff;
+  background: #f4f4f6;
+  border-color: #f4f4f6;
   color: #000;
 }
 .pw-content li.ui-state-default a,
@@ -13372,7 +13372,7 @@ body .ui-tooltip {
  */
 .ui-accordion.ui-widget .ui-accordion-header {
   padding-left: 1.5em;
-  background: #fff;
+  background: #f4f4f6;
   border: none;
   border-radius: 0;
 }
@@ -13496,7 +13496,7 @@ body .ui-tooltip {
   text-transform: uppercase;
   transition: 0.1s ease-in-out;
   transition-property: color, background-color, border-color;
-  background-color: #fff;
+  background-color: #f4f4f6;
   color: #000;
   border: 1px solid transparent;
   background: #3584EA;
@@ -13564,7 +13564,7 @@ button.ui-button.pw-button-dropdown-toggle {
 .ui-slider .ui-slider-range,
 .ui-widget .ui-slider .ui-slider-range,
 .ui-widget-content .ui-slider .ui-slider-range {
-  background: #fff;
+  background: #f4f4f6;
   padding: 0;
 }
 .ui-slider,
@@ -13624,7 +13624,7 @@ a.tooltip:hover {
   border-radius: 0;
 }
 .ui-progressbar .ui-progressbar-value {
-  background: #fff;
+  background: #f4f4f6;
   color: #000;
   margin: 0;
   border: none;
@@ -13771,8 +13771,8 @@ a.tooltip:hover {
   margin: 0 5px 0 0;
 }
 .ui-datepicker button.ui-datepicker-close {
-  background: #fff;
-  border-color: #fff;
+  background: #f4f4f6;
+  border-color: #f4f4f6;
   color: #000;
   font-weight: normal;
   transition: all 150ms ease-in;
@@ -14920,7 +14920,7 @@ a.InputfieldButtonLink:hover {
 }
 .InputfieldFileList > li > .InputfieldItemHeader {
   border: none;
-  background: #fff;
+  background: #f4f4f6;
   color: #000;
 }
 .InputfieldFileList > li > .InputfieldItemHeader a {
@@ -14989,7 +14989,7 @@ a.InputfieldButtonLink:hover {
 }
 .InputfieldFileUpload .InputMask.ui-button:hover,
 .InputfieldImageUpload .InputMask.ui-button:hover {
-  background-color: #fff;
+  background-color: #f4f4f6;
   color: #000;
   border: 1px solid transparent;
 }
@@ -15017,10 +15017,10 @@ a.InputfieldButtonLink:hover {
 }
 .Inputfields .InputfieldRepeater .InputfieldContent .InputfieldRepeaterItem > .InputfieldHeader {
   border: none;
-  background: #fff;
+  background: #f4f4f6;
   color: #000;
   outline: 1px solid #eeeeef;
-  outline-color: #fff;
+  outline-color: #f4f4f6;
 }
 .Inputfields .InputfieldRepeater .InputfieldContent .InputfieldRepeaterItem > .InputfieldHeader a {
   color: #000;
@@ -15075,7 +15075,7 @@ a.InputfieldButtonLink:hover {
   margin-left: 10px;
 }
 .pw-notices .uk-alert-primary .notice-remove {
-  color: #fff;
+  color: #f4f4f6;
 }
 .pw-notices .uk-alert-warning .notice-remove {
   color: #FFD15E;
@@ -15153,7 +15153,7 @@ body .ProDraftsNotice {
   padding: 8px 9px;
 }
 .ProcessPageEditImageSelect #selected_image_settings #action_icons span:hover {
-  background: #fff;
+  background: #f4f4f6;
 }
 .ProcessPageEditImageSelect #ProcessPageEditImageSelect > form {
   margin-top: 1px;
@@ -15825,47 +15825,47 @@ ul.uk-navbar-nav ul {
   background: #333335;
   color: #fff;
 }
-#pw-masthead-mobile {
+.AdminThemeUikit #pw-masthead-mobile {
   background-color: #fff;
 }
-#pw-masthead {
+.AdminThemeUikit #pw-masthead {
   background-color: #fff;
 }
-#pw-masthead .uk-navbar-nav > li {
+.AdminThemeUikit #pw-masthead .uk-navbar-nav > li {
   position: relative;
 }
-#pw-masthead .uk-navbar-nav > li,
-#pw-masthead .uk-navbar-nav > li > a {
+.AdminThemeUikit #pw-masthead .uk-navbar-nav > li,
+.AdminThemeUikit #pw-masthead .uk-navbar-nav > li > a {
   color: #444444;
 }
-#pw-masthead .uk-navbar-nav > li i,
-#pw-masthead .uk-navbar-nav > li > a i {
+.AdminThemeUikit #pw-masthead .uk-navbar-nav > li i,
+.AdminThemeUikit #pw-masthead .uk-navbar-nav > li > a i {
   color: #000000;
 }
-#pw-masthead .uk-navbar-nav > li.uk-active,
-#pw-masthead .uk-navbar-nav > li.uk-active > a {
+.AdminThemeUikit #pw-masthead .uk-navbar-nav > li.uk-active,
+.AdminThemeUikit #pw-masthead .uk-navbar-nav > li.uk-active > a {
   color: #3584EA;
 }
-#pw-masthead .uk-navbar-nav > li > a.hover,
-#pw-masthead .uk-navbar-nav > li > a:hover {
+.AdminThemeUikit #pw-masthead .uk-navbar-nav > li > a.hover,
+.AdminThemeUikit #pw-masthead .uk-navbar-nav > li > a:hover {
   color: #222222;
 }
-#pw-masthead .uk-navbar-nav > li > a.hover i,
-#pw-masthead .uk-navbar-nav > li > a:hover i {
+.AdminThemeUikit #pw-masthead .uk-navbar-nav > li > a.hover i,
+.AdminThemeUikit #pw-masthead .uk-navbar-nav > li > a:hover i {
   color: #222222;
 }
-#pw-masthead .pw-search-form .pw-search-input {
+.AdminThemeUikit #pw-masthead .pw-search-form .pw-search-input {
   color: #000000;
   background: #ffffff;
   border-color: #808080;
   border-radius: 2em;
 }
-#pw-masthead .pw-search-form .pw-search-input:focus {
+.AdminThemeUikit #pw-masthead .pw-search-form .pw-search-input:focus {
   color: #333335;
   background: #eeeeee;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 2, 0.2);
 }
-#pw-masthead .pw-search-form .uk-form-icon {
+.AdminThemeUikit #pw-masthead .pw-search-form .uk-form-icon {
   color: #333333;
 }
 .ui-autocomplete a:hover .uk-text-muted {
@@ -15958,7 +15958,7 @@ ul.pw-dropdown-menu > li.ui-menu-item > ul.ui-menu,
 ul.ui-menu > li.ui-menu-item > ul.ui-menu {
   border: 0px solid #eee !important;
 }
-#pw-mastheads > header {
+.AdminThemeUikit #pw-mastheads > header {
   -webkit-backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
   backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
   background: rgba(255, 255, 255, 0.95);
@@ -16302,8 +16302,17 @@ form.Inputfield {
   border-color: #ccc #ddd #ddd #ddd;
   box-shadow: none;
 }
-.pw body.ProcessLogin #main {
-  margin: 0 !important;
+.pw body.ProcessLogin {
+  position: relative;
+  top: 5vw;
+  width: 450px;
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: 15px;
+  background: #fafafb;
+  box-shadow: inset 0px 0px 127px 0px rgba(180, 180, 185, 0.1), 0 0px 1px 0px rgba(250, 250, 255, 0.95), 0 10px 50px -30px rgba(53, 132, 234, 0.6);
+  border-radius: 10px;
+  border: 1px solid #eee;
 }
 @media (min-width: 1000px) {
   .pw body.ProcessLogin {
@@ -16311,38 +16320,77 @@ form.Inputfield {
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
-    width: 66vw;
-    max-width: 900px;
-    padding: 5vh 2vw;
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 2, 0.2);
+    padding: 30px;
   }
 }
 .pw body.ProcessLogin .pw-notices {
   margin-bottom: 2em;
 }
-.pw body.ProcessLogin .Inputfields .Inputfield {
-  box-shadow: none !important;
-}
-.pw body.ProcessLogin .Inputfields .Inputfield label {
-  text-transform: uppercase;
-}
 .pw body.ProcessLogin #pw-masthead-mobile {
+  background-color: transparent;
   margin-bottom: 2em;
 }
 .pw body.ProcessLogin #pw-masthead-mobile .pw-logo {
   max-height: 60px;
-  /*border-radius: 50%;
-				box-shadow: @pw-box-shadow;*/
+}
+.pw body.ProcessLogin > #main {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.pw body.ProcessLogin > #main #ProcessLoginForm {
+  width: auto;
+}
+.pw body.ProcessLogin > #main #ProcessLoginForm .Inputfields {
+  display: flex;
+}
+.pw body.ProcessLogin > #main #ProcessLoginForm .Inputfield {
+  display: flex;
+  box-shadow: none !important;
+  background: transparent;
+  width: 100%;
+  float: none;
+}
+.pw body.ProcessLogin > #main #ProcessLoginForm .Inputfield input {
+  border-radius: 4px;
+}
+.pw body.ProcessLogin > #main #ProcessLoginForm .Inputfield > div,
+.pw body.ProcessLogin > #main #ProcessLoginForm .Inputfield > label {
+  text-transform: uppercase;
+  background: transparent;
+}
+.pw body.ProcessLogin > #main #ProcessLoginForm .Inputfield label {
+  cursor: pointer;
 }
 .pw body.ProcessLogin #socialsLoginForm ul.Inputfields {
-  margin-top: 3em;
-  padding-top: 2em;
-  border-top: 1px solid #eeeeef;
+  margin-top: 1em;
+  padding-top: 1em;
   justify-content: center;
+}
+.pw body.ProcessLogin #socialsLoginForm ul.Inputfields .ui-button {
+  font-size: 1em;
+  padding: 0 1em;
+  line-height: 1.75em;
+}
+.pw body.ProcessLogin #socialsLoginForm ul.Inputfields .ui-button.ui-state-default {
+  background-color: #b7b7b7;
+  box-shadow: none;
+}
+.pw body.ProcessLogin #socialsLoginForm ul.Inputfields .ui-button.ui-state-hover {
+  background-color: reset;
+}
+.pw body.ProcessLogin #socialsLoginForm ul.Inputfields .InputfieldButton,
+.pw body.ProcessLogin #socialsLoginForm ul.Inputfields .InputfieldSubmit {
+  display: block;
 }
 .pw body.ProcessLogin #pw-content-body > div {
   display: inline-block;
-  margin: 0 1em;
+  margin: 0 0.75em;
+  padding-top: 0.75em;
+}
+.pw body.ProcessLogin #pw-content-body > div a {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  color: #848484;
 }
 /* Color Required fields Asterics */
 .InputfieldStateRequired > .InputfieldHeader:first-child:after {
@@ -16423,9 +16471,13 @@ form.Inputfield {
 .pw .uk-checkbox:checked {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
+.pw .LanguageSupport label.checkbox.detail,
 .pw .uk-form-controls-text label:only-of-type {
   cursor: pointer;
 }
+.pw .LanguageSupport label.checkbox.detail input[type=checkbox],
+.pw .uk-form-controls-text label:only-of-type input[type=checkbox],
+.pw .LanguageSupport label.checkbox.detail input.uk-checkbox,
 .pw .uk-form-controls-text label:only-of-type input.uk-checkbox {
   font-size: .7rem;
   margin-top: 0;
@@ -16438,7 +16490,11 @@ form.Inputfield {
   border-radius: 3em;
   box-shadow: inset 5em 0 0 0 #DDD;
   flex-shrink: 0;
+  vertical-align: bottom;
 }
+.pw .LanguageSupport label.checkbox.detail input[type=checkbox]:after,
+.pw .uk-form-controls-text label:only-of-type input[type=checkbox]:after,
+.pw .LanguageSupport label.checkbox.detail input.uk-checkbox:after,
 .pw .uk-form-controls-text label:only-of-type input.uk-checkbox:after {
   content: "";
   position: absolute;
@@ -16451,11 +16507,17 @@ form.Inputfield {
   transition: all 250ms ease 20ms;
   box-shadow: 0.05em 0.15em 0.5em rgba(0, 0, 0, 0.2);
 }
+.pw .LanguageSupport label.checkbox.detail input[type=checkbox]:checked,
+.pw .uk-form-controls-text label:only-of-type input[type=checkbox]:checked,
+.pw .LanguageSupport label.checkbox.detail input.uk-checkbox:checked,
 .pw .uk-form-controls-text label:only-of-type input.uk-checkbox:checked {
   background-color: transparent;
   box-shadow: inset 5em 0 0 0 #91bcf4;
   border-color: #3584EA;
 }
+.pw .LanguageSupport label.checkbox.detail input[type=checkbox]:checked:after,
+.pw .uk-form-controls-text label:only-of-type input[type=checkbox]:checked:after,
+.pw .LanguageSupport label.checkbox.detail input.uk-checkbox:checked:after,
 .pw .uk-form-controls-text label:only-of-type input.uk-checkbox:checked:after {
   left: 1.85em;
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);

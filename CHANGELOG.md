@@ -2,6 +2,11 @@
 
 © 2018 noelboss.com
 
+## Version 0.5.1
+
+* Added: Redesigned login screen
+* Fixed: Background color for repeaters
+
 
 ## Version 0.5.0
 
