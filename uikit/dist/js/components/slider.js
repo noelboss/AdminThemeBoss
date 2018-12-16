@@ -259,12 +259,12 @@
 
                 while (nextIndex !== prevIndex && dis > width) {
 
-                    this$1.drag -= width * this$1.dir;
+                    this.drag -= width * this.dir;
 
                     prevIndex = nextIndex;
                     dis -= width;
-                    nextIndex = this$1.getIndex(prevIndex + this$1.dir, prevIndex);
-                    width = this$1._getDistance(prevIndex, nextIndex) || slides[prevIndex].offsetWidth;
+                    nextIndex = this.getIndex(prevIndex + this.dir, prevIndex);
+                    width = this._getDistance(prevIndex, nextIndex) || slides[prevIndex].offsetWidth;
 
                 }
 
@@ -912,8 +912,6 @@
             },
 
             maxIndex: function() {
-                var this$1 = this;
-
 
                 if (!this.finite || this.center && !this.sets) {
                     return this.length - 1;
@@ -929,8 +927,8 @@
                 var i = this.length;
 
                 while (i--) {
-                    if (getElLeft(this$1.list.children[i], this$1.list) < max) {
-                        return Math.min(i + 1, this$1.length - 1);
+                    if (getElLeft(this.list.children[i], this.list) < max) {
+                        return Math.min(i + 1, this.length - 1);
                     }
                 }
 
@@ -1017,8 +1015,6 @@
         events: {
 
             beforeitemshow: function(e) {
-                var this$1 = this;
-
 
                 if (!this.dragging && this.sets && this.stack.length < 2 && !uikitUtil.includes(this.sets, this.index)) {
                     this.index = this.getValidIndex();
@@ -1033,7 +1029,7 @@
                 if (!this.dragging && diff > 1) {
 
                     for (var i = 0; i < diff; i++) {
-                        this$1.stack.splice(1, 0, this$1.dir > 0 ? 'next' : 'previous');
+                        this.stack.splice(1, 0, this.dir > 0 ? 'next' : 'previous');
                     }
 
                     e.preventDefault();
@@ -1096,8 +1092,8 @@
                 var j = 0;
 
                 while (width > 0) {
-                    var slideIndex = this$1.getIndex(--j + index, index);
-                    var slide = this$1.slides[slideIndex];
+                    var slideIndex = this.getIndex(--j + index, index);
+                    var slide = this.slides[slideIndex];
 
                     uikitUtil.css(slide, 'order', slideIndex > index ? -2 : -1);
                     width -= bounds(slide).width;
@@ -1106,7 +1102,6 @@
             },
 
             getValidIndex: function(index, prevIndex) {
-                var this$1 = this;
                 if ( index === void 0 ) index = this.index;
                 if ( prevIndex === void 0 ) prevIndex = this.prevIndex;
 
@@ -1121,12 +1116,12 @@
 
                 do {
 
-                    if (uikitUtil.includes(this$1.sets, index)) {
+                    if (uikitUtil.includes(this.sets, index)) {
                         return index;
                     }
 
                     prev = index;
-                    index = this$1.getIndex(index + this$1.dir, prevIndex);
+                    index = this.getIndex(index + this.dir, prevIndex);
 
                 } while (index !== prev);
 

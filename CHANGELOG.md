@@ -2,6 +2,21 @@
 
 © 2018 noelboss.com
 
+
+## Version 0.5.0
+
+* Added: Checkbox toggles, thanks @chrisbennet
+* Changed: Lighter Page List without lines and light edit-icons, larger font-size
+* Changed: Tabs: Lighter color with shaddow
+* Changed: Labels; removed bold font-weight of inputfield-labels
+* Changed: Labels; hover colors of inputfield-labels
+* Changed: Page-title: decreased font-size
+* Upated: Latest AdminThemeUikit dependencies
+* Fixed: Various small issues; dropdowns, buttons etc.
+* Fixed: Dark black is now darker ;)
+* Fixed: AdminHelpTab color
+
+
 ## Version 0.4.1
 
 * Fix for subfolder installations: AdminThemeUikit requires relative paths
@@ -13,10 +28,12 @@
 * Added new Pink Theme Variant:
 * Bugfixes
 
+
 ## Version 0.3.0
 
 * Introdoced a new way to inject CSS and Logo using configurations from AdminThemeUikit
 * Upgraded uikit to 3.0.0-rc.17
+
 
 ## Version 0.2.6
 

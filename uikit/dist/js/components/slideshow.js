@@ -389,12 +389,12 @@
 
                 while (nextIndex !== prevIndex && dis > width) {
 
-                    this$1.drag -= width * this$1.dir;
+                    this.drag -= width * this.dir;
 
                     prevIndex = nextIndex;
                     dis -= width;
-                    nextIndex = this$1.getIndex(prevIndex + this$1.dir, prevIndex);
-                    width = this$1._getDistance(prevIndex, nextIndex) || slides[prevIndex].offsetWidth;
+                    nextIndex = this.getIndex(prevIndex + this.dir, prevIndex);
+                    width = this._getDistance(prevIndex, nextIndex) || slides[prevIndex].offsetWidth;
 
                 }
 

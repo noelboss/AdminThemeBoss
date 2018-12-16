@@ -6,6 +6,8 @@
  *
  */
 
+@global-xxlarge-font-size: 2em;
+
 @offcanvas-bar-width: 350px;
 @pw-icon-font-size: 14px;
 @pw-tiny-font-size: 12px;
@@ -28,6 +30,7 @@
 @theme-link-hover-color: darken(@theme-link-color, 20%);
 
 @pw-box-shadow: 0 10px 30px -10px rgba(0, 0, 2, 0.2);
+@pw-tabs-box-shadow: 0px -5px 15px -6px rgba(0, 0, 2, 0.1);
 
 @theme-light-background: #fff;
 @theme-dark-background: #131010;
@@ -79,7 +82,7 @@
 
 /* dropdown */
 
-@theme-dropdown-background: rgba(250, 250, 250, 0.95);
+@theme-dropdown-background: rgba(250, 250, 250, 0.9);
 @theme-dropdown-color: @theme-text-color;
 @theme-dropdown-hover-background: @theme-primary-color-rgba;
 @theme-dropdown-border-color: #eee;
@@ -88,21 +91,29 @@
 
 /* page list */
 
-@theme-page-list-link-color: #333;
+@theme-page-list-link-color: @theme-text-color;
 @theme-page-list-link-open-color: #111;
 @theme-page-list-icon-color: @theme-link-color; // #a9adb5;
 @theme-page-list-link-active-color: @theme-link-hover-color;
 @theme-page-list-link-hover-color: @theme-link-hover-color;
-@theme-page-list-action-link-color: #fff;
-@theme-page-list-action-link-background-color: @theme-link-color;
+
+@theme-page-list-action-link-color: #000;
+@theme-page-list-action-link-background-color: @theme-muted-background;
 @theme-page-list-action-link-hover-color: #fff;
 @theme-page-list-action-link-hover-background-color: @theme-primary-color;
 
-@theme-inputfield-border: 1px solid #dededf;
+/* input field */
+
+@theme-inputfield-border: 1px solid #eeeeef;
 @theme-inputfield-input-background: #fff;
 @theme-inputfield-input-border-color: #ccc #ddd #ddd #ddd;
 
 @theme-form-radio-checked-background: @theme-muted-text-color-alternate;
+
+@pw-inputfield-border-color: @theme-inputfield-input-border-color;
+@pw-inputfield-background: @theme-inputfield-input-background;
+@pw-inputfield-input-border-color: @theme-inputfield-input-border-color;
+/* offcanvas */
 
 @theme-offcanvas-text-color: @theme-text-color;
 @theme-offcanvas-link-color: @theme-text-color;
@@ -111,16 +122,19 @@
 @theme-offcanvas-background: @theme-secondary-background;
 @theme-offcanvas-search-background: #fff;
 
+
+/* language tabs */
+
 @theme-language-tab-background: transparent;
 @theme-language-tab-color: @theme-text-color;
-@theme-language-tab-current-background: #ddd;
+@theme-language-tab-current-background: #fff;
 @theme-language-tab-current-color: @theme-primary-headline-color;
 @theme-language-tab-hover-background: @theme-muted-background;
 @theme-language-tab-hover-color: @theme-text-color;
 @theme-language-tab-empty-color: @theme-muted-text-color;
 
 @theme-table-header-color: @theme-muted-text-color-alternate;
-@theme-table-header-current-color: @theme-table-header-color;
+@theme-table-header-current-color: @theme-primary-color;
 
 /****************************************************************
  * General admin theme variables
@@ -134,7 +148,7 @@
 // Global colors
 @global-color: @theme-text-color;
 
-@global-primary-background: darken(@theme-muted-background, 5%);
+@global-primary-background: #fff;
 @global-inverse-color: #000;
 
 @global-secondary-background: @theme-secondary-background;
@@ -202,9 +216,9 @@
 @pw-inputfield-color-warning: @theme-warning-color;
 @pw-inputfield-background-warning: lighten(@theme-warning-background, 20%);
 @pw-inputfield-background-danger: lighten(@theme-danger-background, 50%);
-@pw-inputfield-header-color: @theme-text-color;
+@pw-inputfield-header-color: #11111f;
 @pw-inputfield-header-collapsed-color: @theme-muted-text-color-alternate;
-@pw-inputfield-header-hover-color: @theme-muted-text-color-alternate;
+@pw-inputfield-header-hover-color: @theme-primary-color;
 @pw-inputfield-header-collapsed-hover-background: linear-gradient(@global-background, @theme-muted-background);
 
 @pw-inputfield-fieldset-background: linear-gradient(@global-background, @theme-muted-background);
@@ -223,13 +237,16 @@
 @pw-page-list-link-active-color: @global-link-color;
 @pw-page-list-link-hover-color: @global-link-hover-color;
 @pw-page-list-link-open-color: @theme-page-list-link-open-color;
+@pw-page-list-link-open-text-decoration: none;
 @pw-page-list-link-open-background-color: inherit;
+
 @pw-page-list-icon-color: @theme-page-list-icon-color;
 @pw-page-list-status-icon-color: #aaaaaa;
 @pw-page-list-action-link-color: @theme-page-list-action-link-color;
 @pw-page-list-action-link-background-color: @theme-page-list-action-link-background-color;
 @pw-page-list-action-link-hover-color: @theme-page-list-action-link-hover-color;
 @pw-page-list-action-link-hover-background-color: @theme-page-list-action-link-hover-background-color;
+@pw-page-list-action-link-font-weight: normal;
 
 // Tabs
 @tab-margin-horizontal: 0;
@@ -270,7 +287,11 @@
 @pw-table-header-current-color: darken(@pw-table-header-color, 10%);
 
 @global-font-family: 'Roboto Condensed',
+"HelveticaNeue",
+"Arial",
 sans-serif;
+
+
 /**********************************************************************
  * Styles
  *
@@ -299,11 +320,14 @@ sans-serif;
 
 .hook-tab-item-active() {
 	border: @pw-inputfield-border;
+	box-shadow: @pw-tabs-box-shadow;
 	border-bottom-color: transparent;
 	border-top-left-radius: 1px;
 	border-top-right-radius: 1px;
 }
 
+
+// Language Tabs ---------------------------------------------------------------
 .langTabs .ui-tabs-nav,
 .langTabs .uk-tab {
 	// using a different styling for language tabs in this theme
@@ -330,14 +354,15 @@ sans-serif;
 			text-transform: uppercase;
 		}
 		>a:hover {
-			color: @theme-language-tab-hover-color;
+			color: @theme-primary-color;
 			background: @theme-language-tab-hover-background;
 		}
 		&.uk-active>a {
 			color: @theme-language-tab-current-color;
-			background: @pw-inputfield-background-primary;
-			border: 1px solid darken(@pw-inputfield-background-primary, 7%);
+			background: @theme-language-tab-current-background;
+			border: 1px solid darken(@pw-inputfield-background-primary, 3%);
 			border-bottom: none;
+			box-shadow: @pw-tabs-box-shadow;
 		}
 	}
 }
@@ -379,17 +404,46 @@ sans-serif;
 	background: none;
 }
 
-.uk-pagination>li,
-.PageList {
+/* Page List (Edit Screen)*/
+
+// increase selector specifity:
+#mqin .uk-pagination>li,
+#main .PageList {
 	background: transparent;
-	.PageListItem>a.PageListPage i {
-		padding-right: 0.5em;
+	.PageListActions {
+		margin-left: 0.5em;
+		a {
+			text-transform: uppercase;
+			font-size: 0.9em;
+			line-height: 1;
+		}
+	} // page title:
+	.PageListItem {
+		// no borders
+		border-bottom-width: 0;
+		font-size: 16px;
+
+		&.PageListItemOpen {
+			font-weight: bold;
+		}
+
+		>a.PageListPage {
+			.label_title:hover,
+			&:hover {
+				text-decoration: none;
+			}
+			i {
+				padding-right: 0.5em;
+			}
+		}
 	}
+
 	.uk-pagination>li {
 		padding: 0;
 		margin-left: -1px;
 		>a {
 			border-radius: 0;
+
 		}
 		&:first-child>a {
 			border-top-left-radius: 3px;
@@ -406,28 +460,29 @@ sans-serif;
 			padding-right: 5px;
 		}
 
-
-
 		margin: 0 0 0 -1px;
+
 		>.PageListLoading {
 			border: none;
 			display: inline-block;
 		}
+
 		&:first-child>a {
 			margin-left: 3px;
 		}
+
 		>a {
 			border: @pw-inputfield-border !important;
 		}
+
 		&.uk-active>a {
 			border-color: @theme-link-color !important;
 			background: @theme-link-color;
 			color: @pw-button-hover-color;
 		}
 	}
-}
 
-// Masthead and dropdowns ------------------------------------------
+} // Masthead and dropdowns ------------------------------------------
 #pw-masthead-mobile {
 	background-color: @theme-masthead-background;
 }
@@ -477,9 +532,7 @@ sans-serif;
 		}
 	}
 
-}
-
-// fix small text in dropdowns (search)
+} // fix small text in dropdowns (search)
 .ui-autocomplete {
 	a:hover {
 		.uk-text-muted {
@@ -497,7 +550,7 @@ ul.breadcrumb-dropdown,
 li.aos_adminLangSwitcher>ul,
 body>ul.pw-dropdown-ready {
 	&:before {
-		// white triangle
+		// triangle
 		content: " ";
 		width: 0;
 		height: 0;
@@ -509,6 +562,7 @@ body>ul.pw-dropdown-ready {
 		left: 30px;
 		z-index: 99;
 	}
+
 
 	border-radius: @pw-dropdown-list-border-radius;
 	>li:first-child,
@@ -528,6 +582,29 @@ body>ul.pw-dropdown-ready {
 
 }
 
+//
+body.AdminThemeUikit {
+
+	#_ProcessPageEditViewDropdown {
+		transform: translate(-5px, 30px);
+	}
+
+	ul.pw-button-dropdown.pw-dropdown-menu, // save button edit page
+	&.ProcessPageList ul.pw-dropdown-menu {
+		// add new button – move dropdown position…
+		transform: translate(-5px, 10px);
+
+		/* move triangle to the right */
+		&[data-at~="right"] {
+			&:before {
+				left: auto;
+				right: 15px;
+			}
+		}
+	}
+}
+
+
 ul.breadcrumb-dropdown,
 ul.pw-dropdown-menu,
 ul.ui-menu {
@@ -540,8 +617,6 @@ ul.ui-menu {
 	}
 }
 
-
-
 // header add transparency (for sticky)
 #pw-mastheads>header {
 	-webkit-backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
@@ -549,24 +624,34 @@ ul.ui-menu {
 
 	background: rgba(255, 255, 255, 0.95);
 	box-shadow: 0 10px 20px rgba(255, 255, 255, 1);
-}
-
-// dropdowns inside content and buttons, remove triangle
+} // dropdowns inside content and buttons, remove triangle
 body>ul.ui-autocomplete,
 #_ProcessPageEditViewDropdown,
 .pw-button-dropdown {
 	&:before {
 		display: none !important;
 	}
-}
-
-
-.uk-breadcrumb {
-	padding-bottom: 0;
+} // breadcrumb and dropdown:
+#main .uk-breadcrumb {
+	padding-bottom: 0; // wrongly nested
+	.uk-breadcrumb {
+		margin-bottom: 0px;
+	}
 
 	>li {
 		font-size: .875rem;
 		color: @theme-muted-text-color;
+		.dropdown-toggle {
+			margin-bottom: 0px;
+			&:hover {
+				color: @theme-primary-color;
+				background: @pw-dropdown-background;
+			}
+			.fa {
+				left: 0;
+				bottom: 0;
+			}
+		}
 	}
 
 	ul.breadcrumb-dropdown {
@@ -578,9 +663,9 @@ body>ul.ui-autocomplete,
 		box-shadow: @pw-dropdown-box-shadow;
 		border: @theme-dropdown-border;
 
-		li.current {
+		li.page-current {
 			a {
-				color: @theme-link-color;
+				color: @theme-primary-color;
 				font-weight: bold;
 			}
 		}
@@ -682,6 +767,7 @@ html.pw-sidebar-frame body {
 .InputfieldFieldset {
 	// fieldset containing other Inputfield elements
 	>.InputfieldHeader {
+		font-weight: normal;
 		background: transparent;
 	}
 }
@@ -727,6 +813,7 @@ img.pw-logo-native {
 	padding-top: 20px;
 	border-top: @pw-inputfield-border;
 	color: lighten(@theme-muted-text-color, 20%);
+	small,
 	a {
 		color: lighten(@theme-muted-text-color, 10%);
 	}
@@ -811,6 +898,7 @@ html.highlightRows .PageListItem:hover {
 	background-color: @pw-body-background !important;
 }
 
+
 html.highlightRowst,
 .pw .pw-table-responsive {
 	.AdminDataTable.AdminDataLis,
@@ -858,10 +946,16 @@ button.ui-button {
 	box-shadow: 0 5px 15px @theme-primary-color-rgba;
 }
 
+/* fix position  */
+
+.batchChildTableContainer {
+	+.ui-button {
+		margin-top: 25px;
+	}
+}
 
 
-
-/* Shadows --------------------------------------------------------------------*/
+/* Form Shadows --------------------------------------------------------------------*/
 
 // fliters:
 form.WireTab>ul {
@@ -887,10 +981,10 @@ form.Inputfield {
 	background: transparent;
 }
 
-/* chosen fields -------------------------------------------------------------- */
 
 .pw {
 
+	/* chosen fields -------------------------------------------------------------- */
 	.chosen-container-active.chosen-with-drop .chosen-single {
 		box-shadow: none;
 		border-color: @theme-inputfield-input-border-color;
@@ -1011,7 +1105,7 @@ form.Inputfield {
 	}
 }
 
-/* for required fields */
+/* Color Required fields Asterics */
 
 .InputfieldStateRequired>.InputfieldHeader:first-child:after {
 	color: inherit;
@@ -1020,6 +1114,16 @@ form.Inputfield {
 
 
 .pw {
+	/* labels */
+	.InputfieldHeader {
+		font-weight: normal;
+		text-transform: uppercase;
+		.fa+span.title {
+			margin-left: 0.3em;
+		}
+	}
+
+
 	/* image edit*/
 	// ugly metal handler
 	.ui-slider,
@@ -1068,6 +1172,7 @@ form.Inputfield {
 			}
 		}
 	}
+
 	/* lightboxes */
 	.ui-dialog .ui-dialog-titlebar .ui-button,
 	.ui-dialog .ui-dialog-titlebar {
@@ -1078,7 +1183,7 @@ form.Inputfield {
 		}
 	}
 
-	/* radio etc. */
+	/* radio & checkbox. */
 	.uk-checkbox:checked,
 	.uk-checkbox:indeterminate,
 	.uk-radio:checked {
@@ -1093,18 +1198,93 @@ form.Inputfield {
 		background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 	}
 
+	/* checkbox switch toggle */
+	.uk-form-controls-text label:only-of-type {
+		cursor: pointer;
+
+		input.uk-checkbox {
+			font-size: .7rem;
+			margin-top: 0;
+			position: relative;
+			-webkit-appearance: none;
+			outline: none;
+			width: 4em;
+			height: 2.4em;
+			border: 2px solid #D6D6D6;
+			border-radius: 3em;
+			box-shadow: inset 5em 0 0 0 #DDD;
+			flex-shrink: 0;
+
+			&:after {
+				content: "";
+				position: absolute;
+				top: .25em;
+				left: .25em;
+				background: rgba(255, 255, 255, 0.9);
+				width: 1.6em;
+				height: 1.6em;
+				border-radius: 50%;
+				transition: all 250ms ease 20ms;
+				box-shadow: .05em .15em .5em rgba(0, 0, 0, 0.2);
+			}
+			&:checked {
+				background-color: transparent;
+				box-shadow: inset 5em 0 0 0 lighten(@theme-primary-color, 20%);
+				border-color: @theme-primary-color;
+				&:after {
+					left: 1.85em;
+					box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+				}
+			}
+		}
+	}
+
+	.InputfieldCheckboxes,
+	.InputfieldCheckbox {
+		.InputfieldCheckboxesStacked {
+			li {
+				padding-bottom: 3px;
+			}
+		}
+		.InputfieldContent {
+			label:only-of-type {
+				display: flex;
+			}
+		}
+	}
+
+	/* Label Color */
+	label:only-of-type input.uk-checkbox {
+		+span {
+			//color: #c3c3c3;
+			display: flex;
+			align-items: center;
+			line-height: 1.1;
+		}
+		/*&:checked+span {
+			color: #008a00;
+			transition: all 250ms ease 20ms;
+		}*/
+	}
+	/**/
 }
 
 ::-moz-selection,
 ::selection {
 	background-color: @theme-primary-color;
 	color: @theme-button-text-color;
-} // Notifications
-.NotificationBug {
+}
+
+/* Notifications */
+
+#pw-mastheads .NotificationBug {
 	background: @theme-button-secondary-background;
+	left: auto;
+	right: 35px;
 }
 
 
+/* language switcher */
 
 li.aos_adminLangSwitcher {
 	>a:after {
@@ -1179,9 +1359,7 @@ html.highlightRows .PageListItem:hover {
 	&:hover {
 		background: @pw-dropdown-background;
 	}
-}
-
-// aos all checkboxes
+} // aos all checkboxes
 #main #checkAllCheckboxes {
 	border-color: transparent;
 
@@ -1210,7 +1388,7 @@ html.highlightRows .PageListItem:hover {
 }
 
 #main #_AdminHelpTabHelp {
-	color: @theme-primary-color;
+	color: @theme-primary-color !important;
 }
 
 #main #help-container,

@@ -3135,34 +3135,28 @@
         };
 
         UIkit.prototype._initData = function () {
-            var this$1 = this;
-
 
             var ref = this.$options;
             var data$$1 = ref.data; if ( data$$1 === void 0 ) data$$1 = {};
 
             for (var key in data$$1) {
-                this$1.$props[key] = this$1[key] = data$$1[key];
+                this.$props[key] = this[key] = data$$1[key];
             }
         };
 
         UIkit.prototype._initMethods = function () {
-            var this$1 = this;
-
 
             var ref = this.$options;
             var methods = ref.methods;
 
             if (methods) {
                 for (var key in methods) {
-                    this$1[key] = bind(methods[key], this$1);
+                    this[key] = bind(methods[key], this);
                 }
             }
         };
 
         UIkit.prototype._initComputeds = function () {
-            var this$1 = this;
-
 
             var ref = this.$options;
             var computed = ref.computed;
@@ -3171,7 +3165,7 @@
 
             if (computed) {
                 for (var key in computed) {
-                    registerComputed(this$1, key, computed[key]);
+                    registerComputed(this, key, computed[key]);
                 }
             }
         };
@@ -3181,8 +3175,6 @@
         };
 
         UIkit.prototype._initProps = function (props) {
-            var this$1 = this;
-
 
             var key;
 
@@ -3192,14 +3184,14 @@
 
             for (key in props) {
                 if (!isUndefined(props[key])) {
-                    this$1.$props[key] = props[key];
+                    this.$props[key] = props[key];
                 }
             }
 
             var exclude = [this.$options.computed, this.$options.methods];
-            for (key in this$1.$props) {
+            for (key in this.$props) {
                 if (key in props && notIn(exclude, key)) {
-                    this$1[key] = this$1.$props[key];
+                    this[key] = this.$props[key];
                 }
             }
         };
@@ -6235,8 +6227,6 @@
                 self: true,
 
                 handler: function() {
-                    var this$1 = this;
-
 
                     var found;
                     var ref = this;
@@ -6244,7 +6234,7 @@
 
                     while (prev) {
 
-                        if (prev.clsPage === this$1.clsPage) {
+                        if (prev.clsPage === this.clsPage) {
                             found = true;
                             break;
                         }
@@ -7894,8 +7884,8 @@
                 var toggle, next = getIndex(item, this.toggles, prev);
 
                 for (var i = 0; i < length; i++, next = (next + dir + length) % length) {
-                    if (!matches(this$1.toggles[next], '.uk-disabled, [disabled]')) {
-                        toggle = this$1.toggles[next];
+                    if (!matches(this.toggles[next], '.uk-disabled, [disabled]')) {
+                        toggle = this.toggles[next];
                         break;
                     }
                 }
@@ -9074,12 +9064,12 @@
 
                 while (nextIndex !== prevIndex && dis > width$$1) {
 
-                    this$1.drag -= width$$1 * this$1.dir;
+                    this.drag -= width$$1 * this.dir;
 
                     prevIndex = nextIndex;
                     dis -= width$$1;
-                    nextIndex = this$1.getIndex(prevIndex + this$1.dir, prevIndex);
-                    width$$1 = this$1._getDistance(prevIndex, nextIndex) || slides[prevIndex].offsetWidth;
+                    nextIndex = this.getIndex(prevIndex + this.dir, prevIndex);
+                    width$$1 = this._getDistance(prevIndex, nextIndex) || slides[prevIndex].offsetWidth;
 
                 }
 
@@ -9708,7 +9698,6 @@
                 name: 'itemshow',
 
                 handler: function(ref) {
-                    var this$1 = this;
                     var target = ref.target;
 
 
@@ -9720,8 +9709,8 @@
                     html(this.caption, caption);
 
                     for (var j = 0; j <= this.preload; j++) {
-                        this$1.loadItem(this$1.getIndex(i + j));
-                        this$1.loadItem(this$1.getIndex(i - j));
+                        this.loadItem(this.getIndex(i + j));
+                        this.loadItem(this.getIndex(i - j));
                     }
 
                 }
@@ -10765,8 +10754,6 @@
             },
 
             maxIndex: function() {
-                var this$1 = this;
-
 
                 if (!this.finite || this.center && !this.sets) {
                     return this.length - 1;
@@ -10782,8 +10769,8 @@
                 var i = this.length;
 
                 while (i--) {
-                    if (getElLeft(this$1.list.children[i], this$1.list) < max) {
-                        return Math.min(i + 1, this$1.length - 1);
+                    if (getElLeft(this.list.children[i], this.list) < max) {
+                        return Math.min(i + 1, this.length - 1);
                     }
                 }
 
@@ -10870,8 +10857,6 @@
         events: {
 
             beforeitemshow: function(e) {
-                var this$1 = this;
-
 
                 if (!this.dragging && this.sets && this.stack.length < 2 && !includes(this.sets, this.index)) {
                     this.index = this.getValidIndex();
@@ -10886,7 +10871,7 @@
                 if (!this.dragging && diff > 1) {
 
                     for (var i = 0; i < diff; i++) {
-                        this$1.stack.splice(1, 0, this$1.dir > 0 ? 'next' : 'previous');
+                        this.stack.splice(1, 0, this.dir > 0 ? 'next' : 'previous');
                     }
 
                     e.preventDefault();
@@ -10949,8 +10934,8 @@
                 var j = 0;
 
                 while (width$$1 > 0) {
-                    var slideIndex = this$1.getIndex(--j + index$$1, index$$1);
-                    var slide = this$1.slides[slideIndex];
+                    var slideIndex = this.getIndex(--j + index$$1, index$$1);
+                    var slide = this.slides[slideIndex];
 
                     css(slide, 'order', slideIndex > index$$1 ? -2 : -1);
                     width$$1 -= bounds(slide).width;
@@ -10959,7 +10944,6 @@
             },
 
             getValidIndex: function(index$$1, prevIndex) {
-                var this$1 = this;
                 if ( index$$1 === void 0 ) index$$1 = this.index;
                 if ( prevIndex === void 0 ) prevIndex = this.prevIndex;
 
@@ -10974,12 +10958,12 @@
 
                 do {
 
-                    if (includes(this$1.sets, index$$1)) {
+                    if (includes(this.sets, index$$1)) {
                         return index$$1;
                     }
 
                     prev = index$$1;
-                    index$$1 = this$1.getIndex(index$$1 + this$1.dir, prevIndex);
+                    index$$1 = this.getIndex(index$$1 + this.dir, prevIndex);
 
                 } while (index$$1 !== prev);
 
@@ -11792,18 +11776,18 @@
 
                 for (var i = 0; i < files.length; i++) {
 
-                    if (this$1.maxSize && this$1.maxSize * 1000 < files[i].size) {
-                        this$1.fail(this$1.msgInvalidSize.replace('%s', this$1.maxSize));
+                    if (this.maxSize && this.maxSize * 1000 < files[i].size) {
+                        this.fail(this.msgInvalidSize.replace('%s', this.maxSize));
                         return;
                     }
 
-                    if (this$1.allow && !match$1(this$1.allow, files[i].name)) {
-                        this$1.fail(this$1.msgInvalidName.replace('%s', this$1.allow));
+                    if (this.allow && !match$1(this.allow, files[i].name)) {
+                        this.fail(this.msgInvalidName.replace('%s', this.allow));
                         return;
                     }
 
-                    if (this$1.mime && !match$1(this$1.mime, files[i].type)) {
-                        this$1.fail(this$1.msgInvalidMime.replace('%s', this$1.mime));
+                    if (this.mime && !match$1(this.mime, files[i].type)) {
+                        this.fail(this.msgInvalidMime.replace('%s', this.mime));
                         return;
                     }
 

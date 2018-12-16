@@ -2912,34 +2912,28 @@
         };
 
         UIkit.prototype._initData = function () {
-            var this$1 = this;
-
 
             var ref = this.$options;
             var data$$1 = ref.data; if ( data$$1 === void 0 ) data$$1 = {};
 
             for (var key in data$$1) {
-                this$1.$props[key] = this$1[key] = data$$1[key];
+                this.$props[key] = this[key] = data$$1[key];
             }
         };
 
         UIkit.prototype._initMethods = function () {
-            var this$1 = this;
-
 
             var ref = this.$options;
             var methods = ref.methods;
 
             if (methods) {
                 for (var key in methods) {
-                    this$1[key] = bind(methods[key], this$1);
+                    this[key] = bind(methods[key], this);
                 }
             }
         };
 
         UIkit.prototype._initComputeds = function () {
-            var this$1 = this;
-
 
             var ref = this.$options;
             var computed = ref.computed;
@@ -2948,7 +2942,7 @@
 
             if (computed) {
                 for (var key in computed) {
-                    registerComputed(this$1, key, computed[key]);
+                    registerComputed(this, key, computed[key]);
                 }
             }
         };
@@ -2958,8 +2952,6 @@
         };
 
         UIkit.prototype._initProps = function (props) {
-            var this$1 = this;
-
 
             var key;
 
@@ -2969,14 +2961,14 @@
 
             for (key in props) {
                 if (!isUndefined(props[key])) {
-                    this$1.$props[key] = props[key];
+                    this.$props[key] = props[key];
                 }
             }
 
             var exclude = [this.$options.computed, this.$options.methods];
-            for (key in this$1.$props) {
+            for (key in this.$props) {
                 if (key in props && notIn(exclude, key)) {
-                    this$1[key] = this$1.$props[key];
+                    this[key] = this.$props[key];
                 }
             }
         };
@@ -6118,8 +6110,6 @@
                 self: true,
 
                 handler: function() {
-                    var this$1 = this;
-
 
                     var found;
                     var ref = this;
@@ -6127,7 +6117,7 @@
 
                     while (prev) {
 
-                        if (prev.clsPage === this$1.clsPage) {
+                        if (prev.clsPage === this.clsPage) {
                             found = true;
                             break;
                         }
@@ -7777,8 +7767,8 @@
                 var toggle, next = getIndex(item, this.toggles, prev);
 
                 for (var i = 0; i < length; i++, next = (next + dir + length) % length) {
-                    if (!matches(this$1.toggles[next], '.uk-disabled, [disabled]')) {
-                        toggle = this$1.toggles[next];
+                    if (!matches(this.toggles[next], '.uk-disabled, [disabled]')) {
+                        toggle = this.toggles[next];
                         break;
                     }
                 }

@@ -3,7 +3,7 @@
 
 ### Features
 
-* Three unique color options
+* Four unique color options: blue, vibrant, black & pink
 * Beautiful typografy using Roboto Condensed
 * Extended breadcrumb with edit links
 * Extends AdminThemeUikit, you can continue using all AdminThemeUikit features
@@ -13,15 +13,29 @@
 ## Color Variants:
 
 ### ProcessWire Blue
+
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/pw-pt.png "Default ProcessWire Blue Page Tree")
+
 ![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/pw.png "Default ProcessWire Blue")
 
-### Vibrant Blue
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/vibrant.png "Vibrant Blue Color")
 
 ### Dark Black
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/black.png "Dark Black Color")
 
-![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/login.png "Dark Black Color Login")
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/black-pt.png "Dark Black Page Tree")
+
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/black.png "Dark Black")
+
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/login.png "Dark Black Login")
+
+
+### Vibrant Blue
+
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/vibrant.png "Vibrant Blue")
+
+
+### Happy Pink
+
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/pink.png "Happy Pink")
 
 
 ## Requirements

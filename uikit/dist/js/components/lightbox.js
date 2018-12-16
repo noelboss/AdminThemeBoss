@@ -512,8 +512,6 @@
                 self: true,
 
                 handler: function() {
-                    var this$1 = this;
-
 
                     var found;
                     var ref = this;
@@ -521,7 +519,7 @@
 
                     while (prev) {
 
-                        if (prev.clsPage === this$1.clsPage) {
+                        if (prev.clsPage === this.clsPage) {
                             found = true;
                             break;
                         }
@@ -958,12 +956,12 @@
 
                 while (nextIndex !== prevIndex && dis > width) {
 
-                    this$1.drag -= width * this$1.dir;
+                    this.drag -= width * this.dir;
 
                     prevIndex = nextIndex;
                     dis -= width;
-                    nextIndex = this$1.getIndex(prevIndex + this$1.dir, prevIndex);
-                    width = this$1._getDistance(prevIndex, nextIndex) || slides[prevIndex].offsetWidth;
+                    nextIndex = this.getIndex(prevIndex + this.dir, prevIndex);
+                    width = this._getDistance(prevIndex, nextIndex) || slides[prevIndex].offsetWidth;
 
                 }
 
@@ -1592,7 +1590,6 @@
                 name: 'itemshow',
 
                 handler: function(ref) {
-                    var this$1 = this;
                     var target = ref.target;
 
 
@@ -1604,8 +1601,8 @@
                     uikitUtil.html(this.caption, caption);
 
                     for (var j = 0; j <= this.preload; j++) {
-                        this$1.loadItem(this$1.getIndex(i + j));
-                        this$1.loadItem(this$1.getIndex(i - j));
+                        this.loadItem(this.getIndex(i + j));
+                        this.loadItem(this.getIndex(i - j));
                     }
 
                 }
