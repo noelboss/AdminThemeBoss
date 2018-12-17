@@ -11,7 +11,12 @@
 * Option to activate theme for all users
 
 
-## Color Variants:
+## Release Updates
+
+Checkout the [Releases Page and subscribe to updates](http://releases.noelboss.com/adminthemeboss) or take a look at the [CHANGELOG.md](https://github.com/noelboss/AdminThemeBoss/blob/master/CHANGELOG.md) file for a full change log.
+
+
+# Color Variants:
 
 ### ProcessWire Blue
 
@@ -66,11 +71,6 @@ Requires AdminThemeUikit installed and activated.
 3. Copy all of the files for this module into /site/modules/AdminThemeBoss/
 4. Go to “Modules > Refresh” in your admin
 5. Click “Install“ on the “AdminThemeBoss“ Module
-
-
-## Change Log
-
-Checkout the [Releases Page and subscribe to updates](http://releases.noelboss.com/adminthemeboss) or take a look at the [CHANGELOG.md](https://github.com/noelboss/AdminThemeBoss/blob/master/CHANGELOG.md) file for a full change log.
 
 
 ## Modify yourself
