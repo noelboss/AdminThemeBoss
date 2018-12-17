@@ -70,7 +70,7 @@ Requires AdminThemeUikit installed and activated.
 
 ## Change Log
 
-See [CHANGELOG.md](https://github.com/noelboss/AdminThemeBoss/blob/master/CHANGELOG.md) file for full change log.
+Checkout the [Releases Page and subscribe to updates](http://releases.noelboss.com/adminthemeboss) or take a look at the [CHANGELOG.md](https://github.com/noelboss/AdminThemeBoss/blob/master/CHANGELOG.md) file for a full change log.
 
 
 ## Modify yourself
