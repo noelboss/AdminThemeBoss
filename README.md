@@ -11,7 +11,12 @@
 * Option to activate theme for all users
 
 
-## Color Variants:
+## Release Updates
+
+Checkout the [Releases Page and subscribe to updates](http://releases.noelboss.com/adminthemeboss) or take a look at the [CHANGELOG.md](https://github.com/noelboss/AdminThemeBoss/blob/master/CHANGELOG.md) file for a full change log.
+
+
+# Color Variants:
 
 ### ProcessWire Blue
 
@@ -65,19 +70,14 @@ Requires AdminThemeUikit installed and activated.
 2. Download the theme files from [GitHub](https://github.com/noelboss/AdminThemeBoss) or the [ProcessWire Modules Repository](https://modules.processwire.com/modules/admin-theme-uikit/).
 3. Copy all of the files for this module into /site/modules/AdminThemeBoss/
 4. Go to “Modules > Refresh” in your admin
-4. Click “Install“ on the “AdminThemeBoss“ Module
-
-
-## Change Log
-
-See [CHANGELOG.md](https://github.com/noelboss/AdminThemeBoss/blob/master/CHANGELOG.md) file for full change log.
+5. Click “Install“ on the “AdminThemeBoss“ Module
 
 
 ## Modify yourself
 
 This is how you modify the themes less files on your own: Run “yarn watch“ to recompile css on file change:
 
-	# Change into Uikit Folder:
+	# Change into uikit folder:
 	$ cd AdminThemeBoss/uikit
 
 	# install node_modules:
@@ -90,11 +90,14 @@ This is how you modify the themes less files on your own: Run “yarn watch“ t
 	$ npm run watch
 
 Now you can modify the less file(s) under “AdminThemeBoss/uikit/custom/…“.
-The primary theme file is “AdminThemeBoss/uikit/custom/pw/custom-theme.less“.
+The primary theme file is “AdminThemeBoss/uikit/custom/theme/main.less“.
 
 
 If you wan't to add your own theme, modify “AdminThemeBoss/uikit/themes.json“ and add your new less file ro “AdminThemeBoss/uikit/custom/newtheme.less“.
 
+## Update to latest AdminThemeUikit
+
+There is a [script](https://github.com/noelboss/AdminThemeBoss/blob/master/upgrade-theme.sh) that you can run to update the dependencies. It makes a backup of the current theme, downloads the latest AdminThemeUikit and puts everything back together.
 
 ## License: MIT
 
