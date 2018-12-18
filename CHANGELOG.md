@@ -4,7 +4,6 @@
 
 ## Release 0.5.3
 
-* Added: New colorfull login screens
 * Changed: Further design improvements to login screens
 * Changed: Update script now hadles everything (no manual changes needed)
 * Fixed: Conflict with AdminOnSteroids with black login header
