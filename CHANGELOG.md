@@ -2,7 +2,7 @@
 
 © 2018 noelboss.com
 
-## Upcomming
+## Release 0.5.3
 
 * Added: New colorfull login screens
 * Changed: Further design improvements to login screens
