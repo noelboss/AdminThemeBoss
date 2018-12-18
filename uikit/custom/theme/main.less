@@ -1060,10 +1060,9 @@ form.Inputfield {
 		padding: 20px;
 		border-radius: 15px;
 
-		background: lighten(@theme-primary-color, 20%);
-		box-shadow: inset 0px 0px 127px -20px fade(@theme-primary-color, 40%),
-		0 10px 50px -10px fade(@theme-primary-color, 90%);
-		border: 1px solid fade(@theme-primary-color, 70%);
+		background: fade(@theme-primary-color, 2%);
+		box-shadow: 0 10px 50px -10px fade(@theme-primary-color, 20%);
+		border: 1px solid fade(@theme-primary-color, 15%);
 
 		@media (min-width: 1000px) {
 			position: absolute;
@@ -1082,14 +1081,19 @@ form.Inputfield {
 			}
 		}
 
+		a,
+		input,
+		button {
+			transition: all 250ms ease 20ms;
+		}
+
 		#pw-masthead-mobile {
 			background-color: transparent;
 			margin-bottom: 2em;
 			box-shadow: none;
 
 			.pw-logo {
-				max-height: 60px;
-				filter: grayscale(100%) brightness(400%);
+				max-height: 60px; //filter: grayscale(100%) brightness(400%);
 			}
 		}
 
@@ -1130,8 +1134,8 @@ form.Inputfield {
 						text-align: left;
 						height: auto;
 						line-height: 2em;
-						border-color: @theme-primary-color;
-						background: lighten(@theme-primary-color, 40%);
+						border-color: lighten(@theme-primary-color, 20%);
+						background: fade(@theme-primary-color, 15%);
 
 						&::placeholder {
 							color: fade(@theme-primary-color, 40%);
@@ -1139,7 +1143,7 @@ form.Inputfield {
 
 						&:hover,
 						&:focus {
-							border-color: lighten(@theme-primary-color, 10%);
+							border-color: @theme-primary-color;
 							box-shadow: @pw-primary-box-shadow;
 						}
 					}
@@ -1198,8 +1202,8 @@ form.Inputfield {
 				a {
 					font-size: 0.9em;
 					text-transform: uppercase;
-					color: #fff;
-					opacity: 0.9;
+					color: fade(@theme-primary-color, 80%);
+					opacity: 0.7;
 
 					&:hover {
 						opacity: 1;

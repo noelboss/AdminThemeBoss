@@ -16308,9 +16308,9 @@ form.Inputfield {
   margin: 0 auto;
   padding: 20px;
   border-radius: 15px;
-  background: #f974cd;
-  box-shadow: inset 0px 0px 127px -20px rgba(244, 19, 169, 0.4), 0 10px 50px -10px rgba(244, 19, 169, 0.9);
-  border: 1px solid rgba(244, 19, 169, 0.7);
+  background: rgba(244, 19, 169, 0.02);
+  box-shadow: 0 10px 50px -10px rgba(244, 19, 169, 0.2);
+  border: 1px solid rgba(244, 19, 169, 0.15);
 }
 @media (min-width: 1000px) {
   .pw body.ProcessLogin {
@@ -16328,6 +16328,11 @@ form.Inputfield {
   border-bottom-width: 0;
   border-radius: 4px;
 }
+.pw body.ProcessLogin a,
+.pw body.ProcessLogin input,
+.pw body.ProcessLogin button {
+  transition: all 250ms ease 20ms;
+}
 .pw body.ProcessLogin #pw-masthead-mobile {
   background-color: transparent;
   margin-bottom: 2em;
@@ -16335,7 +16340,6 @@ form.Inputfield {
 }
 .pw body.ProcessLogin #pw-masthead-mobile .pw-logo {
   max-height: 60px;
-  filter: grayscale(100%) brightness(400%);
 }
 .pw body.ProcessLogin > #main {
   margin: 0 !important;
@@ -16371,15 +16375,15 @@ form.Inputfield {
   text-align: left;
   height: auto;
   line-height: 2em;
-  border-color: #f413a9;
-  background: #fdd6f0;
+  border-color: #f974cd;
+  background: rgba(244, 19, 169, 0.15);
 }
 .pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input::placeholder {
   color: rgba(244, 19, 169, 0.4);
 }
 .pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input:hover,
 .pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input:focus {
-  border-color: #f644bb;
+  border-color: #f413a9;
   box-shadow: 0 5px 15px rgba(244, 19, 169, 0.6);
 }
 .pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input::placeholder {
@@ -16421,8 +16425,8 @@ form.Inputfield {
 .pw body.ProcessLogin #pw-content-body > div a {
   font-size: 0.9em;
   text-transform: uppercase;
-  color: #fff;
-  opacity: 0.9;
+  color: rgba(244, 19, 169, 0.8);
+  opacity: 0.7;
 }
 .pw body.ProcessLogin #pw-content-body > div a:hover {
   opacity: 1;
