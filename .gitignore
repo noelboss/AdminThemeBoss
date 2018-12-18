@@ -1,7 +1,7 @@
 /.styles
 /bak
+/backup
 .DS_Store
-/COPY.sh
 /.idea
 /DEVELOP.txt
 node_modules/

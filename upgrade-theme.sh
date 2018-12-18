@@ -1,23 +1,23 @@
 #!/bin/bash
 #set -x
-
+folder=backup
 back="$(date +%Y-%m-%d-%H-%M-%S)";
 
 printf "\n\nCreate backup folder:"
-if [ ! -d ./bak ]; then
-	mkdir -p ./bak;
+if [ ! -d ./$folder ]; then
+	mkdir -p ./$folder;
 fi
-if [ ! -d ./bak/$back ]; then
-	mkdir -p ./bak/$back;
+if [ ! -d ./$folder/$back ]; then
+	mkdir -p ./$folder/$back;
 fi
 
-##mv "src bak/src-$d"
+##mv "src $folder/src-$d"
 printf "\n\nMove custom out of uikit folder:"
 cp -R ./uikit/custom ./custom
 
 printf "\n\nBackup old stuff:"
-mv ./uikit ./bak/$back/uikit
-mv ./AdminThemeUikit ./bak/$back/AdminThemeUikit
+mv ./uikit ./$folder/$back/uikit
+mv ./AdminThemeUikit ./$folder/$back/AdminThemeUikit
 
 printf "\n\nDownload new AdminThemeUikit"
 git clone https://github.com/ryancramerdesign/AdminThemeUikit download
@@ -33,6 +33,8 @@ rm -rf download
 
 printf "\n\nMove custom theme stuff back into new uikit folder"
 mv custom/ uikit/custom
+rm -y ./AdminThemeUikit/pw/pw-theme-reno.less
+touch ./AdminThemeUikit/pw/pw-theme-reno.less
 
 printf "\n\nGo to new directory"
 cd uikit
@@ -40,17 +42,13 @@ cd uikit
 printf "\n\nInstall node modules"
 yarn
 
+printf "\n\nRecompiling"
+yarn compile
+
 printf "\n\ndone…"
 printf "
 
-ATTENTION:
-------------------------------------------------
-You need to manually remove or comment the last line from ryans _import.less:
-
-# AdminThemeUikit/pw/_import.less last line:
-// @import \"pw-theme-reno.less\";
-
-Then you can run
+You can now run
 $ uikit/yarn compile-less
 
 or for development:
