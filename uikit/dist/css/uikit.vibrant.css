@@ -15825,47 +15825,47 @@ ul.uk-navbar-nav ul {
   background: #333335;
   color: #fff;
 }
-.AdminThemeUikit #pw-masthead-mobile {
+.pw #pw-masthead-mobile {
   background-color: #fff;
 }
-.AdminThemeUikit #pw-masthead {
+.pw #pw-masthead {
   background-color: #fff;
 }
-.AdminThemeUikit #pw-masthead .uk-navbar-nav > li {
+.pw #pw-masthead .uk-navbar-nav > li {
   position: relative;
 }
-.AdminThemeUikit #pw-masthead .uk-navbar-nav > li,
-.AdminThemeUikit #pw-masthead .uk-navbar-nav > li > a {
+.pw #pw-masthead .uk-navbar-nav > li,
+.pw #pw-masthead .uk-navbar-nav > li > a {
   color: #444444;
 }
-.AdminThemeUikit #pw-masthead .uk-navbar-nav > li i,
-.AdminThemeUikit #pw-masthead .uk-navbar-nav > li > a i {
+.pw #pw-masthead .uk-navbar-nav > li i,
+.pw #pw-masthead .uk-navbar-nav > li > a i {
   color: #000000;
 }
-.AdminThemeUikit #pw-masthead .uk-navbar-nav > li.uk-active,
-.AdminThemeUikit #pw-masthead .uk-navbar-nav > li.uk-active > a {
+.pw #pw-masthead .uk-navbar-nav > li.uk-active,
+.pw #pw-masthead .uk-navbar-nav > li.uk-active > a {
   color: #00BED7;
 }
-.AdminThemeUikit #pw-masthead .uk-navbar-nav > li > a.hover,
-.AdminThemeUikit #pw-masthead .uk-navbar-nav > li > a:hover {
+.pw #pw-masthead .uk-navbar-nav > li > a.hover,
+.pw #pw-masthead .uk-navbar-nav > li > a:hover {
   color: #222222;
 }
-.AdminThemeUikit #pw-masthead .uk-navbar-nav > li > a.hover i,
-.AdminThemeUikit #pw-masthead .uk-navbar-nav > li > a:hover i {
+.pw #pw-masthead .uk-navbar-nav > li > a.hover i,
+.pw #pw-masthead .uk-navbar-nav > li > a:hover i {
   color: #222222;
 }
-.AdminThemeUikit #pw-masthead .pw-search-form .pw-search-input {
+.pw #pw-masthead .pw-search-form .pw-search-input {
   color: #000000;
   background: #ffffff;
   border-color: #808080;
   border-radius: 2em;
 }
-.AdminThemeUikit #pw-masthead .pw-search-form .pw-search-input:focus {
+.pw #pw-masthead .pw-search-form .pw-search-input:focus {
   color: #333335;
   background: #eeeeee;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 2, 0.2);
 }
-.AdminThemeUikit #pw-masthead .pw-search-form .uk-form-icon {
+.pw #pw-masthead .pw-search-form .uk-form-icon {
   color: #333333;
 }
 .ui-autocomplete a:hover .uk-text-muted {
@@ -15932,16 +15932,16 @@ body > ul.pw-dropdown-ready ul > li:last-child > a {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-body.AdminThemeUikit #_ProcessPageEditViewDropdown {
+body.template-admin #_ProcessPageEditViewDropdown {
   transform: translate(-5px, 30px);
 }
-body.AdminThemeUikit ul.pw-button-dropdown.pw-dropdown-menu,
-body.AdminThemeUikit.ProcessPageList ul.pw-dropdown-menu {
+body.template-admin ul.pw-button-dropdown.pw-dropdown-menu,
+body.template-admin.ProcessPageList ul.pw-dropdown-menu {
   transform: translate(-5px, 10px);
   /* move triangle to the right */
 }
-body.AdminThemeUikit ul.pw-button-dropdown.pw-dropdown-menu[data-at~="right"]:before,
-body.AdminThemeUikit.ProcessPageList ul.pw-dropdown-menu[data-at~="right"]:before {
+body.template-admin ul.pw-button-dropdown.pw-dropdown-menu[data-at~="right"]:before,
+body.template-admin.ProcessPageList ul.pw-dropdown-menu[data-at~="right"]:before {
   left: auto;
   right: 15px;
 }
@@ -15949,7 +15949,6 @@ ul.breadcrumb-dropdown,
 ul.pw-dropdown-menu,
 ul.ui-menu {
   border: 0px solid #eee;
-  -webkit-backdrop-filter: blur(20px) drop-shadow(4px 4px 10px blue);
   backdrop-filter: blur(20px) drop-shadow(4px 4px 10px blue);
   margin-top: -2px;
 }
@@ -15958,8 +15957,7 @@ ul.pw-dropdown-menu > li.ui-menu-item > ul.ui-menu,
 ul.ui-menu > li.ui-menu-item > ul.ui-menu {
   border: 0px solid #eee !important;
 }
-.AdminThemeUikit #pw-mastheads > header {
-  -webkit-backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
+.pw #pw-mastheads > header {
   backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 10px 20px #ffffff;
@@ -16304,15 +16302,15 @@ form.Inputfield {
 }
 .pw body.ProcessLogin {
   position: relative;
-  top: 5vw;
-  width: 450px;
-  max-width: 90vw;
+  width: 370px;
+  top: 7vw;
+  max-width: 85vw;
   margin: 0 auto;
-  padding: 15px;
-  background: #fafafb;
-  box-shadow: inset 0px 0px 127px 0px rgba(180, 180, 185, 0.1), 0 0px 1px 0px rgba(250, 250, 255, 0.95), 0 10px 50px -30px rgba(0, 190, 215, 0.6);
-  border-radius: 10px;
-  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 15px;
+  background: #3ee9ff;
+  box-shadow: inset 0px 0px 127px -20px rgba(0, 190, 215, 0.4), 0 10px 50px -10px rgba(0, 190, 215, 0.9);
+  border: 1px solid rgba(0, 190, 215, 0.7);
 }
 @media (min-width: 1000px) {
   .pw body.ProcessLogin {
@@ -16326,40 +16324,73 @@ form.Inputfield {
 .pw body.ProcessLogin .pw-notices {
   margin-bottom: 2em;
 }
+.pw body.ProcessLogin .pw-notices > li {
+  border-bottom-width: 0;
+  border-radius: 4px;
+}
 .pw body.ProcessLogin #pw-masthead-mobile {
   background-color: transparent;
   margin-bottom: 2em;
+  box-shadow: none;
 }
 .pw body.ProcessLogin #pw-masthead-mobile .pw-logo {
   max-height: 60px;
+  filter: grayscale(100%) brightness(400%);
 }
 .pw body.ProcessLogin > #main {
   margin: 0 !important;
   padding: 0 !important;
 }
-.pw body.ProcessLogin > #main #ProcessLoginForm {
+.pw body.ProcessLogin > #main #ProcessLoginForm label {
+  display: none;
+}
+.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) {
   width: auto;
 }
-.pw body.ProcessLogin > #main #ProcessLoginForm .Inputfields {
+.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfields {
   display: flex;
 }
-.pw body.ProcessLogin > #main #ProcessLoginForm .Inputfield {
+.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .InputfieldHeader {
+  font-size: 1.1em;
+}
+.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .InputfieldContent {
+  padding: 0 0 1em;
+}
+.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield {
+  border-width: none;
+  outline: none;
   display: flex;
   box-shadow: none !important;
   background: transparent;
-  width: 100%;
+  width: 100% !important;
   float: none;
 }
-.pw body.ProcessLogin > #main #ProcessLoginForm .Inputfield input {
+.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input {
   border-radius: 4px;
+  font-size: 1.3em;
+  text-align: left;
+  height: auto;
+  line-height: 2em;
+  border-color: #00BED7;
+  background: #a4f4ff;
 }
-.pw body.ProcessLogin > #main #ProcessLoginForm .Inputfield > div,
-.pw body.ProcessLogin > #main #ProcessLoginForm .Inputfield > label {
+.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input::placeholder {
+  color: rgba(0, 190, 215, 0.4);
+}
+.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input:hover,
+.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input:focus {
+  border-color: #0be3ff;
+  box-shadow: 0 5px 15px rgba(0, 190, 215, 0.6);
+}
+.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input::placeholder {
   text-transform: uppercase;
+}
+.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield > div,
+.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield > label {
   background: transparent;
 }
-.pw body.ProcessLogin > #main #ProcessLoginForm .Inputfield label {
-  cursor: pointer;
+.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield .ui-button {
+  margin-top: 1em;
 }
 .pw body.ProcessLogin #socialsLoginForm ul.Inputfields {
   margin-top: 1em;
@@ -16372,7 +16403,7 @@ form.Inputfield {
   line-height: 1.75em;
 }
 .pw body.ProcessLogin #socialsLoginForm ul.Inputfields .ui-button.ui-state-default {
-  background-color: #b7b7b7;
+  background-color: rgba(0, 190, 215, 0.6);
   box-shadow: none;
 }
 .pw body.ProcessLogin #socialsLoginForm ul.Inputfields .ui-button.ui-state-hover {
@@ -16390,7 +16421,12 @@ form.Inputfield {
 .pw body.ProcessLogin #pw-content-body > div a {
   font-size: 0.9em;
   text-transform: uppercase;
-  color: #848484;
+  color: #fff;
+  opacity: 0.9;
+}
+.pw body.ProcessLogin #pw-content-body > div a:hover {
+  opacity: 1;
+  text-decoration: none;
 }
 /* Color Required fields Asterics */
 .InputfieldStateRequired > .InputfieldHeader:first-child:after {

@@ -2,6 +2,18 @@
 
 © 2018 noelboss.com
 
+## Upcomming
+
+* Added: New colorfull login screens
+* Changed: Further design improvements to login screens
+* Fixed: Conflict with AdminOnSteroids with black login header
+
+
+## Version 0.5.2
+
+* Changed: Updated Readme and screenshots
+
+
 ## Version 0.5.1
 
 * Added: Redesigned login screen

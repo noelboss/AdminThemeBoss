@@ -6,7 +6,7 @@
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
  *
- * File created/changed: 2018-10-11T21:31:50+02:00
+ * File created/changed: 2018-12-18T13:00:03+01:00
  */
 
 namespace ProcessWire;
@@ -80,6 +80,12 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 			}
 
 			return $event;
+		});
+
+		// add placeholder text
+		$this->wire()->addHookAfter('ProcessLogin::buildLoginForm', function (HookEvent $event) {
+			$event->return->get('login_name')->set('placeholder', $event->return->get('login_name')->get('label'));
+			$event->return->get('login_pass')->set('placeholder', $event->return->get('login_pass')->get('label'));
 		});
 	}
 
