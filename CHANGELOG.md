@@ -2,7 +2,13 @@
 
 © 2018 noelboss.com
 
-## Upcomming
+## Version 0.5.4
+
+* Fixed: Reno theme regression
+* Fixed: Update script not removing reno theme less
+
+
+## Version 0.5.3
 
 * Added: New colorfull login screens
 * Changed: Further design improvements to login screens

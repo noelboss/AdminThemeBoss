@@ -274,21 +274,18 @@ h2,
 .uk-h2 {
   font-size: 1.5rem;
   line-height: 1.4;
-  color: #50739b;
   color: #645959;
 }
 h3,
 .uk-h3 {
   font-size: 1.25rem;
   line-height: 1.4;
-  color: #50739b;
   color: #645959;
 }
 h4,
 .uk-h4 {
   font-size: 16px;
   line-height: 1.4;
-  color: #50739b;
   color: #645959;
 }
 h5,
@@ -4340,8 +4337,6 @@ ul.uk-nav-sub {
   color: #777;
   transition: color 0.1s ease-in-out;
   padding: 2px 11px;
-  color: #354b60;
-  background: #f0f3f7;
   color: #575555;
   background: #fafafb;
   border: 1px solid #eeeeef;
@@ -4352,8 +4347,6 @@ ul.uk-nav-sub {
   color: #000;
   text-decoration: none;
   background: #f4f4f6;
-  color: #354b60;
-  background: #dfe6ee;
   color: #575555;
   background: #ececf0;
   border: 1px solid #eeeeef;
@@ -4369,13 +4362,6 @@ ul.uk-nav-sub {
 }
 .uk-pagination > .uk-active > *,
 .uk-pagination > .uk-active > * a {
-  background: #e83561;
-  color: #000;
-  border: 1px solid #eeeeef;
-  border-color: #e83561;
-}
-.uk-pagination > .uk-active > *,
-.uk-pagination > .uk-active > * a {
   background: #333335;
   color: #000;
   border: 1px solid #eeeeef;
@@ -4383,7 +4369,6 @@ ul.uk-nav-sub {
 }
 /* Disabled */
 .uk-pagination > .uk-disabled > * {
-  color: #8d939e;
   padding-left: 0;
   padding-right: 0;
   color: #777;
@@ -4465,9 +4450,6 @@ ul.uk-nav-sub {
 .uk-tab > .uk-active > a {
   color: #333;
   border-color: #333335;
-  border-bottom-color: #fff;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
   border: 1px solid #eeeeef;
   box-shadow: 0px -5px 15px -6px rgba(0, 0, 2, 0.1);
   border-bottom-color: transparent;
@@ -15448,324 +15430,6 @@ body.pw-init .WireTab {
 }
 ul.uk-navbar-nav ul {
   display: none;
-}
-/**************************************************************
- * Reno theme
- *
- * Adjustments to stock Uikit admin theme to make it resemble
- * the AdminThemeReno look and colors. 
- *  
- */
-/**************************************************************
- * Primary variables
- *
- * The entire color theme can be adjusted from the @reno 
- * variables below. 
- *
- */
-/****************************************************************
- * General admin theme variables
- * 
- * These mostly map @reno variables to Uikit and @pw admin them
- * variables. These are not likely to need edits if making 
- * adjustments to the theme colors. 
- *
- */
-/**********************************************************************
- * Styles
- *
- * Adjustments to the default Uikit admin theme styles to give more 
- * the look and feel of AdminThemeReno. 
- *
- */
-.hook-base-h2,
-.hook-base-h3,
-.hook-base-h4 {
-  color: #50739b;
-}
-.hook-tab-item {
-  border: 1px solid transparent;
-  margin-left: -1px;
-}
-.langTabs .ui-tabs-nav > li,
-.langTabs .uk-tab > li {
-  background: transparent;
-  border: none;
-  margin: 3px 0 3px 0;
-  padding: 0 !important;
-}
-.langTabs .ui-tabs-nav > li.langTabEmpty > a,
-.langTabs .uk-tab > li.langTabEmpty > a {
-  color: #8d939e;
-}
-.langTabs .ui-tabs-nav > li > a,
-.langTabs .uk-tab > li > a {
-  margin: 0 1px 0 0;
-  display: inline-block;
-  border: none;
-  border-radius: 0;
-  color: #354b60;
-  background: transparent;
-  padding: 4px 15px;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-.langTabs .ui-tabs-nav > li > a:hover,
-.langTabs .uk-tab > li > a:hover {
-  color: #354b60;
-  background: #f0f3f7;
-}
-.langTabs .ui-tabs-nav > li.uk-active > a,
-.langTabs .uk-tab > li.uk-active > a {
-  color: #1C2836;
-  background: #d2dce6;
-}
-.WireTabs.uk-tab > li.uk-active.pw-tab-muted {
-  background: #f0f3f7;
-}
-.WireTabs.uk-tab > li.uk-active.pw-tab-muted > a {
-  border-bottom: none;
-}
-.uk-pagination > li,
-.PageList > .uk-pagination > li {
-  padding: 0;
-  margin-left: -1px;
-}
-.uk-pagination > li > a,
-.PageList > .uk-pagination > li > a {
-  border-radius: 0;
-}
-.uk-pagination > li:first-child > a,
-.PageList > .uk-pagination > li:first-child > a {
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-.uk-pagination > li:last-child > a,
-.PageList > .uk-pagination > li:last-child > a {
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
-.uk-pagination > li.uk-disabled > span,
-.PageList > .uk-pagination > li.uk-disabled > span {
-  border: none;
-  color: #8d939e;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-.PageList > .uk-pagination > li {
-  margin: 0 0 0 -1px;
-}
-.PageList > .uk-pagination > li > .PageListLoading {
-  border: none;
-  display: inline-block;
-}
-.PageList > .uk-pagination > li:first-child > a {
-  margin-left: 3px;
-}
-.PageList > .uk-pagination > li > a {
-  border: 1px solid #eeeeef !important;
-}
-.PageList > .uk-pagination > li.uk-active > a {
-  border-color: #e83561 !important;
-  background: #e83561;
-}
-#pw-masthead-mobile {
-  background-color: #1C2836;
-}
-#pw-masthead {
-  background-color: #1C2836;
-}
-#pw-masthead .uk-navbar-nav > li {
-  position: relative;
-  /*
-      &.uk-active > a:not(.hover):not(:hover):after {
-        border-color: transparent transparent rgba(255,255,255,0.5) transparent;
-      }
-      */
-}
-#pw-masthead .uk-navbar-nav > li,
-#pw-masthead .uk-navbar-nav > li > a {
-  color: rgba(255, 255, 255, 0.7);
-}
-#pw-masthead .uk-navbar-nav > li i,
-#pw-masthead .uk-navbar-nav > li > a i {
-  color: #8d939e;
-}
-#pw-masthead .uk-navbar-nav > li.uk-active,
-#pw-masthead .uk-navbar-nav > li.uk-active > a {
-  color: #fff;
-}
-#pw-masthead .uk-navbar-nav > li > a.hover,
-#pw-masthead .uk-navbar-nav > li > a:hover {
-  color: lightblue;
-}
-#pw-masthead .uk-navbar-nav > li > a.hover i,
-#pw-masthead .uk-navbar-nav > li > a:hover i {
-  color: lightblue;
-}
-#pw-masthead .uk-navbar-nav > li.uk-active > a:after,
-#pw-masthead .uk-navbar-nav > li > a.hover:after,
-#pw-masthead .uk-navbar-nav > li > a:hover:after {
-  content: " ";
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 6px 7px 6px;
-  border-color: transparent transparent #fff transparent;
-  position: absolute;
-  bottom: -1px;
-  left: 40%;
-  z-index: 99;
-}
-#pw-masthead .uk-navbar-nav > li > a.hover:after,
-#pw-masthead .uk-navbar-nav > li > a:hover:after {
-  z-index: 200;
-}
-#pw-masthead .pw-search-form .pw-search-input {
-  color: #8d939e;
-  background: transparent;
-  border-color: #364d69;
-  border-radius: 5px;
-}
-#pw-masthead .pw-search-form .pw-search-input:focus {
-  color: #fff;
-  border-color: #2e4058;
-  background: #2e4058;
-}
-#pw-masthead .pw-search-form .uk-form-icon {
-  color: #8d939e;
-}
-ul.pw-dropdown-menu,
-ul.ui-menu {
-  border: 1px solid #d9e1ea;
-  margin-top: -2px;
-}
-ul.pw-dropdown-menu > li.ui-menu-item > ul.ui-menu,
-ul.ui-menu > li.ui-menu-item > ul.ui-menu {
-  border: 1px solid #d9e1ea !important;
-}
-.pw-notices {
-  margin-top: 0;
-}
-.pw-notices > li {
-  margin: 0;
-}
-.pw-notices .NoticeMessage {
-  border-bottom: 1px solid #fafafb;
-}
-.pw-notices .NoticeMessage a.notice-remove {
-  color: #575555;
-}
-.pw-notices .NoticeWarning,
-.pw-notices .NoticeError {
-  border-bottom: 1px solid #fff;
-}
-.pw-notices .NoticeWarning a.notice-remove,
-.pw-notices .NoticeError a.notice-remove {
-  color: #fff;
-}
-#offcanvas-toggle {
-  cursor: pointer;
-}
-#offcanvas-toggle > i {
-  color: #8d939e;
-}
-#offcanvas-toggle:hover > i {
-  color: rgba(255, 255, 255, 0.7);
-}
-#offcanvas-nav {
-  color: #354b60;
-}
-#offcanvas-nav .uk-offcanvas-bar {
-  background: #e2e9ef;
-  padding: 0;
-  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.175);
-  border-right: 1px solid #c1d0dd;
-}
-#offcanvas-nav #offcanvas-nav-header {
-  display: none;
-}
-#offcanvas-nav .pw-sidebar-nav li > a {
-  padding-left: 20px;
-  padding-right: 20px;
-  color: #354b60;
-}
-#offcanvas-nav .pw-sidebar-nav li > a:hover {
-  color: #e83561;
-}
-#offcanvas-nav .pw-sidebar-nav li.uk-open {
-  padding-bottom: 0;
-  background: #ecf0f4;
-}
-#offcanvas-nav .pw-sidebar-nav li.uk-open > a {
-  color: #e83561;
-}
-#offcanvas-nav .pw-sidebar-nav li.pw-nav-spinner {
-  padding-left: 20px;
-}
-#offcanvas-nav .pw-search-form {
-  padding: 20px 20px 5px 20px;
-}
-#offcanvas-nav .pw-search-input {
-  background: #fff;
-  border-radius: 5px;
-}
-#offcanvas-nav .pw-logo {
-  display: none;
-}
-html.pw-sidebar-frame,
-html.pw-sidebar-frame body {
-  background: #fafafb;
-}
-html.pw-sidebar-frame #main,
-html.pw-sidebar-frame body #main {
-  background: #fafafb;
-}
-.Inputfields input:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):not(.uk-form-blank),
-.Inputfields textarea:not(.uk-form-blank) {
-  background-color: #f0f3f7;
-  border: 1px solid;
-  border-color: #b1c3d4 #cbd7e3 #cbd7e3 #cbd7e3;
-  -webkit-appearance: none;
-}
-.Inputfields input:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):not(.uk-form-blank):focus,
-.Inputfields textarea:not(.uk-form-blank):focus {
-  background-color: #f7f8fb;
-  border-color: #b1c3d4 #cbd7e3 #cbd7e3 #cbd7e3;
-}
-.Inputfields select.uk-select:not(.uk-form-blank) {
-  background-color: #f0f3f7;
-  border: 1px solid;
-  border-color: #cbd7e3;
-  -webkit-appearance: none;
-}
-.Inputfields select.uk-select:not(.uk-form-blank):focus {
-  background-color: #f7f8fb;
-  border-color: #cbd7e3;
-}
-.Inputfields input.uk-form-blank:focus,
-.Inputfields textarea.uk-form-blank:focus {
-  background-color: #f7f8fb;
-}
-img.pw-logo {
-  max-height: 40px;
-}
-img.pw-logo-native:hover {
-  filter: brightness(0) invert(1);
-}
-#pw-content-head h1 {
-  color: #1C2836;
-}
-.uk-breadcrumb {
-  padding-bottom: 0;
-}
-#main .notes {
-  color: #8d939e !important;
-  background: #ffd;
-}
-#pw-footer {
-  padding-top: 20px;
-  border-top: 1px solid #eeeeef;
 }
 /* cyrillic-ext */
 @font-face {

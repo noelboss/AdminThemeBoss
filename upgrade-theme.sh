@@ -33,7 +33,7 @@ rm -rf download
 
 printf "\n\nMove custom theme stuff back into new uikit folder"
 mv custom/ uikit/custom
-rm -y ./AdminThemeUikit/pw/pw-theme-reno.less
+rm ./AdminThemeUikit/pw/pw-theme-reno.less
 touch ./AdminThemeUikit/pw/pw-theme-reno.less
 
 printf "\n\nGo to new directory"
