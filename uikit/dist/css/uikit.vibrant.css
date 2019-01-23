@@ -16511,12 +16511,15 @@ form.Inputfield {
 .pw .uk-checkbox:checked {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
+.pw .InputfieldCheckboxes,
 .pw .LanguageSupport label.checkbox.detail,
 .pw .uk-form-controls-text label:only-of-type {
   cursor: pointer;
 }
+.pw .InputfieldCheckboxes input[type=checkbox],
 .pw .LanguageSupport label.checkbox.detail input[type=checkbox],
 .pw .uk-form-controls-text label:only-of-type input[type=checkbox],
+.pw .InputfieldCheckboxes input.uk-checkbox,
 .pw .LanguageSupport label.checkbox.detail input.uk-checkbox,
 .pw .uk-form-controls-text label:only-of-type input.uk-checkbox {
   font-size: .7rem;
@@ -16532,8 +16535,10 @@ form.Inputfield {
   flex-shrink: 0;
   vertical-align: bottom;
 }
+.pw .InputfieldCheckboxes input[type=checkbox]:after,
 .pw .LanguageSupport label.checkbox.detail input[type=checkbox]:after,
 .pw .uk-form-controls-text label:only-of-type input[type=checkbox]:after,
+.pw .InputfieldCheckboxes input.uk-checkbox:after,
 .pw .LanguageSupport label.checkbox.detail input.uk-checkbox:after,
 .pw .uk-form-controls-text label:only-of-type input.uk-checkbox:after {
   content: "";
@@ -16547,20 +16552,29 @@ form.Inputfield {
   transition: all 250ms ease 20ms;
   box-shadow: 0.05em 0.15em 0.5em rgba(0, 0, 0, 0.2);
 }
+.pw .InputfieldCheckboxes input[type=checkbox]:checked,
 .pw .LanguageSupport label.checkbox.detail input[type=checkbox]:checked,
 .pw .uk-form-controls-text label:only-of-type input[type=checkbox]:checked,
+.pw .InputfieldCheckboxes input.uk-checkbox:checked,
 .pw .LanguageSupport label.checkbox.detail input.uk-checkbox:checked,
 .pw .uk-form-controls-text label:only-of-type input.uk-checkbox:checked {
   background-color: transparent;
   box-shadow: inset 5em 0 0 0 #3ee9ff;
   border-color: #00BED7;
 }
+.pw .InputfieldCheckboxes input[type=checkbox]:checked:after,
 .pw .LanguageSupport label.checkbox.detail input[type=checkbox]:checked:after,
 .pw .uk-form-controls-text label:only-of-type input[type=checkbox]:checked:after,
+.pw .InputfieldCheckboxes input.uk-checkbox:checked:after,
 .pw .LanguageSupport label.checkbox.detail input.uk-checkbox:checked:after,
 .pw .uk-form-controls-text label:only-of-type input.uk-checkbox:checked:after {
   left: 1.85em;
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+}
+.pw .InputfieldCheckboxes label,
+.pw .InputfieldCheckbox label {
+  display: flex;
+  white-space: inherit;
 }
 .pw .InputfieldCheckboxes .InputfieldCheckboxesStacked li,
 .pw .InputfieldCheckbox .InputfieldCheckboxesStacked li {
@@ -16626,20 +16640,36 @@ li.aos_adminLangSwitcher > ul li > a:hover {
     display: none !important;
   }
 }
-.tooltipNotes #main #content p.notes,
-.tooltipDesc #main #content p.description {
+.tooltipNotes #main #content p.notes strong,
+.tooltipDesc #main #content p.description strong,
+.tooltipNotes #main #content p.notes em,
+.tooltipDesc #main #content p.description em {
+  color: inherit;
+}
+.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes,
+.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes,
+.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description,
+.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description {
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15) !important;
   background: rgba(250, 250, 250, 0.9) !important;
-  font-size: 1px;
+  font-size: 0.01vw;
 }
-.tooltipNotes #main #content p.notes:hover,
-.tooltipDesc #main #content p.description:hover {
+.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes:focus,
+.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes:focus,
+.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description:focus,
+.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description:focus,
+.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes:hover,
+.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes:hover,
+.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description:hover,
+.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description:hover {
   font-size: 1rem;
 }
-.tooltipNotes #main #content p.notes:before,
-.tooltipDesc #main #content p.description:before {
+.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes:before,
+.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes:before,
+.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description:before,
+.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description:before {
   color: #575555;
   margin-top: -3px;
   width: 22px;
@@ -16647,8 +16677,10 @@ li.aos_adminLangSwitcher > ul li > a:hover {
   line-height: 22px !important;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
 }
-.tooltipNotes #main #content p.notes:after,
-.tooltipDesc #main #content p.description:after {
+.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes:after,
+.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes:after,
+.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description:after,
+.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description:after {
   border-top-color: rgba(250, 250, 250, 0.9);
 }
 #wrap_Inputfield_enabledSubmodules > .InputfieldContent,

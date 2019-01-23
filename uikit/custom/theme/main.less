@@ -1310,6 +1310,7 @@ form.Inputfield {
 	}
 
 	/* checkbox switch toggle */
+	.InputfieldCheckboxes,
 	.LanguageSupport label.checkbox.detail,
 	.uk-form-controls-text label:only-of-type {
 		cursor: pointer;
@@ -1355,6 +1356,11 @@ form.Inputfield {
 
 	.InputfieldCheckboxes,
 	.InputfieldCheckbox {
+
+		label {
+			display: flex;
+			white-space: inherit;
+		}
 		.InputfieldCheckboxesStacked {
 			li {
 				padding-bottom: 3px;
@@ -1438,28 +1444,44 @@ li.aos_adminLangSwitcher {
 // aos notice and description
 .tooltipNotes #main #content p.notes,
 .tooltipDesc #main #content p.description {
-
-	-webkit-backdrop-filter: blur(20px);
-	backdrop-filter: blur(20px);
-
-	box-shadow: @pw-dropdown-box-shadow !important;
-	background: @pw-dropdown-background !important;
-	font-size: 1px;
-	&:hover {
-		font-size: 1rem; //font-weight: bold;
-	} //color: @theme-text-color;
-	&:before {
-		color: @theme-text-color;
-		margin-top: -3px;
-		width: 22px;
-		padding: 0;
-		line-height: 22px !important; //border-left: @theme-inputfield-border;
-		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+	strong,
+	em {
+		color: inherit;
 	}
-	&:after {
-		border-top-color: @pw-dropdown-background;
+} // disable effect on live preview
+.tooltipNotes,
+.tooltipDesc {
+	:not(.ProDraftsLivePreview) {
+		#main #content {
+			p.notes,
+			p.description {
+				-webkit-backdrop-filter: blur(20px);
+				backdrop-filter: blur(20px);
+				box-shadow: @pw-dropdown-box-shadow !important;
+				background: @pw-dropdown-background !important;
+				font-size: 0.01vw;
+				&:focus,
+				&:hover {
+					font-size: 1rem; //font-weight: bold;
+				} //color: @theme-text-color;
+				&:before {
+					color: @theme-text-color;
+					margin-top: -3px;
+					width: 22px;
+					padding: 0;
+					line-height: 22px !important; //border-left: @theme-inputfield-border;
+					box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+				}
+				&:after {
+					border-top-color: @pw-dropdown-background;
+				}
+			}
+		}
 	}
-} // aos backgrounds
+}
+
+
+// aos backgrounds
 #wrap_Inputfield_enabledSubmodules>.InputfieldContent,
 #wrap_Inputfield_enabledSubmodules>label,
 html.highlightRows .AdminDataTable.AdminDataList tr:hover td,

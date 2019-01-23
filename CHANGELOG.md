@@ -2,6 +2,12 @@
 
 © 2018 noelboss.com
 
+## Version 0.5.5
+
+* Fixed: Display of strong and italic content inside field descriptions and notes.
+* Fixed: Display of descriptions and notes with ProDrafts Livepreview
+* Fixed: Aligments of checkbox labels
+
 ## Version 0.5.4
 
 * Fixed: Reno theme regression
