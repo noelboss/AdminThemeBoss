@@ -49,10 +49,12 @@ printf "\n\ndone…"
 printf "
 
 You can now run
-$ uikit/yarn compile-less
+$ cd uikit 
+$ yarn compile-less
 
 or for development:
-$ uikit/yarn watch
+$ cd uikit
+$ yarn watch
 
 
 Enjoy…

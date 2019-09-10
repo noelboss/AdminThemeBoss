@@ -17,39 +17,21 @@ namespace ProcessWire;
 class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 {
 	/**
-	 * Development mode, to be used when developing this module’s code.
-	 */
-	const dev = false;
-
-	/**
 	 * Default logo image file (relative to this dir).
 	 */
 	const logo = 'uikit/custom/images/pw-mark.png';
 
-	private $adminThemeUikit;
-
 	public function ___upgrade()
 	{
-		//$this->message('unstall');
-		$this->setSettings();
-	}
-
-	public function ___install()
-	{
-		//$this->message('unstall');
-		$this->cache->saveFor($this, 'cssBackup', $this->modules->getConfig('AdminThemeUikit', 'cssURL'));
-		$this->cache->saveFor($this, 'logoBackup', $this->modules->getConfig('AdminThemeUikit', 'logoURL'));
-		$this->setSettings();
+		$this->cache->deleteFor($this);
 	}
 
 	public function ___uninstall()
 	{
-		//$this->message('uninstalled!');
-		$this->resetSettings();
 		$this->cache->deleteFor($this);
 	}
 
-	/*******************************************************************************************
+	/*
 	 * MARKUP RENDERING METHODS
 	 *
 	 */
@@ -59,28 +41,19 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 	 */
 	public function init()
 	{
-		$this->adminThemeUikit = $this->modules->AdminThemeUikit;
-		if ($this->get('allusers') && $this->user->admin_theme !== 'AdminThemeUikit') {
+		$this->addHookBefore('Modules::saveConfig', $this, 'updateSettings');
+
+		if (!$this->get('enablemodule')) {
+			return;
+		}
+
+		if ($this->get('allusers') && 'AdminThemeUikit' !== $this->user->admin_theme) {
 			$this->user->setAndSave('admin_theme', 'AdminThemeUikit');
 		}
 
 		if ($this->get('extendedbreadcrumb') && !$this->wire('modules')->isInstalled('BreadcrumbDropdowns')) {
 			$this->addHookAfter('AdminThemeUikit::renderBreadcrumbs', $this, 'renderBreadcrumbs');
 		}
-
-		$this->addHookAfter('Modules::saveConfig', function (HookEvent $event) {
-			$class = $event->arguments(0);
-			//bd($event->arguments(1));
-
-			if ($class == 'AdminThemeBoss') {
-				foreach ($event->arguments(1) as $key => $value) {
-					$this->set($key, $value);
-				}
-				$this->setSettings();
-			}
-
-			return $event;
-		});
 
 		// add placeholder text
 		$this->wire()->addHookAfter('ProcessLogin::buildLoginForm', function (HookEvent $event) {
@@ -89,31 +62,88 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 		});
 	}
 
+	public function ready()
+	{
+		if (!$this->get('enablemodule')) {
+			return;
+		}
+
+		// remove uikit css…
+		$this->config->styles->remove($this->modules->getConfig('AdminThemeUikit', 'cssURL'));
+
+		// add this css…
+		$this->config->styles->append($this->getVariant());
+	}
+
+	protected function updateSettings(HookEvent $event)
+	{
+		$class = $event->arguments(0);
+
+		// update logo…
+		if ($class == $this->className()) {
+			$newSettings = $event->arguments(1);
+			$oldSettings = $this->modules->getConfig($this);
+
+			// save old settings…
+			if ($oldSettings['enablemodule'] && false == $newSettings['enablemodule']) {
+				$this->message('Module disabled. Settings cached…');
+				$this->cache->saveFor($this, 'oldSettings', $oldSettings);
+			}
+			// reapply old settings…
+			elseif ($newSettings['enablemodule'] && false == $oldSettings['enablemodule']) {
+				// use old settings as new ones…
+				$newSettings = $this->cache->getFor($this, 'oldSettings');
+				if ($newSettings) {
+					$event->arguments(1, $newSettings);
+					$this->cache->deleteFor($this, 'oldSettings');
+					$this->message('Module settings restored…');
+				}
+			}
+
+			$logo      = $this->urls->AdminThemeBoss . self::logo;
+			$uikitlogo = $this->modules->getConfig('AdminThemeUikit', 'logoURL');
+
+			$usedark   = $newSettings['usedarklogo'];
+
+			if (!is_file($this->config->paths->root . $uikitlogo) || $usedark && is_file($this->config->paths->root . $logo)) {
+				if (is_file($this->config->paths->root . $uikitlogo) && $logo !== $uikitlogo) {
+					$this->warning('AdminThemeUikit uses a custom logo – this setting has no effect');
+				} else {
+					$this->modules->saveConfig('AdminThemeUikit', 'logoURL', $logo);
+				}
+			}
+
+			if (!$usedark && $logo == $uikitlogo) {
+				$this->modules->saveConfig('AdminThemeUikit', 'logoURL', '');
+			}
+		}
+	}
+
 	/**
 	 * Render a list of breadcrumbs (list items), excluding the containing <ul>.
 	 *
 	 * @return string
 	 */
-	public function renderBreadcrumbs(HookEvent $event)
+	protected function renderBreadcrumbs(HookEvent $event)
 	{
 		if (!$event->return) {
 			return;
 		}
 
 		$process = $this->wire('page')->process;
-		if ($process == 'ProcessPageList') {
+		if ('ProcessPageList' == $process) {
 			return '';
 		}
 		$breadcrumbs = $this->wire('breadcrumbs');
-		$out = '';
+		$out         = '';
 
 		// don't show breadcrumbs if only one of them (subjective)
-		if (count($breadcrumbs) < 2 && $process != 'ProcessPageEdit') {
+		if (count($breadcrumbs) < 2 && 'ProcessPageEdit' != $process) {
 			return '';
 		}
 
-		if (strpos($this->layout, 'sidenav') === false) {
-			$out = '<li>'.$event->object->renderQuickTreeLink().'</li>';
+		if (false === strpos($this->layout, 'sidenav')) {
+			$out = '<li>' . $event->object->renderQuickTreeLink() . '</li>';
 		}
 
 		foreach ($breadcrumbs as $breadcrumb) {
@@ -128,95 +158,43 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 				$pageid = explode('open=', $breadcrumb->url);
 				$pageid = end($pageid);
 				if (wire('pages')->get($pageid)->editable()) {
-					$edit = "&nbsp;&nbsp;<a href='../edit/?id=$pageid'>$icon</a>";
+					$edit = "&nbsp;&nbsp;<a href='../edit/?id={$pageid}'>{$icon}</a>";
 				}
-			} elseif (strpos($breadcrumb->url, '../') !== false && wire('process')) {
+			} elseif (false !== strpos($breadcrumb->url, '../') && wire('process')) {
 				// make sure we're editing a page and not a user
 				if (method_exists(wire('process'), 'getPage')) {
 					$pageid = wire('process')->getPage()->parent->id;
 
 					if (wire('pages')->get($pageid)->editable()) {
-						$edit = "&nbsp;&nbsp;<a href='../edit/?id=$pageid'>$icon</a>";
+						$edit = "&nbsp;&nbsp;<a href='../edit/?id={$pageid}'>{$icon}</a>";
 					}
 					// modify open
-					$breadcrumb->url = "../?open=$pageid";
+					$breadcrumb->url = "../?open={$pageid}";
 				}
 			}
-			$out .= "<li><a href='$breadcrumb->url'>$title</a>$edit</li>";
+			$out .= "<li><a href='{$breadcrumb->url}'>{$title}</a>{$edit}</li>";
 		}
 
 		if ($out) {
-			$out = "<ul class='uk-breadcrumb'>$out</ul>";
+			$out = "<ul class='uk-breadcrumb'>{$out}</ul>";
 		}
 
 		$event->return = $out;
 	}
 
-	/**
-	 * Get the primary Uikit CSS file to use.
-	 *
-	 * @return string
-	 *
-	 * @param mixed $event
-	 */
-	private function setSettings()
-	{
-		//$this->message('Set css settings: '.$this->getVariant());
-		$this->modules->saveConfig('AdminThemeUikit', 'cssURL', $this->getVariant());
-
-		if ($this->get('uselogo')) {
-			//$this->message('Set logo settings');
-			$url = '/site/modules/AdminThemeBoss/';
-
-			$this->modules->saveConfig('AdminThemeUikit', 'logoURL', $url.self::logo);
-		} else {
-			$conf['logoURL'] = $this->resetLogo();
-		}
-	}
-
-	/**
-	 * Get the primary Uikit CSS file to use.
-	 *
-	 * @return string
-	 *
-	 * @param mixed $event
-	 */
-	private function resetSettings()
-	{
-		//$this->message('Restored old settings');
-
-		$this->modules->saveConfig('AdminThemeUikit', 'cssURL', $this->cache->getFor($this, 'cssBackup'));
-		$this->resetLogo();
-	}
-
-	/**
-	 * Get the primary Uikit CSS file to use.
-	 *
-	 * @return string
-	 *
-	 * @param mixed $event
-	 */
-	private function resetLogo()
-	{
-		//$this->message('restored logo settings');
-		$this->modules->saveConfig('AdminThemeUikit', 'logoURL', $this->cache->getFor($this, 'logoBackup'));
-	}
-
 	private function getVariant()
 	{
-		$moduleInfo = $this->wire('modules')->getModuleInfo($this);
-
 		$variant = $this->get('variant');
 
-		$version = $moduleInfo['version'];
-		$url = '/site/modules/AdminThemeBoss/';
+		$version = $this->config->debug ? time() : $this->modules->getModuleInfoProperty($this, 'version');
+		$url     = $this->config->urls->AdminThemeBoss;
 
 		// default
-		$file = $url.'uikit/dist/css/uikit.pw.min.css?'.$version;
+		$file = $url . 'uikit/dist/css/uikit.pw.min.css?' . $version;
 
-		$exists = is_file($this->config->paths->AdminThemeBoss.'uikit/dist/css/uikit.'.$variant.'.min.css');
+		$exists = is_file($this->config->paths->AdminThemeBoss . 'uikit/dist/css/uikit.' . $variant . '.min.css');
 		if ($exists) {
-			$file = $url.'uikit/dist/css/uikit.'.$variant.'.min.css?'.$version;
+			$file = $url . 'uikit/dist/css/uikit.' . $variant . '.min.css?' . $version;
 		}
 
 		return $file;
