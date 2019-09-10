@@ -1,0 +1,173 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+
+@import "../variables.less";
+
+/* language switcher */
+
+#pw-mastheads {
+    li.aos_adminLangSwitcher {
+        >a:after {
+            display: none;
+        }
+
+        >ul {
+            &:after {
+                display: none;
+            }
+
+            &:before {
+                left: auto;
+                right: 30px;
+            }
+
+            filter: none; // box-shadow
+            background: transparent;
+            border-width: 0px;
+            box-shadow: @pw-dropdown-box-shadow;
+
+            li>a {
+                color: @pw-dropdown-nav-item-color;
+                background: @pw-dropdown-background;
+
+                &:active,
+                &:hover {
+                    background: @theme-dropdown-hover-background;
+                    color: darken(@pw-dropdown-nav-item-color, 7%)
+                }
+            }
+        }
+    }
+}
+
+
+
+// aos column breack on mobile
+.aos_col_right,
+.aos_col_left {
+    @media (max-width: 1149px) {
+        +.gutter {
+            display: none !important;
+        }
+
+        float: none !important;
+        width: 100% !important;
+    }
+}
+
+// Admin On Steroids –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+// aos notice and description
+html.tooltipNotes #main #content p.notes,
+html.tooltipDesc #main #content p.description {
+
+    strong,
+    em {
+        color: inherit;
+    }
+}
+
+html.tooltipNotes,
+html.tooltipDesc {
+
+    // disable effect on live preview
+    :not(.ProDraftsLivePreview) {
+        #main #content {
+
+            p.notes,
+            p.description {
+                // text
+                -webkit-backdrop-filter: blur(20px);
+                backdrop-filter: blur(20px);
+                box-shadow: @pw-dropdown-box-shadow  !important;
+                background: @theme-primary-color  !important;
+                font-size: 0.01vw;
+                letter-spacing: 0px;
+                pointer-events: all;
+                color: @theme-button-text-color  !important;
+                border-radius: 3px;
+
+                // triangle
+                &:after {
+                    border-top-color: @theme-primary-color;
+                }
+
+                &:focus,
+                &:hover {
+                    font-size: 1rem; //font-weight: bold;
+                }
+
+                // icon:
+                &:before {
+                    pointer-events: all;
+                    color: darken(@theme-text-color, 7%);
+                    margin-top: -3px;
+                    width: 22px;
+                    padding: 0;
+                    line-height: 22px !important; //border-left: @theme-inputfield-border;
+                    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+                }
+
+            }
+        }
+    }
+}
+
+// reset in certain situations
+#content p#ProcessListerSelector.notes {
+    position: static !important;
+    font-size: 1rem !important;
+    background: none !important;
+    border-width: 0px !important;
+    box-shadow: none !important;
+    width: auto;
+    height: auto;
+    text-indent: 0;
+    padding: 8px 0px;
+    pointer-events: all;
+    margin: 0;
+
+    &::before {
+        display: none;
+    }
+}
+
+
+// aos all checkboxes
+#checkAllCheckboxes {
+    border-color: transparent;
+
+    box-shadow: @pw-dropdown-box-shadow;
+    margin-left: 0 !important;
+
+    -ms-transform: translate(-25%, -20%);
+    transform: translate(-25%, -20%);
+
+    background: @pw-dropdown-background;
+
+    &:hover {
+        background: @theme-primary-color;
+    }
+
+    i:before {
+        color: @theme-primary-color;
+    }
+
+    &:hover i:before {
+        color: #fff;
+    }
+}
+
+#main .filterbox {
+    padding-left: 0 !important;
+
+    input {
+        background-position: 0 40% !important;
+        border-bottom-width: 0px !important;
+        padding-left: 2rem !important;
+    }
+}

@@ -9,6 +9,7 @@
 		#pw-masthead-mobile .pw-logo {
 			filter: grayscale(100%) brightness(200%);
 		}
+
 		#main {
 			#content form:not(#socialsLoginForm) {
 				.Inputfield {
@@ -17,7 +18,7 @@
 						color: #eee;
 						border-color: transparent;
 						background-color: rgba(60, 60, 63, 0.4);
-						box-shaddow: 0 3px 10px #000;
+						box-shadow: 0 3px 10px #000;
 
 						&:hover,
 						&:focus {
@@ -25,6 +26,7 @@
 							background-color: rgba(60, 60, 63, 0.7);
 							box-shadow: @pw-box-shadow;
 						}
+
 						&:focus {
 							border-color: #55555a;
 						}
@@ -33,20 +35,24 @@
 							color: @theme-muted-text-color-alternate;
 						}
 					}
+
 					label {
 						color: @theme-muted-text-color-alternate;
 					}
+
 					button {
-						background-color: lighten(@theme-muted-text-color-alternate, 40%);
-						color: #000;
+						color: lighten(@theme-muted-text-color-alternate, 30%);
+						background-color: #000;
+
 						&:hover {
-							color: lighten(@theme-muted-text-color-alternate, 30%);
-							background-color: #000;
+							color: #fff;
+							background-color: lighten(#000, 2%);
 						}
 					}
 				}
 			}
 		}
+
 		#socialsLoginForm ul.Inputfields {
 
 			.ui-button {
@@ -58,10 +64,12 @@
 		}
 
 		#pw-content-body {
+
 			// password links
 			>div {
 				a {
 					color: lighten(@theme-muted-text-color-alternate, 15%);
+
 					&:hover {
 						color: #fff;
 					}

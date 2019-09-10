@@ -1,0 +1,89 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+@import "../variables.less";
+
+.uk-table th {
+    font-size: inherit;
+}
+
+// improved padding for tables
+.InputfieldContent>.AdminDataTable {
+    margin: 0 -20px -24px;
+    width: calc(~"100% + 40px");
+}
+
+.InputfieldContent {
+
+    // parents exluded…
+    .pw-table-responsive {
+        margin: 0 0 -24px;
+    }
+
+    .modules_section .pw-table-responsive {
+        margin: 0 -20px -24px;
+
+        .AdminDataTable.AdminDataList,
+        table {
+            tr {
+
+                th,
+                td {
+                    &:first-child {
+                        padding-left: 20px
+                    }
+
+                    &:last-child {
+                        padding-right: 20px
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+html.highlightRowst,
+.pw .pw-table-responsive {
+
+    .AdminDataTable.AdminDataLis,
+    table {
+        tr {
+            &:hover {
+                td {
+                    background-color: linear-gradient(@global-background, @theme-muted-background) !important;
+                }
+            }
+        }
+    }
+}
+
+/* fix position  */
+.batchChildTableContainer {
+    +.ui-button {
+        margin-top: 25px;
+    }
+}
+
+// aos backgrounds
+#wrap_Inputfield_enabledSubmodules>.InputfieldContent,
+#wrap_Inputfield_enabledSubmodules>label,
+html.highlightRows .AdminDataTable.AdminDataList tr:hover td,
+html.highlightRows .PageListItem:hover {
+    background: linear-gradient(@global-background, @theme-muted-background);
+}
+
+// hover
+.uk-table-hover tbody tr:hover,
+.uk-table-hover>tr:hover,
+.uk-table-divider>:first-child>tr:not(:first-child),
+.uk-table-divider>:not(:first-child)>tr,
+.uk-table-divider>tr:not(:first-child) {
+    &:hover {
+        background: linear-gradient(@global-background, @theme-muted-background);
+    }
+}

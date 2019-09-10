@@ -88,7 +88,7 @@ strong {
   /* 2 */
   font-size: 0.875rem;
   /* 3 */
-  color: #faa;
+  color: #f8ada5;
   white-space: nowrap;
   padding: 0 0;
   background: none;
@@ -98,7 +98,7 @@ strong {
  * Emphasize
  */
 em {
-  color: #faa;
+  color: #f8ada5;
 }
 /*
  * Insert
@@ -1500,16 +1500,16 @@ button.uk-icon:not(:disabled) {
  */
 .uk-form-danger,
 .uk-form-danger:focus {
-  color: #faa;
-  border-color: #faa;
+  color: #f8ada5;
+  border-color: #f8ada5;
 }
 /*
  * Success
  */
 .uk-form-success,
 .uk-form-success:focus {
-  color: #8bccde;
-  border-color: #8bccde;
+  color: #cbf2e1;
+  border-color: #cbf2e1;
 }
 /*
  * Blank
@@ -1953,20 +1953,20 @@ select.uk-form-width-xsmall {
  * Danger
  */
 .uk-button-danger {
-  background-color: #faa;
+  background-color: #f8ada5;
   color: #000;
   border: 1px solid transparent;
 }
 /* Hover + Focus */
 .uk-button-danger:hover,
 .uk-button-danger:focus {
-  background-color: #ff9090;
+  background-color: #f6978d;
   color: #000;
 }
 /* OnClick + Active */
 .uk-button-danger:active,
 .uk-button-danger.uk-active {
-  background-color: #ff7777;
+  background-color: #f48276;
   color: #000;
 }
 /*
@@ -3111,20 +3111,20 @@ select.uk-form-width-xsmall {
  */
 .uk-alert-success {
   background: #ffffff;
-  color: #8bccde;
+  color: #cbf2e1;
 }
 /*
  * Warning
  */
 .uk-alert-warning {
-  background: #FFD15E;
+  background: #ffe299;
   color: #000;
 }
 /*
  * Danger
  */
 .uk-alert-danger {
-  background: #faa;
+  background: #f8ada5;
   color: #000;
 }
 /*
@@ -3199,21 +3199,21 @@ select.uk-form-width-xsmall {
  * Success
  */
 .uk-label-success {
-  background-color: #8bccde;
+  background-color: #cbf2e1;
   color: #000;
 }
 /*
  * Warning
  */
 .uk-label-warning {
-  background-color: #FFD15E;
+  background-color: #ffe299;
   color: #000;
 }
 /*
  * Danger
  */
 .uk-label-danger {
-  background-color: #faa;
+  background-color: #f8ada5;
   color: #000;
 }
 /* ========================================================================
@@ -4336,10 +4336,8 @@ ul.uk-nav-sub {
   /* 2 */
   color: #777;
   transition: color 0.1s ease-in-out;
-  padding: 2px 11px;
-  color: #575555;
   background: #fafafb;
-  border: 1px solid #eeeeef;
+  padding: 2px 11px;
 }
 /* Hover + Focus */
 .uk-pagination > * > :hover,
@@ -4347,9 +4345,6 @@ ul.uk-nav-sub {
   color: #000;
   text-decoration: none;
   background: #f4f4f6;
-  color: #575555;
-  background: #ececf0;
-  border: 1px solid #eeeeef;
 }
 /* Active */
 .uk-pagination > .uk-active > * {
@@ -4359,13 +4354,6 @@ ul.uk-nav-sub {
 .uk-pagination > .uk-active > * a {
   background: #f4f4f6;
   color: #000;
-}
-.uk-pagination > .uk-active > *,
-.uk-pagination > .uk-active > * a {
-  background: #333335;
-  color: #000;
-  border: 1px solid #eeeeef;
-  border-color: #333335;
 }
 /* Disabled */
 .uk-pagination > .uk-disabled > * {
@@ -4451,7 +4439,7 @@ ul.uk-nav-sub {
   color: #333;
   border-color: #333335;
   border: 1px solid #eeeeef;
-  box-shadow: 0px -5px 15px -6px rgba(0, 0, 2, 0.1);
+  box-shadow: 0px -5px 15px -6px #fafafb;
   border-bottom-color: transparent;
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
@@ -5835,19 +5823,19 @@ ul.uk-nav-sub {
  * Success
  */
 .uk-notification-message-success {
-  color: #8bccde;
+  color: #cbf2e1;
 }
 /*
  * Warning
  */
 .uk-notification-message-warning {
-  color: #FFD15E;
+  color: #ffe299;
 }
 /*
  * Danger
  */
 .uk-notification-message-danger {
-  color: #faa;
+  color: #f8ada5;
 }
 /* ========================================================================
    Component: Tooltip
@@ -7019,13 +7007,13 @@ ul.uk-nav-sub {
   color: #f4f4f6 !important;
 }
 .uk-text-success {
-  color: #8bccde !important;
+  color: #cbf2e1 !important;
 }
 .uk-text-warning {
-  color: #FFD15E !important;
+  color: #ffe299 !important;
 }
 .uk-text-danger {
-  color: #faa !important;
+  color: #f8ada5 !important;
 }
 /* Background modifier
  ========================================================================== */
@@ -13416,7 +13404,7 @@ body .ui-tooltip {
 }
 .ui-state-error,
 .ui-widget-content .ui-state-error {
-  background: #faa;
+  background: #f8ada5;
   color: #000;
 }
 .ui-state-error:not(:input),
@@ -13853,7 +13841,7 @@ a.tooltip:hover {
   min-width: 200px;
   font-size: 0.875rem;
   line-height: 1.2em;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   display: none;
   border: none;
@@ -13903,14 +13891,14 @@ a.tooltip:hover {
 }
 .ui-menu .ui-menu-item a.uk-active,
 .ui-menu .ui-menu-item a.on {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.6);
+  color: #454343;
+  background: rgba(0, 0, 0, 0.4);
 }
 .ui-menu .ui-menu-item a:hover,
 .ui-menu .ui-menu-item a.ui-state-focus,
 .ui-menu .ui-menu-item a.ui-state-active {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.6);
+  color: #454343;
+  background: rgba(0, 0, 0, 0.4);
 }
 .ui-menu .ui-menu-item a .ui-menu-icon {
   display: none;
@@ -13921,7 +13909,7 @@ a.tooltip:hover {
 .ui-menu .ui-menu-item .ui-menu.navJSON {
   display: none;
   border: none;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   font-size: 0.875rem;
 }
@@ -14645,7 +14633,7 @@ table.AdminDataTable .Inputfields .Inputfield .InputfieldContent {
   background: #ffffff;
 }
 .InputfieldIsSuccess > .InputfieldHeader {
-  color: #8bccde;
+  color: #cbf2e1;
 }
 .InputfieldIsHighlight:not(.InputfieldNoBorder) {
   /*
@@ -14670,7 +14658,7 @@ table.AdminDataTable .Inputfields .Inputfield .InputfieldContent {
 }
 .InputfieldIsWarning:not(.InputfieldNoBorder) > .InputfieldHeader,
 .InputfieldIsWarning:not(.InputfieldNoBorder) > .InputfieldContent {
-  background: #ffeec4;
+  background: #ffffff;
 }
 .InputfieldIsWarning > .InputfieldHeader {
   color: #000;
@@ -14695,7 +14683,7 @@ table.AdminDataTable .Inputfields .Inputfield .InputfieldContent {
 .InputfieldStateError > .InputfieldHeader,
 .InputfieldIsDanger > .InputfieldHeader,
 .InputfieldIsError > .InputfieldHeader {
-  color: #faa;
+  color: #f8ada5;
 }
 /*** AsmSelect **************************************************************/
 .asmContainer {
@@ -14931,7 +14919,7 @@ a.InputfieldButtonLink:hover {
 }
 .InputfieldFileList > li > .InputfieldItemHeader.ui-state-error {
   text-decoration: line-through;
-  background: #faa;
+  background: #f8ada5;
 }
 .InputfieldFileList > li > .InputfieldFileData {
   background: #fff;
@@ -15041,10 +15029,10 @@ a.InputfieldButtonLink:hover {
 }
 .Inputfields .InputfieldRepeater .InputfieldContent .InputfieldRepeaterItem > .InputfieldHeader.ui-state-error {
   text-decoration: line-through;
-  background: #faa;
+  background: #f8ada5;
   color: #000;
   border: none;
-  outline-color: #faa;
+  outline-color: #f8ada5;
 }
 .Inputfields .InputfieldRepeater .InputfieldContent .InputfieldRepeaterItem > .InputfieldContent {
   outline: 1px solid #eeeeef;
@@ -15078,10 +15066,10 @@ a.InputfieldButtonLink:hover {
   color: #f4f4f6;
 }
 .pw-notices .uk-alert-warning .notice-remove {
-  color: #FFD15E;
+  color: #ffe299;
 }
 .pw-notices .uk-alert-danger .notice-remove {
-  color: #faa;
+  color: #f8ada5;
 }
 .pw-notices .uk-alert-danger a {
   color: rgba(0, 0, 0, 0.7);
@@ -15120,10 +15108,10 @@ a.InputfieldButtonLink:hover {
   margin-bottom: 0;
 }
 #NotificationBug.NoticeError {
-  background: #faa;
+  background: #f8ada5;
 }
 #NotificationBug.NoticeWarning {
-  background: #f7b000;
+  background: #ffc533;
 }
 body .ProDraftsNotice {
   background: #fafafb;
@@ -15663,6 +15651,13 @@ ul.uk-navbar-nav ul {
  *
  */
 /**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+/**************************************************************
  * Primary variables
  *
  * The entire color theme can be adjusted from the @theme
@@ -15683,6 +15678,153 @@ ul.uk-navbar-nav ul {
  * adjustments to the theme colors.
  *
  */
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+/* language switcher */
+#pw-mastheads li.aos_adminLangSwitcher > a:after {
+  display: none;
+}
+#pw-mastheads li.aos_adminLangSwitcher > ul {
+  filter: none;
+  background: transparent;
+  border-width: 0px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+#pw-mastheads li.aos_adminLangSwitcher > ul:after {
+  display: none;
+}
+#pw-mastheads li.aos_adminLangSwitcher > ul:before {
+  left: auto;
+  right: 30px;
+}
+#pw-mastheads li.aos_adminLangSwitcher > ul li > a {
+  color: #575555;
+  background: rgba(250, 250, 250, 0.9);
+}
+#pw-mastheads li.aos_adminLangSwitcher > ul li > a:active,
+#pw-mastheads li.aos_adminLangSwitcher > ul li > a:hover {
+  background: rgba(0, 0, 0, 0.4);
+  color: #454343;
+}
+@media (max-width: 1149px) {
+  .aos_col_right,
+  .aos_col_left {
+    float: none !important;
+    width: 100% !important;
+  }
+  .aos_col_right + .gutter,
+  .aos_col_left + .gutter {
+    display: none !important;
+  }
+}
+html.tooltipNotes #main #content p.notes strong,
+html.tooltipDesc #main #content p.description strong,
+html.tooltipNotes #main #content p.notes em,
+html.tooltipDesc #main #content p.description em {
+  color: inherit;
+}
+html.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes,
+html.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes,
+html.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description,
+html.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2) !important;
+  background: #000000 !important;
+  font-size: 0.01vw;
+  letter-spacing: 0px;
+  pointer-events: all;
+  color: #fff !important;
+  border-radius: 3px;
+}
+html.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes:after,
+html.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes:after,
+html.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description:after,
+html.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description:after {
+  border-top-color: #000000;
+}
+html.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes:focus,
+html.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes:focus,
+html.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description:focus,
+html.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description:focus,
+html.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes:hover,
+html.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes:hover,
+html.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description:hover,
+html.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description:hover {
+  font-size: 1rem;
+}
+html.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes:before,
+html.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes:before,
+html.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description:before,
+html.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description:before {
+  pointer-events: all;
+  color: #454343;
+  margin-top: -3px;
+  width: 22px;
+  padding: 0;
+  line-height: 22px !important;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+}
+#content p#ProcessListerSelector.notes {
+  position: static !important;
+  font-size: 1rem !important;
+  background: none !important;
+  border-width: 0px !important;
+  box-shadow: none !important;
+  width: auto;
+  height: auto;
+  text-indent: 0;
+  padding: 8px 0px;
+  pointer-events: all;
+  margin: 0;
+}
+#content p#ProcessListerSelector.notes::before {
+  display: none;
+}
+#checkAllCheckboxes {
+  border-color: transparent;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  margin-left: 0 !important;
+  -ms-transform: translate(-25%, -20%);
+  transform: translate(-25%, -20%);
+  background: rgba(250, 250, 250, 0.9);
+}
+#checkAllCheckboxes:hover {
+  background: #000000;
+}
+#checkAllCheckboxes i:before {
+  color: #000000;
+}
+#checkAllCheckboxes:hover i:before {
+  color: #fff;
+}
+#main .filterbox {
+  padding-left: 0 !important;
+}
+#main .filterbox input {
+  background-position: 0 40% !important;
+  border-bottom-width: 0px !important;
+  padding-left: 2rem !important;
+}
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
 /**********************************************************************
  * Styles
  *
@@ -15698,199 +15840,48 @@ ul.uk-navbar-nav ul {
 .hook-base-h4 {
   color: #645959;
 }
-.hook-tab-item {
-  border: 1px solid transparent;
-  margin-left: -1px;
-  text-transform: uppercase;
+img.pw-logo {
+  max-height: 40px;
 }
-.langTabs .ui-tabs-nav > li,
-.langTabs .uk-tab > li {
-  background: transparent;
-  margin: 3px 0 0;
-  border: none;
-  padding: 0 !important;
+img.pw-logo-native:hover {
+  opacity: 0.9;
 }
-.langTabs .ui-tabs-nav > li.langTabEmpty > a,
-.langTabs .uk-tab > li.langTabEmpty > a {
-  color: #777;
-}
-.langTabs .ui-tabs-nav > li > a,
-.langTabs .uk-tab > li > a {
-  margin: 0 1px 0 0;
-  display: inline-block;
-  border: none;
-  border-radius: 0;
-  color: #575555;
-  background: transparent;
-  padding: 4px 15px;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-.langTabs .ui-tabs-nav > li > a:hover,
-.langTabs .uk-tab > li > a:hover {
-  color: #000000;
-  background: #fafafb;
-}
-.langTabs .ui-tabs-nav > li.uk-active > a,
-.langTabs .uk-tab > li.uk-active > a {
+#pw-content-head h1 {
   color: #131111;
-  background: #fff;
-  border: 1px solid #f1efef;
-  border-bottom: none;
-  box-shadow: 0px -5px 15px -6px rgba(0, 0, 2, 0.1);
 }
-.WireTabs.uk-tab > li.uk-active.pw-tab-muted {
-  background: #fafafb;
-}
-.WireTabs.uk-tab > li.uk-active.pw-tab-muted > a {
-  border-bottom: none;
-}
-/* Page List (Edit Screen)*/
-#mqin .uk-pagination > li,
-#main .PageList {
-  background: transparent;
-}
-#mqin .uk-pagination > li .PageListActions,
-#main .PageList .PageListActions {
-  margin-left: 0.5em;
-}
-#mqin .uk-pagination > li .PageListActions a,
-#main .PageList .PageListActions a {
-  text-transform: uppercase;
-  font-size: 0.9em;
-  line-height: 1;
-}
-#mqin .uk-pagination > li .PageListItem,
-#main .PageList .PageListItem {
-  border-bottom-width: 0;
-  font-size: 16px;
-}
-#mqin .uk-pagination > li .PageListItem.PageListItemOpen,
-#main .PageList .PageListItem.PageListItemOpen {
-  font-weight: bold;
-}
-#mqin .uk-pagination > li .PageListItem > a.PageListPage .label_title:hover,
-#main .PageList .PageListItem > a.PageListPage .label_title:hover,
-#mqin .uk-pagination > li .PageListItem > a.PageListPage:hover,
-#main .PageList .PageListItem > a.PageListPage:hover {
-  text-decoration: none;
-}
-#mqin .uk-pagination > li .PageListItem > a.PageListPage i,
-#main .PageList .PageListItem > a.PageListPage i {
-  padding-right: 0.5em;
-}
-#mqin .uk-pagination > li .uk-pagination > li,
-#main .PageList .uk-pagination > li {
-  padding: 0;
-  margin-left: -1px;
-  margin: 0 0 0 -1px;
-}
-#mqin .uk-pagination > li .uk-pagination > li > a,
-#main .PageList .uk-pagination > li > a {
-  border-radius: 0;
-}
-#mqin .uk-pagination > li .uk-pagination > li:first-child > a,
-#main .PageList .uk-pagination > li:first-child > a {
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-#mqin .uk-pagination > li .uk-pagination > li:last-child > a,
-#main .PageList .uk-pagination > li:last-child > a {
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
-#mqin .uk-pagination > li .uk-pagination > li.uk-disabled > span,
-#main .PageList .uk-pagination > li.uk-disabled > span {
-  border: none;
-  color: #777;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-#mqin .uk-pagination > li .uk-pagination > li > .PageListLoading,
-#main .PageList .uk-pagination > li > .PageListLoading {
-  border: none;
-  display: inline-block;
-}
-#mqin .uk-pagination > li .uk-pagination > li:first-child > a,
-#main .PageList .uk-pagination > li:first-child > a {
-  margin-left: 3px;
-}
-#mqin .uk-pagination > li .uk-pagination > li > a,
-#main .PageList .uk-pagination > li > a {
-  border: 1px solid #eeeeef !important;
-}
-#mqin .uk-pagination > li .uk-pagination > li.uk-active > a,
-#main .PageList .uk-pagination > li.uk-active > a {
-  border-color: #333335 !important;
-  background: #333335;
-  color: #fff;
-}
-.pw #pw-masthead-mobile {
-  background-color: #fff;
-}
-.pw #pw-masthead {
-  background-color: #fff;
-}
-.pw #pw-masthead .uk-navbar-nav > li {
-  position: relative;
-}
-.pw #pw-masthead .uk-navbar-nav > li,
-.pw #pw-masthead .uk-navbar-nav > li > a {
-  color: #444444;
-}
-.pw #pw-masthead .uk-navbar-nav > li i,
-.pw #pw-masthead .uk-navbar-nav > li > a i {
-  color: #000000;
-}
-.pw #pw-masthead .uk-navbar-nav > li.uk-active,
-.pw #pw-masthead .uk-navbar-nav > li.uk-active > a {
-  color: #000000;
-}
-.pw #pw-masthead .uk-navbar-nav > li > a.hover,
-.pw #pw-masthead .uk-navbar-nav > li > a:hover {
-  color: #222222;
-}
-.pw #pw-masthead .uk-navbar-nav > li > a.hover i,
-.pw #pw-masthead .uk-navbar-nav > li > a:hover i {
-  color: #222222;
-}
-.pw #pw-masthead .pw-search-form .pw-search-input {
-  color: #000000;
-  background: #ffffff;
-  border-color: #808080;
-  border-radius: 2em;
-}
-.pw #pw-masthead .pw-search-form .pw-search-input:focus {
-  color: #333335;
-  background: #eeeeee;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 2, 0.2);
-}
-.pw #pw-masthead .pw-search-form .uk-form-icon {
-  color: #333333;
-}
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
 .ui-autocomplete a:hover .uk-text-muted {
   color: inherit !important;
   opacity: 0.9;
 }
-/* Dropdowns ------------------------------------------------------------*/
+.pw-dropdown-toggle:after {
+  display: none !important;
+}
 body > ul.ui-autocomplete,
 ul.breadcrumb-dropdown,
 li.aos_adminLangSwitcher > ul,
 body > ul.pw-dropdown-ready {
   border-radius: 5px;
 }
-body > ul.ui-autocomplete:before,
-ul.breadcrumb-dropdown:before,
-li.aos_adminLangSwitcher > ul:before,
-body > ul.pw-dropdown-ready:before {
+body > ul.ui-autocomplete:after,
+ul.breadcrumb-dropdown:after,
+li.aos_adminLangSwitcher > ul:after,
+body > ul.pw-dropdown-ready:after {
   content: " ";
+  display: block;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 7px 9px 7px;
-  border-color: transparent transparent #eee transparent;
+  border-width: 0 8px 8px 8px;
+  border-color: transparent transparent rgba(237, 237, 237, 0.9) transparent;
   position: absolute;
-  top: -9px;
+  top: -8px;
   left: 30px;
   z-index: 99;
 }
@@ -15932,16 +15923,34 @@ body > ul.pw-dropdown-ready ul > li:last-child > a {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+body > ul.pw-button-dropdown:before,
+body > ul.ui-autocomplete:before,
+#_ProcessPageEditViewDropdown:before {
+  display: block;
+  content: " ";
+  height: 8px;
+  background: transparent;
+}
+body > ul.pw-button-dropdown:after,
+body > ul.ui-autocomplete:after,
+#_ProcessPageEditViewDropdown:after {
+  left: auto;
+  right: 20px;
+  top: 0;
+}
+body > ul.ui-autocomplete {
+  transform: translate(0, 10px);
+}
 body.template-admin #_ProcessPageEditViewDropdown {
   transform: translate(-5px, 30px);
 }
 body.template-admin ul.pw-button-dropdown.pw-dropdown-menu,
-body.template-admin.ProcessPageList ul.pw-dropdown-menu {
+body.template-admin.ProcessPageList #content ul.pw-dropdown-menu {
   transform: translate(-5px, 10px);
   /* move triangle to the right */
 }
 body.template-admin ul.pw-button-dropdown.pw-dropdown-menu[data-at~="right"]:before,
-body.template-admin.ProcessPageList ul.pw-dropdown-menu[data-at~="right"]:before {
+body.template-admin.ProcessPageList #content ul.pw-dropdown-menu[data-at~="right"]:before {
   left: auto;
   right: 15px;
 }
@@ -15949,23 +15958,13 @@ ul.breadcrumb-dropdown,
 ul.pw-dropdown-menu,
 ul.ui-menu {
   border: 0px solid #eee;
-  backdrop-filter: blur(20px) drop-shadow(4px 4px 10px blue);
-  margin-top: -2px;
+  backdrop-filter: blur(20px) drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.2));
+  -webkit-backdrop-filter: blur(20px) drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.2));
 }
 ul.breadcrumb-dropdown > li.ui-menu-item > ul.ui-menu,
 ul.pw-dropdown-menu > li.ui-menu-item > ul.ui-menu,
 ul.ui-menu > li.ui-menu-item > ul.ui-menu {
   border: 0px solid #eee !important;
-}
-.pw #pw-mastheads > header {
-  backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 10px 20px #ffffff;
-}
-body > ul.ui-autocomplete:before,
-#_ProcessPageEditViewDropdown:before,
-.pw-button-dropdown:before {
-  display: none !important;
 }
 #main .uk-breadcrumb {
   padding-bottom: 0;
@@ -15990,7 +15989,7 @@ body > ul.ui-autocomplete:before,
 }
 #main .uk-breadcrumb ul.breadcrumb-dropdown {
   background: rgba(250, 250, 250, 0.9);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   border: 0px solid #eee;
 }
 #main .uk-breadcrumb ul.breadcrumb-dropdown:before {
@@ -16008,115 +16007,368 @@ body > ul.ui-autocomplete:before,
 }
 #main .uk-breadcrumb ul.breadcrumb-dropdown > li > a:active,
 #main .uk-breadcrumb ul.breadcrumb-dropdown > li > a:hover {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   color: #fff;
 }
-.pw-notices {
-  margin-top: 0;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 2, 0.2);
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+#main {
+  /* buttons --------------------------------------------------------------------*/
+  /* Form Shadows --------------------------------------------------------------------*/
+  /* Chosen Inputfields */
+  /* chosen fields -------------------------------------------------------------- */
+  /* Color Required fields Asterics */
+  /* labels */
+  /* image edit*/
+  /* lightboxes */
+  /* radio & checkbox. */
+  /* checkbox switch toggle */
+  /* Label Color */
 }
-.pw-notices > li {
-  margin: 0;
-}
-.pw-notices .NoticeMessage {
-  border-bottom: 1px solid #fafafb;
-}
-.pw-notices .NoticeMessage a.notice-remove {
-  color: #575555;
-}
-.pw-notices .NoticeWarning,
-.pw-notices .NoticeError {
-  border-bottom: 1px solid #fff;
-}
-.pw-notices .NoticeWarning a.notice-remove,
-.pw-notices .NoticeError a.notice-remove {
-  color: #fff;
-}
-#offcanvas-toggle {
-  cursor: pointer;
-}
-#offcanvas-toggle > i {
-  color: #000000;
-}
-#offcanvas-toggle:hover > i {
-  color: #444444;
-}
-#offcanvas-nav {
-  color: #575555;
-}
-#offcanvas-nav .uk-offcanvas-bar {
-  background: rgba(250, 250, 250, 0.9);
-  padding: 0;
-  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.175);
-  border-right: 1px solid rgba(225, 225, 225, 0.9);
-}
-#offcanvas-nav #offcanvas-nav-header {
-  display: none;
-}
-#offcanvas-nav .pw-sidebar-nav li > a {
-  padding-left: 20px;
-  padding-right: 20px;
-  color: #575555;
-}
-#offcanvas-nav .pw-sidebar-nav li > a:hover {
-  color: #333335;
-}
-#offcanvas-nav .pw-sidebar-nav li.uk-open {
-  padding-bottom: 0;
-  background: rgba(255, 255, 255, 0.9);
-}
-#offcanvas-nav .pw-sidebar-nav li.uk-open > a {
-  color: #333335;
-}
-#offcanvas-nav .pw-sidebar-nav li.pw-nav-spinner {
-  padding-left: 20px;
-}
-#offcanvas-nav .pw-search-form {
-  padding: 20px 20px 5px 20px;
-}
-#offcanvas-nav .pw-search-input {
-  background: #fff;
-  border-radius: 5px;
-}
-#offcanvas-nav .pw-logo {
-  display: none;
-}
-html.pw-sidebar-frame,
-html.pw-sidebar-frame body {
-  background: #fafafb;
-}
-html.pw-sidebar-frame #main,
-html.pw-sidebar-frame body #main {
-  background: #fafafb;
-}
-.InputfieldFieldset > .InputfieldHeader {
+#main .InputfieldFieldset > .InputfieldHeader {
   font-weight: normal;
   background: transparent;
 }
-.Inputfields input:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]),
-.Inputfields textarea {
+#main form.Inputfield {
+  background: transparent;
+}
+#main .Inputfields input:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]),
+#main .Inputfields textarea {
   background: #fff;
   border: 1px solid;
   border-color: #ccc #ddd #ddd #ddd;
   -webkit-appearance: none;
 }
-.Inputfields input:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):focus,
-.Inputfields textarea:focus {
+#main .Inputfields input:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):focus,
+#main .Inputfields textarea:focus {
   background: #ffffff;
   border-color: #ccc #ddd #ddd #ddd;
 }
-img.pw-logo {
-  max-height: 40px;
-}
-img.pw-logo-native:hover {
-  opacity: 0.9;
-}
-#pw-content-head h1 {
-  color: #131111;
+#main .Inputfields select {
+  background-color: #fff;
+  border: 1px solid;
+  border-color: #ccc #ddd #ddd #ddd;
 }
 #main .notes {
-  color: #777 !important;
+  color: #777;
   background: transparent;
+}
+#main .ui-datepicker {
+  background: transparent;
+  box-shadow: none;
+}
+#main .ui-datepicker#ui-datepicker-div {
+  background: rgba(250, 250, 250, 0.9);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+#main .ui-datepicker > div {
+  border-color: #dcdcdc;
+}
+#main .ui-datepicker table td .ui-state-default {
+  border-color: transparent;
+}
+#main .ui-datepicker table td .ui-state-hover,
+#main .ui-datepicker table td .ui-state-active {
+  background: #777, 15%;
+  color: #fff;
+}
+#main .ui-datepicker table td .ui-state-highlight,
+#main .ui-datepicker table td .ui-state-highlight:hover {
+  background: rgba(0, 0, 0, 0.4);
+  color: #575555;
+}
+#main .ui-datepicker button {
+  border-width: 0px;
+}
+#main .ui-datepicker button.ui-datepicker-close {
+  background: #000000;
+  color: #fff;
+}
+#main .ui-datepicker button.ui-datepicker-close:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+#main .ui-datepicker button.ui-datepicker-current {
+  background: #777;
+  color: #fff;
+}
+#main button.ui-button {
+  position: relative;
+  z-index: 1;
+}
+#main button.ui-button:hover {
+  z-index: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+#main button.ui-button:hover + .ui-button {
+  z-index: 0;
+}
+#main .InputfieldSubmit button,
+#main .pw-button-dropdown-wrap button {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+#main .InputfieldSubmit:hover button,
+#main .Inputfield_submit_save:hover button,
+#main .pw-button-dropdown-wrap:hover button {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+#main form.WireTab > ul {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+}
+#main .WireTabs > .uk-active {
+  box-shadow: 0 0px 20px rgba(255, 255, 255, 0.5);
+}
+#main .Inputfields .Inputfield:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset):not(.InputfieldSubmit) {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+}
+.InputfieldContent > .Inputfields > .Inputfield #main .Inputfields .Inputfield:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset):not(.InputfieldSubmit) {
+  box-shadow: none;
+}
+#main .chosen-container-active.chosen-with-drop .chosen-single {
+  box-shadow: none;
+  border-color: #ccc #ddd #ddd #ddd;
+}
+#main .chosen-container-single .chosen-single {
+  padding: 7px 25px 7px 7px;
+  background: #fff;
+  border-color: #ccc #ddd #ddd #ddd;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+#main .chosen-container-single .chosen-single abbr {
+  top: 14px;
+}
+#main .chosen-container-single .chosen-single div {
+  top: 8px;
+}
+#main .chosen-container .chosen-choices {
+  border-color: #ccc #ddd #ddd #ddd;
+  background: #fff;
+}
+#main .chosen-container .chosen-choices li.search-choice {
+  background: rgba(0, 0, 0, 0.07);
+  border-radius: 3px;
+  padding: 7px 25px 7px 7px;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+#main .chosen-container .chosen-choices li.search-choice:hover {
+  background: rgba(51, 51, 51, 0.07);
+}
+#main .chosen-container .chosen-choices li.search-choice .search-choice-close {
+  top: 8px;
+}
+#main .chosen-container .chosen-choices .search-field input {
+  padding-top: 6px;
+  line-height: 20px;
+  height: 32px;
+}
+#main .chosen-container .chosen-drop {
+  background: rgba(250, 250, 250, 0.9);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-color: #ccc #ddd #ddd #ddd;
+  border-top-width: 0;
+}
+#main .chosen-container .chosen-results li.highlighted {
+  background: rgba(0, 0, 0, 0.2);
+  color: #575555;
+}
+#main .chosen-container-active .chosen-choices {
+  border-color: #ccc #ddd #ddd #ddd;
+  box-shadow: none;
+}
+#main .asmListItem {
+  margin-top: 10px;
+}
+#main .asmListItem.ui-state-hover,
+#main .asmListItem.ui-state-default {
+  background: rgba(0, 0, 0, 0.07);
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding: 2px;
+}
+#main .asmListItem.ui-state-hover a,
+#main .asmListItem.ui-state-default a,
+#main .asmListItem.ui-state-hover a:hover,
+#main .asmListItem.ui-state-default a:hover {
+  text-decoration: none;
+}
+#main .asmListItem.ui-state-hover {
+  background: rgba(51, 51, 51, 0.07);
+}
+#main .asmListItem .asmListItemRemove i {
+  top: 3px;
+  right: 7px;
+}
+#main .InputfieldStateRequired > .InputfieldHeader:first-child:after {
+  color: inherit;
+  opacity: 0.7;
+}
+#main .InputfieldHeader {
+  font-weight: normal;
+  text-transform: uppercase;
+}
+#main .InputfieldHeader .fa + span.title {
+  margin-left: 0.3em;
+}
+#main .ui-slider,
+#main .ui-slider-horizontal {
+  background: rgba(232, 232, 232, 0.9);
+}
+#main .ui-slider .ui-slider-range-min,
+#main .ui-slider-horizontal .ui-slider-range-min {
+  background: rgba(225, 225, 225, 0.9);
+}
+#main .ui-slider .ui-state-default.ui-slider-handle {
+  background: #333335;
+  width: 17px;
+  height: 17px;
+  border-radius: 17px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+#main .ui-slider .ui-state-default.ui-slider-handle:hover {
+  background: #010101;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+}
+#main .gridImage__overflow .focusArea .focusCircle,
+#main .InputfieldImageEdit .focusArea .focusCircle {
+  border-color: #000000;
+  background: radial-gradient(ellipse at center, #000000 0%, #000000 14%, rgba(255, 255, 255, 0.5) 15%, rgba(255, 255, 255, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=1);
+}
+#main .gridImage__edit:hover {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#main .gridImage.gridImageEditing .gridImage__inner {
+  background: rgba(0, 0, 0, 0.4);
+}
+#main .gridImage .gridImage__inner:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+#main .ui-dialog .ui-dialog-titlebar .ui-button,
+#main .ui-dialog .ui-dialog-titlebar {
+  font-size: 18px;
+  color: #131111;
+}
+#main .ui-dialog .ui-dialog-titlebar .ui-button:hover,
+#main .ui-dialog .ui-dialog-titlebar:hover {
+  box-shadow: none;
+}
+#main .uk-checkbox:checked,
+#main .uk-checkbox:indeterminate,
+#main .uk-radio:checked {
+  background-color: #0d0d0d;
+  color: #fff;
+  border-color: #000000;
+}
+#main .uk-radio:checked {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+#main .uk-checkbox:checked {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+#main .InputfieldCheckboxes,
+#main .LanguageSupport label.checkbox.detail,
+#main .uk-form-controls-text label:only-of-type {
+  cursor: pointer;
+}
+#main .InputfieldCheckboxes input[type=checkbox],
+#main .LanguageSupport label.checkbox.detail input[type=checkbox],
+#main .uk-form-controls-text label:only-of-type input[type=checkbox],
+#main .InputfieldCheckboxes input.uk-checkbox,
+#main .LanguageSupport label.checkbox.detail input.uk-checkbox,
+#main .uk-form-controls-text label:only-of-type input.uk-checkbox {
+  font-size: .7rem;
+  margin-top: 0;
+  position: relative;
+  -webkit-appearance: none;
+  outline: none;
+  width: 4em;
+  height: 2.4em;
+  border: 2px solid #D6D6D6;
+  border-radius: 3em;
+  box-shadow: inset 5em 0 0 0 #DDD;
+  flex-shrink: 0;
+  vertical-align: bottom;
+}
+#main .InputfieldCheckboxes input[type=checkbox]:after,
+#main .LanguageSupport label.checkbox.detail input[type=checkbox]:after,
+#main .uk-form-controls-text label:only-of-type input[type=checkbox]:after,
+#main .InputfieldCheckboxes input.uk-checkbox:after,
+#main .LanguageSupport label.checkbox.detail input.uk-checkbox:after,
+#main .uk-form-controls-text label:only-of-type input.uk-checkbox:after {
+  content: "";
+  position: absolute;
+  top: .25em;
+  left: .25em;
+  background: rgba(255, 255, 255, 0.9);
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  transition: all 250ms ease 20ms;
+  box-shadow: 0.05em 0.15em 0.5em rgba(0, 0, 0, 0.2);
+}
+#main .InputfieldCheckboxes input[type=checkbox]:checked,
+#main .LanguageSupport label.checkbox.detail input[type=checkbox]:checked,
+#main .uk-form-controls-text label:only-of-type input[type=checkbox]:checked,
+#main .InputfieldCheckboxes input.uk-checkbox:checked,
+#main .LanguageSupport label.checkbox.detail input.uk-checkbox:checked,
+#main .uk-form-controls-text label:only-of-type input.uk-checkbox:checked {
+  background-color: transparent;
+  box-shadow: inset 5em 0 0 0 #333333;
+  border-color: #000000;
+}
+#main .InputfieldCheckboxes input[type=checkbox]:checked:after,
+#main .LanguageSupport label.checkbox.detail input[type=checkbox]:checked:after,
+#main .uk-form-controls-text label:only-of-type input[type=checkbox]:checked:after,
+#main .InputfieldCheckboxes input.uk-checkbox:checked:after,
+#main .LanguageSupport label.checkbox.detail input.uk-checkbox:checked:after,
+#main .uk-form-controls-text label:only-of-type input.uk-checkbox:checked:after {
+  left: 1.85em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+}
+#main .InputfieldCheckboxes label,
+#main .InputfieldCheckbox label {
+  display: flex;
+  white-space: inherit;
+}
+#main .InputfieldCheckboxes .InputfieldCheckboxesStacked li,
+#main .InputfieldCheckbox .InputfieldCheckboxesStacked li {
+  padding-bottom: 3px;
+}
+#main .InputfieldCheckboxes .InputfieldContent label:only-of-type,
+#main .InputfieldCheckbox .InputfieldContent label:only-of-type {
+  display: flex;
+}
+#main label:only-of-type input.uk-checkbox + span {
+  display: flex;
+  align-items: center;
+  line-height: 1.1;
+}
+::-moz-selection,
+::selection {
+  background-color: #000000;
+  color: #fff;
+}
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+.pw #pw-mastheads > header {
+  backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 20px #ffffff;
 }
 #pw-footer {
   padding-top: 20px;
@@ -16127,178 +16379,27 @@ img.pw-logo-native:hover {
 #pw-footer a {
   color: #919191;
 }
-.InputfieldContent > .AdminDataTable {
-  margin: 0 -20px -24px;
-  width: calc(100% + 40px);
-}
-.InputfieldContent .pw-table-responsive {
-  margin: 0 0 -24px;
-}
-.InputfieldContent .modules_section .pw-table-responsive {
-  margin: 0 -20px -24px;
-}
-.InputfieldContent .modules_section .pw-table-responsive .AdminDataTable.AdminDataList tr th:first-child,
-.InputfieldContent .modules_section .pw-table-responsive table tr th:first-child,
-.InputfieldContent .modules_section .pw-table-responsive .AdminDataTable.AdminDataList tr td:first-child,
-.InputfieldContent .modules_section .pw-table-responsive table tr td:first-child {
-  padding-left: 20px;
-}
-.InputfieldContent .modules_section .pw-table-responsive .AdminDataTable.AdminDataList tr th:last-child,
-.InputfieldContent .modules_section .pw-table-responsive table tr th:last-child,
-.InputfieldContent .modules_section .pw-table-responsive .AdminDataTable.AdminDataList tr td:last-child,
-.InputfieldContent .modules_section .pw-table-responsive table tr td:last-child {
-  padding-right: 20px;
-}
-.pw .ui-datepicker {
-  background: transparent;
-  box-shadow: none;
-}
-.pw .ui-datepicker#ui-datepicker-div {
-  z-index: 2 !important;
-  background: rgba(250, 250, 250, 0.9);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
-}
-.pw .ui-datepicker > div {
-  border-color: #dcdcdc;
-}
-.pw .ui-datepicker table td .ui-state-default {
-  border-color: transparent;
-}
-.pw .ui-datepicker table td .ui-state-hover,
-.pw .ui-datepicker table td .ui-state-active {
-  background: #777, 15%;
-  color: #fff;
-}
-.pw .ui-datepicker table td .ui-state-highlight,
-.pw .ui-datepicker table td .ui-state-highlight:hover {
-  background: rgba(0, 0, 0, 0.6);
-  color: #575555;
-}
-.pw .ui-datepicker button {
-  border-width: 0px;
-}
-.pw .ui-datepicker button.ui-datepicker-close {
-  background: #000000;
-  color: #fff;
-}
-.pw .ui-datepicker button.ui-datepicker-close:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
-}
-.pw .ui-datepicker button.ui-datepicker-current {
-  background: #777;
-  color: #fff;
-}
-.PageList .PageListItem.PageListItemOpen,
-html.highlightRows .PageListItem:hover {
-  background-color: #fff !important;
-}
-html.highlightRowst .AdminDataTable.AdminDataLis tr:hover td,
-.pw .pw-table-responsive .AdminDataTable.AdminDataLis tr:hover td,
-html.highlightRowst table tr:hover td,
-.pw .pw-table-responsive table tr:hover td {
-  background-color: #fafafb !important;
-}
 .detail.version {
   display: none;
 }
-.Inputfields .langTabsContainer .pw-description,
-.Inputfields .langTabsContainer .description {
-  margin-bottom: 7px;
+.pw .ProDraftsNotice {
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0, 0, 0, 0.07) 35px, rgba(0, 0, 0, 0.07) 70px);
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+  border-top: 0px;
+  font-size: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-/* buttons --------------------------------------------------------------------*/
-button.ui-button {
-  position: relative;
-  z-index: 1;
-}
-button.ui-button:hover {
-  z-index: 1;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
-}
-button.ui-button:hover + .ui-button {
-  z-index: 0;
-}
-.InputfieldSubmit button,
-.pw-button-dropdown-wrap button {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-.InputfieldSubmit:hover button,
-.Inputfield_submit_save:hover button,
-.pw-button-dropdown-wrap:hover button {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
-}
-/* fix position  */
-.batchChildTableContainer + .ui-button {
-  margin-top: 25px;
-}
-/* Form Shadows --------------------------------------------------------------------*/
-form.WireTab > ul {
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 2, 0.2);
-}
-.WireTabs > .uk-active {
-  box-shadow: 0 0px 20px rgba(255, 255, 255, 0.5);
-}
-.Inputfields .Inputfield:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset):not(.InputfieldSubmit) {
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 2, 0.2);
-}
-.InputfieldContent > .Inputfields > .Inputfield .Inputfields .Inputfield:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset):not(.InputfieldSubmit) {
-  box-shadow: none;
-}
-form.Inputfield {
-  background: transparent;
-}
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
 .pw {
-  /* chosen fields -------------------------------------------------------------- */
   /* login page form */
-}
-.pw .chosen-container-active.chosen-with-drop .chosen-single {
-  box-shadow: none;
-  border-color: #ccc #ddd #ddd #ddd;
-}
-.pw .chosen-container-single .chosen-single {
-  padding: 7px 25px 7px 7px;
-  background: #fff;
-  border-color: #ccc #ddd #ddd #ddd;
-  height: auto;
-  border-radius: 0;
-  box-shadow: none;
-}
-.pw .chosen-container-single .chosen-single abbr {
-  top: 14px;
-}
-.pw .chosen-container-single .chosen-single div {
-  top: 8px;
-}
-.pw .chosen-container .chosen-choices {
-  border-color: #ccc #ddd #ddd #ddd;
-  background: #fff;
-}
-.pw .chosen-container .chosen-choices li.search-choice {
-  background: #f8f7f7;
-  border-radius: 0;
-  padding: 7px 25px 7px 7px;
-}
-.pw .chosen-container .chosen-choices li.search-choice .search-choice-close {
-  top: 8px;
-}
-.pw .chosen-container .chosen-choices .search-field input {
-  padding-top: 6px;
-  line-height: 20px;
-  height: 32px;
-}
-.pw .chosen-container .chosen-drop {
-  background: rgba(250, 250, 250, 0.9);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  border-color: #ccc #ddd #ddd #ddd;
-  border-top-width: 0;
-}
-.pw .chosen-container .chosen-results li.highlighted {
-  background: rgba(0, 0, 0, 0.6);
-  color: #575555;
-}
-.pw .chosen-container-active .chosen-choices {
-  border-color: #ccc #ddd #ddd #ddd;
-  box-shadow: none;
 }
 .pw body.ProcessLogin {
   position: relative;
@@ -16384,7 +16485,7 @@ form.Inputfield {
 .pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input:hover,
 .pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input:focus {
   border-color: #000000;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 .pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input::placeholder {
   text-transform: uppercase;
@@ -16432,285 +16533,67 @@ form.Inputfield {
   opacity: 1;
   text-decoration: none;
 }
-/* Color Required fields Asterics */
-.InputfieldStateRequired > .InputfieldHeader:first-child:after {
-  color: inherit;
-  opacity: 0.7;
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+.pw #pw-masthead-mobile {
+  background-color: #fff;
 }
-.pw {
-  /* labels */
-  /* image edit*/
-  /* lightboxes */
-  /* radio & checkbox. */
-  /* checkbox switch toggle */
-  /* Label Color */
-  /**/
+.pw #pw-masthead {
+  background-color: #fff;
 }
-.pw .InputfieldHeader {
-  font-weight: normal;
-  text-transform: uppercase;
-}
-.pw .InputfieldHeader .fa + span.title {
-  margin-left: 0.3em;
-}
-.pw .ui-slider,
-.pw .ui-slider-horizontal {
-  background: rgba(232, 232, 232, 0.9);
-}
-.pw .ui-slider .ui-slider-range-min,
-.pw .ui-slider-horizontal .ui-slider-range-min {
-  background: rgba(225, 225, 225, 0.9);
-}
-.pw .ui-slider .ui-state-default.ui-slider-handle {
-  background: #333335;
-  width: 17px;
-  height: 17px;
-  border-radius: 17px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
-  cursor: pointer;
-}
-.pw .ui-slider .ui-state-default.ui-slider-handle:hover {
-  background: #010101;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
-}
-.pw .gridImage__overflow .focusArea .focusCircle,
-.pw .InputfieldImageEdit .focusArea .focusCircle {
-  border-color: #000000;
-  background: radial-gradient(ellipse at center, #000000 0%, #000000 14%, rgba(255, 255, 255, 0.5) 15%, rgba(255, 255, 255, 0.5) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=1);
-}
-.pw .gridImage__edit:hover {
-  text-decoration: none;
-  text-transform: uppercase;
-}
-.pw .gridImage.gridImageEditing .gridImage__inner {
-  background: rgba(0, 0, 0, 0.6);
-}
-.pw .gridImage .gridImage__inner:hover {
-  background: rgba(0, 0, 0, 0.6);
-}
-.pw .ui-dialog .ui-dialog-titlebar .ui-button,
-.pw .ui-dialog .ui-dialog-titlebar {
-  font-size: 18px;
-  color: #131111;
-}
-.pw .ui-dialog .ui-dialog-titlebar .ui-button:hover,
-.pw .ui-dialog .ui-dialog-titlebar:hover {
-  box-shadow: none;
-}
-.pw .uk-checkbox:checked,
-.pw .uk-checkbox:indeterminate,
-.pw .uk-radio:checked {
-  background-color: #0d0d0d;
-  color: #fff;
-  border-color: #000000;
-}
-.pw .uk-radio:checked {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
-}
-.pw .uk-checkbox:checked {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
-}
-.pw .InputfieldCheckboxes,
-.pw .LanguageSupport label.checkbox.detail,
-.pw .uk-form-controls-text label:only-of-type {
-  cursor: pointer;
-}
-.pw .InputfieldCheckboxes input[type=checkbox],
-.pw .LanguageSupport label.checkbox.detail input[type=checkbox],
-.pw .uk-form-controls-text label:only-of-type input[type=checkbox],
-.pw .InputfieldCheckboxes input.uk-checkbox,
-.pw .LanguageSupport label.checkbox.detail input.uk-checkbox,
-.pw .uk-form-controls-text label:only-of-type input.uk-checkbox {
-  font-size: .7rem;
-  margin-top: 0;
+.pw #pw-masthead .uk-navbar-nav > li {
   position: relative;
-  -webkit-appearance: none;
-  outline: none;
-  width: 4em;
-  height: 2.4em;
-  border: 2px solid #D6D6D6;
-  border-radius: 3em;
-  box-shadow: inset 5em 0 0 0 #DDD;
-  flex-shrink: 0;
-  vertical-align: bottom;
 }
-.pw .InputfieldCheckboxes input[type=checkbox]:after,
-.pw .LanguageSupport label.checkbox.detail input[type=checkbox]:after,
-.pw .uk-form-controls-text label:only-of-type input[type=checkbox]:after,
-.pw .InputfieldCheckboxes input.uk-checkbox:after,
-.pw .LanguageSupport label.checkbox.detail input.uk-checkbox:after,
-.pw .uk-form-controls-text label:only-of-type input.uk-checkbox:after {
-  content: "";
-  position: absolute;
-  top: .25em;
-  left: .25em;
-  background: rgba(255, 255, 255, 0.9);
-  width: 1.6em;
-  height: 1.6em;
-  border-radius: 50%;
-  transition: all 250ms ease 20ms;
-  box-shadow: 0.05em 0.15em 0.5em rgba(0, 0, 0, 0.2);
+.pw #pw-masthead .uk-navbar-nav > li,
+.pw #pw-masthead .uk-navbar-nav > li > a {
+  color: #444444;
 }
-.pw .InputfieldCheckboxes input[type=checkbox]:checked,
-.pw .LanguageSupport label.checkbox.detail input[type=checkbox]:checked,
-.pw .uk-form-controls-text label:only-of-type input[type=checkbox]:checked,
-.pw .InputfieldCheckboxes input.uk-checkbox:checked,
-.pw .LanguageSupport label.checkbox.detail input.uk-checkbox:checked,
-.pw .uk-form-controls-text label:only-of-type input.uk-checkbox:checked {
-  background-color: transparent;
-  box-shadow: inset 5em 0 0 0 #333333;
-  border-color: #000000;
-}
-.pw .InputfieldCheckboxes input[type=checkbox]:checked:after,
-.pw .LanguageSupport label.checkbox.detail input[type=checkbox]:checked:after,
-.pw .uk-form-controls-text label:only-of-type input[type=checkbox]:checked:after,
-.pw .InputfieldCheckboxes input.uk-checkbox:checked:after,
-.pw .LanguageSupport label.checkbox.detail input.uk-checkbox:checked:after,
-.pw .uk-form-controls-text label:only-of-type input.uk-checkbox:checked:after {
-  left: 1.85em;
-  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
-}
-.pw .InputfieldCheckboxes label,
-.pw .InputfieldCheckbox label {
-  display: flex;
-  white-space: inherit;
-}
-.pw .InputfieldCheckboxes .InputfieldCheckboxesStacked li,
-.pw .InputfieldCheckbox .InputfieldCheckboxesStacked li {
-  padding-bottom: 3px;
-}
-.pw .InputfieldCheckboxes .InputfieldContent label:only-of-type,
-.pw .InputfieldCheckbox .InputfieldContent label:only-of-type {
-  display: flex;
-}
-.pw label:only-of-type input.uk-checkbox {
-  /*&:checked+span {
-			color: #008a00;
-			transition: all 250ms ease 20ms;
-		}*/
-}
-.pw label:only-of-type input.uk-checkbox + span {
-  display: flex;
-  align-items: center;
-  line-height: 1.1;
-}
-::-moz-selection,
-::selection {
-  background-color: #000000;
-  color: #fff;
-}
-/* Notifications */
-#pw-mastheads .NotificationBug {
-  background: #777;
-  left: auto;
-  right: 35px;
-}
-/* language switcher */
-li.aos_adminLangSwitcher > a:after {
+.pw #pw-masthead .uk-navbar-nav > li:after,
+.pw #pw-masthead .uk-navbar-nav > li > a:after {
   display: none;
 }
-li.aos_adminLangSwitcher > ul {
-  filter: none;
-  background: transparent;
-  border-width: 0px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-}
-li.aos_adminLangSwitcher > ul:before {
-  left: auto;
-  right: 30px;
-}
-li.aos_adminLangSwitcher > ul li > a {
-  color: #575555;
-  background: rgba(250, 250, 250, 0.9);
-}
-li.aos_adminLangSwitcher > ul li > a:active,
-li.aos_adminLangSwitcher > ul li > a:hover {
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-}
-@media (max-width: 1149px) {
-  .aos_col_right,
-  .aos_col_left {
-    float: none !important;
-    width: 100% !important;
-  }
-  .aos_col_right + .gutter,
-  .aos_col_left + .gutter {
-    display: none !important;
-  }
-}
-.tooltipNotes #main #content p.notes strong,
-.tooltipDesc #main #content p.description strong,
-.tooltipNotes #main #content p.notes em,
-.tooltipDesc #main #content p.description em {
-  color: inherit;
-}
-.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes,
-.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes,
-.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description,
-.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description {
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15) !important;
-  background: rgba(250, 250, 250, 0.9) !important;
-  font-size: 0.01vw;
-}
-.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes:focus,
-.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes:focus,
-.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description:focus,
-.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description:focus,
-.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes:hover,
-.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes:hover,
-.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description:hover,
-.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description:hover {
-  font-size: 1rem;
-}
-.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes:before,
-.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes:before,
-.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description:before,
-.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description:before {
-  color: #575555;
-  margin-top: -3px;
-  width: 22px;
-  padding: 0;
-  line-height: 22px !important;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
-}
-.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.notes:after,
-.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.notes:after,
-.tooltipNotes :not(.ProDraftsLivePreview) #main #content p.description:after,
-.tooltipDesc :not(.ProDraftsLivePreview) #main #content p.description:after {
-  border-top-color: rgba(250, 250, 250, 0.9);
-}
-#wrap_Inputfield_enabledSubmodules > .InputfieldContent,
-#wrap_Inputfield_enabledSubmodules > label,
-html.highlightRows .AdminDataTable.AdminDataList tr:hover td,
-html.highlightRows .PageListItem:hover {
-  background: rgba(250, 250, 250, 0.9);
-}
-.uk-table-divider > :first-child > tr:not(:first-child):hover,
-.uk-table-divider > :not(:first-child) > tr:hover,
-.uk-table-divider > tr:not(:first-child):hover {
-  background: rgba(250, 250, 250, 0.9);
-}
-#main #checkAllCheckboxes {
-  border-color: transparent;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-  margin-left: 0 !important;
-  -ms-transform: translate(-25%, -20%);
-  transform: translate(-25%, -20%);
-  background: rgba(250, 250, 250, 0.9);
-}
-#main #checkAllCheckboxes:hover {
-  background: #000000;
-}
-#main #checkAllCheckboxes i:before {
+.pw #pw-masthead .uk-navbar-nav > li i,
+.pw #pw-masthead .uk-navbar-nav > li > a i {
   color: #000000;
 }
-#main #checkAllCheckboxes:hover i:before {
-  color: #fff;
+.pw #pw-masthead .uk-navbar-nav > li.uk-active,
+.pw #pw-masthead .uk-navbar-nav > li.uk-active > a {
+  color: #000000;
 }
+.pw #pw-masthead .uk-navbar-nav > li > a.hover,
+.pw #pw-masthead .uk-navbar-nav > li > a:hover {
+  color: #222222;
+}
+.pw #pw-masthead .uk-navbar-nav > li > a.hover i,
+.pw #pw-masthead .uk-navbar-nav > li > a:hover i {
+  color: #222222;
+}
+.pw #pw-masthead .pw-search-form .pw-search-input {
+  color: #000000;
+  background: #ffffff;
+  border-color: #808080;
+  border-radius: 2em;
+}
+.pw #pw-masthead .pw-search-form .pw-search-input:focus {
+  color: #333335;
+  background: rgba(51, 51, 51, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+}
+.pw #pw-masthead .pw-search-form .uk-form-icon {
+  color: #333333;
+}
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
 .ProcessAdminHelp #pw-content-head h1 {
   display: none;
 }
@@ -16756,6 +16639,369 @@ html.highlightRows .PageListItem:hover {
 #main .cbp-ntaccordion h3.cbp-nttrigger:hover:before {
   content: "-";
 }
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+/* Notifications */
+#pw-mastheads .NotificationBug {
+  position: fixed;
+  left: auto;
+  right: 10px;
+  top: 10px;
+  line-height: 22px;
+  min-height: 24px;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-width: 0px;
+  z-index: 999999999;
+  background-image: linear-gradient(#f15746, #f15746);
+}
+#pw-mastheads .NotificationBug .qty {
+  font-family: inherit;
+  font-weight: bold;
+}
+#NotificationMenu {
+  position: absolute;
+  z-index: 99999999;
+  background: transparent;
+  right: 0;
+  top: -5px;
+  width: 30vw;
+  min-width: 300px;
+  max-width: 80%;
+}
+#NotificationMenu li {
+  padding: 10px;
+  margin: 20px;
+  border-bottom-width: 0;
+  border-radius: 5px;
+}
+#NotificationMenu li > div {
+  padding: 0;
+}
+#NotificationMenu li .NotificationTitle {
+  padding-right: 33px;
+  font-weight: normal;
+}
+#NotificationMenu li .NoticeMessage {
+  border-width: 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+#NotificationMenu li .created {
+  display: none;
+}
+#pw-mastheads .pw-notices {
+  margin-top: 0;
+  position: absolute;
+  z-index: 3;
+  width: 30vw;
+  min-width: 300px;
+  max-width: 80%;
+  right: 0;
+}
+#pw-mastheads .pw-notices > li {
+  margin: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  border-bottom-width: 0;
+}
+#pw-mastheads .pw-notices li > div {
+  padding: 0 10px;
+}
+#notices a.notice-remove {
+  color: inherit;
+}
+#NotificationGhosts li > .NotificationGhost {
+  margin: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  border-bottom-width: 0;
+  color: #000;
+  font-weight: normal;
+  margin: 0 20px;
+  opacity: 1;
+}
+#NotificationGhosts .NoticeMessage {
+  background: #efe;
+}
+#NotificationGhosts .NoticeError {
+  background: #f8ada5;
+}
+#NotificationGhosts .NoticeWarning {
+  background: #ffe299;
+}
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+#offcanvas-toggle {
+  cursor: pointer;
+}
+#offcanvas-toggle > i {
+  color: #000000;
+}
+#offcanvas-toggle:hover > i {
+  color: #444444;
+}
+#offcanvas-nav {
+  color: #575555;
+}
+#offcanvas-nav .uk-offcanvas-bar {
+  background: rgba(250, 250, 250, 0.9);
+  padding: 0;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.175);
+  border-right: 1px solid rgba(225, 225, 225, 0.9);
+}
+#offcanvas-nav #offcanvas-nav-header {
+  display: none;
+}
+#offcanvas-nav .pw-sidebar-nav li > a {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #575555;
+}
+#offcanvas-nav .pw-sidebar-nav li > a:hover {
+  color: #333335;
+}
+#offcanvas-nav .pw-sidebar-nav li.uk-open {
+  padding-bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+}
+#offcanvas-nav .pw-sidebar-nav li.uk-open > a {
+  color: #333335;
+}
+#offcanvas-nav .pw-sidebar-nav li.pw-nav-spinner {
+  padding-left: 20px;
+}
+#offcanvas-nav .pw-search-form {
+  padding: 20px 20px 5px 20px;
+}
+#offcanvas-nav .pw-search-input {
+  background: #fff;
+  border-radius: 5px;
+}
+#offcanvas-nav .pw-logo {
+  display: none;
+}
+html.pw-sidebar-frame,
+html.pw-sidebar-frame body {
+  background: #fafafb;
+}
+html.pw-sidebar-frame #main,
+html.pw-sidebar-frame body #main {
+  background: #fafafb;
+}
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+#mqin .uk-pagination > li,
+#main .PageList {
+  background: transparent;
+}
+#main .PageListActions {
+  margin-left: 0.5em;
+}
+#main .PageListActions a {
+  text-transform: uppercase;
+  font-size: 0.9em;
+  line-height: 1;
+}
+#main .PageListItem {
+  border-bottom-width: 0;
+  font-size: 16px;
+}
+#main .PageListItem.PageListItemOpen {
+  font-weight: bold;
+}
+#main .PageListItem > a.PageListPage .label_title:hover,
+#main .PageListItem > a.PageListPage:hover {
+  text-decoration: none;
+}
+#main .PageListItem > a.PageListPage i {
+  padding-right: 0.5em;
+}
+#main .uk-pagination > li {
+  padding: 0;
+  margin-left: -1px;
+  margin: 0 0 0 -1px;
+}
+#main .uk-pagination > li > a {
+  border-radius: 0;
+}
+#main .uk-pagination > li:first-child > a {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+#main .uk-pagination > li:last-child > a {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+#main .uk-pagination > li.uk-disabled > span {
+  border: none;
+  color: #777;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#main .uk-pagination > li > .PageListLoading {
+  border: none;
+  display: inline-block;
+}
+#main .uk-pagination > li:first-child > a {
+  margin-left: 3px;
+}
+#main .uk-pagination > li > a {
+  border: 1px solid #eeeeef !important;
+}
+#main .uk-pagination > li.uk-active > a {
+  border-color: #333335 !important;
+  background: #333335;
+  color: #fff;
+}
+.PageList .PageListItem.PageListItemOpen,
+html.highlightRows .PageListItem:hover {
+  background-color: #fff !important;
+}
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+.uk-table th {
+  font-size: inherit;
+}
+.InputfieldContent > .AdminDataTable {
+  margin: 0 -20px -24px;
+  width: calc(100% + 40px);
+}
+.InputfieldContent .pw-table-responsive {
+  margin: 0 0 -24px;
+}
+.InputfieldContent .modules_section .pw-table-responsive {
+  margin: 0 -20px -24px;
+}
+.InputfieldContent .modules_section .pw-table-responsive .AdminDataTable.AdminDataList tr th:first-child,
+.InputfieldContent .modules_section .pw-table-responsive table tr th:first-child,
+.InputfieldContent .modules_section .pw-table-responsive .AdminDataTable.AdminDataList tr td:first-child,
+.InputfieldContent .modules_section .pw-table-responsive table tr td:first-child {
+  padding-left: 20px;
+}
+.InputfieldContent .modules_section .pw-table-responsive .AdminDataTable.AdminDataList tr th:last-child,
+.InputfieldContent .modules_section .pw-table-responsive table tr th:last-child,
+.InputfieldContent .modules_section .pw-table-responsive .AdminDataTable.AdminDataList tr td:last-child,
+.InputfieldContent .modules_section .pw-table-responsive table tr td:last-child {
+  padding-right: 20px;
+}
+html.highlightRowst .AdminDataTable.AdminDataLis tr:hover td,
+.pw .pw-table-responsive .AdminDataTable.AdminDataLis tr:hover td,
+html.highlightRowst table tr:hover td,
+.pw .pw-table-responsive table tr:hover td {
+  background-color: linear-gradient(#fff, #fafafb) !important;
+}
+/* fix position  */
+.batchChildTableContainer + .ui-button {
+  margin-top: 25px;
+}
+#wrap_Inputfield_enabledSubmodules > .InputfieldContent,
+#wrap_Inputfield_enabledSubmodules > label,
+html.highlightRows .AdminDataTable.AdminDataList tr:hover td,
+html.highlightRows .PageListItem:hover {
+  background: linear-gradient(#fff, #fafafb);
+}
+.uk-table-hover tbody tr:hover:hover,
+.uk-table-hover > tr:hover:hover,
+.uk-table-divider > :first-child > tr:not(:first-child):hover,
+.uk-table-divider > :not(:first-child) > tr:hover,
+.uk-table-divider > tr:not(:first-child):hover {
+  background: linear-gradient(#fff, #fafafb);
+}
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+/**********************************************************************
+ * Styles
+ *
+ * Adjustments to the default Uikit admin theme styles to give more
+ * the look and feel of AdminThemeReno.
+ *
+ */
+.hook-tab-item {
+  border: 1px solid transparent;
+  margin-left: -1px;
+  text-transform: uppercase;
+}
+.LanguageSupportLabel {
+  text-transform: uppercase;
+}
+.langTabs .ui-tabs-nav > li,
+.langTabs .uk-tab > li {
+  background: transparent;
+  margin: 3px 0 0;
+  border: none;
+  padding: 0 !important;
+}
+.langTabs .ui-tabs-nav > li.langTabEmpty > a,
+.langTabs .uk-tab > li.langTabEmpty > a {
+  color: #777;
+}
+.langTabs .ui-tabs-nav > li > a,
+.langTabs .uk-tab > li > a {
+  margin: 0 1px 0 0;
+  display: inline-block;
+  border: none;
+  border-radius: 0;
+  color: #575555;
+  background: transparent;
+  padding: 4px 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.langTabs .ui-tabs-nav > li > a:hover,
+.langTabs .uk-tab > li > a:hover {
+  color: #000000;
+  background: #fafafb;
+}
+.langTabs .ui-tabs-nav > li.uk-active > a,
+.langTabs .uk-tab > li.uk-active > a {
+  color: #131111;
+  background: #fff;
+  border: 1px solid #f1efef;
+  border-bottom: none;
+  box-shadow: 0px -5px 15px -6px #fafafb;
+}
+.WireTabs.uk-tab > li.uk-active.pw-tab-muted {
+  background: #fafafb;
+}
+.WireTabs.uk-tab > li.uk-active.pw-tab-muted > a {
+  border-bottom: none;
+}
+.Inputfields .langTabsContainer .pw-description,
+.Inputfields .langTabsContainer .description {
+  margin-bottom: 7px;
+}
+/**********************************************************************
+ * Styles
+ *
+ * Adjustments to the default Uikit admin theme styles to give more
+ * the look and feel of AdminThemeReno.
+ *
+ */
 .pw {
   /* login page form */
 }
@@ -16771,13 +17017,13 @@ html.highlightRows .PageListItem:hover {
   color: #eee;
   border-color: transparent;
   background-color: rgba(60, 60, 63, 0.4);
-  box-shaddow: 0 3px 10px #000;
+  box-shadow: 0 3px 10px #000;
 }
 .pw body.ProcessLogin #main #content form:not(#socialsLoginForm) .Inputfield input:hover,
 .pw body.ProcessLogin #main #content form:not(#socialsLoginForm) .Inputfield input:focus {
   color: #fff;
   background-color: rgba(60, 60, 63, 0.7);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 2, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
 }
 .pw body.ProcessLogin #main #content form:not(#socialsLoginForm) .Inputfield input:focus {
   border-color: #55555a;
@@ -16789,12 +17035,12 @@ html.highlightRows .PageListItem:hover {
   color: #777;
 }
 .pw body.ProcessLogin #main #content form:not(#socialsLoginForm) .Inputfield button {
-  background-color: #dddddd;
-  color: #000;
-}
-.pw body.ProcessLogin #main #content form:not(#socialsLoginForm) .Inputfield button:hover {
   color: #c3c3c3;
   background-color: #000;
+}
+.pw body.ProcessLogin #main #content form:not(#socialsLoginForm) .Inputfield button:hover {
+  color: #fff;
+  background-color: #050505;
 }
 .pw body.ProcessLogin #socialsLoginForm ul.Inputfields .ui-button.ui-state-default {
   box-shadow: none;
@@ -16805,4 +17051,19 @@ html.highlightRows .PageListItem:hover {
 }
 .pw body.ProcessLogin #pw-content-body > div a:hover {
   color: #fff;
+}
+/* Overrides… */
+#pw-mastheads .NotificationBug {
+  background-image: linear-gradient(#000, #000);
+}
+.pw .ProDraftsNotice {
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0, 0, 0, 0.95) 35px, rgba(0, 0, 0, 0.95) 70px);
+  color: #fff;
+}
+.pw .ProDraftsNotice a {
+  color: inherit;
+}
+.pw .ProDraftsNotice a:hover {
+  opacity: 0.9;
 }

@@ -1,0 +1,85 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+@import "../variables.less";
+
+
+// Offcanvas -------------------------------------------------
+#offcanvas-toggle {
+    cursor: pointer;
+
+    >i {
+        color: @theme-masthead-icon-color;
+    }
+
+    &:hover>i {
+        color: @theme-masthead-link-color;
+    }
+}
+
+#offcanvas-nav {
+    color: @theme-offcanvas-text-color;
+
+    .uk-offcanvas-bar {
+        background: @theme-offcanvas-background;
+        padding: 0;
+        box-shadow: 0 4px 7px rgba(0, 0, 0, 0.175);
+        border-right: 1px solid darken(@theme-offcanvas-background, 10%);
+    }
+
+    #offcanvas-nav-header {
+        display: none;
+    }
+
+    .pw-sidebar-nav {
+        li>a {
+            padding-left: 20px;
+            padding-right: 20px;
+            color: @theme-offcanvas-link-color;
+
+            &:hover {
+                color: @theme-offcanvas-link-hover-color;
+            }
+        }
+
+        li.uk-open {
+            padding-bottom: 0;
+            background: lighten(@theme-offcanvas-background, 3%);
+
+            >a {
+                color: @theme-offcanvas-link-open-color;
+            }
+        }
+
+        li.pw-nav-spinner {
+            padding-left: 20px;
+        }
+    }
+
+    .pw-search-form {
+        padding: 20px 20px 5px 20px;
+    }
+
+    .pw-search-input {
+        background: @theme-offcanvas-search-background;
+        border-radius: 5px;
+    }
+
+    .pw-logo {
+        display: none;
+    }
+}
+
+// Other ---------------------------------------------------------
+html.pw-sidebar-frame,
+html.pw-sidebar-frame body {
+    background: @global-muted-background;
+
+    #main {
+        background: @global-muted-background;
+    }
+}

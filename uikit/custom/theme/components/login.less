@@ -1,0 +1,188 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+
+@import "../variables.less";
+
+.pw {
+
+
+    /* login page form */
+    body.ProcessLogin {
+        position: relative;
+        width: 370px;
+        top: 7vw;
+        max-width: 85vw;
+
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 15px;
+
+        background: fade(@theme-primary-color, 2%);
+        box-shadow: 0 10px 50px -10px fade(@theme-primary-color, 20%);
+        border: 1px solid fade(@theme-primary-color, 15%);
+
+        @media (min-width: 1000px) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            padding: 30px;
+
+        }
+
+        .pw-notices {
+            margin-bottom: 2em;
+
+            >li {
+                border-bottom-width: 0;
+                border-radius: 4px;
+            }
+        }
+
+        a,
+        input,
+        button {
+            transition: all 250ms ease 20ms;
+        }
+
+        #pw-masthead-mobile {
+            background-color: transparent;
+            margin-bottom: 2em;
+            box-shadow: none;
+
+            .pw-logo {
+                max-height: 60px; //filter: grayscale(100%) brightness(400%);
+            }
+        }
+
+        >#main {
+            margin: 0 !important;
+            padding: 0 !important;
+
+            #ProcessLoginForm {
+                label {
+                    display: none;
+                }
+            }
+
+            #content form:not(#socialsLoginForm) {
+                width: auto;
+
+                .Inputfields {
+                    display: flex;
+                }
+
+                .InputfieldHeader {
+                    font-size: 1.1em;
+                }
+
+                .InputfieldContent {
+                    padding: 0 0 1em;
+                }
+
+                .Inputfield {
+                    border-width: none;
+                    outline: none;
+
+                    display: flex;
+                    box-shadow: none !important;
+                    background: transparent;
+                    width: 100% !important;
+                    float: none;
+
+                    input {
+
+                        border-radius: 4px;
+                        font-size: 1.3em;
+                        text-align: left;
+                        height: auto;
+                        line-height: 2em;
+                        border-color: lighten(@theme-primary-color, 20%);
+                        background: fade(@theme-primary-color, 15%);
+
+                        &::placeholder {
+                            color: fade(@theme-primary-color, 40%);
+                        }
+
+                        &:hover,
+                        &:focus {
+                            border-color: @theme-primary-color;
+                            box-shadow: @pw-primary-box-shadow;
+                        }
+                    }
+
+                    input::placeholder {
+                        text-transform: uppercase;
+                    }
+
+                    >div,
+                    >label {
+                        background: transparent;
+                    }
+
+                    .ui-button {
+                        margin-top: 1em;
+                    }
+                }
+
+
+            }
+
+        }
+
+        #socialsLoginForm ul.Inputfields {
+            // 0auth login centered
+            margin-top: 1em;
+            padding-top: 1em;
+            justify-content: center;
+
+            .ui-button {
+                font-size: 1em;
+                padding: 0 1em;
+                line-height: 1.75em;
+
+                &.ui-state-default {
+                    background-color: fade(@theme-primary-color, 60%);
+                    box-shadow: none;
+                }
+
+                &.ui-state-hover {
+                    background-color: reset;
+                }
+            }
+
+            .InputfieldButton,
+            .InputfieldSubmit {
+                display: block;
+            }
+        }
+
+        #pw-content-body {
+
+            // password links
+            >div {
+                display: inline-block;
+                margin: 0 0.75em;
+                padding-top: 0.75em;
+
+                a {
+                    font-size: 0.9em;
+                    text-transform: uppercase;
+                    color: fade(@theme-primary-color, 80%);
+                    opacity: 0.7;
+
+                    &:hover {
+                        opacity: 1;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,127 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+
+@import "../variables.less";
+
+// Notices ----------------------------------------------------
+/* Notifications */
+
+#pw-mastheads .NotificationBug {
+    position: fixed;
+    left: auto;
+    right: 10px;
+    top: 10px;
+    line-height: 22px;
+    min-height: 24px;
+    border-radius: 50%;
+
+    box-shadow: @pw-dropdown-box-shadow;
+    border-width: 0px;
+    z-index: 999999999;
+    background-image: linear-gradient(darken(@theme-danger-background, 20%), darken(@theme-danger-background, 20%));
+
+    .qty {
+        font-family: inherit;
+        font-weight: bold;
+    }
+}
+
+#NotificationMenu {
+    position: absolute;
+    z-index: 99999999;
+    background: transparent;
+    right: 0;
+    top: -5px;
+    width: 30vw;
+    min-width: 300px;
+    max-width: 80%;
+
+    li {
+        padding: 10px;
+        margin: 20px;
+        border-bottom-width: 0;
+        border-radius: @pw-dropdown-list-border-radius;
+
+
+        >div {
+            padding: 0;
+        }
+
+        .NotificationTitle {
+            padding-right: 33px;
+            font-weight: normal;
+        }
+
+
+        .NoticeMessage {
+            border-width: 0;
+            box-shadow: @pw-dropdown-box-shadow;
+        }
+
+        .created {
+            display: none;
+        }
+    }
+}
+
+
+#pw-mastheads .pw-notices {
+    margin-top: 0;
+
+    position: absolute;
+    z-index: 3;
+    width: 30vw;
+    min-width: 300px;
+    max-width: 80%;
+
+    right: 0;
+
+    >li {
+        margin: 20px;
+        box-shadow: @pw-dropdown-box-shadow;
+        border-radius: @pw-dropdown-list-border-radius;
+        border-bottom-width: 0;
+    }
+
+    li>div {
+        padding: 0 10px;
+    }
+}
+
+#notices {
+    a.notice-remove {
+        color: inherit;
+    }
+}
+
+#NotificationGhosts {
+
+    li>.NotificationGhost {
+        margin: 20px;
+        box-shadow: @pw-dropdown-box-shadow;
+        border-radius: @pw-dropdown-list-border-radius;
+        border-bottom-width: 0;
+        color: @global-inverse-color;
+        font-weight: normal;
+        margin: 0 20px;
+        opacity: 1;
+    }
+
+    .NoticeMessage {
+        background: @alert-primary-background;
+    }
+
+    .NoticeError {
+        background: @alert-danger-background;
+
+    }
+
+    .NoticeWarning {
+        background: @alert-warning-background;
+    }
+}

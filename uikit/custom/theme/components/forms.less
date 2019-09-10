@@ -1,0 +1,462 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+
+@import "../variables.less";
+
+@pill-border-radius: 3px;
+
+
+#main {
+    .InputfieldFieldset {
+
+        // fieldset containing other Inputfield elements
+        >.InputfieldHeader {
+            font-weight: normal;
+            background: transparent;
+        }
+    }
+
+    form.Inputfield {
+        background: transparent;
+    }
+
+    .Inputfields {
+
+
+        // background color for text fields
+        input:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]),
+        textarea {
+            background: @theme-inputfield-input-background;
+            border: 1px solid;
+            border-color: @theme-inputfield-input-border-color;
+            -webkit-appearance: none;
+
+            &:focus {
+                background: lighten(@theme-inputfield-input-background, 2%);
+                border-color: @theme-inputfield-input-border-color;
+            }
+        }
+
+        select {
+            background-color: #fff;
+            border: 1px solid;
+            border-color: @theme-inputfield-input-border-color;
+        }
+    }
+
+    .notes {
+        color: @theme-notes-text-color;
+        background: @theme-notes-background;
+    }
+
+    // date picker
+    .ui-datepicker {
+        background: transparent;
+        box-shadow: none;
+
+        &#ui-datepicker-div {
+            // not inline:
+            //z-index: 2 !important;
+            background: @pw-dropdown-background;
+            box-shadow: @pw-dropdown-box-shadow;
+            border-radius: 15px;
+        }
+
+        >div {
+            border-color: @pw-dropdown-separator-color;
+        }
+
+        table td {
+            .ui-state-default {
+                border-color: transparent;
+            }
+
+            .ui-state-hover,
+            .ui-state-active {
+                background: @theme-button-secondary-background, 15%;
+                color: @theme-button-text-color;
+            }
+
+            .ui-state-highlight,
+            .ui-state-highlight:hover {
+                background: @theme-dropdown-hover-background;
+                color: @theme-dropdown-color;
+            }
+        }
+
+        button {
+            border-width: 0px;
+        }
+
+        button.ui-datepicker-close {
+            background: @theme-primary-color;
+            color: @theme-button-text-color;
+
+            &:hover {
+                box-shadow: 0 5px 15px @theme-primary-color-rgba;
+            }
+        }
+
+        button.ui-datepicker-current {
+            background: @theme-button-secondary-background;
+            color: @theme-button-text-color;
+        }
+    }
+
+    /* buttons --------------------------------------------------------------------*/
+
+    button.ui-button {
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+            z-index: 1;
+            box-shadow: 0 5px 15px @theme-primary-color-rgba;
+
+            +.ui-button {
+                z-index: 0;
+            }
+        }
+    }
+
+    // buttons shadow
+    .InputfieldSubmit button,
+    .pw-button-dropdown-wrap button {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .InputfieldSubmit:hover button,
+    .Inputfield_submit_save:hover button,
+    .pw-button-dropdown-wrap:hover button {
+        box-shadow: 0 5px 15px @theme-primary-color-rgba;
+    }
+
+
+    /* Form Shadows --------------------------------------------------------------------*/
+
+    // fliters:
+    form.WireTab>ul {
+        box-shadow: @pw-box-shadow;
+    }
+
+    // active tab
+    .WireTabs>.uk-active {
+        box-shadow: 0 0px 20px rgba(255, 255, 255, 0.5);
+    }
+
+
+    .Inputfields .Inputfield {
+        &:not(.InputfieldWrapper):not(.filterbox-wrapper):not(.InputfieldFieldset):not(.InputfieldSubmit) {
+            box-shadow: @pw-box-shadow;
+
+            .InputfieldContent>.Inputfields>.Inputfield & {
+                box-shadow: none;
+            }
+        }
+    }
+
+
+    /* Chosen Inputfields */
+
+
+
+    /* chosen fields -------------------------------------------------------------- */
+    .chosen-container-active.chosen-with-drop .chosen-single {
+        box-shadow: none;
+        border-color: @theme-inputfield-input-border-color;
+    }
+
+    .chosen-container-single .chosen-single {
+        padding: 7px 25px 7px 7px;
+        background: @pw-inputfield-background;
+        border-color: @theme-inputfield-input-border-color;
+        height: auto;
+        border-radius: 0;
+        box-shadow: none;
+
+        abbr {
+            //close
+            top: 14px;
+        }
+
+        div {
+            // triangle: ;
+            top: 8px;
+        }
+    }
+
+    .chosen-container {
+
+        .chosen-choices {
+            border-color: @theme-inputfield-input-border-color;
+            background: @pw-inputfield-background;
+
+            li.search-choice {
+                background: @theme-primary-color-verylight;
+                border-radius: @pill-border-radius;
+                padding: 7px 25px 7px 7px;
+                border-color: @theme-primary-color-light;
+
+                &:hover {
+                    background: lighten(@theme-primary-color-verylight, 20%);
+                }
+
+                .search-choice-close {
+                    top: 8px;
+                }
+            }
+
+            .search-field input {
+                padding-top: 6px;
+                line-height: 20px;
+                height: 32px;
+            }
+        }
+
+        .chosen-drop {
+            background: @pw-dropdown-background;
+            box-shadow: @pw-dropdown-box-shadow;
+            border-color: @theme-inputfield-input-border-color;
+            border-top-width: 0;
+        }
+
+        .chosen-results {
+            li.highlighted {
+                background: @theme-primary-color-light;
+                color: @theme-dropdown-color;
+            }
+        }
+    }
+
+
+    .chosen-container-active .chosen-choices {
+        border-color: @theme-inputfield-input-border-color;
+        box-shadow: none;
+    }
+
+    // asm
+
+    .asmListItem {
+        margin-top: 10px;
+    }
+
+    .asmListItem {
+
+        &.ui-state-hover,
+        &.ui-state-default {
+            background: @theme-primary-color-verylight;
+            box-shadow: @pw-box-shadow-small;
+            border-color: @theme-primary-color-light;
+            border-radius: @pill-border-radius;
+            padding: 2px;
+
+            a,
+            a:hover {
+                text-decoration: none;
+            }
+        }
+
+        &.ui-state-hover {
+            background: lighten(@theme-primary-color-verylight, 20%);
+        }
+
+        .asmListItemRemove i {
+            top: 3px;
+            right: 7px;
+        }
+    }
+
+
+
+    /* Color Required fields Asterics */
+
+    .InputfieldStateRequired>.InputfieldHeader:first-child:after {
+        color: inherit;
+        opacity: 0.7;
+    }
+
+
+
+    /* labels */
+    .InputfieldHeader {
+        font-weight: normal;
+        text-transform: uppercase;
+
+        .fa+span.title {
+            margin-left: 0.3em;
+        }
+    }
+
+
+    /* image edit*/
+    // ugly metal handler
+    .ui-slider,
+    .ui-slider-horizontal {
+        background: darken(@theme-dropdown-background, 7%);
+
+        .ui-slider-range-min {
+            background: darken(@theme-dropdown-background, 10%);
+        }
+
+    }
+
+    .ui-slider .ui-state-default.ui-slider-handle {
+        background: @theme-link-color;
+        width: 17px;
+        height: 17px;
+        border-radius: 17px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+
+        &:hover {
+            background: @theme-link-hover-color;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+        }
+    }
+
+    .gridImage__overflow .focusArea .focusCircle,
+    .InputfieldImageEdit .focusArea .focusCircle {
+        // focus zone color
+        border-color: @theme-primary-color;
+        background: radial-gradient(ellipse at center, @theme-primary-color 0%, @theme-primary-color 14%, rgba(255, 255, 255, 0.5) 15%, rgba(255, 255, 255, 0.5) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=1);
+    }
+
+    .gridImage__edit:hover {
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .gridImage {
+
+        &.gridImageEditing .gridImage__inner {
+            background: @theme-primary-color-rgba;
+        }
+
+        .gridImage__inner {
+            &:hover {
+                background: @theme-primary-color-rgba;
+            }
+        }
+    }
+
+    /* lightboxes */
+    .ui-dialog .ui-dialog-titlebar .ui-button,
+    .ui-dialog .ui-dialog-titlebar {
+        font-size: 18px;
+        color: @theme-primary-headline-color;
+
+        &:hover {
+            box-shadow: none;
+        }
+    }
+
+    /* radio & checkbox. */
+    .uk-checkbox:checked,
+    .uk-checkbox:indeterminate,
+    .uk-radio:checked {
+        background-color: lighten(@theme-primary-color, 5%);
+        color: @theme-button-text-color;
+        border-color: darken(@theme-primary-color, 5%);
+    }
+
+    .uk-radio:checked {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
+    }
+
+    .uk-checkbox:checked {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+    }
+
+    /* checkbox switch toggle */
+    .InputfieldCheckboxes,
+    .LanguageSupport label.checkbox.detail,
+    .uk-form-controls-text label:only-of-type {
+        cursor: pointer;
+
+        input[type=checkbox],
+        input.uk-checkbox {
+            font-size: .7rem;
+            margin-top: 0;
+            position: relative;
+            -webkit-appearance: none;
+            outline: none;
+            width: 4em;
+            height: 2.4em;
+            border: 2px solid #D6D6D6;
+            border-radius: 3em;
+            box-shadow: inset 5em 0 0 0 #DDD;
+            flex-shrink: 0;
+            vertical-align: bottom;
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: .25em;
+                left: .25em;
+                background: rgba(255, 255, 255, 0.9);
+                width: 1.6em;
+                height: 1.6em;
+                border-radius: 50%;
+                transition: all 250ms ease 20ms;
+                box-shadow: .05em .15em .5em rgba(0, 0, 0, 0.2);
+            }
+
+            &:checked {
+                background-color: transparent;
+                box-shadow: inset 5em 0 0 0 lighten(@theme-primary-color, 20%);
+                border-color: @theme-primary-color;
+
+                &:after {
+                    left: 1.85em;
+                    box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+    }
+
+    .InputfieldCheckboxes,
+    .InputfieldCheckbox {
+
+        label {
+            display: flex;
+            white-space: inherit;
+        }
+
+        .InputfieldCheckboxesStacked {
+            li {
+                padding-bottom: 3px;
+            }
+        }
+
+        .InputfieldContent {
+            label:only-of-type {
+                display: flex;
+            }
+        }
+    }
+
+    /* Label Color */
+    label:only-of-type input.uk-checkbox {
+        +span {
+            //color: #c3c3c3;
+            display: flex;
+            align-items: center;
+            line-height: 1.1;
+        }
+
+    }
+
+
+}
+
+::-moz-selection,
+::selection {
+    background-color: @theme-primary-color;
+    color: @theme-button-text-color;
+}

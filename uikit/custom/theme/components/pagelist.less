@@ -1,0 +1,105 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+
+@import "../variables.less";
+
+// increase selector specifity:
+#mqin .uk-pagination>li,
+#main .PageList {
+    background: transparent;
+}
+
+#main {
+    .PageListActions {
+        margin-left: 0.5em;
+
+        a {
+            text-transform: uppercase;
+            font-size: 0.9em;
+            line-height: 1;
+        }
+    }
+
+    // page title:
+    .PageListItem {
+        // no borders
+        border-bottom-width: 0;
+        font-size: 16px;
+
+        &.PageListItemOpen {
+            font-weight: bold;
+        }
+
+        >a.PageListPage {
+
+            .label_title:hover,
+            &:hover {
+                text-decoration: none;
+            }
+
+            i {
+                padding-right: 0.5em;
+            }
+        }
+    }
+
+    .uk-pagination>li {
+        padding: 0;
+        margin-left: -1px;
+
+        >a {
+            border-radius: 0;
+
+        }
+
+        &:first-child>a {
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        &:last-child>a {
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        &.uk-disabled>span {
+            border: none;
+            color: @theme-muted-text-color;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        margin: 0 0 0 -1px;
+
+        >.PageListLoading {
+            border: none;
+            display: inline-block;
+        }
+
+        &:first-child>a {
+            margin-left: 3px;
+        }
+
+        >a {
+            border: @pw-inputfield-border  !important;
+        }
+
+        &.uk-active>a {
+            border-color: @theme-link-color  !important;
+            background: @theme-link-color;
+            color: @pw-button-hover-color;
+        }
+    }
+
+}
+
+// hover color
+.PageList .PageListItem.PageListItemOpen,
+html.highlightRows .PageListItem:hover {
+    background-color: @pw-body-background  !important;
+}

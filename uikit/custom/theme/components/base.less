@@ -6,8 +6,7 @@
  *
  */
 
-@import "variables.less";
-@import "components/_index.less";
+@import "../variables.less";
 
 /**********************************************************************
  * Styles
@@ -16,3 +15,30 @@
  * the look and feel of AdminThemeReno.
  *
  */
+
+.pw {
+	font-family: @global-font-family;
+}
+
+
+.hook-base-h2,
+.hook-base-h3,
+.hook-base-h4 {
+	color: @theme-secondary-headline-color;
+}
+
+img.pw-logo {
+	max-height: 40px;
+}
+
+img.pw-logo-native {
+	&:hover {
+		opacity: 0.9;
+	}
+}
+
+#pw-content-head {
+	h1 {
+		color: @theme-primary-headline-color;
+	}
+}

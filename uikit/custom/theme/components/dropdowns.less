@@ -1,0 +1,189 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+
+@import "../variables.less";
+
+
+// fix small text in dropdowns (search)
+.ui-autocomplete {
+    a:hover {
+        .uk-text-muted {
+            color: inherit !important;
+            opacity: 0.9;
+        }
+    }
+}
+
+
+
+// remove the original triangle 
+.pw-dropdown-toggle {
+    &:after {
+        display: none !important;
+    }
+}
+
+// rounded corners and triangle
+body>ul.ui-autocomplete,
+ul.breadcrumb-dropdown,
+li.aos_adminLangSwitcher>ul,
+body>ul.pw-dropdown-ready {
+    border-radius: @pw-dropdown-list-border-radius;
+
+    &:after {
+        content: " ";
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 8px 8px 8px;
+        border-color: transparent transparent darken(@pw-dropdown-background, 5%) transparent;
+        position: absolute;
+        top: -8px;
+        left: 30px;
+        z-index: 99;
+    }
+
+    >li:first-child,
+    >li:first-child>a,
+    ul>li:first-child,
+    ul>li:first-child>a {
+        border-top-left-radius: @pw-dropdown-list-border-radius;
+        border-top-right-radius: @pw-dropdown-list-border-radius;
+    }
+
+    >li:last-child,
+    >li:last-child>a,
+    ul>li:last-child,
+    ul>li:last-child>a {
+        border-bottom-left-radius: @pw-dropdown-list-border-radius;
+        border-bottom-right-radius: @pw-dropdown-list-border-radius;
+    }
+
+}
+
+// triangle move to the right…
+body>ul.pw-button-dropdown,
+body>ul.ui-autocomplete,
+#_ProcessPageEditViewDropdown {
+
+    // garantuee space…
+    &:before {
+        display: block;
+        content: " ";
+        height: 8px;
+        background: transparent;
+    }
+
+    &:after {
+        left: auto;
+        right: 20px;
+        top: 0;
+    }
+}
+
+body>ul.ui-autocomplete {
+    transform: translate(0, 10px);
+}
+
+//
+body.template-admin {
+    #_ProcessPageEditViewDropdown {
+        transform: translate(-5px, 30px);
+    }
+
+
+    ul.pw-button-dropdown.pw-dropdown-menu,
+    // save button edit page
+    &.ProcessPageList #content ul.pw-dropdown-menu {
+        // add new button – move dropdown position…
+        transform: translate(-5px, 10px);
+
+        /* move triangle to the right */
+        &[data-at~="right"] {
+            &:before {
+                left: auto;
+                right: 15px;
+            }
+        }
+    }
+}
+
+// move button to the reight 
+
+
+ul.breadcrumb-dropdown,
+ul.pw-dropdown-menu,
+ul.ui-menu {
+    border: @theme-dropdown-border;
+
+    backdrop-filter: blur(20px) drop-shadow(4px 4px 10px @theme-primary-color-light);
+    -webkit-backdrop-filter: blur(20px) drop-shadow(4px 4px 10px @theme-primary-color-light);
+
+    >li.ui-menu-item>ul.ui-menu {
+        border: @theme-dropdown-border  !important;
+    }
+}
+
+// breadcrumb and dropdown:
+#main .uk-breadcrumb {
+    padding-bottom: 0; // wrongly nested
+
+    .uk-breadcrumb {
+        margin-bottom: 0px;
+    }
+
+    >li {
+        font-size: .875rem;
+        color: @theme-muted-text-color;
+
+        .dropdown-toggle {
+            margin-bottom: 0px;
+
+            &:hover {
+                color: @theme-primary-color;
+                background: @pw-dropdown-background;
+            }
+
+            .fa {
+                left: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    ul.breadcrumb-dropdown {
+        &:before {
+            display: none;
+        }
+
+        background: @pw-dropdown-background;
+        box-shadow: @pw-dropdown-box-shadow;
+        border: @theme-dropdown-border;
+
+        li.page-current {
+            a {
+                color: @theme-primary-color;
+                font-weight: bold;
+            }
+        }
+
+        >li>a {
+            color: @pw-dropdown-nav-item-color;
+            background: @pw-dropdown-background;
+            border-bottom-width: 0px;
+            padding: 5px 15px;
+
+            &:active,
+            &:hover {
+                background: @theme-dropdown-hover-background;
+                color: @pw-dropdown-highlight-color;
+            }
+        }
+    }
+}

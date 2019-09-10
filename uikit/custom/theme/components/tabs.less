@@ -1,0 +1,94 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+
+@import "../variables.less";
+
+/**********************************************************************
+ * Styles
+ *
+ * Adjustments to the default Uikit admin theme styles to give more
+ * the look and feel of AdminThemeReno.
+ *
+ */
+
+// Tabs ---------------------------------------------------------------
+.hook-tab-item {
+	border: 1px solid transparent;
+	margin-left: -1px;
+	text-transform: uppercase;
+}
+
+.hook-tab-item-active() {
+	border: @pw-inputfield-border;
+	box-shadow: @pw-tabs-box-shadow;
+	border-bottom-color: transparent;
+	border-top-left-radius: 1px;
+	border-top-right-radius: 1px;
+}
+
+// Language Tabs ---------------------------------------------------------------
+// toggeled open;
+.LanguageSupportLabel {
+	text-transform: uppercase;
+}
+
+.langTabs .ui-tabs-nav,
+.langTabs .uk-tab {
+
+	// using a different styling for language tabs in this theme
+	>li {
+		background: transparent;
+		margin: 3px 0 0;
+		border: none;
+		padding: 0 !important;
+
+
+		&.langTabEmpty>a {
+			color: @theme-language-tab-empty-color;
+		}
+
+		>a {
+			margin: 0 1px 0 0;
+			display: inline-block;
+			border: none;
+			border-radius: 0;
+			color: @theme-language-tab-color;
+			background: @theme-language-tab-background;
+			padding: 4px 15px;
+			font-size: @pw-tiny-font-size;
+			text-transform: uppercase;
+		}
+
+		>a:hover {
+			color: @theme-primary-color;
+			background: @theme-language-tab-hover-background;
+		}
+
+		&.uk-active>a {
+			color: @theme-language-tab-current-color;
+			background: @theme-language-tab-current-background;
+			border: 1px solid darken(@pw-inputfield-background-primary, 3%);
+			border-bottom: none;
+			box-shadow: @pw-tabs-box-shadow;
+		}
+	}
+}
+
+.WireTabs.uk-tab>li.uk-active.pw-tab-muted {
+	background: @theme-muted-background;
+
+	>a {
+		border-bottom: none;
+	}
+}
+
+// improved padding on language tabs
+.Inputfields .langTabsContainer .pw-description,
+.Inputfields .langTabsContainer .description {
+	margin-bottom: 7px;
+}

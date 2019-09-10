@@ -1,0 +1,301 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+
+@global-xxlarge-font-size: 2em;
+@global-font-family: 'Roboto Condensed',
+	"HelveticaNeue",
+	"Arial",
+	sans-serif;
+
+@theme-primary-color-rgba: fade(@theme-primary-color, 40%);
+@theme-primary-color-light: fade(@theme-primary-color, 20%);
+@theme-primary-color-verylight: fade(@theme-primary-color, 7%);
+
+@offcanvas-bar-width: 350px;
+@pw-icon-font-size: 14px;
+@pw-tiny-font-size: 12px;
+@pw-tabs-margin-bottom: 0; // margin between tabs and whatever is below
+@pw-body-background: #fff;
+
+
+/**************************************************************
+ * Primary variables
+ *
+ * The entire color theme can be adjusted from the @theme
+ * variables below.
+ *
+ */
+
+@global-background: #fff;
+@theme-text-color: #575555;
+
+@theme-link-color: #333335;
+@theme-link-hover-color: darken(@theme-link-color, 20%);
+
+
+
+@theme-light-background: #fff;
+@theme-dark-background: #131010;
+
+@theme-muted-background: #fafafb; // secondary boxes
+@theme-muted-text-color: #777;
+@theme-muted-text-color-alternate: #777;
+
+@theme-secondary-background: rgba(250, 250, 250, 0.9); // offscreen navi
+
+@theme-success-background: #cbf2e1;
+@theme-success-color: @theme-text-color;
+
+@theme-warning-background: #ffe299;
+@theme-warning-color: #000;
+
+@theme-danger-background: #f8ada5;
+@theme-danger-color: #000;
+
+@theme-alert-background: #efe;
+@theme-alert-color: #000;
+
+@theme-primary-headline-color: #131111;
+@theme-secondary-headline-color: lighten(@theme-primary-headline-color, 30%);
+
+@theme-notes-text-color: @theme-muted-text-color;
+@theme-notes-background: transparent;
+
+@theme-masthead-background: @theme-light-background;
+@theme-masthead-icon-color: #000000;
+@theme-masthead-link-color: #444444;
+@theme-masthead-link-hover-color: #222222;
+@theme-masthead-link-current-color: @theme-primary-color;
+
+@theme-masthead-search-text-color: #000000;
+@theme-masthead-search-background: #ffffff;
+@theme-masthead-search-border-color: lighten(@theme-masthead-icon-color, 50%);
+@theme-masthead-search-focus-background: lighten(@theme-primary-color-light, 20%);
+@theme-masthead-search-focus-text-color: @theme-link-color;
+@theme-masthead-search-focus-border-color: @theme-primary-color;
+@theme-masthead-search-icon-color: lighten(@theme-masthead-icon-color, 20%);
+
+// shadows
+@pw-box-shadow: 0 10px 30px -10px @theme-primary-color-light;
+@pw-box-shadow-small: 0 10px 20px -10px @theme-primary-color-light;
+@pw-primary-box-shadow: 0 5px 15px @theme-primary-color-rgba;
+@pw-tabs-box-shadow: 0px -5px 15px -6px @theme-muted-background;
+
+/* buttons */
+
+@theme-button-text-color: #fff;
+@theme-button-background: @theme-primary-color;
+@theme-button-hover-background: #fff;
+@theme-button-secondary-background: @theme-muted-text-color-alternate;
+@theme-button-secondary-hover-background: darken(@theme-button-secondary-background, 5%);
+
+/* dropdown */
+
+@theme-dropdown-background: rgba(250, 250, 250, 0.9);
+@theme-dropdown-color: @theme-text-color;
+@theme-dropdown-hover-background: @theme-primary-color-rgba;
+@theme-dropdown-border-color: #eee;
+@theme-dropdown-border: 0px solid @theme-dropdown-border-color;
+@theme-dropdown-nav-icon-color: #000;
+
+/* page list */
+
+@theme-page-list-link-color: @theme-text-color;
+@theme-page-list-link-open-color: #111;
+@theme-page-list-icon-color: @theme-link-color; // #a9adb5;
+@theme-page-list-link-active-color: @theme-link-hover-color;
+@theme-page-list-link-hover-color: @theme-link-hover-color;
+
+@theme-page-list-action-link-color: #000;
+@theme-page-list-action-link-background-color: @theme-muted-background;
+@theme-page-list-action-link-hover-color: #fff;
+@theme-page-list-action-link-hover-background-color: @theme-primary-color;
+
+/* input field */
+
+@theme-inputfield-border: 1px solid #eeeeef;
+@theme-inputfield-input-background: #fff;
+@theme-inputfield-input-border-color: #ccc #ddd #ddd #ddd;
+
+@theme-form-radio-checked-background: @theme-muted-text-color-alternate;
+
+@pw-inputfield-border-color: @theme-inputfield-input-border-color;
+@pw-inputfield-background: @theme-inputfield-input-background;
+@pw-inputfield-input-border-color: @theme-inputfield-input-border-color;
+/* offcanvas */
+
+@theme-offcanvas-text-color: @theme-text-color;
+@theme-offcanvas-link-color: @theme-text-color;
+@theme-offcanvas-link-hover-color: @theme-link-color;
+@theme-offcanvas-link-open-color: @theme-link-color;
+@theme-offcanvas-background: @theme-secondary-background;
+@theme-offcanvas-search-background: #fff;
+
+
+/* language tabs */
+
+@theme-language-tab-background: transparent;
+@theme-language-tab-color: @theme-text-color;
+@theme-language-tab-current-background: #fff;
+@theme-language-tab-current-color: @theme-primary-headline-color;
+@theme-language-tab-hover-background: @theme-muted-background;
+@theme-language-tab-hover-color: @theme-text-color;
+@theme-language-tab-empty-color: @theme-muted-text-color;
+
+@theme-table-header-color: @theme-muted-text-color-alternate;
+@theme-table-header-current-color: @theme-primary-color;
+
+/****************************************************************
+ * General admin theme variables
+ *
+ * These mostly map @theme variables to Uikit and @pw admin them
+ * variables. These are not likely to need edits if making
+ * adjustments to the theme colors.
+ *
+ */
+
+// Global colors
+@global-color: @theme-text-color;
+
+@global-primary-background: darken(@theme-muted-background, 2%);
+@global-inverse-color: #000;
+
+@global-secondary-background: @theme-secondary-background;
+@global-secondary-color: @theme-text-color;
+@global-link-color: @theme-link-color;
+@global-link-hover-color: @theme-link-hover-color;
+@global-muted-background: @theme-muted-background;
+@global-muted-color: @theme-muted-text-color;
+@global-success-background: @theme-success-background;
+@global-warning-background: @theme-warning-background;
+@global-danger-background: @theme-danger-background;
+
+// Alert colors
+@alert-primary-background: @theme-alert-background;
+@alert-primary-color: @theme-alert-color;
+@alert-danger-background: @theme-danger-background;
+@alert-danger-color: @theme-danger-color;
+@alert-warning-background: @global-warning-background;
+@alert-warning-color: @theme-warning-color;
+
+// Dropdowns and primary navigation
+@dropdown-padding: 15px;
+
+@pw-masthead-height: 73px; // note: must also be updated in _masthead.php "data-pw-height" attribute
+@pw-dropdown-color: @theme-dropdown-color;
+@pw-dropdown-background: @theme-dropdown-background;
+@pw-dropdown-nav-item-color: @theme-dropdown-color;
+@pw-dropdown-nav-item-hover-color: darken(@theme-dropdown-color, 7%);
+@pw-dropdown-nav-item-hover-background: @theme-dropdown-hover-background;
+@pw-dropdown-separator-color: darken(@theme-dropdown-border-color, 7%);
+@pw-dropdown-highlight-color: #fff;
+@pw-dropdown-highlight-background-color: @dropdown-background;
+@pw-dropdown-nav-icon-color: inherit;
+@pw-dropdown-box-shadow: 0 5px 20px @theme-primary-color-light;
+
+@pw-dropdown-line-height: 1.2em;
+@pw-dropdown-list-padding-vertical: 0px;
+@pw-dropdown-list-padding-horizontal: 0;
+@pw-dropdown-item-padding-vertical: 0.5em;
+@pw-dropdown-list-border-radius: 5px;
+
+@navbar-nav-item-text-transform: uppercase;
+@navbar-nav-item-font-size: 18px;
+
+// Buttons
+@button-font-size: 18px;
+@button-text-transform: uppercase;
+@button-text-color: @global-link-color; // text-only button
+@button-text-hover-color: @theme-primary-color; // text-only button
+@pw-button-background: @theme-button-background;
+@pw-button-color: @theme-button-text-color;
+@pw-button-hover-background: darken(@theme-primary-color, 5%);
+@pw-button-hover-color: #fff;
+
+@pw-button-secondary-background: @theme-button-secondary-background;
+@pw-button-secondary-hover-background: darken(@pw-button-secondary-background, 5%);
+
+// Form and inputfields
+@pw-inputfield-border: @theme-inputfield-border;
+@pw-inputfield-repeater-background: @global-muted-background;
+@pw-inputfield-repeater-background-none: @pw-inputfield-repeater-background;
+@pw-inputfield-color-primary: @theme-primary-headline-color;
+@pw-inputfield-background-primary: lighten(@theme-primary-headline-color, 90%);
+@pw-inputfield-border-primary: 1px solid darken(@pw-inputfield-background-primary, 15%);
+@pw-inputfield-color-warning: @theme-warning-color;
+@pw-inputfield-background-warning: lighten(@theme-warning-background, 20%);
+@pw-inputfield-background-danger: lighten(@theme-danger-background, 50%);
+@pw-inputfield-header-color: #11111f;
+@pw-inputfield-header-collapsed-color: @theme-muted-text-color-alternate;
+@pw-inputfield-header-hover-color: @theme-primary-color;
+
+@pw-inputfield-fieldset-background: linear-gradient(@global-background, @theme-muted-background);
+@pw-inputfield-header-collapsed-hover-background: linear-gradient(@global-background, @theme-muted-background);
+
+@form-radio-checked-background: @theme-form-radio-checked-background;
+@form-radio-checked-focus-background: darken(@form-radio-checked-background, 7%);
+
+// jQuery UI
+@pw-ui-widget-overlay-background: @global-link-color;
+@pw-datepicker-background: @global-link-color;
+
+// Page list
+@pw-page-list-text-color: @global-color;
+@pw-page-list-muted-text-color: @global-muted-color;
+@pw-page-list-link-color: @theme-page-list-link-color;
+@pw-page-list-link-active-color: @global-link-color;
+@pw-page-list-link-hover-color: @global-link-hover-color;
+@pw-page-list-link-open-color: @theme-page-list-link-open-color;
+@pw-page-list-link-open-text-decoration: none;
+@pw-page-list-link-open-background-color: inherit;
+
+@pw-page-list-icon-color: @theme-page-list-icon-color;
+@pw-page-list-status-icon-color: #aaaaaa;
+@pw-page-list-action-link-color: @theme-page-list-action-link-color;
+@pw-page-list-action-link-background-color: @theme-page-list-action-link-background-color;
+@pw-page-list-action-link-hover-color: @theme-page-list-action-link-hover-color;
+@pw-page-list-action-link-hover-background-color: @theme-page-list-action-link-hover-background-color;
+@pw-page-list-action-link-font-weight: normal;
+
+// Tabs
+@tab-margin-horizontal: 0;
+@tab-item-padding-horizontal: 20px;
+@tab-item-padding-vertical: 10px;
+@tab-item-color: @global-link-color;
+@tab-item-hover-color: @global-link-hover-color;
+@tab-item-hover-text-decoration: none;
+@tab-item-active-color: @global-emphasis-color;
+@tab-item-disabled-color: @global-muted-color;
+@tab-border-width: @global-border-width;
+@tab-border: @global-border;
+@tab-item-border-width: @global-border-width;
+@tab-item-font-size: 16px;
+@tab-item-text-transform: none;
+@tab-item-active-border: @global-link-color;
+@tab-item-active-background: #fff;
+
+// Offcanvas bar
+@offcanvas-bar-color-mode: dark;
+@offcanvas-bar-padding-vertical-m: @offcanvas-bar-padding-vertical;
+@offcanvas-bar-padding-horizontal-m: @offcanvas-bar-padding-horizontal;
+
+// Sidebar
+@pw-sidebar-nav-border-color: darken(@theme-offcanvas-background, 4%);
+@pw-sidebar-nav-nested-border-color: @theme-offcanvas-background;
+@nav-parent-icon-color: darken(@theme-offcanvas-background, 12%);
+
+// Dialog modal windows
+@pw-dialog-titlebar-background: @theme-masthead-background;
+@pw-dialog-titlebar-color: @theme-text-color;
+
+// Breadcrumb
+@breadcrumb-divider-margin-horizontal: 15px;
+
+// Table
+@pw-table-header-color: @theme-text-color;
+@pw-table-header-current-color: darken(@pw-table-header-color, 10%);

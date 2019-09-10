@@ -1,0 +1,77 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+
+@import "../variables.less";
+
+// Masthead and dropdowns ------------------------------------------
+.pw {
+    #pw-masthead-mobile {
+        background-color: @theme-masthead-background;
+    }
+
+    #pw-masthead {
+        //box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+        background-color: @theme-masthead-background;
+
+        .uk-navbar-nav {
+            >li {
+                position: relative;
+
+                &,
+                >a {
+
+                    // remove traingle
+                    &:after {
+                        display: none;
+                    }
+
+                    color: @theme-masthead-link-color;
+
+                    i {
+                        color: @theme-masthead-icon-color;
+                    }
+                }
+
+                &.uk-active,
+                &.uk-active>a {
+                    color: @theme-masthead-link-current-color;
+                }
+
+                &>a.hover,
+                &>a:hover {
+                    color: @theme-masthead-link-hover-color;
+
+                    i {
+                        color: @theme-masthead-link-hover-color;
+                    }
+                }
+
+            }
+        }
+
+        .pw-search-form {
+            .pw-search-input {
+                color: @theme-masthead-search-text-color;
+                background: @theme-masthead-search-background;
+                border-color: @theme-masthead-search-border-color;
+                border-radius: 2em;
+
+                &:focus {
+                    color: @theme-masthead-search-focus-text-color;
+                    background: @theme-masthead-search-focus-background;
+                    box-shadow: @pw-box-shadow;
+                }
+            }
+
+            .uk-form-icon {
+                color: @theme-masthead-search-icon-color;
+            }
+        }
+
+    }
+}

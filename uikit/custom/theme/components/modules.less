@@ -1,0 +1,65 @@
+/**************************************************************
+ * base theme
+ *
+ * Adjustments to stock Uikit admin theme to make it resemble
+ * the AdminThemeReno look and colors.
+ *
+ */
+
+@import "../variables.less";
+
+// Admin Help Module –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+.ProcessAdminHelp {
+    #pw-content-head h1 {
+        display: none;
+    }
+}
+
+#main #_AdminHelpTabHelp {
+    color: @theme-primary-color  !important;
+}
+
+#main #help-container,
+#main .help-doc {
+    a {
+        color: @theme-link-color;
+        text-decoration: underline;
+
+        i {
+            color: @theme-link-hover-color;
+        }
+    }
+
+    h1 {
+        &:before {
+            content: '' !important;
+            display: none;
+        }
+    }
+}
+
+#main .help-doc h1,
+#main .cbp-ntaccordion h3.cbp-nttrigger {
+    font-family: @global-font-family;
+    font-size: reset;
+    color: @theme-primary-color;
+    padding: reset;
+    font-weight: reset;
+
+    i.fa-file-text-o {
+        display: none;
+    }
+
+    &:before {
+        font-size: 1em;
+        font-family: monospace;
+        font-weight: bold;
+        content: "+";
+        vertical-align: 3px;
+        margin-right: 0;
+    }
+
+    &:hover:before {
+        content: "-";
+    }
+}
