@@ -8,6 +8,21 @@
 
 @import "../variables.less";
 
+// ProDrafts –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+.pw .ProDraftsNotice {
+    background-color: fade(@theme-primary-color, 80%);
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, fade(@theme-primary-color, 95%) 35px, fade(@theme-primary-color, 95%) 70px);
+    color: @theme-text-color-inverse;
+
+    a {
+        color: inherit;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}
+
 // Admin Help Module –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 .ProcessAdminHelp {
     #pw-content-head h1 {

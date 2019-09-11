@@ -8,46 +8,121 @@
 
 @import "../variables.less";
 
-
-// fix small text in dropdowns (search)
-.ui-autocomplete {
-    a:hover {
-        .uk-text-muted {
-            color: inherit !important;
-            opacity: 0.9;
-        }
-    }
-}
-
-
+@triangle-witdh: 8px;
 
 // remove the original triangle 
-.pw-dropdown-toggle {
-    &:after {
-        display: none !important;
-    }
+.aos_adminLangSwitcher ul:before,
+.pw-dropdown-toggle:after,
+.pw-button-dropdown:after {
+    display: none !important;
 }
 
 // rounded corners and triangle
+
 body>ul.ui-autocomplete,
 ul.breadcrumb-dropdown,
-li.aos_adminLangSwitcher>ul,
-body>ul.pw-dropdown-ready {
+.aos_adminLangSwitcher>ul,
+body>ul.pw-dropdown-menu.ui-menu {
+
+    color: @pw-dropdown-nav-item-color;
+
     border-radius: @pw-dropdown-list-border-radius;
 
+    border: @theme-dropdown-border;
+    box-shadow: @pw-dropdown-box-shadow;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    li.ui-menu-item a small {
+        color: inherit !important;
+        opacity: 0.9;
+    }
+
+
+    .uk-nav-divider {
+        border-color: @theme-dropdown-hover-background;
+        margin-left: @triangle-witdh/2;
+        margin-right: @triangle-witdh/2;
+    }
+
+    // triangle
     &:after {
         content: " ";
         display: block;
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 0 8px 8px 8px;
-        border-color: transparent transparent darken(@pw-dropdown-background, 5%) transparent;
+        border-width: 0 @triangle-witdh @triangle-witdh @triangle-witdh;
+        border-color: transparent transparent @pw-dropdown-background transparent;
         position: absolute;
-        top: -8px;
-        left: 30px;
+        top: -@triangle-witdh;
         z-index: 99;
     }
+
+    &[data-at*="left"] {
+        &:after {
+            right: auto;
+            left: 10%;
+        }
+    }
+
+    &[data-at*="right"] {
+        &:after {
+            left: auto;
+            right: 10%;
+        }
+    }
+
+    &.prnav {
+        margin-top: -5px;
+
+        li {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+
+            >a {
+                padding: @pw-dropdown-item-padding-vertical  !important;
+            }
+        }
+
+        &:after {
+            left: 10%;
+        }
+    }
+
+    a:hover {
+        box-shadow: 0 0px 15px -5px fade(darken(@theme-dropdown-background, 50%), 20%);
+    }
+
+    // submenu
+    ul.ui-menu {
+        border-top-left-radius: 0 !important;
+        transform: translateY(-3px);
+
+        border-width: 0px !important;
+
+        &[style*="left"] {
+            left: 99% !important;
+        }
+
+        &[style*="rigth"] {
+            right: 99% !important;
+        }
+
+        >li:first-child,
+        >li:first-child>a {
+            border-top-left-radius: 0;
+        }
+
+        // smaller…
+        li>a {
+            padding-top: 0.25em !important;
+            padding-bottom: 0.25em !important;
+        }
+    }
+
+
 
     >li:first-child,
     >li:first-child>a,
@@ -67,68 +142,41 @@ body>ul.pw-dropdown-ready {
 
 }
 
-// triangle move to the right…
-body>ul.pw-button-dropdown,
-body>ul.ui-autocomplete,
-#_ProcessPageEditViewDropdown {
 
-    // garantuee space…
-    &:before {
-        display: block;
-        content: " ";
-        height: 8px;
-        background: transparent;
+body>ul.ui-autocomplete {
+    // fix positioning:
+    border: @triangle-witdh solid transparent;
+    background-clip: content-box;
+    border-radius: 14px;
+    margin-bottom: -8px;
+    box-shadow: none;
+
+    .uk-nav-header {
+        font-weight: bold;
+        margin-top: 0;
+        color: inherit;
     }
 
     &:after {
-        left: auto;
-        right: 20px;
-        top: 0;
-    }
-}
-
-body>ul.ui-autocomplete {
-    transform: translate(0, 10px);
-}
-
-//
-body.template-admin {
-    #_ProcessPageEditViewDropdown {
-        transform: translate(-5px, 30px);
+        right: 10%;
+        top: -8px;
     }
 
 
-    ul.pw-button-dropdown.pw-dropdown-menu,
-    // save button edit page
-    &.ProcessPageList #content ul.pw-dropdown-menu {
-        // add new button – move dropdown position…
-        transform: translate(-5px, 10px);
+    .uk-nav-header,
+    .ui-menu-item a {
+        padding: 5px 10px;
+    }
 
-        /* move triangle to the right */
-        &[data-at~="right"] {
-            &:before {
-                left: auto;
-                right: 15px;
-            }
+    a:hover {
+        .uk-text-muted {
+            color: inherit !important;
+            opacity: 0.9;
         }
     }
+
 }
 
-// move button to the reight 
-
-
-ul.breadcrumb-dropdown,
-ul.pw-dropdown-menu,
-ul.ui-menu {
-    border: @theme-dropdown-border;
-
-    backdrop-filter: blur(20px) drop-shadow(4px 4px 10px @theme-primary-color-light);
-    -webkit-backdrop-filter: blur(20px) drop-shadow(4px 4px 10px @theme-primary-color-light);
-
-    >li.ui-menu-item>ul.ui-menu {
-        border: @theme-dropdown-border  !important;
-    }
-}
 
 // breadcrumb and dropdown:
 #main .uk-breadcrumb {
@@ -144,10 +192,14 @@ ul.ui-menu {
 
         .dropdown-toggle {
             margin-bottom: 0px;
+            color: @theme-text-color;
+            font-weight: bold;
+            font-size: 1.2em;
 
             &:hover {
+                background: none;
                 color: @theme-primary-color;
-                background: @pw-dropdown-background;
+                text-shadow: 1px 1px 5px @theme-primary-color;
             }
 
             .fa {
@@ -158,17 +210,34 @@ ul.ui-menu {
     }
 
     ul.breadcrumb-dropdown {
+        border-top-left-radius: 3px;
+
         &:before {
             display: none;
+        }
+
+        &:after {
+            left: 3px;
         }
 
         background: @pw-dropdown-background;
         box-shadow: @pw-dropdown-box-shadow;
         border: @theme-dropdown-border;
 
+        li.add-new {
+            text-transform: uppercase;
+            font-weight: bold;
+
+            i {
+                margin-right: 5px;
+                color: @pw-dropdown-nav-item-color;
+            }
+        }
+
         li.page-current {
             a {
-                color: @theme-primary-color;
+                color: @pw-dropdown-nav-item-hover-color;
+                background: @pw-dropdown-nav-item-hover-background;
                 font-weight: bold;
             }
         }

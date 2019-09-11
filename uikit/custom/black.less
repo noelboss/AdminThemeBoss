@@ -3,32 +3,17 @@
 
 // main accent color:
 // pw black
-@theme-primary-color: #000000;
+@theme-primary-color: #111114;
 
 // Original Theme
 @import "../../AdminThemeUikit/pw/_import.less";
 
 // AdminThemeBoss Custom Styles
 @import "fonts/fonts.less";
+
 @import "theme/main.less";
 @import "theme/black-login.less";
 
 /* Overrides… */
-
-#pw-mastheads .NotificationBug {
-    background-image: linear-gradient(#000, #000);
-}
-
-.pw .ProDraftsNotice {
-    background-color: fade(@theme-primary-color, 80%);
-    background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, fade(@theme-primary-color, 95%) 35px, fade(@theme-primary-color, 95%) 70px);
-    color: #fff;
-
-    a {
-        color: inherit;
-
-        &:hover {
-            opacity: 0.9;
-        }
-    }
-}
+@theme-dropdown-background: lighten(@theme-primary-color, 15%);
+@theme-primary-color-verylight: lighten(@theme-primary-color, 90%);

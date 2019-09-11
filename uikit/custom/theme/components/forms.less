@@ -8,10 +8,18 @@
 
 @import "../variables.less";
 
-@pill-border-radius: 3px;
+@pill-border-radius: 5px;
+
+
 
 
 #main {
+
+    .ui-button,
+    .uk-button {
+        transition: all 250ms ease 20ms;
+    }
+
     .InputfieldFieldset {
 
         // fieldset containing other Inputfield elements
@@ -166,28 +174,10 @@
 
 
     /* chosen fields -------------------------------------------------------------- */
-    .chosen-container-active.chosen-with-drop .chosen-single {
-        box-shadow: none;
-        border-color: @theme-inputfield-input-border-color;
-    }
 
     .chosen-container-single .chosen-single {
-        padding: 7px 25px 7px 7px;
         background: @pw-inputfield-background;
         border-color: @theme-inputfield-input-border-color;
-        height: auto;
-        border-radius: 0;
-        box-shadow: none;
-
-        abbr {
-            //close
-            top: 14px;
-        }
-
-        div {
-            // triangle: ;
-            top: 8px;
-        }
     }
 
     .chosen-container {
@@ -195,6 +185,7 @@
         .chosen-choices {
             border-color: @theme-inputfield-input-border-color;
             background: @pw-inputfield-background;
+            color: @theme-dropdown-color;
 
             li.search-choice {
                 background: @theme-primary-color-verylight;
@@ -226,8 +217,12 @@
         }
 
         .chosen-results {
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            color: @theme-dropdown-color;
+
             li.highlighted {
-                background: @theme-primary-color-light;
+                background: @theme-dropdown-hover-background;
                 color: @theme-dropdown-color;
             }
         }
@@ -250,7 +245,7 @@
         &.ui-state-hover,
         &.ui-state-default {
             background: @theme-primary-color-verylight;
-            box-shadow: @pw-box-shadow-small;
+            box-shadow: @pw-box-shadow-subtle;
             border-color: @theme-primary-color-light;
             border-radius: @pill-border-radius;
             padding: 2px;
@@ -266,7 +261,7 @@
         }
 
         .asmListItemRemove i {
-            top: 3px;
+            top: 5px;
             right: 7px;
         }
     }
@@ -297,16 +292,17 @@
     // ugly metal handler
     .ui-slider,
     .ui-slider-horizontal {
-        background: darken(@theme-dropdown-background, 7%);
+
+        background: lighten(@theme-button-secondary-background, 30%);
 
         .ui-slider-range-min {
-            background: darken(@theme-dropdown-background, 10%);
+            background: lighten(@theme-button-secondary-background, 20%);
         }
 
     }
 
     .ui-slider .ui-state-default.ui-slider-handle {
-        background: @theme-link-color;
+        background: @theme-button-secondary-background;
         width: 17px;
         height: 17px;
         border-radius: 17px;
@@ -314,7 +310,7 @@
         cursor: pointer;
 
         &:hover {
-            background: @theme-link-hover-color;
+            background: @theme-primary-color;
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
         }
     }
@@ -405,6 +401,12 @@
                 border-radius: 50%;
                 transition: all 250ms ease 20ms;
                 box-shadow: .05em .15em .5em rgba(0, 0, 0, 0.2);
+            }
+
+            &:focus,
+            &:hover {
+                border-color: lighten(@theme-primary-color, 10%);
+                box-shadow: inset 5em 0 0 0 #DDD, @pw-box-shadow-subtle;
             }
 
             &:checked {

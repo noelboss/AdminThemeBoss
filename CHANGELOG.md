@@ -2,6 +2,17 @@
 
 © 2018 noelboss.com
 
+## Version 0.6.0
+
+Introducing, a refined, more colorfull and streamlined expirience:
+
+* More colors 🎉
+* Improved: notifications 📢
+* Improved: dropdows
+* Improced: third party modules like ProDrafts, AOS and ASM
+* Improved: Under the hood improvements on how settings are saved an applied
+* Fixed: Some minor bugs 🧨🦟
+
 ## Version 0.5.5
 
 * Fixed: Display of strong and italic content inside field descriptions and notes.

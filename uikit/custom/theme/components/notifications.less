@@ -16,14 +16,14 @@
     left: auto;
     right: 10px;
     top: 10px;
-    line-height: 22px;
+    line-height: 24px;
     min-height: 24px;
     border-radius: 50%;
 
-    box-shadow: @pw-dropdown-box-shadow;
+    box-shadow: @pw-box-shadow-small;
     border-width: 0px;
     z-index: 999999999;
-    background-image: linear-gradient(darken(@theme-danger-background, 20%), darken(@theme-danger-background, 20%));
+    background-image: linear-gradient(darken(@theme-primary-color, 5%), darken(@theme-primary-color, 5%));
 
     .qty {
         font-family: inherit;
@@ -46,21 +46,24 @@
         margin: 20px;
         border-bottom-width: 0;
         border-radius: @pw-dropdown-list-border-radius;
-
+        box-shadow: @pw-dropdown-box-shadow;
 
         >div {
             padding: 0;
+
+            p {
+                padding-right: 33px;
+            }
         }
 
         .NotificationTitle {
-            padding-right: 33px;
             font-weight: normal;
         }
 
 
         .NoticeMessage {
             border-width: 0;
-            box-shadow: @pw-dropdown-box-shadow;
+            color: @theme-text-color;
         }
 
         .created {
@@ -75,9 +78,6 @@
 
     position: absolute;
     z-index: 3;
-    width: 30vw;
-    min-width: 300px;
-    max-width: 80%;
 
     right: 0;
 
@@ -86,6 +86,7 @@
         box-shadow: @pw-dropdown-box-shadow;
         border-radius: @pw-dropdown-list-border-radius;
         border-bottom-width: 0;
+
     }
 
     li>div {
@@ -101,15 +102,38 @@
 
 #NotificationGhosts {
 
-    li>.NotificationGhost {
-        margin: 20px;
+    width: 30vw;
+    min-width: 300px;
+    max-width: 80%;
+
+    .removed {
+        display: none;
+    }
+
+    li {
+        opacity: 1 !important;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 10px;
+    }
+
+    &.NotificationGhostsRight {
+        top: 20px;
+    }
+
+
+    li div.NotificationGhost {
+        display: block;
         box-shadow: @pw-dropdown-box-shadow;
         border-radius: @pw-dropdown-list-border-radius;
         border-bottom-width: 0;
         color: @global-inverse-color;
         font-weight: normal;
-        margin: 0 20px;
-        opacity: 1;
+        margin: 0;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+        text-align: left;
+        width: 100%;
     }
 
     .NoticeMessage {
@@ -118,7 +142,6 @@
 
     .NoticeError {
         background: @alert-danger-background;
-
     }
 
     .NoticeWarning {

@@ -17,19 +17,15 @@
         }
 
         >ul {
-            &:after {
-                display: none;
-            }
-
-            &:before {
-                left: auto;
-                right: 30px;
-            }
-
-            filter: none; // box-shadow
             background: transparent;
             border-width: 0px;
             box-shadow: @pw-dropdown-box-shadow;
+            transform: translateX(-5px);
+
+            &:after {
+                left: auto;
+                right: 10%;
+            }
 
             li>a {
                 color: @pw-dropdown-nav-item-color;
@@ -141,20 +137,19 @@ html.tooltipDesc {
 #checkAllCheckboxes {
     border-color: transparent;
 
-    box-shadow: @pw-dropdown-box-shadow;
-    margin-left: 0 !important;
-
-    -ms-transform: translate(-25%, -20%);
-    transform: translate(-25%, -20%);
+    text-shadow: none;
+    transform: translate(5px, -5px);
 
     background: @pw-dropdown-background;
 
     &:hover {
-        background: @theme-primary-color;
+        box-shadow: @pw-dropdown-box-shadow;
+        background: @theme-dropdown-hover-background;
     }
 
     i:before {
-        color: @theme-primary-color;
+        text-shadow: none;
+        color: @theme-text-color-inverse;
     }
 
     &:hover i:before {
