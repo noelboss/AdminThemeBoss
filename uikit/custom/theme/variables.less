@@ -32,34 +32,33 @@
  */
 
 @global-background: #fff;
-@theme-text-color: #575555;
-@theme-text-color-inverse: #fff;
-
-@theme-link-color: #353333;
-@theme-link-hover-color: darken(@theme-link-color, 20%);
-
-
+//@theme-muted-background: lighten(@theme-primary-color, 40%);
 
 @theme-light-background: #fff;
 @theme-dark-background: #131010;
 
-@theme-muted-background: #fafafb; // secondary boxes
+
+@theme-text-color: #575555;
+@theme-text-color-inverse: #fff;
 @theme-muted-text-color: #797777;
-@theme-muted-text-color-alternate: @theme-muted-text-color;
+@theme-muted-text-color-alternate: lighten(@theme-muted-text-color, 5%);
 
-@theme-secondary-background: rgba(250, 250, 250, 0.9); // offscreen navi
+@theme-link-color: #353333;
+@theme-link-hover-color: darken(@theme-link-color, 20%);
 
-@theme-success-background: #cbf2e1;
+@theme-secondary-background: @theme-muted-background; // offscreen navi
+
 @theme-success-color: @theme-text-color;
+@theme-success-background: #cbf2e1;
 
-@theme-warning-background: #ffe299;
 @theme-warning-color: #000;
+@theme-warning-background: #ffe299;
 
-@theme-danger-background: #f8ada5;
 @theme-danger-color: #000;
+@theme-danger-background: #f8ada5;
 
-@theme-alert-background: #efe;
 @theme-alert-color: #000;
+@theme-alert-background: #efe;
 
 @theme-primary-headline-color: #131111;
 @theme-secondary-headline-color: lighten(@theme-primary-headline-color, 30%);
@@ -237,7 +236,7 @@
 @pw-inputfield-header-hover-color: @theme-primary-color;
 
 @pw-inputfield-fieldset-background: linear-gradient(@global-background, @theme-muted-background);
-@pw-inputfield-header-collapsed-hover-background: linear-gradient(@global-background, @theme-muted-background);
+@pw-inputfield-header-collapsed-hover-background: linear-gradient(@global-background, darken(@theme-muted-background, 1.5%));
 
 @form-radio-checked-background: @theme-form-radio-checked-background;
 @form-radio-checked-focus-background: darken(@form-radio-checked-background, 7%);

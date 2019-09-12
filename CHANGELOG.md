@@ -1,6 +1,13 @@
 # Admin Theme Boss – Release Notes
 
-© 2018 noelboss.com
+© 2019 noelboss.com
+
+## Version 0.6.1
+
+Everyone is going green, only AdminThemeBoss was somehow missing the trend… So this new version fixes this glaring oversight 😇
+
+* New «Smooth Green» Color Scheme 💚
+* Fixed: Small issues with asmSelect entries
 
 ## Version 0.6.0
 

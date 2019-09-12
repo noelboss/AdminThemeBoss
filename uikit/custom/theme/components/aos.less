@@ -58,6 +58,7 @@
 
 // Admin On Steroids –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 // aos notice and description
+
 html.tooltipNotes #main #content p.notes,
 html.tooltipDesc #main #content p.description {
 
@@ -67,50 +68,79 @@ html.tooltipDesc #main #content p.description {
     }
 }
 
-html.tooltipNotes,
-html.tooltipDesc {
+html.aos .aos_hasTooltip .aos_EditField {
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: @pw-dropdown-box-shadow  !important;
+    background: @theme-primary-color  !important;
+    color: @theme-button-text-color  !important;
+    border-radius: 3px;
 
-    // disable effect on live preview
-    :not(.ProDraftsLivePreview) {
-        #main #content {
+    // triangle
+    &:before {
+        border-top-color: @theme-primary-color  !important;
+    }
 
-            p.notes,
-            p.description {
-                // text
-                -webkit-backdrop-filter: blur(20px);
-                backdrop-filter: blur(20px);
-                box-shadow: @pw-dropdown-box-shadow  !important;
-                background: @theme-primary-color  !important;
-                font-size: 0.01vw;
-                letter-spacing: 0px;
-                pointer-events: all;
-                color: @theme-button-text-color  !important;
-                border-radius: 3px;
+    &:hover {
+        text-decoration: none;
+        background: darken(@theme-primary-color, 5%) !important;
 
-                // triangle
-                &:after {
-                    border-top-color: @theme-primary-color;
-                }
+        // triangle
+        &:before {
+            border-top-color: darken(@theme-primary-color, 5%) !important;
+        }
+    }
 
-                &:focus,
-                &:hover {
-                    font-size: 1rem; //font-weight: bold;
-                }
+}
 
-                // icon:
-                &:before {
+@media (min-width: @breakpoint-small) {
+
+    html.tooltipNotes,
+    html.tooltipDesc {
+
+        // disable effect on live preview
+        :not(.ProDraftsLivePreview) {
+            #main #content {
+
+                p.notes,
+                p.description {
+                    // text
+                    -webkit-backdrop-filter: blur(20px);
+                    backdrop-filter: blur(20px);
+                    box-shadow: @pw-dropdown-box-shadow  !important;
+                    background: @theme-primary-color  !important;
+                    font-size: 0.01vw;
+                    letter-spacing: 0px;
                     pointer-events: all;
-                    color: darken(@theme-text-color, 7%);
-                    margin-top: -3px;
-                    width: 22px;
-                    padding: 0;
-                    line-height: 22px !important; //border-left: @theme-inputfield-border;
-                    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
-                }
+                    color: @theme-button-text-color  !important;
+                    border-radius: 3px;
 
+                    // triangle
+                    &:after {
+                        border-top-color: @theme-primary-color;
+                    }
+
+                    &:focus,
+                    &:hover {
+                        font-size: 1rem; //font-weight: bold;
+                    }
+
+                    // icon:
+                    &:before {
+                        pointer-events: all;
+                        color: darken(@theme-text-color, 7%);
+                        margin-top: -3px;
+                        width: 22px;
+                        padding: 0;
+                        line-height: 22px !important; //border-left: @theme-inputfield-border;
+                        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+                    }
+
+                }
             }
         }
     }
+
 }
 
 // reset in certain situations

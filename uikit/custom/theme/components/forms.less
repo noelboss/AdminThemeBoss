@@ -238,6 +238,15 @@
 
     .asmListItem {
         margin-top: 10px;
+
+        // center stuff…
+        >i:not(.asmListItemHandle),
+        >a:not(.asmListItemRemove),
+        >span:not(.asmListItemLabel) {
+            top: 50% !important;
+            transform: translateY(-50%);
+            padding-top: 0;
+        }
     }
 
     .asmListItem {
@@ -261,7 +270,6 @@
         }
 
         .asmListItemRemove i {
-            top: 5px;
             right: 7px;
         }
     }
@@ -274,8 +282,6 @@
         color: inherit;
         opacity: 0.7;
     }
-
-
 
     /* labels */
     .InputfieldHeader {

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * © ICF Church – <web@icf.ch>
+ * © ICF Church – <web@icf.ch>.
  *
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
@@ -48,13 +48,14 @@ class AdminThemeBossConfig extends ModuleConfig
 						'name'    => 'variant',
 						'type'    => 'radios',
 						'icon'    => 'adjust',
-						'label'   => $this->_('Color'),
+						'label'   => $this->_('Color Sheme'),
 						'value'   => $this->get('variant'),
 						'options' => [
-							'pw'      => $this->_('ProcessWire Blue'),
-							'vibrant' => $this->_('Vibrant Blue'),
-							'black'   => $this->_('Dark Black'),
-							'pink'    => $this->_('Happy Pink'),
+							'blue'       => $this->_('ProcessWire Blue'),
+							'vibrant'    => $this->_('Vibrant Blue'),
+							'black'      => $this->_('Dark Black'),
+							'pink'       => $this->_('Happy Pink'),
+							'green'      => $this->_('Smooth Green'),
 						],
 					],
 				],
@@ -104,7 +105,7 @@ class AdminThemeBossConfig extends ModuleConfig
 	{
 		return [
 			'enablemodule'           => true,
-			'variant'                => 'pw',
+			'variant'                => 'blue',
 			'extendedbreadcrumb'     => true,
 			'allusers'               => true,
 			'usedarklogo'            => false,

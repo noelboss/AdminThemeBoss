@@ -1,7 +1,7 @@
 <?php
 
 /**
- * © ICF Church – <web@icf.ch>
+ * © ICF Church – <web@icf.ch>.
  *
  * This source file is subject to the license file that is bundled
  * with this source code in the file LICENSE.
@@ -69,7 +69,9 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 		}
 
 		// remove uikit css…
-		$this->config->styles->remove($this->modules->getConfig('AdminThemeUikit', 'cssURL'));
+		if ($this->modules->getConfig('AdminThemeUikit', 'cssURL')) {
+			$this->config->styles->remove($this->modules->getConfig('AdminThemeUikit', 'cssURL'));
+		}
 
 		// add this css…
 		$this->config->styles->append($this->getVariant());
@@ -81,6 +83,8 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 
 		// update logo…
 		if ($class == $this->className()) {
+			$this->cache->deleteFor($this, 'cssurl');
+
 			$newSettings = $event->arguments(1);
 			$oldSettings = $this->modules->getConfig($this);
 
@@ -184,19 +188,24 @@ class AdminThemeBoss extends WireData implements Module, ConfigurableModule
 
 	private function getVariant()
 	{
-		$variant = $this->get('variant');
+		$expires = $this->config->debug ? time() - 10 : WireCache::expireNever;
+		$url     = $this->cache->getFor($this, 'cssurl', $expires, function () {
+			$variant = $this->get('variant');
+			$version = $this->config->debug ? time() : $this->modules->getModuleInfoProperty($this, 'version');
+			$url     = $this->config->urls->AdminThemeBoss;
 
-		$version = $this->config->debug ? time() : $this->modules->getModuleInfoProperty($this, 'version');
-		$url     = $this->config->urls->AdminThemeBoss;
+			// default
+			$file = $url . 'uikit/dist/css/uikit.blue.min.css?' . $version;
 
-		// default
-		$file = $url . 'uikit/dist/css/uikit.pw.min.css?' . $version;
+			$exists = is_file($this->config->paths->AdminThemeBoss . 'uikit/dist/css/uikit.' . $variant . '.min.css');
+			if ($exists) {
+				//bd($this->modules->getModuleInfoProperty($this, 'version'));
+				$file = $url . 'uikit/dist/css/uikit.' . $variant . '.min.css?' . $version;
+			}
 
-		$exists = is_file($this->config->paths->AdminThemeBoss . 'uikit/dist/css/uikit.' . $variant . '.min.css');
-		if ($exists) {
-			$file = $url . 'uikit/dist/css/uikit.' . $variant . '.min.css?' . $version;
-		}
+			return $file;
+		});
 
-		return $file;
+		return $url;
 	}
 }
