@@ -47,7 +47,7 @@ Checkout the [Releases Page and subscribe to updates](http://releases.noelboss.c
 
 ![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/pink.png "Happy Pink")
 
-### Smooth Green **new with 0.6.1**
+### Smooth Green *new with 0.6.1*
 
 ![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/green.png "Smooth Green")
 
