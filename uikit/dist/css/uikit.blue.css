@@ -14076,7 +14076,7 @@ a.tooltip:hover {
   color: #353333;
 }
 .PageList .PageListItem > a.PageListPage i.PageListStatusIcon {
-  color: #aaaaaa;
+  color: #353333;
 }
 .PageList .PageListItem .PageListNumChildren {
   font-size: 13px;
@@ -14414,7 +14414,7 @@ table .InputfieldIsOffset,
   background: #fff;
   font-weight: bold;
   font-size: 16px;
-  color: #11111f;
+  color: #575555;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -15693,6 +15693,9 @@ ul.uk-navbar-nav ul {
  *
  */
 /* language switcher */
+#pw-mastheads li.aos_adminLangSwitcher {
+  z-index: 3;
+}
 #pw-mastheads li.aos_adminLangSwitcher > a:after {
   display: none;
 }
@@ -16531,137 +16534,232 @@ body > ul.ui-autocomplete a:hover .uk-text-muted {
   /* login page form */
 }
 .pw body.ProcessLogin {
-  position: relative;
-  width: 370px;
-  top: 7vw;
-  max-width: 85vw;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 15px;
   background: rgba(53, 132, 234, 0.02);
-  box-shadow: 0 10px 50px -10px rgba(53, 132, 234, 0.2);
-  border: 1px solid rgba(53, 132, 234, 0.05);
+  box-shadow: 0 10px 50px -10px rgba(53, 132, 234, 0.5);
+  /*#pw-masthead-mobile .pw-logo {
+            filter: grayscale(100%) brightness(200%);
+        }*/
 }
-@media (min-width: 1000px) {
-  .pw body.ProcessLogin {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    padding: 30px;
-  }
-}
-.pw body.ProcessLogin .pw-notices {
-  margin-bottom: 2em;
-}
-.pw body.ProcessLogin .pw-notices > li {
-  border-bottom-width: 0;
+.pw body.ProcessLogin #main #content form:not(#socialsLoginForm) .Inputfield input {
   border-radius: 4px;
-}
-.pw body.ProcessLogin a,
-.pw body.ProcessLogin input,
-.pw body.ProcessLogin button {
-  transition: all 250ms ease 20ms;
-}
-.pw body.ProcessLogin #pw-masthead-mobile {
-  background-color: transparent;
-  margin-bottom: 2em;
-  box-shadow: none;
-}
-.pw body.ProcessLogin #pw-masthead-mobile .pw-logo {
-  max-height: 60px;
-}
-.pw body.ProcessLogin > #main {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-.pw body.ProcessLogin > #main #ProcessLoginForm label {
-  display: none;
-}
-.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) {
-  width: auto;
-}
-.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfields {
-  display: flex;
-}
-.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .InputfieldHeader {
-  font-size: 1.1em;
-}
-.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .InputfieldContent {
-  padding: 0 0 1em;
-}
-.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield {
-  border-width: none;
-  outline: none;
-  display: flex;
-  box-shadow: none !important;
-  background: transparent;
-  width: 100% !important;
-  float: none;
-}
-.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input {
-  border-radius: 4px;
-  font-size: 1.3em;
-  text-align: left;
-  height: auto;
-  line-height: 2em;
+  color: #fff;
+  box-shadow: 0 5px 20px -10px rgba(53, 132, 234, 0.5);
   border-color: #91bcf4;
   background: rgba(53, 132, 234, 0.15);
 }
-.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input::placeholder {
+.pw body.ProcessLogin #main #content form:not(#socialsLoginForm) .Inputfield input::placeholder {
   color: rgba(53, 132, 234, 0.4);
 }
-.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input:hover,
-.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input:focus {
-  border-color: #3584EA;
-  box-shadow: 0 5px 15px rgba(53, 132, 234, 0.4);
+.pw body.ProcessLogin #main #content form:not(#socialsLoginForm) .Inputfield input:hover,
+.pw body.ProcessLogin #main #content form:not(#socialsLoginForm) .Inputfield input:focus {
+  color: #fff;
+  background: rgba(53, 132, 234, 0.2);
+  box-shadow: 0 5px 15px -5px rgba(53, 132, 234, 0.5);
+  border-color: #7aaef1;
 }
-.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield input::placeholder {
-  text-transform: uppercase;
+.pw body.ProcessLogin #main #content form:not(#socialsLoginForm) .Inputfield input:focus {
+  border-color: #63a0ef;
 }
-.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield > div,
-.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield > label {
-  background: transparent;
+.pw body.ProcessLogin #main #content form:not(#socialsLoginForm) .Inputfield label {
+  color: #868484;
 }
-.pw body.ProcessLogin > #main #content form:not(#socialsLoginForm) .Inputfield .ui-button {
-  margin-top: 1em;
+.pw body.ProcessLogin #main #content form:not(#socialsLoginForm) .Inputfield button {
+  color: #fff;
+  background-color: #3584EA;
 }
-.pw body.ProcessLogin #socialsLoginForm ul.Inputfields {
-  margin-top: 1em;
-  padding-top: 1em;
-  justify-content: center;
-}
-.pw body.ProcessLogin #socialsLoginForm ul.Inputfields .ui-button {
-  font-size: 1em;
-  padding: 0 1em;
-  line-height: 1.75em;
+.pw body.ProcessLogin #main #content form:not(#socialsLoginForm) .Inputfield button:hover {
+  color: #fff;
+  background-color: #1e76e8;
 }
 .pw body.ProcessLogin #socialsLoginForm ul.Inputfields .ui-button.ui-state-default {
-  background-color: rgba(53, 132, 234, 0.6);
+  background: rgba(53, 132, 234, 0.8);
   box-shadow: none;
-}
-.pw body.ProcessLogin #socialsLoginForm ul.Inputfields .ui-button.ui-state-hover {
-  background-color: reset;
-}
-.pw body.ProcessLogin #socialsLoginForm ul.Inputfields .InputfieldButton,
-.pw body.ProcessLogin #socialsLoginForm ul.Inputfields .InputfieldSubmit {
-  display: block;
-}
-.pw body.ProcessLogin #pw-content-body > div {
-  display: inline-block;
-  margin: 0 0.75em;
-  padding-top: 0.75em;
+  color: #fff;
 }
 .pw body.ProcessLogin #pw-content-body > div a {
-  font-size: 0.9em;
-  text-transform: uppercase;
-  color: rgba(53, 132, 234, 0.8);
-  opacity: 0.7;
+  color: #868484;
 }
 .pw body.ProcessLogin #pw-content-body > div a:hover {
-  opacity: 1;
-  text-decoration: none;
+  color: #797777;
 }
+/*
+
+.pw {
+    // login page form 
+    body.ProcessLogin {
+        position: relative;
+        width: 370px;
+        top: 7vw;
+        max-width: 85vw;
+
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 15px;
+
+        background: fade(@theme-primary-color, 2%);
+        box-shadow: 0 10px 50px -10px fade(@theme-primary-color, 20%);
+        border: 1px solid fade(@theme-primary-color, 05%);
+
+        @media (min-width: 1000px) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            padding: 30px;
+
+        }
+
+        .pw-notices {
+            margin-bottom: 2em;
+
+            >li {
+                border-bottom-width: 0;
+                border-radius: 4px;
+            }
+        }
+
+        a,
+        input,
+        button {
+            transition: all 250ms ease 20ms;
+        }
+
+        #pw-masthead-mobile {
+            background-color: transparent;
+            margin-bottom: 2em;
+            box-shadow: none;
+
+            .pw-logo {
+                max-height: 60px; //filter: grayscale(100%) brightness(400%);
+            }
+        }
+
+        >#main {
+            margin: 0 !important;
+            padding: 0 !important;
+
+            #ProcessLoginForm {
+                label {
+                    display: none;
+                }
+            }
+
+            #content form:not(#socialsLoginForm) {
+                width: auto;
+
+                .Inputfields {
+                    display: flex;
+                }
+
+                .InputfieldHeader {
+                    font-size: 1.1em;
+                }
+
+                .InputfieldContent {
+                    padding: 0 0 1em;
+                }
+
+                .Inputfield {
+                    border-width: none;
+                    outline: none;
+
+                    display: flex;
+                    box-shadow: none !important;
+                    background: transparent;
+                    width: 100% !important;
+                    float: none;
+
+                    input {
+
+                        border-radius: 4px;
+                        font-size: 1.3em;
+                        text-align: left;
+                        height: auto;
+                        line-height: 2em;
+                        border-color: lighten(@theme-primary-color, 20%);
+                        background: fade(@theme-primary-color, 15%);
+
+                        &::placeholder {
+                            color: fade(@theme-primary-color, 40%);
+                        }
+
+                        &:hover,
+                        &:focus {
+                            border-color: @theme-primary-color;
+                            box-shadow: @pw-primary-box-shadow;
+                        }
+                    }
+
+                    input::placeholder {
+                        text-transform: uppercase;
+                    }
+
+                    >div,
+                    >label {
+                        background: transparent;
+                    }
+
+                    .ui-button {
+                        margin-top: 1em;
+                    }
+                }
+
+
+            }
+
+        }
+
+        #socialsLoginForm ul.Inputfields {
+            // 0auth login centered
+            margin-top: 1em;
+            padding-top: 1em;
+            justify-content: center;
+
+            .ui-button {
+                font-size: 1em;
+                padding: 0 1em;
+                line-height: 1.75em;
+
+                &.ui-state-default {
+                    background-color: fade(@theme-primary-color, 60%);
+                    box-shadow: none;
+                }
+
+                &.ui-state-hover {
+                    background-color: reset;
+                }
+            }
+
+            .InputfieldButton,
+            .InputfieldSubmit {
+                display: block;
+            }
+        }
+
+        #pw-content-body {
+
+            // password links
+            >div {
+                display: inline-block;
+                margin: 0 0.75em;
+                padding-top: 0.75em;
+
+                a {
+                    font-size: 0.9em;
+                    text-transform: uppercase;
+                    color: fade(@theme-primary-color, 80%);
+                    opacity: 0.7;
+
+                    &:hover {
+                        opacity: 1;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+}*/
 /**************************************************************
  * base theme
  *
@@ -16798,7 +16896,7 @@ body > ul.ui-autocomplete a:hover .uk-text-muted {
   line-height: 24px;
   min-height: 24px;
   border-radius: 50%;
-  box-shadow: 0 7px 11px -6px rgba(53, 132, 234, 0.8);
+  box-shadow: 0 5px 15px -5px rgba(53, 132, 234, 0.5);
   border-width: 0px;
   z-index: 999999999;
   background-image: linear-gradient(#1e76e8, #1e76e8);

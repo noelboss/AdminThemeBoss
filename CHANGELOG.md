@@ -2,12 +2,22 @@
 
 © 2019 noelboss.com
 
+## Version 0.6.2
+
+Codename »boring«
+
+* Fixed: Login screen design 🖌
+* Fixed: Readme 📄
+* Fixed: AOS Language Switch overlapping notifications 💬
+
+
 ## Version 0.6.1
 
 Everyone is going green, only AdminThemeBoss was somehow missing the trend… So this new version fixes this glaring oversight 😇
 
 * New «Smooth Green» Color Scheme 💚
 * Fixed: Small issues with asmSelect entries
+
 
 ## Version 0.6.0
 
@@ -20,11 +30,13 @@ Introducing, a refined, more colorfull and streamlined expirience:
 * Improved: Under the hood improvements on how settings are saved an applied
 * Fixed: Some minor bugs 🧨🦟
 
+
 ## Version 0.5.5
 
 * Fixed: Display of strong and italic content inside field descriptions and notes.
 * Fixed: Display of descriptions and notes with ProDrafts Livepreview
 * Fixed: Aligments of checkbox labels
+
 
 ## Version 0.5.4
 

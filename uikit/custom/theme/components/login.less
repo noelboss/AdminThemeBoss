@@ -10,8 +10,93 @@
 
 .pw {
 
-
     /* login page form */
+    body.ProcessLogin {
+
+        background: fade(@theme-primary-color, 2%);
+        box-shadow: 0 10px 50px -10px fade(@theme-primary-color, 50%);
+
+        /*#pw-masthead-mobile .pw-logo {
+            filter: grayscale(100%) brightness(200%);
+        }*/
+
+        #main {
+            #content form:not(#socialsLoginForm) {
+                .Inputfield {
+                    input {
+                        border-radius: 4px;
+                        color: @theme-text-color-inverse;
+                        box-shadow: @pw-box-shadow-medium;
+
+                        border-color: lighten(@theme-primary-color, 20%);
+                        background: fade(@theme-primary-color, 15%);
+
+                        &::placeholder {
+                            color: fade(@theme-primary-color, 40%);
+                        }
+
+                        &:hover,
+                        &:focus {
+                            color: #fff;
+                            background: fade(@theme-primary-color, 20%);
+                            box-shadow: @pw-box-shadow-small;
+
+                            border-color: lighten(@theme-primary-color, 15%);
+                        }
+
+                        &:focus {
+                            border-color: lighten(@theme-primary-color, 10%);
+                        }
+                    }
+
+                    label {
+                        color: @theme-muted-text-color-alternate;
+                    }
+
+                    button {
+                        color: @theme-button-text-color;
+                        background-color: @theme-button-background;
+
+                        &:hover {
+                            color: @theme-text-color-inverse;
+                            background-color: @theme-button-hover-background;
+                        }
+                    }
+                }
+            }
+        }
+
+        #socialsLoginForm ul.Inputfields {
+
+            .ui-button {
+                &.ui-state-default {
+                    background: fade(@theme-primary-color, 80%);
+                    box-shadow: none;
+                    color: @theme-button-text-color;
+                }
+            }
+        }
+
+        #pw-content-body {
+
+            // password links
+            >div {
+                a {
+                    color: @theme-muted-text-color-alternate;
+
+                    &:hover {
+                        color: @theme-muted-text-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+
+.pw {
+    // login page form 
     body.ProcessLogin {
         position: relative;
         width: 370px;
@@ -185,4 +270,4 @@
         }
     }
 
-}
+}*/

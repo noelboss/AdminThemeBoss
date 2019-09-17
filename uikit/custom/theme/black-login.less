@@ -2,79 +2,10 @@
 
 	/* login page form */
 	body.ProcessLogin {
-
-		background: #222225;
-		box-shadow: 0 10px 50px -10px fade(@theme-primary-color, 50%);
+		background: @theme-primary-color;
 
 		#pw-masthead-mobile .pw-logo {
 			filter: grayscale(100%) brightness(200%);
-		}
-
-		#main {
-			#content form:not(#socialsLoginForm) {
-				.Inputfield {
-					input {
-						border-radius: 4px;
-						color: #eee;
-						border-color: transparent;
-						background-color: rgba(60, 60, 63, 0.4);
-						box-shadow: 0 3px 10px #000;
-
-						&:hover,
-						&:focus {
-							color: #fff;
-							background-color: rgba(60, 60, 63, 0.7);
-							box-shadow: @pw-box-shadow;
-						}
-
-						&:focus {
-							border-color: #55555a;
-						}
-
-						&::placeholder {
-							color: @theme-muted-text-color-alternate;
-						}
-					}
-
-					label {
-						color: @theme-muted-text-color-alternate;
-					}
-
-					button {
-						color: lighten(@theme-muted-text-color-alternate, 30%);
-						background-color: #000;
-
-						&:hover {
-							color: #fff;
-							background-color: lighten(#000, 2%);
-						}
-					}
-				}
-			}
-		}
-
-		#socialsLoginForm ul.Inputfields {
-
-			.ui-button {
-				&.ui-state-default {
-					box-shadow: none;
-					color: lighten(@theme-muted-text-color-alternate, 20%);
-				}
-			}
-		}
-
-		#pw-content-body {
-
-			// password links
-			>div {
-				a {
-					color: lighten(@theme-muted-text-color-alternate, 15%);
-
-					&:hover {
-						color: #fff;
-					}
-				}
-			}
 		}
 	}
 }

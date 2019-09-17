@@ -82,7 +82,8 @@
 
 // shadows
 @pw-box-shadow: 0 10px 30px -10px @theme-primary-color-light;
-@pw-box-shadow-small: 0 7px 11px -6px fade(@theme-primary-color, 80%);
+@pw-box-shadow-medium: 0 5px 20px -10px fade(@theme-primary-color, 50%);
+@pw-box-shadow-small: 0 5px 15px -5px fade(@theme-primary-color, 50%);
 @pw-box-shadow-subtle: 0 5px 20px -10px fade(@theme-primary-color, 20%);
 @pw-primary-box-shadow: 0 5px 15px @theme-primary-color-rgba;
 @pw-tabs-box-shadow: 0px -5px 15px -6px fade(#000, 3%);
@@ -92,7 +93,7 @@
 
 @theme-button-text-color: @theme-text-color-inverse;
 @theme-button-background: @theme-primary-color;
-@theme-button-hover-background: @theme-text-color-inverse;
+@theme-button-hover-background: darken(@theme-primary-color, 5%);
 @theme-button-secondary-background: @theme-muted-text-color-alternate;
 @theme-button-secondary-hover-background: darken(@theme-button-secondary-background, 5%);
 
@@ -215,8 +216,8 @@
 @button-text-hover-color: @theme-primary-color; // text-only button
 @pw-button-background: @theme-button-background;
 @pw-button-color: @theme-button-text-color;
-@pw-button-hover-background: darken(@theme-primary-color, 5%);
-@pw-button-hover-color: #fff;
+@pw-button-hover-background: @theme-button-hover-background;
+@pw-button-hover-color: @theme-text-color-inverse;
 
 @pw-button-secondary-background: @theme-button-secondary-background;
 @pw-button-secondary-hover-background: darken(@pw-button-secondary-background, 5%);
@@ -231,7 +232,7 @@
 @pw-inputfield-color-warning: @theme-warning-color;
 @pw-inputfield-background-warning: lighten(@theme-warning-background, 20%);
 @pw-inputfield-background-danger: lighten(@theme-danger-background, 50%);
-@pw-inputfield-header-color: #11111f;
+@pw-inputfield-header-color: @theme-text-color;
 @pw-inputfield-header-collapsed-color: @theme-muted-text-color-alternate;
 @pw-inputfield-header-hover-color: @theme-primary-color;
 
@@ -256,7 +257,7 @@
 @pw-page-list-link-open-background-color: inherit;
 
 @pw-page-list-icon-color: @theme-page-list-icon-color;
-@pw-page-list-status-icon-color: #aaaaaa;
+@pw-page-list-status-icon-color: @theme-page-list-icon-color;
 @pw-page-list-action-link-color: @theme-page-list-action-link-color;
 @pw-page-list-action-link-background-color: @theme-page-list-action-link-background-color;
 @pw-page-list-action-link-hover-color: @theme-page-list-action-link-hover-color;
@@ -278,7 +279,7 @@
 @tab-item-font-size: 16px;
 @tab-item-text-transform: none;
 @tab-item-active-border: @global-link-color;
-@tab-item-active-background: #fff;
+@tab-item-active-background: @theme-text-color-inverse;
 
 // Offcanvas bar
 @offcanvas-bar-color-mode: dark;
