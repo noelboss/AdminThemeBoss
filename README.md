@@ -3,12 +3,13 @@
 
 ### Features
 
-* Four unique color options: blue, vibrant, black & pink
+* Five unique color options: blue, vibrant, black & pink
 * Beautiful redesigned login screen
-* Modern typografy using Roboto Condensed
+* Modern typography using Roboto Condensed
 * Extended breadcrumb with edit links
 * Extends the default AdminThemeUikit so you can continue using all current (and future) AdminThemeUikit features
 * Option to activate theme for all users
+* Compatibility with AdminOnStreoids and other third party modules
 
 
 ## Release Updates
@@ -45,6 +46,10 @@ Checkout the [Releases Page and subscribe to updates](http://releases.noelboss.c
 ### Happy Pink
 
 ![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/pink.png "Happy Pink")
+
+### Smooth Green *new with 0.6.1*
+
+![alt text](https://raw.githubusercontent.com/noelboss/AdminThemeBoss/master/docs/images/green.png "Smooth Green")
 
 
 ## Requirements
