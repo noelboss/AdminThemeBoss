@@ -1,6 +1,21 @@
 # Admin Theme Boss – Release Notes
 
-© 2019 noelboss.com
+For more information, check out the following links:
+
+* [Release Notifications](http://releases.noelboss.com/adminthemeboss/)
+* [Support Forum](https://processwire.com/talk/topic/19574-admin-theme-boss-–-based-on-uikit-3/)
+* [ProcessWire Modules Repository](http://modules.processwire.com/modules/admin-theme-uikit/)
+* [Gitlab](https://github.com/noelboss/AdminThemeBoss) & [Issues](https://github.com/noelboss/AdminThemeBoss/issues)
+
+
+
+## Version 0.6.3
+
+Codename »hehehe«
+
+* Improved: Login screen on mobile is now full screen
+* Fixed: Fixed Login screen design 🤯
+
 
 ## Version 0.6.2
 
@@ -158,3 +173,8 @@ Introducing, a refined, more colorfull and streamlined expirience:
 ## Version 0.1.0
 
 * Initial release
+
+
+---
+
+© 2019 noelboss.com

@@ -9,116 +9,37 @@
 @import "../variables.less";
 
 .pw {
+    min-width: 100vw;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     /* login page form */
     body.ProcessLogin {
 
         background: fade(@theme-primary-color, 2%);
         box-shadow: 0 10px 50px -10px fade(@theme-primary-color, 50%);
-
-        /*#pw-masthead-mobile .pw-logo {
-            filter: grayscale(100%) brightness(200%);
-        }*/
-
-        #main {
-            #content form:not(#socialsLoginForm) {
-                .Inputfield {
-                    input {
-                        border-radius: 4px;
-                        color: @theme-text-color-inverse;
-                        box-shadow: @pw-box-shadow-medium;
-
-                        border-color: lighten(@theme-primary-color, 20%);
-                        background: fade(@theme-primary-color, 15%);
-
-                        &::placeholder {
-                            color: fade(@theme-primary-color, 40%);
-                        }
-
-                        &:hover,
-                        &:focus {
-                            color: #fff;
-                            background: fade(@theme-primary-color, 20%);
-                            box-shadow: @pw-box-shadow-small;
-
-                            border-color: lighten(@theme-primary-color, 15%);
-                        }
-
-                        &:focus {
-                            border-color: lighten(@theme-primary-color, 10%);
-                        }
-                    }
-
-                    label {
-                        color: @theme-muted-text-color-alternate;
-                    }
-
-                    button {
-                        color: @theme-button-text-color;
-                        background-color: @theme-button-background;
-
-                        &:hover {
-                            color: @theme-text-color-inverse;
-                            background-color: @theme-button-hover-background;
-                        }
-                    }
-                }
-            }
-        }
-
-        #socialsLoginForm ul.Inputfields {
-
-            .ui-button {
-                &.ui-state-default {
-                    background: fade(@theme-primary-color, 80%);
-                    box-shadow: none;
-                    color: @theme-button-text-color;
-                }
-            }
-        }
-
-        #pw-content-body {
-
-            // password links
-            >div {
-                a {
-                    color: @theme-muted-text-color-alternate;
-
-                    &:hover {
-                        color: @theme-muted-text-color;
-                    }
-                }
-            }
-        }
-    }
-}
-
-/*
-
-.pw {
-    // login page form 
-    body.ProcessLogin {
-        position: relative;
-        width: 370px;
-        top: 7vw;
-        max-width: 85vw;
-
-        margin: 0 auto;
         padding: 20px;
-        border-radius: 15px;
 
-        background: fade(@theme-primary-color, 2%);
-        box-shadow: 0 10px 50px -10px fade(@theme-primary-color, 20%);
-        border: 1px solid fade(@theme-primary-color, 05%);
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
 
         @media (min-width: 1000px) {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateY(-50%) translateX(-50%);
-            padding: 30px;
+            border-radius: 15px;
 
+            padding: 40px;
+
+            min-width: 30vw;
+            min-height: 30vh;
+
+            max-width: 900px;
+            max-height: 900px;
         }
+
 
         .pw-notices {
             margin-bottom: 2em;
@@ -128,6 +49,7 @@
                 border-radius: 4px;
             }
         }
+
 
         a,
         input,
@@ -145,107 +67,131 @@
             }
         }
 
+        /*#pw-masthead-mobile .pw-logo {
+            filter: grayscale(100%) brightness(200%);
+        }*/
+
         >#main {
-            margin: 0 !important;
-            padding: 0 !important;
+            margin-bottom: 0 !important;
 
-            #ProcessLoginForm {
-                label {
-                    display: none;
-                }
-            }
+            #content {
+                form {
 
-            #content form:not(#socialsLoginForm) {
-                width: auto;
+                    width: auto;
 
-                .Inputfields {
-                    display: flex;
-                }
-
-                .InputfieldHeader {
-                    font-size: 1.1em;
-                }
-
-                .InputfieldContent {
-                    padding: 0 0 1em;
-                }
-
-                .Inputfield {
-                    border-width: none;
-                    outline: none;
-
-                    display: flex;
-                    box-shadow: none !important;
-                    background: transparent;
-                    width: 100% !important;
-                    float: none;
-
-                    input {
-
-                        border-radius: 4px;
-                        font-size: 1.3em;
-                        text-align: left;
-                        height: auto;
-                        line-height: 2em;
-                        border-color: lighten(@theme-primary-color, 20%);
-                        background: fade(@theme-primary-color, 15%);
-
-                        &::placeholder {
-                            color: fade(@theme-primary-color, 40%);
-                        }
-
-                        &:hover,
-                        &:focus {
-                            border-color: @theme-primary-color;
-                            box-shadow: @pw-primary-box-shadow;
-                        }
+                    .Inputfields {
+                        display: flex;
                     }
 
-                    input::placeholder {
-                        text-transform: uppercase;
+                    .InputfieldHeader {
+                        font-size: 1.1em;
                     }
 
-                    >div,
-                    >label {
+                    .InputfieldContent {
+                        padding: 0 0 1em;
+                    }
+
+                    .Inputfield {
+                        border-width: none;
+                        outline: none;
+
+                        box-shadow: none !important;
                         background: transparent;
+                        width: 100% !important;
+
+                        input {
+                            outline: none;
+
+                            border-radius: 4px;
+                            color: fade(@theme-primary-color, 70%);
+                            box-shadow: @pw-box-shadow-medium;
+
+                            border-color: lighten(@theme-primary-color, 20%);
+                            background: fade(@theme-primary-color, 15%);
+                            font-size: 1.25rem;
+                            text-align: left;
+
+                            max-width: 500px;
+
+                            &::placeholder {
+                                color: fade(@theme-primary-color, 60%);
+                                text-transform: uppercase;
+                            }
+
+                            &:hover,
+                            &:focus {
+                                color: fade(@theme-primary-color, 80%);
+                                background: fade(@theme-primary-color, 20%);
+                                box-shadow: @pw-box-shadow-small;
+                                border-color: lighten(@theme-primary-color, 15%);
+                            }
+
+                            &:focus {
+                                color: @theme-primary-color;
+                                border-color: lighten(@theme-primary-color, 10%);
+                            }
+                        }
+
+                        label {
+                            display: none;
+                        }
+
+                        button {
+                            outline: none;
+
+                            color: @theme-button-text-color;
+                            background-color: @theme-button-background;
+
+                            &:hover {
+                                color: @theme-text-color-inverse;
+                                background-color: @theme-button-hover-background;
+                            }
+                        }
+
+                        >div,
+                        >label {
+                            background: transparent;
+                        }
+
+                        .ui-button {
+                            margin-top: 1em;
+                            font-size: 1.25rem
+                        }
                     }
 
-                    .ui-button {
-                        margin-top: 1em;
+                    &#socialsLoginForm {
+                        margin: 20px 0 0;
+
+                        ul.Inputfields {
+                            margin-top: 1em;
+                            justify-content: center;
+                            width: 100%;
+
+                            >li {
+                                padding: 0;
+                                flex-basis: 20%;
+                            }
+
+                            .ui-button {
+                                font-size: 1rem;
+                                margin: 1em 0.5em 0;
+                                padding: 0.25em 1em;
+                                line-height: 1.75em;
+                                color: darken(@theme-button-text-color, 5%);
+                            }
+
+                            .InputfieldButton,
+                            .InputfieldSubmit {
+                                display: block;
+                            }
+                        }
                     }
                 }
-
-
             }
 
         }
 
-        #socialsLoginForm ul.Inputfields {
-            // 0auth login centered
-            margin-top: 1em;
-            padding-top: 1em;
-            justify-content: center;
 
-            .ui-button {
-                font-size: 1em;
-                padding: 0 1em;
-                line-height: 1.75em;
-
-                &.ui-state-default {
-                    background-color: fade(@theme-primary-color, 60%);
-                    box-shadow: none;
-                }
-
-                &.ui-state-hover {
-                    background-color: reset;
-                }
-            }
-
-            .InputfieldButton,
-            .InputfieldSubmit {
-                display: block;
-            }
-        }
 
         #pw-content-body {
 
@@ -258,16 +204,19 @@
                 a {
                     font-size: 0.9em;
                     text-transform: uppercase;
-                    color: fade(@theme-primary-color, 80%);
-                    opacity: 0.7;
+
+                    color: @theme-muted-text-color;
 
                     &:hover {
-                        opacity: 1;
-                        text-decoration: none;
+                        color: @theme-muted-text-color-alternate;
                     }
                 }
             }
-        }
-    }
 
-}*/
+            p:last-child {
+                display: none;
+            }
+        }
+
+    }
+}

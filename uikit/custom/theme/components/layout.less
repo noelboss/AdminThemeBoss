@@ -8,26 +8,33 @@
 @import "../variables.less";
 
 // header add transparency (for sticky)
-.pw #pw-mastheads>header {
-    backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
+.pw {
 
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 1);
-}
-
-
-#pw-footer {
-    padding-top: 20px;
-    border-top: @pw-inputfield-border;
-    color: lighten(@theme-muted-text-color, 20%);
-
-    small,
-    a {
-        color: lighten(@theme-muted-text-color, 10%);
+    body {
+        min-width: 100vw;
+        min-height: 100vh;
     }
-}
 
-// remove lister version
-.detail.version {
-    display: none;
+    #pw-mastheads>header {
+        backdrop-filter: blur(20px) drop-shadow(4px 4px 10px red);
+
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 10px 20px rgba(255, 255, 255, 1);
+    }
+
+    #pw-footer {
+        padding-top: 20px;
+        border-top: @pw-inputfield-border;
+        color: lighten(@theme-muted-text-color, 20%);
+
+        small,
+        a {
+            color: lighten(@theme-muted-text-color, 10%);
+        }
+    }
+
+    // remove lister version
+    .detail.version {
+        display: none;
+    }
 }
