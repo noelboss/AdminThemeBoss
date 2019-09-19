@@ -14,6 +14,7 @@ For more information, check out the following links:
 Codename »hehehe«
 
 * Improved: Login screen on mobile is now full screen
+* Improved: Notifications on login screen
 * Fixed: Fixed Login screen design 🤯
 
 

@@ -16558,6 +16558,7 @@ body > ul.ui-autocomplete a:hover .uk-text-muted {
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  position: static;
   /*#pw-masthead-mobile .pw-logo {
             filter: grayscale(100%) brightness(200%);
         }*/
@@ -16572,12 +16573,32 @@ body > ul.ui-autocomplete a:hover .uk-text-muted {
     max-height: 900px;
   }
 }
-.pw body.ProcessLogin .pw-notices {
-  margin-bottom: 2em;
+.pw body.ProcessLogin #pw-mastheads {
+  position: static;
 }
-.pw body.ProcessLogin .pw-notices > li {
+.pw body.ProcessLogin #pw-mastheads .pw-notices {
+  margin-bottom: 2em;
+  position: relative;
+}
+@media (min-width: 1000px) {
+  .pw body.ProcessLogin #pw-mastheads .pw-notices {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+.pw body.ProcessLogin #pw-mastheads .pw-notices > li {
   border-bottom-width: 0;
   border-radius: 4px;
+  padding: 0.8em !important;
+}
+@media (min-width: 1000px) {
+  .pw body.ProcessLogin #pw-mastheads .pw-notices > li {
+    opacity: 0.9;
+  }
+  .pw body.ProcessLogin #pw-mastheads .pw-notices > li:hover {
+    opacity: 1;
+  }
 }
 .pw body.ProcessLogin a,
 .pw body.ProcessLogin input,
@@ -16597,6 +16618,9 @@ body > ul.ui-autocomplete a:hover .uk-text-muted {
 }
 .pw body.ProcessLogin > #main #content form {
   width: auto;
+}
+.pw body.ProcessLogin > #main #content form#ProcessLoginForm label {
+  display: none;
 }
 .pw body.ProcessLogin > #main #content form .Inputfields {
   display: flex;
@@ -16640,14 +16664,12 @@ body > ul.ui-autocomplete a:hover .uk-text-muted {
   color: #3584EA;
   border-color: #63a0ef;
 }
-.pw body.ProcessLogin > #main #content form .Inputfield label {
-  display: none;
-}
 .pw body.ProcessLogin > #main #content form .Inputfield button {
   outline: none;
   color: #fff;
   background-color: #3584EA;
 }
+.pw body.ProcessLogin > #main #content form .Inputfield button:focus,
 .pw body.ProcessLogin > #main #content form .Inputfield button:hover {
   color: #fff;
   background-color: #1e76e8;

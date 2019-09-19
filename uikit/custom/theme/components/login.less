@@ -40,13 +40,35 @@
             max-height: 900px;
         }
 
+        position: static;
 
-        .pw-notices {
-            margin-bottom: 2em;
+        #pw-mastheads {
+            position: static;
 
-            >li {
-                border-bottom-width: 0;
-                border-radius: 4px;
+            .pw-notices {
+                margin-bottom: 2em;
+                position: relative;
+                
+                // floating on large screens
+                @media (min-width: 1000px) {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+                
+                >li {
+                    border-bottom-width: 0;
+                    border-radius: 4px;
+                    padding: 0.8em !important;
+
+                    @media (min-width: 1000px) {
+                        opacity: 0.9;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
             }
         }
 
@@ -76,6 +98,12 @@
 
             #content {
                 form {
+
+                    &#ProcessLoginForm {
+                        label {
+                            display: none;
+                        }
+                    }
 
                     width: auto;
 
@@ -132,16 +160,13 @@
                             }
                         }
 
-                        label {
-                            display: none;
-                        }
-
                         button {
                             outline: none;
 
                             color: @theme-button-text-color;
                             background-color: @theme-button-background;
 
+                            &:focus,
                             &:hover {
                                 color: @theme-text-color-inverse;
                                 background-color: @theme-button-hover-background;
