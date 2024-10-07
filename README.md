@@ -108,4 +108,4 @@ There is a [script](https://github.com/noelboss/AdminThemeBoss/blob/master/upgra
 
 See included [LICENSE](https://github.com/noelboss/AdminThemeBoss/blob/master/LICENSE) file for full license text.
 
-© [Noevu - Schweizer KMU Webseiten Entwicklung](https://www.noevu.ch/#entwicklung) | [ProcessWire Modules](https://modules.processwire.com/authors/noelboss/)
+© [Noevu - Schweizer KMU Webseiten Entwicklung]([https://noevu.ch/#entwicklung](https://noevu.ch/neue-webseite-fuer-meine-firma/)) | [ProcessWire Modules](https://modules.processwire.com/authors/noelboss/)
